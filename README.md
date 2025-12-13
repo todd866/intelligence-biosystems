@@ -89,12 +89,6 @@ The `code/` directory contains four simulation scripts demonstrating the collisi
 pdflatex intelligence.tex && pdflatex intelligence.tex
 ```
 
-## Related papers
-
-- **Coherence Time** (`4_coherence_time/`): Temporal bottleneck for distributed biological computation
-- **Coherence Conditions** (`1_coherence_conditions/`): Coherence requirements for biological computation
-- **Substrate Dimensionality** (`14_substrate_dimensionality/`): Dimensional constraints on computation
-
 ## Citation
 
 ```bibtex
