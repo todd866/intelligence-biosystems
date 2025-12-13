@@ -1,0 +1,510 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{margin=1in}
+\usepackage{setspace}
+\doublespacing
+
+\title{Intelligence as High-Dimensional Coherence: Energy Landscapes, Phase Space, and the Physical Basis of Computation}
+
+\author{Ian Todd\\
+Sydney Medical School\\
+University of Sydney\\
+Sydney, NSW, Australia\\
+\texttt{itod2305@uni.sydney.edu.au}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We propose that intelligence emerges from a system's capacity to maintain high-dimensional coherence within thermodynamically admissible yet temporally unresolvable regimes, where computation occurs below the threshold for bit-writing. Building on prior work establishing measurement limits in the sub-Landauer domain (Todd, 2025), we demonstrate that vector addition systems---computationally intractable through discrete enumeration---become solvable via continuous relaxation in high-dimensional phase space precisely because the temporal structure of the solution pathway is fundamentally inaccessible. The key principle: biological systems solve hard problems by maintaining coherent dynamics at energies where timing information cannot be extracted, then integrating these unmeasurable signals through dimensional collapse to produce discrete outputs. This framework unites energy, information, and inference while acknowledging a fundamental methodological constraint: the computational substrate itself resists the standard scientific toolkit of simulation and temporal decomposition. We characterize the boundaries of this unmeasurable regime and derive testable predictions for its macroscopic signatures, showing that intelligence operates at the edge of what physics permits us to know.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Intelligence, Coherence, Phase Space, Thermodynamics, Vector Addition Systems, Sub-Landauer Dynamics, Measurement Limits, Dimensional Computation
+
+\noindent\textbf{Highlights:}
+\begin{itemize}
+\item Intelligence operates in regimes where temporal fine-structure is fundamentally unmeasurable
+\item Sub-Landauer coherent dynamics enable VAS solution by preventing temporal decomposition into discrete steps
+\item Dimensional collapse integrates unmeasurable signals into measurable outputs at Landauer cost
+\item Framework predicts observable boundaries while acknowledging limits on characterizing the computational substrate
+\item Effective dimensionality encoded in inaccessible timing relationships explains biological computational efficiency
+\end{itemize}
+
+\section{Introduction: The Unmeasurable Substrate of Intelligence}
+
+Intelligence in biological systems operates with remarkable efficiency, yet the mechanisms underlying this efficiency have proven difficult to characterize using traditional scientific methods. We propose this difficulty is not accidental but fundamental: intelligence emerges from computational dynamics that occur in regimes where standard observables---including temporal ordering of states---are not physically accessible.
+
+The foundational observation comes from thermodynamics. The Landauer limit establishes that irreversibly erasing one bit requires minimum energy $E_{\text{Landauer}} = k_B T \ln 2$ [5]. Recent work [6] demonstrates that below this threshold, measurement cannot extract complete information about system dynamics. Critically, sub-Landauer energies render temporal structure inaccessible: you can detect \textit{that} a pattern exists through integration over time, but you cannot determine \textit{when} events occurred along the trajectory.
+
+This creates a profound methodological challenge. The computational substrate of intelligence---the continuous evolution through high-dimensional phase space during problem-solving---resists the standard scientific approach of decomposing processes into measurable sequential steps. We cannot write explicit equations for the unmeasurable dynamics because the domain of those equations (pointwise values $\phi_i(t)$ at specific times $t$) does not exist in the observable algebra.
+
+\textbf{The central thesis:} This unmeasurability is not a limitation but the mechanism. Intelligence solves computationally intractable problems precisely because it operates in regimes where the temporal decomposition required for discrete enumeration is physically prohibited. This extends our prior demonstration [6] that sub-Landauer patterns resist falsification, showing they also enable computation. The computation happens through dynamics that cannot be measured without destruction; the result appears through dimensional collapse.
+
+\subsection{Structure and Scope}
+
+This paper characterizes the boundaries and consequences of unmeasurable computation rather than attempting to model its interior dynamics. We establish:
+
+\begin{enumerate}
+\item \textbf{The expansion regime} - where sub-Landauer coherent dynamics enable computation through inaccessible temporal fine-structure
+\item \textbf{The collapse mechanism} - how unmeasurable signals integrate into measurable outputs
+\item \textbf{The feasibility bounds} - thermodynamic constraints on expansion-collapse cycles
+\item \textbf{Observable predictions} - macroscopic signatures testable without accessing unmeasurable dynamics
+\end{enumerate}
+
+We deliberately avoid pseudocode, detailed simulations, or equations claiming to represent the temporal evolution during expansion. Such representations would contradict our core claim: the dynamics are fundamentally private to the physical system itself.
+
+\subsection{Key Notation}
+
+\begin{itemize}
+\item $E_{\text{Landauer}} = k_B T \ln 2$ - Minimum energy for irreversible bit erasure
+\item $D_{\text{eff}}$ - Effective dimensionality of coherent state
+\item $r$ - Coherence order parameter ($r \in [0,1]$)
+\item $\Sigma_{\text{eff}}$ - Effective entropy production rate
+\item $\bar{R}$ - Average irreversible bit-writing rate
+\item $T_e$ - Envelope period (integration window before collapse)
+\item $\tau_c$ - Coherence time
+\end{itemize}
+
+\section{The Measurement Boundary: Where Temporal Structure Disappears}
+
+\subsection{Sub-Landauer Dynamics and Temporal Inaccessibility}
+
+Following Todd (2025) [6], measurement at energy $E_{\text{meas}}$ extracts information bounded by:
+\begin{equation}
+I_{\text{max}} \leq \frac{E_{\text{meas}}}{k_B T \ln 2}
+\end{equation}
+
+Interpreting $k_B T \ln 2$ as a per-bit lower bound on irreversible recording, the available energy sets an upper budget on recoverable bits; we use this as a conservative guideline rather than an equality. When $E_{\text{meas}} \ll k_B T \ln 2$, the measurement collapses continuous high-dimensional structure into coarse low-dimensional symbolic representations. More fundamentally, timing resolution fails. In standard quantum theory, time is treated as an external parameter rather than a general self-adjoint observable, so precise timing measurements require interactions that introduce back-action [6]; when such back-action exceeds the signal energy, timing becomes inaccessible.
+
+\textbf{The temporal uncertainty relation:} The energy-time uncertainty principle $\Delta E \cdot \Delta t \gtrsim \hbar/2$ can be recast for thermal systems. For events with energy $E_{\text{event}}$, the minimum measurement back-action introduces timing uncertainty. When measurement requires energy $\sim k_B T \ln 2$ to record one bit of timing information, and the event itself has energy $E_{\text{event}}$, timing uncertainty satisfies:
+\begin{equation}
+\sigma_t \gtrsim \frac{k_B T \ln 2}{E_{\text{event}}} \cdot \tau_c
+\end{equation}
+
+where $\tau_c$ is coherence time (the timescale over which phase relationships persist). Below the Landauer threshold, $\sigma_t \to \infty$: temporal resolution diverges. You can know \textit{that} something happened and measure its integrated effect, but you cannot trace its temporal evolution without injecting measurement energy that destroys the phenomenon.
+
+This is not a technological limitation but a thermodynamic one: no physically permissible interaction can extract timing information without exceeding the energy budget. The information required to specify when events occurred along a trajectory simply does not exist as a physical quantity in the sub-Landauer regime.
+
+\subsection{Dimensionality Encoded in Inaccessible Timing}
+
+High-dimensional coherent states encode information in precise temporal relationships---relative phases $\phi_i - \phi_j$, delays, correlations evolving at different rates. The dimensionality exists in the \textit{timing structure}.
+
+Since sub-Landauer measurements cannot resolve when events occurred, they cannot extract this temporal fine-structure. You can detect that a high-dimensional coherent state exists (through integrated observables like total energy, global coherence $r$), but you cannot project it onto a low-dimensional discrete description because the timing information required for such reduction is physically inaccessible.
+
+\textbf{Key principle:} Dimensionality lives in timing → Sub-Landauer energies prohibit timing resolution → High-dimensional states remain fundamentally unmeasurable during evolution.
+
+\subsection{What Can Be Characterized}
+
+We \textit{can} characterize:
+\begin{itemize}
+\item \textbf{Boundary conditions}: Initial states, target configurations, coupling topology
+\item \textbf{Integral constraints}: Energy conservation, total phase evolution, coherence metrics integrated over time
+\item \textbf{Collapse events}: Sudden dimensional reduction, energy dissipation, discrete outputs
+\item \textbf{Macroscopic correlations}: Statistical relationships between preparation and outcome
+\end{itemize}
+
+We \textit{cannot} characterize:
+\begin{itemize}
+\item \textbf{Temporal trajectories}: Pointwise state evolution $\phi_i(t_0), \phi_i(t_1), \ldots$
+\item \textbf{Sequential dynamics}: Which configurations were visited in what order
+\item \textbf{Intermediate states}: Fine-grained structure between initial and final conditions
+\end{itemize}
+
+This is the unmeasurable regime where computation occurs.
+
+\section{Vector Addition Systems: Computation by Continuous Relaxation}
+
+\subsection{The Computational Primitive}
+
+Vector addition systems (VAS) represent fundamental computational problems [13]. States are integer vectors; transitions add or subtract fixed vectors. VAS reachability---determining whether target state $\mathbf{v}_{\text{target}}$ is reachable from $\mathbf{v}_{\text{init}}$---has been proven to be Ackermann-complete [14], with non-elementary complexity making it intractable through discrete enumeration for large systems [15,16].\footnote{For an accessible overview of VAS reachability and its computational complexity, see Brubaker (2023) [17].}
+
+This presents a fundamental conundrum: if VAS reachability is computationally intractable, why are biological systems so proficient at solving such problems? Humans routinely navigate high-dimensional decision spaces, integrating multiple constraints simultaneously. Cells determine optimal metabolic pathways among exponentially many possibilities. Animals plan motor sequences that satisfy complex biomechanical constraints. Plants allocate resources across competing demands. All of these are effectively VAS problems---achieving goal states through sequences of constrained transitions in high-dimensional spaces. The fact that biology solves them efficiently while discrete algorithms fail suggests a fundamentally different computational substrate.
+
+\textbf{Example:} Consider a simple 2D VAS with states $(x,y) \in \mathbb{N}^2$ and transitions adding vectors $(+1,-1)$ or $(-2,+1)$. To determine whether $(5,3)$ is reachable from $(0,0)$, a discrete algorithm must enumerate all possible sequences of transitions, checking each path for validity. The computational cost grows explosively with dimensionality---for $n$-dimensional VAS, the problem requires resources beyond any elementary function of the input size.
+
+Traditional approaches must enumerate possible transition sequences, tracking state evolution step by step. Each verification requires knowing \textit{when} each transition occurred to ensure path validity.
+
+\subsection{Continuous Relaxation in Phase Space}
+
+Consider instead a continuous system where oscillator phases naturally perform vector addition:
+\begin{equation}
+\vec{V}_{\text{resultant}} = \sum_{i=1}^N A_i e^{i\phi_i}
+\end{equation}
+
+The system evolves according to coupled dynamics (Kuramoto-like):
+\begin{equation}
+\dot{\phi}_i = \omega_i + \sum_{j=1}^N g_{ij} \sin(\phi_j - \phi_i + \alpha_{ij}) + \eta_i(t)
+\end{equation}
+
+where coupling $g_{ij}$ encodes VAS constraints (transition weights determine interaction strengths) and $\alpha_{ij}$ introduces target-specific phase relationships. This defines an energy landscape where the system naturally relaxes toward minima:
+\begin{equation}
+E(\boldsymbol{\phi}) = -\sum_{i,j} g_{ij} \cos(\phi_j - \phi_i + \alpha_{ij})
+\end{equation}
+
+The system relaxes toward configurations minimizing $E$, which correspond to satisfied constraints. Coherence metric $r$ indicates solution quality:
+\begin{equation}
+r = \frac{|\sum_i A_i e^{i\phi_i}|}{\sum_i A_i}
+\end{equation}
+
+High coherence ($r \approx 1$) means aligned vectors satisfying constraints simultaneously.
+
+\subsection{Why Unmeasurability Enables Solution}
+
+\textbf{The critical insight:} This analog computation succeeds precisely because it operates below measurement thresholds.
+
+As established in Todd (2025) [6], patterns in the sub-Landauer domain satisfy four criteria: (1) energy below $k_B T \ln 2$, (2) temporal coherence beyond thermal relaxation, (3) causal influence on outcomes, and (4) destruction upon measurement. VAS solution through phase coherence requires all four.
+
+The continuous relaxation explores high-dimensional constraint manifolds without discrete state transitions. While we can detect that constraint satisfaction occurred (the system reaches high coherence), we cannot determine \textit{when} individual phase adjustments happened or trace the temporal path through solution space.
+
+Sub-Landauer energies permit pattern detection through integration but fundamentally prohibit temporal resolution. The continuous relaxation succeeds precisely because there is no way to collapse it into a sequence of discrete computational steps---the timing information required for such decomposition is physically inaccessible.
+
+Measurement at any point during expansion would:
+\begin{itemize}
+\item Inject energy $\geq k_B T \ln 2$ to resolve state
+\item Collapse high-dimensional manifold to low-dimensional observation
+\item Destroy coherence enabling parallel constraint satisfaction
+\item Revert problem to intractable discrete enumeration
+\end{itemize}
+
+Intelligence emerges because biological systems maintain coherence in this unmeasurable regime, solving VAS through continuous relaxation where discrete algorithms fail.
+
+\section{Dimensional Expansion and Collapse}
+
+\subsection{The Expansion Phase: Unmeasurable Computation}
+
+During expansion, effective dimensionality $D_{\text{eff}}$ grows as coherent evolution explores the energy landscape. This is where computation occurs---through unmeasured continuous relaxation in high-dimensional phase space.
+
+We can characterize this phase only through integral observables:
+\begin{equation}
+I_{\text{capacity}} \approx k_B T \ln D_{\text{eff}}(T_{\text{envelope}})
+\end{equation}
+
+The system explores constraint manifolds, performing analog vector addition through phase dynamics. But the temporal fine-structure---which configurations were visited when---remains inaccessible. We know expansion happens; we can measure its duration and final coherence; but the internal dynamics resist decomposition.
+
+\textbf{This is not ignorance---it is the mechanism.} VAS reachability is solved during unmeasured coherent evolution. Any attempt to observe the solution pathway would destroy the computation.
+
+\subsection{The Collapse Phase: Integration of Unmeasurable Signals}
+
+Collapse occurs when coherence exceeds threshold $r > r_c$ or integration time reaches $T_{\text{envelope}}$. The high-dimensional state projects onto measurement:
+\begin{equation}
+\boldsymbol{\phi}_{\text{measured}} = \mathcal{M}[\boldsymbol{\phi}(T_{\text{collapse}})]
+\end{equation}
+
+where measurement operator $\mathcal{M}$ has dimensionality $D_{\text{measure}} \ll D_{\text{eff}}$.
+
+\textbf{What collapse does:} It integrates all the sub-Landauer signals---the unmeasurable phase dynamics over the integration window---into a measurable discrete output:
+\begin{equation}
+\text{Output} = \int_0^{T_e} f(\boldsymbol{\phi}(t)) \, dt
+\end{equation}
+
+The integrand depends on $\boldsymbol{\phi}(t)$ at specific times (e.g., a phase-coherence functional or target-aligned projection), but those pointwise values are not jointly measurable with their timing. Collapse extracts the integral without accessing the temporal decomposition. We treat collapse as a statistical reduction mapping unobservable temporal fine-structure to measurable aggregates; a mechanistic micro-model is beyond current non-equilibrium theory.
+
+Information loss:
+\begin{equation}
+\Delta I = k_B T \ln\left(\frac{D_{\text{eff}}}{D_{\text{measure}}}\right)
+\end{equation}
+
+Energy dissipation (Landauer bound):
+\begin{equation}
+E_{\text{dissipated}} \geq k_B T \ln 2 \cdot D_{\text{measure}}
+\end{equation}
+
+\textbf{Why collapse cannot be mathematically formalized:} We would need to write an operator acting on $\phi_i(t_0), \phi_i(t_1), \ldots$ but these values don't exist as observables. Collapse is a statistical reduction, not a dynamical process. It's the interface between unmeasurable expansion and the observable world.
+
+\subsection{Temporal Fine-Graining and Frequency Scaling}
+
+Effective dimensionality scales inversely with envelope frequency:
+\begin{equation}
+D_{\text{eff}} \propto \frac{1}{f_e} = T_e
+\end{equation}
+
+Longer integration windows yield higher dimensional exploration. Multiple carrier frequencies $f_c$ can time-multiplex within a fixed envelope, increasing representational capacity.
+
+Dimensionality is encoded in temporal relationships between oscillators evolving at different rates. Since sub-Landauer measurements cannot resolve timing, they cannot extract this structure. Biological systems achieve $D_{\text{eff}} \sim 10^6$ (order-of-magnitude) through temporal fine-graining with millisecond to microsecond carriers within envelope periods $T_e \sim 100$--1000 ms, without requiring comparable spatial scales.
+
+\section{Thermodynamic Feasibility and Optimization}
+
+\subsection{The Feasibility Bound}
+
+The thermodynamic constraint balancing coherent evolution against collapse:
+\begin{equation}
+\Sigma_{\text{eff}} < \bar{R} \ln 2 < \frac{P_{\text{available}}}{k_B T}
+\end{equation}
+
+where $\Sigma_{\text{eff}}$ is entropy production from coherence decay and $\bar{R}$ is bit-writing rate. This ensures:
+\begin{itemize}
+\item Coherence decay produces less entropy than bit operations
+\item Bit-writing stays within power budget
+\end{itemize}
+
+\subsection{Optimizing the Expansion-Collapse Cycle}
+
+Intelligence corresponds to maximizing information throughput per unit energy:
+\begin{equation}
+\eta_{\text{intelligence}} = \frac{\sum_k I_{\text{gain}}^{(k)}}{\sum_k E_{\text{expansion}}^{(k)} + E_{\text{collapse}}^{(k)}}
+\end{equation}
+
+Optimal strategy:
+\begin{itemize}
+\item Long expansion phases maximize $D_{\text{eff}}$ and information capacity
+\item Timely collapse prevents decoherence losses
+\item Sparse collapses minimize Landauer costs
+\item Strategic measurement preserves relevant information
+\end{itemize}
+
+Information gain from collapse at coherence $r$ (heuristic proxy from circular statistics, see Appendix):
+\begin{equation}
+I_{\text{gain}}(r) \approx -\log_2(1-r^2)
+\end{equation}
+
+Power scaling:
+\begin{equation}
+P_{\text{total}} = \alpha N f_c + \beta \frac{N f_c}{\tau_{\text{coherence}}} k_B T \ln 2
+\end{equation}
+
+where $f_c$ is the carrier frequency, $\alpha$ is maintenance cost per oscillator-Hz (units: J/cycle, estimated from ionic pumping costs [1]), and $\beta$ is a dimensionless collapse frequency parameter.
+
+\section{Observable Predictions and Experimental Tests}
+
+\subsection{What We Can Measure}
+
+Though the computational substrate resists direct characterization, the framework predicts observable macroscopic signatures:
+
+\textbf{Prediction 1 - Coherence Time Scaling:} Cognitive performance should correlate with neural coherence time:
+\begin{equation}
+\tau_c = \int_0^\infty \langle r(t) r(0) \rangle dt
+\end{equation}
+
+Measured via autocorrelation of MEG/EEG phase signals. Longer $\tau_c$ predicts better performance on tasks requiring integration. This aligns with observations that large-scale phase synchronization correlates with cognitive performance [18,23,24].
+
+\textbf{Prediction 2 - Dimensional Expansion:} Task complexity should correlate with effective dimensionality $D_{\text{eff}}$ measured via singular value decomposition of phase correlation matrices. Complex tasks require higher-dimensional exploration. Cortical population activity organized on low-dimensional manifolds supports this framework [19].
+
+\textbf{Prediction 3 - Sub-Landauer Detection:} Neural populations should detect signals with $E_{\text{signal}} \ll k_B T \ln 2$ through temporal integration. Detection thresholds fall below Landauer limit when temporal integration windows exceed $\sim 100$ms (testable via psychophysical experiments with controlled noise). Stochastic resonance in neural systems provides a mechanism for such detection [12,20].
+
+\textbf{Prediction 4 - Collapse Signatures:} Sudden dimensional reduction events should be detectable in neural recordings, correlated with decision/output events. These should show characteristic energy dissipation matching Landauer cost for bits written.
+
+\textbf{Prediction 5 - Metabolic Efficiency:} Brain regions with higher $D_{\text{eff}}$ should show better operations-per-watt efficiency (measurable via combined fMRI/PET imaging).
+
+\subsection{What We Cannot Measure}
+
+We explicitly acknowledge limitations:
+\begin{itemize}
+\item \textbf{Expansion trajectories}: Cannot resolve $\phi_i(t)$ pointwise during computation
+\item \textbf{Solution pathways}: Cannot determine which intermediate states were visited
+\item \textbf{Temporal decomposition}: Cannot extract sequential structure below Landauer threshold
+\end{itemize}
+
+These are not experimental limitations but fundamental physics. The predictions focus on \textit{boundaries} (when collapse occurs) and \textit{consequences} (coherence-performance correlations) rather than interior dynamics.
+
+\section{Hierarchical Resonance and Biological Implementation}
+
+Biological systems implement coherence computation through nested oscillatory hierarchies [11]. Neural population oscillations span delta (0.5-4 Hz), theta (4-8 Hz), alpha (8-13 Hz), beta (13-30 Hz), and gamma (30-100 Hz) bands, with high-frequency oscillations extending to ~500 Hz in specialized contexts. These rhythms organize through cross-frequency coupling, where slow oscillations modulate the amplitude and phase of faster rhythms.
+
+Cross-frequency coupling binds information across timescales without requiring measurement at individual levels. The computational capacity scales with the product of participating frequency bands and their effective dimensionalities:
+\begin{equation}
+D_{\text{total}} \approx \prod_{n=1}^{N_{\text{levels}}} D_{\text{eff}}^{(n)}
+\end{equation}
+
+This architecture enables exponential computational capacity through temporal multiplexing rather than spatial scaling, all maintained in the unmeasurable regime until strategic collapse events extract integrated outputs. Molecular and subcellular dynamics likely contribute additional layers of temporal structure, though their integration with population-level oscillations remains an active research area.
+
+\section{Symbolic Emergence Through Collapse}
+
+Discrete symbols arise from collapse of coherent states. When oscillators form stable resonant configurations (attractors), noise-induced transitions create symbol sequences from continuous dynamics.
+
+Transition rates follow:
+\begin{equation}
+\Gamma_{m \to n} \propto \exp\left(-\frac{\Delta E_{mn}}{k_B T}\right)
+\end{equation}
+
+creating Markov processes on symbol space. But symbols are \textit{shadows} of underlying coherence, not fundamental units. Intelligence operates at the coherent level; symbols emerge when convenient for memory, communication, or deliberation.
+
+This resolves symbol-grounding: symbols are grounded in the physical coherence from which they emerge through collapse. DNA base pairs, neural representations, and linguistic structures all exemplify resonance-stabilized codes emerging from unmeasurable continuous dynamics.
+
+\section{Discussion}
+
+\subsection{The Methodological Challenge}
+
+This framework presents an unusual scientific challenge: the core computational mechanism resists standard methods of characterization. We cannot simulate the expansion phase with discrete timesteps without contradicting the principle that it operates precisely because temporal discretization fails. We cannot write explicit dynamical equations because their domain (pointwise states at specific times) doesn't exist observably.
+
+This is not a failure of the theory but recognition of physical limits on knowledge. Below the Landauer threshold, temporal structure becomes fundamentally private to the system itself. What remains accessible are boundary conditions, integral constraints, collapse events, and statistical correlations---exactly what we have characterized.
+
+\textbf{Empirical status:} Biological systems routinely solve VAS-like problems that are computationally intractable through discrete enumeration. Navigation through complex environments, motor planning under biomechanical constraints, cellular metabolic optimization, and high-dimensional decision-making all require integrating multiple constraints simultaneously---tasks that become exponentially complex when approached sequentially. The fact that biology accomplishes these efficiently suggests the continuous relaxation mechanisms we describe. Our framework characterizes the physical substrate---coherent dynamics in sub-Landauer regimes where temporal structure is fundamentally inaccessible---that enables this computational mode. The predictions we derive (coherence times, collapse signatures, efficiency scaling) enable experimental validation of this substrate through observable signatures at the boundaries we have characterized, without requiring access to the unmeasurable interior dynamics.
+
+\subsection{Comparison with Existing Paradigms}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Computational paradigms. $T_e$ denotes envelope period.}
+\begin{tabular}{lp{3cm}p{2cm}p{2.5cm}p{3cm}}
+\hline
+Paradigm & Temporal structure & Energy/op & Dimensionality & Biological example \\
+\hline
+Digital & Fully measurable & $\sim 10^{-15}$ J & $O(N_{\text{gates}})$ & Visual decision tasks \\
+Quantum & Unmeasurable (superposition) & $\sim 10^{-18}$ J & $O(2^{N_{\text{qubits}}})$ & Photosynthetic complexes \\
+Coherence & Unmeasurable (sub-Landauer) & $< 10^{-21}$ J & $O(N f_c T_e)$ & Cortical phase hierarchies \\
+\hline
+\end{tabular}
+\end{table}
+
+Coherence computing shares quantum computing's exploitation of unmeasurable dynamics but operates at room temperature with classical coherence. Unlike quantum systems requiring isolation, it leverages thermal noise as a resource.
+
+The computational power of high-dimensional representations is familiar from modern artificial intelligence: large language models achieve their capabilities by assembling information into high-dimensional embedding spaces (typically $10^3$--$10^4$ dimensions). However, these operate in the fully measurable digital regime, where every activation and weight is accessible to inspection. Biological coherence computing achieves similar dimensional scaling through temporal structure rather than spatial parameters, and does so in the unmeasurable regime where the computational substrate resists direct observation. This enables energy efficiencies orders of magnitude beyond digital implementations.
+
+A natural question arises: how do biological systems physically implement high-dimensional energy landscapes? Multiple mechanisms likely contribute. At the neural population level, ephaptic field coupling between oscillators provides one substrate: weak extracellular potentials ($\sim 10^{-23}$ J, well below single-neuron detection thresholds) enable partial synchronization through stochastic resonance, maintaining the critical balance between coherence needed for feature binding and dimensionality required for complex computation. As Miller and colleagues demonstrate [22], electric fields not only reflect synchronized neural activity but actively shape it through ephaptic coupling, propagating as near-instantaneous field influences relative to synaptic timescales. This connects to their rhythmic subspace coding framework [18,19], where cognitive functions multiplex across oscillatory frequency bands. At the cellular level, intracellular dynamics and cytoskeletal networks may support similar high-dimensional computation. Levin's work on developmental bioelectricity [21] demonstrates that bioelectric gradients coordinate morphogenesis across spatial scales, suggesting field-mediated computation operates throughout biological organization, not only in neural systems. The participation ratio $P_{\text{eff}} = 1/\Pi$ (inverse of quantum-like purity) quantifies the dimensionality-coherence balance across these scales: perfect synchronization collapses dimensionality ($P_{\text{eff}} \to 1$), while complete independence prevents integration ($P_{\text{eff}} \to N$ but no binding). Different biological substrates may optimize this balance through distinct physical mechanisms while maintaining the same computational architecture.
+
+\subsection{Relationship to Consciousness}
+
+Integrated Information Theory [16] posits consciousness corresponds to integrated information $\Phi$. As heuristic scaling:
+\begin{equation}
+\Phi \propto D_{\text{eff}} \cdot r^2
+\end{equation}
+
+suggesting consciousness requires both high dimensionality and strong coherence. If consciousness depends on sub-Landauer coherence patterns, it would explain why subjective experience resists objective characterization: the substrate is fundamentally unmeasurable. The "hard problem" may be hard precisely because consciousness operates in the unmeasurable regime.
+
+\subsection{Implications for Understanding Intelligence}
+
+Intelligence is not symbol manipulation but coherence maintenance within thermodynamic constraints. Evolution optimized biological systems for:
+\begin{itemize}
+\item Maintaining high-dimensional coherence at minimal energy cost
+\item Deferring measurement/collapse to maximize exploration
+\item Strategic integration of unmeasurable signals into discrete outputs
+\item Operating at boundaries of physical knowability
+\end{itemize}
+
+There is no discrete "intelligence threshold"---only gradations of coherence capacity and optimization of expansion-collapse cycles.
+
+\section{Conclusion}
+
+We formalize intelligence as the capacity to maintain and exploit high-dimensional coherence in unmeasurable temporal regimes. The core principle: \textbf{by operating below measurement thresholds, biological systems solve otherwise intractable problems through continuous relaxation in high-dimensional phase space where the timing information required for discrete decomposition is physically inaccessible.}
+
+This extends the framework of Todd (2025) [6], which established that falsifiability fails in the sub-Landauer domain because measurement destroys phenomena. Here we show this unmeasurability is not epistemic limitation but computational mechanism. VAS reachability becomes tractable precisely because the system maintains coherence below measurement thresholds, preventing the temporal decomposition that would revert to combinatorial explosion.
+
+Key results:
+
+\begin{enumerate}
+\item \textbf{Unmeasurable computation}: Hard problems solved during coherent expansion where temporal fine-structure is fundamentally inaccessible
+
+\item \textbf{Dimensional collapse}: Integration of sub-Landauer signals into discrete outputs, paying Landauer cost only at measurement
+
+\item \textbf{Timing-encoded dimensionality}: Complexity resides in temporal relationships inaccessible to sub-Landauer measurement
+
+\item \textbf{Observable boundaries}: Framework predicts measurable signatures (coherence times, collapse events, efficiency scaling) while acknowledging limits on characterizing computational substrate
+
+\item \textbf{Thermodynamic optimization}: Intelligence maximizes information throughput per energy by deferring discretization and minimizing irreversible commits
+\end{enumerate}
+
+The deep reason: high-dimensional coherent states encode information in precise timing relationships. Since sub-Landauer measurements cannot resolve when events occurred, they cannot extract temporal structure constituting dimensionality. Continuous relaxation becomes computationally powerful precisely because timing information required to collapse it into discrete steps is physically prohibited.
+
+We conclude that the computational substrate of intelligence operates at the edge of what physics permits us to know. Energy, information, and inference are not distinct categories but projections of a single process: maintenance and strategic collapse of coherence within thermodynamic limits. The sub-Landauer domain is not where measurement fails, but where computation succeeds through fundamental unmeasurability.
+
+This reformulation suggests the next revolution in computing will come from learning to exploit unmeasurable regimes the way biological systems do---computing continuously in phase space inaccessible to observation, integrating results only when necessary, and accepting that the most powerful computations may be those whose inner workings remain forever private to the universe itself.
+
+\appendix
+
+\section*{Appendix: Information Gain from Coherence}
+
+The relationship $I_{\text{gain}}(r) \approx -\log_2(1-r^2)$ derives from circular statistics. For $N$ phase oscillators with von Mises-distributed phases centered on mean direction $\bar{\phi}$, concentration parameter $\kappa$ relates to coherence as $r \approx I_1(\kappa)/I_0(\kappa)$ where $I_n$ are modified Bessel functions.
+
+Fisher information for estimating $\bar{\phi}$ scales as $\mathcal{I} \propto N \kappa$. Entropy is $H \approx \log(2\pi I_0(\kappa))$. For large $\kappa$ (strong coherence): $H \propto -\log r + \text{const}$.
+
+Information gained by measuring (collapsing) this state is approximately $-\log_2(1-r^2)$ when measurement resolves mean phase direction. This serves as a proxy for extractable information content, acknowledging the collapse mechanism itself resists explicit formalization.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+
+\section*{Declaration of competing interest}
+The author declares no competing financial interests or personal relationships that could have influenced this work.
+
+\section*{Declaration of generative AI use}
+During preparation the author used Claude (Anthropic) for literature review, mathematical formulation, and editing. All content was reviewed and the author takes full responsibility for the published article.
+
+\begin{thebibliography}{99}
+
+\bibitem{laughlin1998}
+Laughlin, S.B., de Ruyter van Steveninck, R.R., Anderson, J.C. (1998). The metabolic cost of neural information. \textit{Nature Neuroscience}, 1, 36--41.
+
+\bibitem{lennie2003}
+Lennie, P. (2003). The cost of cortical computation. \textit{Current Biology}, 13, 493--497.
+
+\bibitem{marzen2016}
+Marzen, S.E., Crutchfield, J.P. (2016). Statistical signatures of structural organization. \textit{Physics Letters A}, 380, 1517--1525.
+
+\bibitem{parrondo2015}
+Parrondo, J.M., Horowitz, J.M., Sagawa, T. (2015). Thermodynamics of information. \textit{Nature Physics}, 11, 131--139.
+
+\bibitem{landauer1961}
+Landauer, R. (1961). Irreversibility and heat generation in the computing process. \textit{IBM Journal of Research and Development}, 5, 183--191.
+
+\bibitem{todd2025biosystems}
+Todd, I. (2025). The limits of falsifiability: Dimensionality, measurement thresholds, and the sub-landauer domain in biological systems. \textit{BioSystems}, 245, 105239.
+
+\bibitem{kuramoto1984}
+Kuramoto, Y. (1984). \textit{Chemical Oscillations, Waves, and Turbulence}. Springer, Berlin.
+
+\bibitem{strogatz2000}
+Strogatz, S.H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators. \textit{Physica D}, 143, 1--20.
+
+\bibitem{pikovsky2001}
+Pikovsky, A., Rosenblum, M., Kurths, J. (2001). \textit{Synchronization: A Universal Concept in Nonlinear Sciences}. Cambridge University Press, Cambridge.
+
+\bibitem{mandel1995}
+Mandel, L., Wolf, E. (1995). \textit{Optical Coherence and Quantum Optics}. Cambridge University Press, Cambridge.
+
+\bibitem{buzsaki2006}
+Buzsáki, G. (2006). \textit{Rhythms of the Brain}. Oxford University Press, Oxford.
+
+\bibitem{gammaitoni1998}
+Gammaitoni, L., Hänggi, P., Jung, P., Marchesoni, F. (1998). Stochastic resonance. \textit{Reviews of Modern Physics}, 70, 223--287.
+
+\bibitem{kosaraju1982}
+Kosaraju, S.R. (1982). Decidability of reachability in vector addition systems. In: \textit{Proceedings of the 14th Annual ACM Symposium on Theory of Computing}, pp. 267--281.
+
+\bibitem{mayr1981}
+Mayr, E.W. (1981). An algorithm for the general Petri net reachability problem. \textit{Journal of the ACM}, 28(3), 615--639.
+
+\bibitem{czerwinski2021}
+Czerwiński, W., Lasota, S., Leroux, J., Lazić, R., Mazowiecki, F. (2021). Reachability in Vector Addition Systems is Ackermann-complete. In: \textit{62nd IEEE Annual Symposium on Foundations of Computer Science (FOCS)}, pp. 1229--1240.
+
+\bibitem{czerwinski2019}
+Czerwiński, W., Lasota, S., Lazić, R., Leroux, J., Mazowiecki, F. (2019). The reachability problem for Petri nets is not elementary. \textit{Journal of the ACM}, 68(1), Article 7.
+
+\bibitem{leroux2011}
+Leroux, J. (2011). Vector addition system reachability problem: a short self-contained proof. In: \textit{Proceedings of the 38th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages}, pp. 307--316.
+
+\bibitem{brubaker2023}
+Brubaker, B. (2023). An easy-sounding problem yields numbers too big for our universe. \textit{Quanta Magazine}, December 4. Available at: \texttt{https://www.quantamagazine.org/an-easy-sounding-problem-yields-numbers-too-big-for-our-universe-20231204/}
+
+\bibitem{palva2013}
+Palva, S., Palva, J.M. (2013). Functional roles of alpha-band phase synchronization in local and large-scale cortical networks. \textit{Frontiers in Psychology}, 2, 204.
+
+\bibitem{gallego2020}
+Gallego, J.A., Perich, M.G., Chowdhury, R.H., Solla, S.A., Miller, L.E. (2020). Long-term stability of cortical population dynamics underlying consistent behavior. \textit{Nature Neuroscience}, 23(2), 260--270.
+
+\bibitem{mcdonnell2009}
+McDonnell, M.D., Abbott, D. (2009). What is stochastic resonance? Definitions, misconceptions, debates, and its relevance to biology. \textit{PLoS Computational Biology}, 5(5), e1000348.
+
+\bibitem{miller2024}
+Miller, E.K., Brincat, S.L., Roy, J.E. (2024). Cognition is an emergent property. \textit{Current Opinion in Behavioral Sciences}, 57, 101388.
+
+\bibitem{hipp2012}
+Hipp, J.F., Hawellek, D.J., Corbetta, M., Siegel, M., Engel, A.K. (2012). Large-scale cortical correlation structure of spontaneous oscillatory activity. \textit{Nature Neuroscience}, 15(6), 884--890.
+
+\bibitem{siegel2012}
+Siegel, M., Donner, T.H., Engel, A.K. (2012). Spectral fingerprints of large-scale neuronal interactions. \textit{Nature Reviews Neuroscience}, 13(2), 121--134.
+
+\bibitem{levin2021}
+Levin, M. (2021). Bioelectric signaling: Reprogrammable circuits underlying embryogenesis, regeneration, and cancer. \textit{Cell}, 184(8), 1971--1989.
+
+\bibitem{tononi2004}
+Tononi, G. (2004). An information integration theory of consciousness. \textit{BMC Neuroscience}, 5, 42.
+
+\end{thebibliography}
+
+\end{document}
