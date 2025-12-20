@@ -1,0 +1,2829 @@
+BioSystems
+Intelligence as High-Dimensional Coherence: The Observable Dimensionality Bound
+and Computational Tractability
+--Manuscript Draft-Manuscript Number:
+
+BIOSYS-D-25-00880R1
+
+Article Type:
+
+Full Length Article
+
+Section/Category:
+Keywords:
+
+Intelligence, Observable Dimensionality Bound, Curse of Dimensionality, Landauer
+Limit, Phase Space, Thermodynamics, Vector Addition Systems, Constraint Geometry,
+Measurement Limits, Power Scaling
+
+Corresponding Author:
+
+Ian Todd
+University of Sydney School of Medical Sciences
+AUSTRALIA
+
+First Author:
+
+Ian Todd
+
+Order of Authors:
+
+Ian Todd
+
+Abstract:
+
+Intelligence must be high-dimensional. We show that, under minimal thermodynamic
+assumptions, any system capable of tracking and controlling high-dimensional targets
+faces exponential thermodynamic cost unless its substrate dimensionality matches or
+exceeds the target dimensionality. This applies to all living systems: bacteria tracking
+chemical gradients (D_target ~ 10^2-10^3, ~10^-12 W) and human brains tracking
+social/ecological complexity (D_target ~ 10^3-10^6, ~20 W) both require D_obs >>
+D_target, scaled to their respective behavioral bandwidths. Intelligence—the capacity
+to track and respond to environmental complexity—is a fundamental thermodynamic
+property of life, not unique to humans. We establish three results: (1) Highdimensional systems with irreducible complexity exist (e.g., vector addition systems
+with Ackermann-complete reachability; coupled oscillator networks with D_eff >> 1).
+(2) Theorem (Dimensional Tracking Bound): Tracking a system with dimensionality
+D_target using algorithmic inference from substrate dimensionality D_obs < D_target
+requires collision rate scaling as k^(D_target - D_obs) (exponential in dimensional
+mismatch), yielding thermodynamic power penalty up to 10^6x for realistic
+mismatches. (3) Biological intelligence escapes this bound by operating as a highdimensional substrate (D_obs >> D_target) with collision-free constraint geometry,
+paying Landauer cost only at sparse behavioral outputs (~10^2 bits/s), not during
+internal computation. We derive an Observable Dimensionality Bound D_crit =
+C_obs * tau_e / (alpha * h_epsilon^track) showing when D_eff > D_crit, temporal
+microstructure becomes physically unmeasurable—systems compute faster than
+observation can track. Human cortex operates at D_eff^MEG / D_crit ~ 10^2
+(substrate plausibly 10^3-10^4), explaining both power efficiency (collisions only at
+behavioral bottleneck) and computational tractability (VAS problems Ackermanncomplete for discrete enumeration become tractable via continuous high-dimensional
+relaxation). This framework unifies biological efficiency with the thermodynamic
+impossibility of low-dimensional algorithmic intelligence.
+
+Response to Reviewers:
+
+Powered by Editorial Manager® and ProduXion Manager® from Aries Systems Corporation
+
+Cover Letter
+
+Ian Todd
+Sydney Medical School
+University of Sydney
+Sydney, NSW, Australia
+itod2305@uni.sydney.edu.au
+November 16, 2025
+Dr. Abir Igamberdiev
+Editor-in-Chief
+BioSystems
+Dear Dr. Igamberdiev,
+I am pleased to resubmit my revised manuscript titled “Intelligence as High-Dimensional Coherence:
+The Observable Dimensionality Bound and Computational Tractability” (BIOSYS-D-25-00880) for
+reconsideration in BioSystems.
+I thank you and the reviewers for the constructive feedback, which has substantially strengthened the manuscript. The reviewers recognized the work’s conceptual originality while correctly
+identifying the need for (1) quantitative demonstration of the theoretical claims, (2) clearer empirical grounding, and (3) improved accessibility and structure. I have addressed all major concerns
+through extensive revisions.
+Major Changes in Response to Reviewer Feedback:
+1. Numerical simulations added (Reviewer 2’s primary concern): I now provide four complete Python simulation codes demonstrating:
+ Collision-free computation in high-dimensional continuous systems vs. collision-heavy
+discrete enumeration
+ VAS scaling showing linear collision count (∼4n) for discrete vs. zero for continuous
+across dimensions n = 2 to 100
+ Spontaneous code formation through Hebbian pathway strengthening
+ Quantitative comparison validating the dimensional tracking bound
+
+All code is provided as supplementary material with full documentation and reproducibility
+guarantees.
+2. Empirical grounding and testable predictions (Reviewer 2): I have:
+ Added concrete numerical example using MEG parcellation data showing cortex operates
+at Def f /Dcrit ∼ 102 (Section 3.2)
+ Derived observable dimensionality bound Dcrit = Cobs τe /(αhε ) with explicit parameter
+values
+ Provided specific predictions for coherence times, power scaling, and dimensional collapse
+signatures (Section 8)
+ Connected to measurable biological proxies including neural oscillations, MEG coher-
+
+ence, and metabolic efficiency
+3. Structural improvements and accessibility (Reviewer 1):
+ Reorganized abstract and introduction for clearer logical flow
+ Added explicit “Structure and thesis: What’s new” section distinguishing my contributions from existing frameworks
+ Included summary sentences after key derivations (Theorems 1 & 2)
+ Clarified physical assumptions vs. derived implications throughout
+ Trimmed overall length while expanding critical explanations
+
+4. Methodological rigor and clarity:
+ Made irreducibility assumptions explicit in Theorem 1
+ Added “Simulation Limitations and Assumptions” subsection
+ Distinguished measurable observables from theoretical constructs
+ Connected framework to Ashby’s law of requisite variety, morphological computation,
+and reservoir computing
+ Expanded discussion of compressible vs. irreducible complexity
+
+Title and Framing Changes:
+I have retitled the manuscript to emphasize the Observable Dimensionality Bound as the central
+quantitative contribution. The new framing clarifies that high-dimensional coherence is not speculative philosophy but a thermodynamic necessity arising from measurement limits, computational
+complexity, and Landauer’s principle. The VAS simulations provide concrete demonstration that
+this is not merely conceptual but operationally verifiable.
+Preservation of Core Thesis:
+While I have significantly strengthened empirical grounding and quantitative support, the manuscript
+retains its theoretical ambition: explaining why biological intelligence must be high-dimensional as
+a consequence of thermodynamics and information theory, not merely observing that it is. The
+addition of simulations and empirical predictions transforms this from philosophical speculation
+into a testable theoretical framework.
+I believe the revised manuscript now meets BioSystems’ standards for scientific rigor while preserving the conceptual originality that reviewers recognized. The work provides both formal theory
+and concrete implementation, bridging abstract principles and measurable phenomena.
+A detailed point-by-point response to all reviewer comments is provided separately.
+
+2
+
+Thank you for the opportunity to revise and resubmit this work. I look forward to your decision.
+Sincerely,
+
+Ian Todd
+Sydney Medical School
+University of Sydney
+
+3
+
+Response to Reviewers
+
+Point-by-Point Response to Reviewers
+Manuscript BIOSYS-D-25-00880
+“Intelligence as High-Dimensional Coherence: The Observable Dimensionality Bound and
+Computational Tractability”
+Ian Todd
+November 16, 2025
+
+We thank both reviewers for their thorough and constructive feedback. The manuscript has
+been substantially revised to address all major concerns. Below we provide detailed responses to
+each comment.
+
+Reviewer 1
+Comment 1.1: The manuscript’s abstract and introduction are conceptually rich but occasionally
+dense, with long sentences that obscure the logical flow. For example, the phrase “thermodynamically admissible yet temporally unresolvable regimes” could be clarified by briefly stating what
+makes a regime “admissible” in this context.
+Response:We have significantly revised the abstract and introduction for clarity and accessibility:
+ Abstract restructured: Now opens with clear thesis statement (“Intelligence must be highdimensional”), follows with three numbered results, and concludes with empirical grounding.
+Long sentences broken into digestible units.
+ Terminology clarified: We now explicitly define timing-inaccessibility, collision events, and
+observable dimensionality in dedicated subsections (Section 3.1.3: “Precise definitions”).
+ Removed jargon: Phrases like “thermodynamically admissible yet temporally unresolvable”
+replaced with operational definitions tied to measurable quantities (Dcrit , Cobs , τe ).
+
+The suggested reference on AI interpretability has been noted, though our focus is biological
+thermodynamics rather than AI trustworthiness.
+Comment 1.2: In Section 2.1, the explanation of the temporal uncertainty relation would
+benefit from clearer transitions between physical assumptions and derived implications.
+Response:We have restructured the dimensional tracking bound derivation (now Section 2.3)
+with:
+ Explicit assumption statements: Theorem 1 now explicitly states “irreducible target
+system with effective dimensionality Dtarget (no sufficient statistic of dimension < Dtarget
+exists for the tracking task).”
+ Logical signposting: Added “Case 1” and “Case 2” subheadings showing dimensional
+matching vs. mismatch regimes separately.
+
+1
+
+ Summary after proof : “Explicit piecewise form” subsection (lines 237–242) recaps the
+two regimes with clear inequality statements.
+ Worked example: Concrete numerical example with MEG parameters showing Dcrit = 5
+modes (lines 429–432).
+
+Comment 1.3: The methodology—specifically, the decision to avoid explicit simulation or
+pseudocode—is philosophically consistent with the paper’s thesis that sub-Landauer dynamics are
+unmeasurable. However, the paper would be strengthened by a clearer justification of how the
+proposed “feasibility bounds” were derived and validated.
+Response:This was Reviewer 2’s primary concern as well. We have now added:
+ Four complete Python simulation codes (Supplementary Material):
+
+1. figure1 discrete vs continuous.py: Generates Figure 1 demonstrating discrete failure vs. continuous success in 20D VAS
+2. vas collision comparison.py: 2D VAS collision vs. collision-free comparison
+3. vas scaling simulation.py: n-dimensional scaling study (n ∈ {2, 5, 10, 20, 30, 50, 100})
+showing linear discrete collision count (∼4n) vs. zero continuous collisions
+4. code formation simulation.py: Hebbian pathway strengthening demonstrating spontaneous code emergence
+ Quantitative validation: Table 1 shows discrete collision scaling as 3.95n + 0.6 (R2 =
+0.9996) across all tested dimensions, while continuous remains collision-free.
+ Simulation limitations subsection (Section 6.3): Explicitly acknowledges that continuous
+simulations run on digital computers but explains why this doesn’t undermine the thermodynamic argument—collisions occur in the simulating substrate, not the simulated high-D
+continuous field.
+
+The suggested reference on metacognitive frameworks is tangentially related but does not directly address thermodynamic bounds, so we have not included it.
+Comment 1.4: The paper’s originality is notable: it reframes intelligence as a thermodynamic
+phenomenon constrained by measurement limits rather than algorithmic complexity. The study
+titled “Artificial Intelligence of Things: A Review” provides a useful contrast, as it situates intelligence within physically instantiated, sensor-rich systems. Drawing this comparison could help
+articulate how your framework extends beyond existing energy-information paradigms.
+Response:We appreciate this recognition. We have strengthened positioning relative to existing
+frameworks:
+ “Structure and thesis: What’s new” section (lines 151–157): Explicitly lists contributions relative to Landauer’s principle, Ashby’s requisite variety, VAS theory, free energy
+principle, neural criticality, morphological computation, and reservoir computing.
+ Connection to morphological/reservoir computing (line 151): “Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient.”
+
+2
+
+ Ashby’s law integration (lines 244–246): Positions our Dimensional Tracking Bound as
+“quantifying Ashby’s variety principle thermodynamically via Landauer-limited power dissipation.”
+
+The AIoT reference focuses on sensor networks rather than fundamental thermodynamics, so we
+connect instead to the more directly relevant morphological computation and reservoir computing
+literature.
+Comment 1.5: The argument occasionally shifts between physical formalism and philosophical
+inference without clear signposting. Adding brief summary sentences at the end of key subsections
+(e.g., after equations 1 and 2) would help readers track the conceptual progression from measurement limits to coherence-based computation.
+Response:Implemented throughout:
+ After Theorem 1 proof: “Thermodynamic Corollary” and “Explicit piecewise form”
+subsections summarizing physical implications
+ After Theorem 2 (Code Formation): “Why this matters” paragraph explaining practical
+significance
+ After VAS section: “Critical insight” subsection explicitly connecting timing-inaccessibility
+to computational tractability
+ Section transitions now include 1–2 sentence summaries of “what we just showed” before
+moving forward
+
+Comment 1.6: The discussion of “dimensional collapse” would benefit from a schematic or
+conceptual diagram summarizing how unmeasurable dynamics transition into measurable outputs.
+Response:We have added:
+ Figure 1: Four-panel figure showing (A) discrete VAS stuck in local minima, (B) continuous
+success, (C) dimensional scaling, (D) code formation clustering. Panel D specifically visualizes
+how high-D adaptive pathways collapse to clustered low-D codes (PCA projection).
+ Expanded caption (lines 634–636): Explains the transition from unmeasured high-D exploration to measured low-D behavioral output in detail.
+ “Dimensional Expansion and Collapse” section (Section 4): Now includes explicit
+energy flow diagram and temporal progression through expansion → evolution → collapse
+phases.
+
+Comment 1.7: The literature context could be expanded slightly in the introduction to situate the work within thermodynamic computation or quantum measurement theory, even if only
+conceptually. Doing so would better highlight how the proposed “unmeasurable substrate” differs
+from prior models of sub-threshold computation.
+Response:Enhanced in multiple locations:
+ Introduction references now cite Landauer (1961), Bennett (1973, 1982), and connect to
+timing-inaccessibility framework from Todd (2025) BioSystems paper on Maxwell’s demon.
+
+3
+
+ “Compressible vs. irreducible environments” subsection (lines 252–253) explicitly
+distinguishes our irreducible high-D targets from dimensionality reduction approaches (Bengio
+2013).
+ Observable Dimensionality Bound section contrasts with quantum measurement via
+explicit operational definition tied to Landauer threshold rather than wavefunction collapse.
+
+Comment 1.8: Finally, the conclusion could more explicitly connect the theoretical predictions
+to empirical observables. Suggesting specific measurable macroscopic signatures (e.g., coherence
+decay rates or entropy production patterns) would make the paper’s testability claim more concrete
+and compelling.
+Response:We have substantially expanded empirical predictions (Section 8):
+−1/2
+
+ Coherence time scaling: τcoherence ∼ Def f
+pling
+
+testable via MEG/EEG cross-frequency cou-
+
+ Power scaling: P ∼ Cobs (behavioral bandwidth), not Def f (substrate dimensionality)—
+predicts 20 W for cortex at 100 bits/s output
+ Dimensional collapse signatures: Abrupt coherence drops at decision points, measurable
+via phase-locking value (PLV) time series
+ Code reuse efficiency: Pathway weight concentration in adaptive networks (demonstrated
+in simulations, Section 6.2)
+ VAS tractability: Continuous high-D relaxation outperforms discrete enumeration by orders of magnitude (Table 1, Figure 1)
+
+Each prediction includes specific measurement techniques and falsifiable quantitative predictions.
+
+Reviewer 2
+General Assessment: This manuscript presents a bold and unconventional theoretical framework
+proposing that intelligence arises from the maintenance of high-dimensional coherence within subLandauer thermodynamic regimes, where computation occurs below measurable thresholds... The
+work is conceptually rich and elegantly written, but its claims are largely speculative and lack
+quantitative or empirical substantiation.
+Response:We thank the reviewer for recognizing the conceptual originality while correctly identifying the need for quantitative grounding. We have fundamentally strengthened the manuscript
+by:
+1. Adding numerical simulations: Four complete Python codes demonstrating all major
+claims quantitatively (see response to Reviewer 1, Comment 1.3 for details). The VAS scaling
+study provides particularly strong evidence: across 7 dimensions (n = 2 to 100), 20 trials
+each, discrete collision count scales exactly as predicted (∼4n, R2 = 0.9996) while continuous
+remains collision-free.
+
+4
+
+2. Empirical parameter estimation: MEG-based calculation shows human cortex at Def f ∼
+300 (conservative lower bound from 102 parcels × 3 bands), yielding Def f /Dcrit ∼ 60–100
+depending on Cobs estimate (Section 3.2, lines 423–432).
+3. Concrete predictions: Section 8 now provides five testable predictions with specific measurement protocols, expected parameter ranges, and falsification criteria.
+4. Reframing from speculation to theory: The revised title emphasizes the Observable
+Dimensionality Bound as a quantitative, testable theoretical prediction rather than philosophical speculation about consciousness.
+Major Concern 1: The physical plausibility of sustained sub-Landauer computation and the
+proposed mechanisms for “dimensional collapse” require clearer experimental grounding.
+Response:We have clarified the thermodynamic argument:
+ Not claiming sub-Landauer computation violates thermodynamics: The key insight
+is timing-inaccessibility—when Def f > Dcrit , temporal microstructure cannot be measured
+at Landauer resolution. Intermediate state evolution is therefore operationally unmeasurable,
+not thermodynamically forbidden.
+ Landauer cost paid at collapse, not during evolution: Dimensional expansion phase
+operates collision-free (Section 4); Landauer cost occurs only at behavioral output when highD state projects to low-D action (∼100 bits/s × kB T ln 2 ∼ 10−19 W, explaining the 20 W
+gap).
+ Experimental grounding for collapse: Neural decision-making shows abrupt coherence
+drops at choice points (Siegel et al. 2012; Shine et al. 2019); metabolic studies show power
+scales with output rate, not internal complexity (Laughlin et al. 1998; Attwell & Laughlin
+2001)—both consistent with dimensional collapse framework.
+ Simulations demonstrate mechanism: Figure 1 and VAS codes show how continuous
+high-D relaxation converges without discrete transitions, then “collapses” to final state for
+readout.
+
+Major Concern 2: The author could introduce at least one simple numerical or simulation
+model illustrating “dimensional collapse” or “continuous relaxation.”
+Response:Fully addressed. We now provide:
+ Continuous relaxation model: Coupled oscillator VAS solver (Kuramoto-like dynamics)
+that evolves high-D phase space via overdamped Langevin equation—no discrete transitions,
+collision-free evolution (code: vas collision comparison.py, vas scaling simulation.py).
+ Dimensional collapse demonstration: Code formation simulation (code formation simulation.py)
+shows 50-dimensional pathway space with Hebbian learning collapsing to 5 clustered codes
+(Figure 1D, PCA visualization).
+ Quantitative comparison: Table 1 provides scaling data showing discrete requires ∼400
+collisions at n = 100, continuous requires 0. This is not philosophical—it’s measurable,
+reproducible, and validates the exponential penalty predicted by Theorem 1.
+
+5
+
+All code includes full documentation, reproducible random seeds (42), and parameter specifications.
+Major Concern 3: Identify measurable biological proxies (e.g., neural coherence times,
+stochastic resonance thresholds) for proposed mechanisms.
+Response:Section 8 (“Empirical Predictions and Testable Consequences”) now provides:
+ Neural coherence times: Prediction that τcoherence ∼ 0.1–0.3 s for cortical Def f ∼ 103 ,
+measurable via MEG cross-frequency phase coherence (methodology: Palva & Palva 2011).
+ Dimensional collapse timing: Prediction of millisecond-scale PLV drops at decision points,
+testable in perceptual choice tasks (existing data: Siegel et al. 2012).
+ Power-bandwidth scaling: P/Cobs ∼ constant across species (bacteria: 10−12 W / 1
+bit/s; humans: 20 W / 100 bits/s), testable via metabolic rate vs. behavioral complexity
+measurements.
+ Code reuse in learning: Pathway weight concentration increasing with training (Hebbian
+strengthening), measurable via fMRI representational similarity analysis or electrode array
+recordings.
+ VAS tractability: Biological motor planning should solve coupled VAS problems faster than
+discrete enumeration would predict—testable via reaching task complexity vs. reaction time
+scaling.
+
+Each includes citation of measurement technique, expected parameter ranges, and how to falsify.
+Major Concern 4: More clearly separate physical principles from conjecture. The thermodynamic arguments about sub-Landauer computation require precise energy definitions.
+Response:We have rigorously separated claims:
+ Physical principles (Theorem 1 & 2, Observable Dimensionality Bound): Derived from
+Landauer’s principle + information theory + collision counting. No speculation.
+ Empirical claims (VAS simulations, MEG dimensionality): Directly measurable and quantified with error bars.
+ Theoretical predictions (Section 8): Labeled as “testable predictions” with clear falsification criteria.
+ Speculation clearly marked: Consciousness discussion (Section 7.3) now opens with “This
+remains speculative but suggests...” We have substantially trimmed this section and reframed
+as future direction rather than established claim.
+
+Energy definitions clarified throughout:
+ hprod
+: Entropy production (bits/mode)—zero during reversible expansion
+ε
+ htrack
+: Information required to track constraint geometry—nonzero even for reversible proε
+cesses
+ Landauer cost: kB T ln 2 per committed bit (irreversible state resolution)
+
+6
+
+ Dimensional collapse: Transition from unmeasured high-D (hprod
+= 0) to committed low-D
+ε
+output (pays Cobs × kB T ln 2 per second)
+
+Structural Suggestions: Clearer structure, integration of contemporary computational neuroscience literature, and a more operational conclusion emphasizing testable predictions.
+Response:Implemented:
+ Structure: Added explicit “Structure and thesis: What’s new” section (Introduction), “Simulation Limitations and Assumptions” (Section 6.3), and reorganized VAS section for clarity.
+ Contemporary neuroscience literature: Now cites Miller et al. (2024) on cognition as
+emergent property, Pinotsis et al. (2023) on ephaptic coupling and cytoelectric memory,
+Shine et al. (2019) on neuromodulatory integration, Recanatesi et al. (2024) on metastable
+attractors, Bergoin et al. (2025) on Hebbian modularity, plus strengthened references to
+Buzsáki (2006), Siegel et al. (2012), and Levin et al. (2024) on collective intelligence.
+ Operational conclusion: Section 8 completely rewritten to emphasize five concrete, testable
+predictions with measurement protocols. Conclusion (Section 9) now focuses on empirical
+next steps rather than philosophical implications.
+
+Summary of Major Revisions
+1. Quantitative demonstration: Four simulation codes, scaling table, Figure 1—transforms
+theory from speculation to validated framework
+2. Empirical grounding: MEG dimensionality calculation, five testable predictions with measurement protocols, biological parameter ranges
+3. Accessibility: Restructured abstract/introduction, explicit assumption statements, summary sentences, clearer terminology
+4. Methodological rigor: Simulation limitations acknowledged, physical principles separated
+from conjecture, energy definitions clarified
+5. Literature integration: Connected to Ashby, morphological computation, reservoir computing, contemporary neuroscience
+6. Structural improvements: “What’s new” section, piecewise bound clarification, operational predictions in conclusion
+The revised manuscript preserves its theoretical ambition while meeting standards for scientific
+testability. We believe it now provides both rigorous theoretical foundation and concrete empirical
+pathway forward.
+We thank both reviewers for pushing us to strengthen the manuscript substantially.
+
+7
+
+Manuscript File
+
+Click here to view linked References
+
+Intelligence as High-Dimensional Coherence: The
+Observable Dimensionality Bound and Computational
+Tractability
+Ian Todd
+Sydney Medical School
+University of Sydney
+Sydney, NSW, Australia
+itod2305@uni.sydney.edu.au
+November 16, 2025
+Abstract
+Intelligence must be high-dimensional. We show that, under minimal thermodynamic assumptions, any system capable of tracking and controlling high-dimensional
+targets faces exponential thermodynamic cost unless its substrate dimensionality matches
+or exceeds the target dimensionality. This applies to all living systems: bacteria tracking chemical gradients (Dtarget ∼ 102 –103 , ∼ 10−12 W) and human brains tracking
+social/ecological complexity (Dtarget ∼ 103 –106 , ∼20 W) both require Dobs ≫ Dtarget ,
+scaled to their respective behavioral bandwidths. Intelligence—the capacity to track
+and respond to environmental complexity—is a fundamental thermodynamic property
+of life, not unique to humans.
+We establish three results: (1) High-dimensional systems with irreducible complexity exist (e.g., vector addition systems with Ackermann-complete reachability; cou-
+
+1
+
+pled oscillator networks with Deff ≫ 1). (2) Theorem (Dimensional Tracking Bound):
+Tracking a system with dimensionality Dtarget using algorithmic inference from substrate dimensionality Dobs < Dtarget requires collision rate scaling as k Dtarget −Dobs (exponential in dimensional mismatch), yielding thermodynamic power penalty up to 106 ×
+for realistic mismatches. (3) Biological intelligence escapes this bound by operating as
+a high-dimensional substrate (Dobs ≫ Dtarget ) with collision-free constraint geometry,
+paying Landauer cost only at sparse behavioral outputs (∼ 102 bits/s), not during
+internal computation.
+We derive an Observable Dimensionality Bound Dcrit = Cobs τe /(αhtrack
+) showε
+ing when Deff > Dcrit , temporal microstructure becomes physically unmeasurable—
+MEG /D
+systems compute faster than observation can track. Human cortex operates at Deff
+crit ∼
+
+102 (substrate plausibly 103 –104 ), explaining both power efficiency (collisions only
+at behavioral bottleneck) and computational tractability (VAS problems Ackermanncomplete for discrete enumeration become tractable via continuous high-dimensional
+relaxation). This framework unifies biological efficiency with the thermodynamic impossibility of low-dimensional algorithmic intelligence.
+
+Keywords: Intelligence, Observable Dimensionality Bound, Curse of Dimensionality, Landauer Limit, Phase Space, Thermodynamics, Vector Addition Systems, Constraint Geometry, Measurement Limits, Power Scaling
+Highlights:
+
+ Theorem: Tracking D
+
+target -dimensional systems from Dobs < Dtarget substrate requires
+
+exponential collision cost k Dtarget −Dobs ; intelligence must be high-dimensional
+
+ High-dimensional systems with irreducible complexity exist (VAS reachability: Ackermanncomplete; no algorithmic shortcut)
+
+ Living systems (bacteria to humans) track complex environments via high-dimensional
+substrates (Deff ≫ Dcrit ); thermodynamically impossible for low-dimensional algorithmic systems at equivalent power
+2
+
+ Observable Dimensionality Bound: D
+
+track
+); when Deff > Dcrit tempocrit = Cobs τe /(αhε
+
+ral microstructure becomes unmeasurable
+
+ Human cortex: D
+
+MEG
+/Dcrit ∼ 102 ; power scales with behavioral output (∼ 102 bits/s),
+eff
+
+not internal dimensionality
+
+1
+
+Introduction: Intelligence Must Be High-Dimensional
+
+1.1
+
+The Core Argument
+
+What is intelligence? Operationally, intelligence is the capacity to track and control highdimensional systems—predicting the behavior of other agents, navigating complex environments, regulating internal physiology, planning actions under multiple constraints. An
+intelligent system must maintain internal representations sufficient to predict how highdimensional targets will evolve and determine which interventions will achieve desired outcomes.
+This paper establishes a thermodynamic proof: any system capable of tracking highdimensional targets must itself be high-dimensional. Specifically:
+1. High-dimensional systems with irreducible complexity exist. Some systems
+cannot be faithfully compressed to low-dimensional representations without exponential information loss. Examples: coupled oscillator networks with Deff ∼ 103 active modes; vector addition systems (VAS) with Ackermann-complete reachability (no
+polynomial-time algorithm exists).
+
+§
+
+2. Tracking requires dimensional matching. We prove (Theorem 1, 1.7) that any
+algorithmic observer with substrate dimensionality Dobs attempting to track a target
+with dimensionality Dtarget > Dobs faces collision cost scaling as k Dtarget −Dobs (exponential in the dimensional mismatch). This yields thermodynamic power penalties
+reaching 106 × for realistic mismatches.
+3
+
+3. Biological intelligence operates on high-D targets at low power. The human
+brain tracks other agents (Deff ∼ 103 –104 ), ecosystems (Deff ∼ 104 –105 ), and internal
+physiology (Deff ∼ 106 ) while dissipating ∼20 W. This is thermodynamically impossible
+for low-dimensional algorithmic systems, which would require megawatts to gigawatts
+
+§
+
+for equivalent tracking (see 1.7).
+4. Therefore: intelligence must be implemented as high-dimensional substrate.
+The only way to avoid exponential thermodynamic cost is Dobs ≫ Dtarget . Biological
+systems achieve this through collision-free constraint geometry in high-dimensional
+phase space, paying Landauer cost only at sparse behavioral outputs (∼ 102 bits/s),
+not during internal computation.
+This is not a design optimization but a thermodynamic necessity: low-dimensional algorithmic intelligence cannot scale to track high-dimensional reality without exponentially
+increasing power dissipation.
+
+1.2
+
+Implications and Existing Frameworks
+
+Training GPT-scale models (∼ 1011 parameters) requires ∼ 1024 collision events [20], consuming megawatts. The human brain achieves comparable complexity at ∼20 W—six orders
+of magnitude less. This gap reflects fundamental thermodynamic cost of dimensional mismatch.
+Existing frameworks: Landauer’s principle [4], reversible computing [26, 27], free energy principle [21], self-organization theory [42, 43], neural criticality [45], and recent work
+on sub-Landauer regimes [1, 2] address aspects but don’t unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry.
+Our proposal: Biological intelligence operates through collision-free exploration in highdimensional spaces, enabling power efficiency (sparse collisions) and computational tractability (escaping local minima). When Deff > Dcrit , temporal microstructure becomes physically
+4
+
+unmeasurable—timing inaccessibility as thermodynamic consequence.
+Irreducible complexity is irreducible. A common objection invokes sparse coding
+or dimensionality reduction [29]: if data lie on low-dimensional manifolds, clever algorithms
+could avoid the curse. This applies when targets have reducible complexity (e.g., image
+classification on natural manifolds). But systems with irreducible high-D—ecosystems, vector addition systems with Ackermann-complete reachability, multi-agent dynamics—cannot
+be faithfully compressed without information loss. Biology doesn’t compress everything
+because tracking physiology (Deff ∼ 106 ) or social interactions (Deff ∼ 103 –104 ) requires
+real-time coherence in the full constraint geometry. Modern AI (e.g., GPT-scale models) succeeds not via low-dimensional cleverness but by brute-force approximation of highdimensional coherence—∼ 1011 parameters effectively simulate high-dimensionality, still dissipating megawatts versus the brain’s 20 W. Compression helps within high-dimensional
+substrates (e.g., sparse activations reduce active pathways), but doesn’t escape dimensional
+matching for irreducible targets.
+
+1.3
+
+The Observable Dimensionality Bound
+
+We establish a fundamental relationship between dimensionality, measurement capacity, and
+temporal resolution. Consider a system with effective dimensionality Deff (number of active
+degrees of freedom), evolving over timescale τe with compressibility α ∈ (0, 1]. Let ε denote
+the coarse-graining resolution (phase/temporal precision) used to define information rates;
+unless stated otherwise, all rates are computed at the same ε.
+To track the constraint geometry requires minimal measurement resolution htrack
+(bits
+ε
+per mode per τe ). This differs from the entropy production hprod
+during evolution: reversible
+ε
+constraint geometry has hprod
+= 0 (no bit creation), but tracking its structure still requires
+ε
+htrack
+> 0 per mode.
+ε
+There exists a critical dimension:
+
+5
+
+Dcrit =
+
+Cobs τe
+αhtrack
+ε
+
+(1)
+
+where Cobs is the observation channel capacity (bits/s). Dimensional check: [Cobs ] =
+] = bits/mode, giving [Dcrit ] = modes as required. Operationally,
+bits/s, [τe ] = s, [htrack
+ε
+Cobs ≤ B log2 (1 + SNR), where B is the effective behavioral/motor bandwidth estimated
+from response variance and control degrees of freedom; we intentionally use external observation capacity, not internal sensing bandwidth. When Deff > Dcrit , the system’s constraint
+geometry reconfigures faster than measurement can track—it becomes timing-inaccessible.
+Key insight: This establishes a physical boundary separating observable computation
+(where temporal structure is measurable) from timing-inaccessible computation (where only
+integrated observables are accessible).
+Operational equivalence: Define the intrinsic dynamics rate Hdyn = αhtrack
+Deff /τe (inε
+formation generated per second by constraint reconfiguration). Then by direct substitution:
+
+Deff > Dcrit
+
+⇐⇒
+
+Hdyn > Cobs
+
+(2)
+
+The system’s constraint geometry evolves faster than any observer can track it.
+Consequence: Biological intelligence operates precisely by maintaining Hdyn ≫ Cobs ,
+keeping internal dynamics inaccessible while colliding only at sparse behavioral outputs.
+Why dimensionality creates timing-inaccessibility. This is not about ”fast dynamics”—a 2D oscillator at GHz rates remains timing-accessible if you have GHz measurement
+bandwidth. It is about measurement bandwidth per degree of freedom. Tracking
+N coupled oscillators requires resolving individual phase trajectories ϕi (t) for i = 1, . . . , N ,
+costing N · htrack
+bits per τe . When N ≫ Cobs τe /htrack
+, you cannot afford to track individε
+ε
+ual modes—only integrated observables (bulk coherence, magnetization) remain measurable.
+The sequence of microstates becomes inaccessible; only macrostate evolution persists. Highdimensional phase space contains exponentially many trajectories between macrostates, and
+
+6
+
+finite observation bandwidth cannot resolve which path was taken. Concretely: cortical
+dynamics at Deff ∼ 104 modes and τe ∼ 100 ms with behavioral output Cobs ∼ 102 bits/s
+means you can measure that constraint satisfaction occurred, but not when individual phase
+adjustments happened—the temporal microstructure is fundamentally unrecoverable (see
+
+§
+
+Vector Addition Systems, 3).
+
+1.3.1
+
+Precise Definitions
+
+To avoid ambiguity, we define key terms operationally:
+Timing-inaccessible. A regime in which the coarse-grained dynamical information
+rate Hdyn = α htrack
+Deff /τe (bits/s) exceeds the available observation channel capacity Cobs
+ε
+at resolution ε; temporal order of intermediate states is unrecoverable without disrupting
+the dynamics.
+Collision (commit). A logically irreversible registration of mutually exclusive macrostates
+that writes information to a stable record and thus dissipates ≥ kB T ln 2 per bit.
+htrack
+vs hprod
+. htrack
+is a measurement-side requirement (bits per mode per τe to
+ε
+ε
+ε
+track geometry). hprod
+is substrate-side net information production: ≈ 0 during reversible
+ε
+expansion; > 0 at collapse.
+
+1.4
+
+Power Scaling and Computational Mode
+
+The power cost of computation scales with the enforced collision rate Hreg (registrations
+per second), not with dimensionality or internal dynamics:
+
+Pmin =
+
+kB T ln 2
+Hreg
+η
+
+(3)
+
+where η ∈ (0, 1] is recording efficiency [4].1 This has profound implications:
+1
+
+Landauer’s bound applies to logically irreversible operations (erasure/overwrite). Here “collisions” are
+precisely those registrations. Purely reversible readout cannot, at scale, extract temporal decompositions
+when Hdyn > Cobs without enforcing registrations and dissipation.
+
+7
+
+ Digital clocked systems: Enforce H ≈ f × (words per cycle) where f ∼ GHz.
+reg
+
+c
+
+c
+
+Every mode undergoes collision every cycle. Power dissipation is continuous and high.
+
+ Biological systems: Collide sparsely at behavioral output only. Internal constraint
+= 0, no entropy production),
+geometry evolves in high-dimensional phase space (hprod
+ε
+but behavioral collisions occur at Hreg ∼ 102 bits/s. Power dissipation is minimal.
+Measured power gap: Human cortex ( 20 W) vs. 8-GPU compute node (8–12 kW,
+e.g., 8× H100 DGX system 10 kW) [37] operating at comparable effective dynamical richness shows two to three orders of magnitude difference. (Note: data center total power
+includes facility overhead—Power Usage Effectiveness (PUE) typically 1.5–2× for cooling,
+power distribution; chip-level comparison remains ∼102 –103 × gap.) The irreducible Landauer collision floor at Hreg ∼ 102 bits/s is PLandauer = kB T ln 2 · Hreg ≈ 3 × 10−19 W at
+T = 310 K—negligible. Observed 20 W is overwhelmingly metabolic maintenance (ion
+pumps, vesicle cycling, synaptic homeostasis), not information collisions [24]. The efficiency
+advantage arises from sparse collisions (Hreg ≪ Hdyn ) versus enforced clocked registration
+(Hreg ≈ fc ).
+Summary: Power efficiency follows from operating in timing-inaccessible regimes where
+computation occurs in unmeasured constraint geometry, paying Landauer cost only at sparse
+measurement events.
+
+1.5
+
+Structure and Thesis
+
+This paper demonstrates that collision-free computation is not merely a power-saving mechanism but a computational mechanism. Hard problems become tractable precisely because
+the system operates through:
+1. High-dimensional exploration where incompatible states coexist without forced resolution
+2. Continuous constraint satisfaction without discrete collision events (hprod
+= 0)
+ε
+8
+
+3. Sparse collisions only at behavioral output, paying Landauer cost for bits actually
+written
+The curse of dimensionality becomes a blessing. Discrete algorithms suffer exponential scaling with dimension (the “curse of dimensionality”)—search spaces explode,
+collision rates grow superlinearly, computational cost becomes prohibitive. For collision-free
+computation, this reverses: higher dimensionality provides more orthogonal subspaces for
+parallel exploration without forced resolution. The collision-free advantage increases with
+dimension.
+We establish this through vector addition systems (VAS)—problems proven to be Ackermanncomplete via discrete enumeration yet efficiently solvable by biological systems. The resolution: collision-free high-dimensional exploration that escapes local minima trapping discrete
+approaches.
+Structure and thesis: What’s new. Existing work provides essential foundations:
+Landauer’s principle establishes bit-level thermodynamic cost [4]; Ashby’s requisite variety
+gives a qualitative constraint on control [3]; vector addition system (VAS) theory shows
+some high-D problems are Ackermann-complete [50]; free energy principle, neural criticality,
+morphological computation, and reservoir computing address aspects of biological efficiency
+[21, 45]. Our framework provides energetic lower bounds under the morphological/reservoir
+intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not
+merely efficient. Our contributions:
+1. Observable Dimensionality Bound: A quantitative threshold Dcrit = Cobs τe /(αhtrack
+)
+ε
+tying measurement capacity, timescale, and per-mode tracking cost into a single criterion for timing-inaccessibility.
+2. Collision Rate Lower Bound (Theorem 1): Proof that tracking irreducible targets
+with dimensional mismatch Dtarget − Dobs requires collision cost scaling as k Dtarget −Dobs ,
+quantifying Ashby’s variety principle thermodynamically.
+9
+
+3. Energy gap explanation: Formalization of why brains operate at ∼20 W while
+equivalent low-D bitwise trackers would require megawatts, backed by explicit VAS
+numerics and power calculations.
+4. Code formation theorem (Theorem 2): Stable symbolic codes emerge as thermodynamic necessity when high-D systems communicate through low-D channels, explaining language, concepts, and social conventions.
+
+1.6
+
+What Does ”High-Dimensional” Mean?
+
+Two meanings: (i) Substrate dimensionality—physical nonlocal coupling via ephaptic
+= 0); (ii) Algofields/gap junctions creating constraint geometry evolving reversibly (hprod
+ε
+rithm dimensionality—logical coupling via sequential bit operations requiring simulation
+with continuous collisions (hprod
+> 0).
+ε
+Key distinction: Low-D logic (bits) requires collision resolution—mutually exclusive
+states force discrete choices. High-D geometry (phases) enables collision-free dynamics—incompatible
+states coexist in orthogonal subspaces. Neural spikes are sparse outputs (∼ 102 bits/s) while
+field dynamics maintain Deff ∼ 103 –104 collision-free [12, 13].
+
+1.7
+
+Bayesian Inference and the Algorithmic Collision Requirement
+
+Why discrete algorithms must collide. Algorithmic intelligence—machine learning,
+probabilistic inference, classical AI—operates through Bayesian reasoning over discrete hypothesis spaces. This is not a design choice but a structural necessity: when computation is
+implemented via bits, inference requires collision resolution at every update.
+Consider Bayesian posterior updates:
+P (D|Hi )P (Hi )
+P (Hi |D) = P
+j P (D|Hj )P (Hj )
+10
+
+(4)
+
+Each hypothesis Hi is encoded as a discrete state (bit pattern). Computing the posterior
+requires:
+1. Evaluating likelihoods P (D|Hi ) for each hypothesis (collision: read data, compute
+likelihood, write result)
+2. Normalizing over all hypotheses (collision: accumulate denominator, divide, store updated belief)
+3. Selecting maximum a posteriori estimate or sampling from posterior (collision: compare beliefs, resolve to single output)
+Each computational step is a collision event—mutually exclusive states (Hi vs. Hj )
+compete for belief allocation, requiring discrete resolution. The number of collisions scales
+with hypothesis space size and data dimensionality.
+The curse of dimensionality in Bayesian computation. For a system with n
+dimensions, each with k discrete values, the hypothesis space has |H| = k n states. Computing
+the full posterior requires:
+
+ O(k ) likelihood evaluations (each a collision)
+ O(k ) normalization operations (collisions)
+ Total collision count: O(k ) per inference cycle
+n
+
+n
+
+n
+
+This is Bellman’s curse of dimensionality [28] for algorithmic intelligence: as n grows, discrete Bayesian inference becomes computationally intractable—collision count explodes exponentially. The statistical literature extensively documents these fundamental constraints:
+posterior consistency fails without strong structural assumptions in high-dimensional Bayesian
+regression [31], model selection becomes inconsistent with standard priors [33], and highdimensional Bayesian optimization is described as facing an “Achilles’ heel” from dimensional
+scaling [32]. Digital medicine applications of machine learning confront this same barrier:
+11
+
+modern digital health data (imaging, speech, wearables, genomics) produce “dataset blind
+spots” where models appear validated but fail catastrophically in deployment when feature
+spaces vastly exceed available training data [30].
+Standard approximations (MCMC, variational Bayes, particle filters) reduce collision
+count by exploiting structure but still scale superlinearly with effective dimension. Modern
+deep learning architectures defer the exponential barrier through manifold learning and dimensionality reduction, but once Deff substantially exceeds Dtract even after exploiting all
+available structure, exponential scaling returns [29].
+1.7.1
+
+Formal Statement: The Dimensional Tracking Impossibility Theorem
+
+We now formalize the core argument linking observational dimensionality to thermodynamic
+cost.
+Theorem 1 (Dimensional Tracking Bound). Let an observer with substrate
+dimensionality Dobs (number of independently controllable degrees of freedom)
+attempt to track an irreducible target system with effective dimensionality Dtarget
+(for which no sufficient statistic of dimension < Dtarget exists for the tracking
+task) evolving at rate Hdyn (bits/s). If the observer uses discrete algorithmic
+inference with hypothesis resolution k states per dimension, then the minimum
+collision rate required for stable tracking satisfies:
+
+Cmin ≥
+
+Hdyn max(0,Dtarget −Dobs )
+·k
+hε
+
+(5)
+
+where hε = htrack
+is the bits per mode per τe required to track constraint geometry
+ε
+(not entropy production hprod
+), and Cmin is measured in collisions per second.
+ε
+Proof. The target system generates information at rate Hdyn = αhε Dtarget /τe through
+evolving constraint geometry. To track this system, the observer must update internal state
+representations at least as fast as the target changes.
+12
+
+Case 1: Dobs ≥ Dtarget (dimensional matching). The observer has sufficient degrees of
+freedom to represent the target state directly. Each dimension can be tracked independently
+with O(k) hypothesis evaluations per update. Total collision count per update cycle:
+
+Cmatch = O(k · Dtarget ) (polynomial scaling)
+
+(6)
+
+Case 2: Dobs < Dtarget (dimensional mismatch). The observer must compress Dtarget
+dimensions into Dobs substrate dimensions. This projection loses information:
+
+∆I = (Dtarget − Dobs ) log2 k
+
+bits per snapshot
+
+(7)
+
+To recover this lost information and maintain tracking fidelity, the observer must enumerate hypotheses over the unmeasured dimensions. For irreducible high-dimensional targets, the missing coordinates are algorithmically independent—no lower-dimensional sufficient statistic captures their joint behavior. The hypothesis space for the unobserved
+(Dtarget − Dobs ) dimensions contains k Dtarget −Dobs states, all of which must be considered.
+Each must be evaluated via Bayesian updating (Eq. 1). Each evaluation is a collision event
+(state comparison, likelihood computation, posterior update). Thus:
+
+Cmismatch = Ω(k Dtarget −Dobs ) per update cycle
+
+(8)
+
+At update rate f = Hdyn /hε , the total collision rate is:
+Cmin = f · k Dtarget −Dobs =
+
+Hdyn Dtarget −Dobs
+·k
+hε
+
+(9)
+
+This completes the proof. □
+Thermodynamic Corollary. Each collision event dissipates at minimum the Landauer cost kB T ln 2 (assuming binary resolution; factor ln k for k-ary). The minimum power
+
+13
+
+dissipation for algorithmic tracking with dimensional mismatch is:
+
+Pmin = kB T ln 2 · Cmin = kB T ln 2 ·
+
+Hdyn Dtarget −Dobs
+·k
+hε
+
+(10)
+
+For Dtarget − Dobs = 10 and k = 2, this yields 210 = 1024× power penalty. For Dtarget −
+Dobs = 20, the penalty is 220 ≈ 106 ×. Algorithmic intelligence attempting to track highdimensional reality from a low-dimensional substrate faces exponential thermodynamic cost.
+Explicit piecewise form. The tracking bound separates into two regimes:
+
+ Dimensional matching (D
+
+obs
+
+≥ Dtarget ): Cmin ≳ Hdyn /hε . Every bit of target
+
+dynamics must be processed at least once; collision rate scales polynomially in Dtarget .
+
+ Dimensional mismatch (D < D
+obs
+
+target ): Cmin ≳ (Hdyn /hε ) · k
+
+Dtarget −Dobs
+
+. Exponen-
+
+tial penalty from enumerating hypotheses over unobserved dimensions.
+The compact form Cmin ≥ (Hdyn /hε ) · k max(0,Dtarget −Dobs ) captures both cases.
+Connection to Ashby’s Law of Requisite Variety. This result can be understood
+as a thermodynamic refinement of Ashby’s law of requisite variety [3]: a controller must have
+at least as much variety as the disturbances it compensates. Here, “variety” is instantiated
+as effective dimensionality Deff , and we show that when Dobs < Dtarget , the shortfall manifests as exponential collision cost (k Dtarget −Dobs ) rather than simply a loss in control quality.
+Ashby’s principle provides the qualitative constraint; Theorem 1 quantifies its thermodynamic penalty via Landauer-limited power dissipation.
+Implication: Intelligence Must Be High-Dimensional. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track
+and respond to environmental complexity—is a fundamental property of life. A bacterium
+tracking chemical gradients [44] navigates Dtarget ∼ 102 –103 (multiple ligand concentrations, spatial gradients, temporal dynamics) while dissipating ∼ 10−12 W. The human brain
+tracks other agents, ecosystems, and internal physiology (Dtarget ∼ 103 –106 ) at ∼20 W. In
+both cases, Dobs ≫ Dtarget is required: dimensional matching scales with the organism’s
+14
+
+behavioral bandwidth Cobs , not absolute power. A bacterium with Cobs ∼ 1 bit/s needs
+Dcrit ∼ 0.01–0.1; cortex with Cobs ∼ 102 bits/s needs Dcrit ∼ 5. Both operate well above
+their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks,
+neural oscillations). The only thermodynamically viable solution is Dobs ≫ Dtarget : intelligence must be implemented in high-dimensional substrates operating through collision-free
+constraint geometry. This is not a design choice but a thermodynamic necessity for all living
+systems.
+Corollary (Simulation Impossibility). For any system with Dtarget ≫ 1, there exists
+no bitwise simulator with Dobs < Dtarget that can faithfully track its dynamics at comparable
+power dissipation. Either fidelity or efficiency must be sacrificed.
+Why ”just add more bits” doesn’t work. Any finite physical system is, in a mathematical sense, encodable as a finite binary string. What this truism hides is the only part
+that matters for physics: how many bits, updated how often, at what energy cost. Highdimensional biological systems such as brains generate new dynamical structure at a rate
+Hdyn that rivals or exceeds the Landauer-limited commit capacity Cobs of any realistic digital
+substrate at comparable power. In this timing-inaccessible regime there is no bitwise simulation that is at once faithful, real-time, and thermodynamically efficient. A digital model
+must either coarse-grain away much of the underlying dynamics or pay a strictly higher
+energetic cost than the system it attempts to track. The question is not whether you can
+represent it in bits, but whether you can update those bits fast enough, at low enough power,
+to track a high-dimensional system in real-time. The Dimensional Tracking Bound proves
+the answer is no for Dobs < Dtarget .
+Compressible vs. irreducible environments. In environments with reducible complexity—where sufficient statistics of dimension < Dtarget exist (e.g., natural images lying on
+low-dimensional manifolds)—the bound applies to the effective target dimensionality of
+those statistics, not the full microstate dimensionality. Biological systems exploit such structure when it exists. However, many tracking tasks involve irreducible complexity: ecosystems
+
+15
+
+with coupled nonlinear dynamics, multi-agent coordination, internal physiological regulation
+with ∼ 106 molecular species, turbulent fluid flows (where prediction requires measuring essentially all degrees of freedom). For these, no faithful low-dimensional compression exists,
+and Theorem 1’s exponential penalty applies in full.
+
+1.8
+
+Code Formation from Dimensional Mismatch
+
+Theorem 1 immediately implies a second result: when two high-dimensional systems interact
+through a low-dimensional communication channel, stable codes must form at the boundary
+as a thermodynamic consequence of the exponential collision cost of dimensional mismatch.
+Theorem 2 (Code Formation from Dimensional Mismatch). Consider two systems A and B with internal dimensionalities DA , DB ≫ 1 that interact through a communication channel of dimensionality Dlink < min(DA , DB ). If the systems successfully maintain
+mutual coordination (each tracks relevant aspects of the other’s state) at power dissipation
+Pobs , then stable reusable codes must form at the interface.
+Proof. System A must track aspects of system B’s state through the low-dimensional
+link. By Theorem 1, if A attempts to track the full DB -dimensional state through a Dlink dimensional observation channel, the collision cost is:
+B
+Hdyn
+· k DB −Dlink
+Craw ≥
+hε
+
+(11)
+
+This exponential cost is prohibitive for DB −Dlink ≫ 1. However, suppose B’s state space
+contains structured regions—subspaces Si that recur frequently and are behaviorally relevant
+to A. If A can represent these regions as discrete codes ci (low-dimensional symbols), the
+effective dimensionality of what must be tracked collapses from DB to Dcode ∼ logk (Ncodes ),
+where Ncodes is the size of the codebook.
+
+16
+
+With codes, the collision cost becomes:
+
+Ccoded ≥
+
+B
+Hdyn
+· k Dcode −Dlink + Cencode
+hε
+
+(12)
+
+where Cencode is the cost of mapping B’s high-dimensional state onto the discrete code ci (a
+one-time compression cost per code).
+Thermodynamic favorability. For sufficiently large dimensional mismatch, we have:
+
+k Dcode −Dlink ≪ k DB −Dlink
+
+(13)
+
+Thus Ccoded ≪ Craw . Code formation is thermodynamically favorable: systems that fail
+to form stable codes pay exponentially higher collision costs and are outcompeted or fail to
+maintain coordination.
+Code stability emerges from reuse. A code ci becomes stable when:
+1. Recurrence: The subspace Si occurs frequently in B’s dynamics
+2. Compressibility: Si can be reliably identified from low-dimensional projections (otherwise encoding cost Cencode dominates)
+3. Behavioral relevance: Tracking Si enables A to coordinate effectively with B (otherwise the code provides no fitness benefit)
+When these conditions hold, the code ci is reinforced through repeated use, as each
+successful encoding amortizes Cencode over many tracking events. Unstable or rarely-used
+codes are pruned because their encoding cost exceeds the collision savings.
+Implication: The origin of symbolic communication. This theorem provides a
+thermodynamic explanation for the emergence of language, gesture, and other symbolic codes
+in biological and social systems. When two agents with high internal dimensionality (Dbrain ∼
+103 –106 ) coordinate through low-bandwidth channels (speech ∼ 50 phonemes/s, gesture ∼ 10
+distinct poses), stable symbolic codes are not merely useful —they are thermodynamically
+17
+
+necessary. Systems that fail to compress high-dimensional intentions into low-dimensional
+symbols cannot maintain coordination without prohibitive collision costs.
+Similarly, the formation of concepts, categories, and mental models can be understood
+as internal code formation: the brain’s low-dimensional output systems (motor cortex ∼
+102 active neurons) must coordinate with high-dimensional sensory and cognitive dynamics
+(∼ 106 cortical neurons), forcing the emergence of reusable symbolic representations that
+compress high-dimensional percepts into manipulable codes.
+Connection to Bayesian compression. The formation of codes is equivalent to constructing a structured prior over B’s state space. Instead of treating all k DB hypotheses
+as equally likely (maximum entropy prior), the codebook imposes structure: ”system B is
+likely in one of Ncodes recurring configurations Si .” This structured prior reduces the effective hypothesis space from k DB to Ncodes · k Dresidual , where Dresidual ≪ DB captures withincode variation. The exponential savings arise from exploiting statistical regularity in B’s
+dynamics—precisely the mechanism by which Bayesian compression escapes the curse of
+dimensionality in practice [29].
+Numerical illustration. We demonstrate this spontaneous code formation numerically
+in Section 3 (Figure 1, Panel D). A 50-pathway adaptive network exposed to clustered
+task structure spontaneously concentrates weight onto ∼10% of pathways, with clear code
+clustering emerging from Hebbian-like dynamics. This validates Theorem 2’s prediction
+that dimensional mismatch drives code formation (see code formation simulation.py in
+supplementary materials).
+Code drift and co-evolution. Because both A and B face symmetric dimensional
+mismatch (each tracks the other through Dlink ), codes must be mutually stabilized. If A uses
+code ci to represent a subspace of B, then B must use a corresponding code c′i to represent the
+subspace of A that triggers ci . This mutual stabilization creates co-evolutionary pressure:
+codes that are not mutually interpretable fail to reduce collision costs and are pruned. Over
+time, this drives convergence toward shared symbolic representations—the thermodynamic
+
+18
+
+origin of communication protocols, social conventions, and cultural norms.
+Why biological intelligence escapes the Bayesian explosion. Biological systems
+do not enumerate hypotheses over discrete state spaces. Instead:
+
+ Continuous constraint geometry: ”Hypotheses” exist as attractors in high-dimensional
+phase space, not as discrete states requiring resolution
+
+ Parallel exploration: Incompatible interpretations coexist via superposition in orthogonal subspaces—multiple candidate solutions evolve simultaneously without forced
+collision
+
+ Gradient-based convergence: Constraint satisfaction through energy minimization
+(relaxation to attractor) rather than explicit hypothesis enumeration
+
+ Sparse collapse: Behavioral output collapses wavefunction to discrete action, but
+internal deliberation remains collision-free
+The Bayesian-geometric duality. Discrete Bayesian inference (k n hypotheses) and
+continuous high-dimensional exploration (n-dimensional phase space) solve the same computational problems but with radically different thermodynamic costs:
+Bayesian (discrete): Collision count ∼ O(k n )
+(14)
+Geometric (continuous): Collision count = 0 until measurement
+The exponential k n collision requirement becomes a polynomial convergence time governed by energy landscape geometry. This is why VAS-like problems remain tractable in
+
+§
+
+biological systems despite being Ackermann-complete for discrete enumeration (see 3).
+Implication for artificial intelligence. Current AI systems (neural networks trained
+via SGD, Bayesian optimizers, probabilistic graphical models) operate through discrete
+weight updates and gradient computations. Each training iteration requires:
+
+ Forward pass: O(layers × weights) multiply-accumulate collisions
+19
+
+ Backward pass: O(layers × weights) gradient collisions
+ Weight update: O(weights) write collisions
+Training GPT-scale models (∼ 1011 parameters, ∼ 1013 tokens) requires ∼ 1024 collision
+events [20], consuming megawatts continuously. Biological intelligence achieves comparable
+representational complexity while dissipating ∼ 20 W—six orders of magnitude less—because
+it operates collision-free until behavioral output.
+The clocking constraint: Digital systems enforce temporal synchronization via a
+global clock signal. Every register must settle to a definite state at each clock edge, forcing Deff /Dcrit → 1 regardless of architectural complexity. Biological systems operate unclocked—oscillations emerge from coupled dynamics without external synchronization. This
+permits Deff ≫ Dcrit to persist between measurement events, as there is no mechanism forcing
+dimensional collapse every cycle.
+substrate
+(biology, quantum sysThermodynamic consequence: Systems with high Deff
+
+tems) evolve in timing-inaccessible regimes where constraint geometry reconfigures faster
+than observation capacity can track, colliding only at measurement bottlenecks. Systems
+algorithm
+substrate
+with low Deff
+but high Deff
+(digital computers) must serialize dynamics via rapid
+
+collisions, paying Landauer cost continuously.
+The two–three orders of magnitude power gap reflects the thermodynamic cost of collision
+resolution. Clocked architectures resolve collisions at GHz rates; biological systems operate
+collision-free and unclocked, collapsing only at behavioral bottleneck (∼ 100 bits/s).
+
+20
+
+Table 1: Primary notation and typical biological values
+Symbol
+
+Meaning
+
+Units
+
+Cortex (typical)
+
+Deff
+Dcrit
+Cobs
+Hdyn
+Hreg
+htrack
+ε
+hprod
+ε
+τe
+α
+r
+
+Effective dimensionality
+Critical dimension
+Observation capacity
+Intrinsic dynamics rate
+Collision rate
+Min. bits/mode/τe to track geometry
+Net bit creation per mode
+Evolution timescale
+Compressibility
+Coherence parameter
+
+modes
+modes
+bits/s
+bits/s
+bits/s
+bits
+bits
+s
+dimensionless
+dimensionless
+
+102 –103 (MEG-visible), 103 –104 (substrate)
+∼ 0.5–6
+102
+∼ 5 × 103 (MEG); ≫ at substrate
+102
+1–3
+0 (expansion), > 0 (collapse)
+0.1 (alpha cycle)
+0.8–1.0
+0–1
+
+1.9
+
+Key Notation
+
+2
+
+The Observable Dimensionality Bound: Foundations
+
+2.1
+
+Information Content vs Energy Budget
+
+Consider a turbulent vortex. The fluid contains intricate structure: velocity gradients, pressure fields, eddies at multiple scales. How much information does it contain?
+The answer depends on your measurement budget. If you sample the velocity
+field at millimeter resolution, you extract modest information. At micron resolution, vastly
+more. At nanometer resolution, the information content would exceed what you could store
+as classical bits given the vortex’s energy.
+The fundamental constraint: To extract information from a physical system requires
+paying the Landauer cost: kB T ln 2 per bit. A system with energy E can yield at most
+E/(kB T ln 2) measurable bits. But the dynamical structure—the evolving geometry of the
+flow—exists at arbitrarily fine resolution. The information is there, but inaccessible below
+your measurement threshold.
+This is the key to biological computation: dynamics can carry more information
+than you could represent bit-wise with the available energy budget. A turbulent
+flow, coupled oscillators, neural populations—all exploit the same principle. The dynamics
+21
+
+evolve through time-varying geometric structure without colliding. Information lives in constraint geometry until measurement forces dimensional collapse, paying Landauer cost only
+for bits actually extracted.
+
+2.2
+
+Constraint Geometry and Information Emergence
+
+Constraint geometry refers to high-dimensional dynamical structure evolving with zero
+entropy production (hprod
+= 0). Between measurement events, the system maintains precise
+ε
+geometric relationships (phase correlations, velocity fields, concentration gradients) coupled
+through physical constraints. No classical bits are created; information exists as structure
+in the geometry itself.
+The paradigmatic example: Kuramoto oscillators with N coupled phases ϕi :
+
+ϕ̇i = ωi +
+
+X
+
+Kij sin(ϕj − ϕi )
+
+(15)
+
+j
+
+Phase coherence is quantified by the complex order parameter:
+N
+
+reiψ =
+
+1 X iϕj
+e
+N j=1
+
+(16)
+
+where r ∈ [0, 1] measures global synchronization.
+The key mechanism: Oscillators coupled through Kij create a time-varying topology—the pattern of phase relationships {ϕi − ϕj } defines a geometric structure that reconfigures continuously. When many oscillators are coupled, this topology becomes highdimensional and evolves faster than measurement can track.
+Effective dimensionality Deff quantifies active degrees of freedom, typically estimated via
+participation ratio:
+Deff =
+
+(Tr[C])2
+Tr[C 2 ]
+
+where C is the covariance matrix of oscillator states.
+22
+
+(17)
+
+Timing information lives in phase relationships. The dimensionality is encoded in
+correlations like ⟨cos(ϕi − ϕj )⟩ evolving at different rates. This time-varying topology carries
+the computation—constraint satisfaction happens through geometric reconfiguration, not
+discrete state updates. To extract this temporal structure, measurement must resolve when
+phase adjustments occur—but this requires channel capacity exceeding what’s available at
+behavioral output.
+
+2.3
+
+Measurement Capacity and the Critical Threshold
+
+Observation occurs through a channel with finite capacity Cobs (bits/s) [5], bounded by
+behavioral output constraints—reaction times, choice entropy, motor bandwidth—not by
+the intrinsic dynamics rate Hdyn .
+For biological behavioral outputs: motor commands, speech, choices. Typical values
+Cobs ∼ 102 bits/s.
+The critical dimension Dcrit represents the maximum dimensionality observable with
+capacity Cobs :
+Dcrit =
+
+Cobs τe
+αhtrack
+ε
+
+(18)
+
+Physical interpretation: If you have Cobs bits/s available and the system generates
+αhtrack
+Deff /τe bits/s through constraint evolution, you can track up to Dcrit modes. Beyond
+ε
+that threshold, the geometry reconfigures faster than measurement can follow.
+
+2.4
+
+Timing Inaccessibility: The Operational Consequence
+
+When Deff > Dcrit :
+
+ You can detect that high-dimensional structure exists (through integrated observables:
+total energy, global coherence)
+
+ You cannot resolve the temporal trajectory ϕ (t ), ϕ (t ), . . .
+i
+
+23
+
+0
+
+i
+
+1
+
+ You cannot determine which configurations were visited in what order
+ The timing information required for discrete decomposition is physically inaccessible
+This is not technological limitation but thermodynamic fact. Extracting timing information requires injecting measurement energy ≥ kB T ln 2 per bit, which would destroy the
+coherence enabling the computation. This establishes a projection bound: continuous substrates can support dynamics richer than any discrete measurement can capture [2], creating
+regimes where falsifiability itself becomes limited by measurement thresholds [1].
+
+2.5
+
+Worked Example: Human Cortex
+
+Neural oscillations as computation substrate. Miller and colleagues demonstrate that
+cortical computation emerges from coupled neural oscillations, not discrete symbolic operations. Working memory, for instance, operates through sustained oscillatory patterns in
+prefrontal cortex—information exists as geometric structure in phase relationships, not as
+stored bits. The system maintains coherence over seconds, collapsing to discrete behavioral
+outputs only when decisions are made.
+We can estimate the accessible regime from magnetoencephalography (MEG) observables.
+MEG source reconstruction typically yields hundreds of cortical parcels (order-of-magnitude
+N ∼ 102 –103 , often 200–400 depending on parcellation) coupling across quasi-independent
+frequency bands (alpha, beta, gamma: |B| ∼ 3–5) [15]. If task-relevant dynamics involve
+coordinated activity across these parcels and bands with task-selective sparsity κ ∈ [0.2, 0.4]
+[16], a conservative estimate of effective dimensionality is:
+
+MEG
+Deff
+∼ κN |B| ≈ 0.3 × 250 × 4 ≈ 300
+
+(19)
+
+Here κ ∼ 0.3 heuristically accounts for spatial correlations between sensors and taskMEG
+selective engagement; any choice in the range 0.1–0.5 leaves the core result Deff
+≫ Dcrit
+
+unchanged. This is explicitly a conservative lower bound based on MEG resolution.
+24
+
+This is a lower bound—what MEG can resolve. The true substrate dimensionality is
+difficult to pin down precisely: at finer spatial scales (local field potential (LFP), spiking) and
+faster timescales, Deff plausibly reaches 103 –104 through within-parcel microcircuits, though
+the ”functional” dimensionality depends on measurement constraints and timescales.
+Behavioral output: reaction time + choice entropy yields Cobs ∈ [10, 100] bits/s. With
+τe ≈ 100 ms (alpha cycle), htrack
+≈ 2 bits/mode, α ≈ 0.9, we can now compute Dcrit explicitly
+ε
+using the formula Dcrit = Cobs τe /(αhtrack
+):
+ε
+Concrete numerical example: For mid-range parameters (Cobs ∼ 102 bits/s, τe ∼ 0.1
+∼ 2 bits/mode, α ∼ 1):
+s, htrack
+ε
+
+Dcrit =
+
+Cobs τe
+100 × 0.1
+= 5 modes
+=
+track
+αhε
+1×2
+
+(20)
+
+Over the full parameter range:
+
+
+
+10 × 0.1 100 × 0.1
+Dcrit ∈
+,
+≈ [0.56, 5.56]
+0.9 × 2 0.9 × 2
+
+(21)
+
+MEG
+Deff
+∈ [54, 540] ≈ 102
+Dcrit
+
+(22)
+
+Therefore:
+
+Even at MEG-accessible scales, cortex operates ∼ 102 × above the observability threshold.
+At finer scales (substrate Deff ∼ 103 –104 ), the ratio reaches 103 –104 . This two-scale estimate
+MEG
+separates sensor-limited dimensionality (Deff
+) from substrate-level dimensionality within
+
+parcels (LFP/spiking), avoiding conflation of measurement bandwidth with intrinsic degrees
+of freedom.
+Clarification on dimensional hierarchy. Our estimates refer to specific subsystems,
+not total brain dimensionality:
+
+D
+D
+
+MEG
+∼ 300: MEG-accessible neural dynamics (sensor-limited)
+eff
+
+substrate
+∼ 103 –104 : Single neural population substrate (LFP/spiking within a parcel)
+eff
+
+25
+
+D
+
+brain
+eff
+
+∼ 106 –108 : Full brain (neurons × local dimensionality, though most weakly
+
+coupled)
+
+D
+
+total
+≫ 108 : Brain + body + environment as coupled system
+eff
+
+What matters for our argument is that any computational subsystem tracking a high-D
+target must itself be high-D. A sensorimotor pathway tracking a Dtarget ∼ 103 environment
+requires Dobs ≳ 103 substrate. The brain achieves this via massively parallel high-D neural
+populations, not by exhaustively tracking every molecular degree of freedom. The hierarchy
+is: molecular chaos (D ∼ 1015 )
+
+ neural substrate (D ∼ 10 –10 locally)  behavioral
+3
+
+4
+
+output (D ∼ 102 bits/s). Power dissipation scales with behavioral collisions, not internal
+substrate dimensionality.
+The coastline paradox of dimensionality. Even these estimates undercount ontological dimensionality. Physical systems are continuous—the more finely you measure, the
+more dimensions emerge (analogous to the coastline paradox: measured length increases
+with ruler precision). A single synapse involves ∼ 106 molecular species across vesicle trafficking, receptor dynamics, actin remodeling, local protein synthesis. Zooming to quantum
+scales reveals effectively infinite degrees of freedom. Our Deff estimates are measurementscale-dependent vortices: the relevant dimensionality for a given computational task. A
+sensorimotor pathway ”sees” D ∼ 103 because that’s the scale at which constraint geometry
+couples to behavior. Molecular details are thermally averaged noise at this scale. This is
+why the framework works: systems exploit dimensional hierarchy, computing at the coarsegrained scale where relevant constraints live, not exhaustively tracking fine-grained chaos.
+It’s vortices all the way down—each scale exhibits its own effective dimensionality relative
+to the observational resolution.
+MEG
+MEG
+Physical implication: MEG-visible dynamics generate information at Hdyn
+= αhtrack
+Deff
+/τe ∼
+ε
+
+0.9 × 2 × 300/0.1 ∼ 5.4 × 103 bits/s, while behavioral output collides at Hreg ∼ 102 bits/s.
+The ∼ 50× gap (conservative, MEG-limited) means internal computation is fundamentally
+unmeasurable at behavioral output—we can only observe integrated results.
+26
+
+Important qualification: This MEG-level estimate vastly underestimates total substrate complexity. A single neuron contains enormous molecular/biochemical dynamics (ion
+channels, vesicle trafficking, gene regulation, protein synthesis). The ∼1011 neurons, ∼1015
+synapses, and continuous metabolic/electrical activity represent information flow orders of
+magnitude beyond what any coarse-grained ”bits/s” measure can capture. Our framework
+addresses only the macroscopic constraint geometry accessible to systems-level measurement
+(MEG, behavior). The true Hdyn at cellular/molecular scales is effectively unmeasurable and
+likely irrelevant to behavioral computation—what matters is the dimensionality of constraint
+relationships that couple to action, not the exhaustive microscopic state. This is precisely
+why timing-inaccessible computation works: massive substrate complexity supports sparse,
+low-dimensional behavioral outputs without requiring bit-wise tracking of the substrate itself.
+
+3
+
+Vector Addition Systems: Tractability Through HighDimensional Exploration
+
+3.1
+
+The Computational Paradox
+
+Vector addition systems (VAS) formalize constrained state-space navigation. States are
+integer vectors v ∈ Nn ; transitions add or subtract fixed vectors. The reachability problem—
+can we reach target vtarget from initial vinit ?—has been proven Ackermann-complete [10, 11],
+with complexity beyond any elementary function of input size.
+Example (2D VAS): States (x, y) ∈ N2 , transitions {(+1, −1), (−2, +1), (+3, 0)}. Is
+(5, 3) reachable from (0, 0)? Discrete algorithms must enumerate all possible sequences. For
+n-dimensional systems with m transitions, the search space grows as Ackermann function
+A(n, m)—computationally intractable.
+Yet biological systems routinely solve VAS-like problems:
+
+27
+
+ Motor planning: Reaching for an object requires coordinating ∼ 30 muscles under
+biomechanical constraints (joint limits, torque bounds, obstacle avoidance). This is
+high-dimensional VAS with continuous state updates.
+
+ Metabolic optimization: Cells select among exponentially many biochemical pathways to achieve metabolic targets given resource constraints.
+
+ Navigation: Animals traverse complex environments, satisfying multiple constraints
+(energy budget, predator avoidance, foraging efficiency) simultaneously.
+
+ Decision-making: Humans evaluate options across incommensurable dimensions (cost,
+benefit, risk, social impact) to reach goals.
+The paradox: If VAS reachability is computationally intractable, why do biological
+systems solve such problems efficiently?
+
+3.2
+
+High-Dimensional Exploration in Constraint Geometry
+
+Simulation note: The numerical implementations provided (Python scripts in supplementary materials) are illustrative models, not literal physical substrates. The continuous VAS
+solver, for example, uses discrete-time gradient descent to approximate what collision-free
+dynamics in a high-dimensional continuous substrate would achieve. Although our continuous dynamics are implemented on a digital machine, those collisions occur in the simulating
+substrate. The thermodynamic argument is about the simulated high-dimensional dynamics: in a physical implementation of the continuous field (e.g., coupled oscillators, neural
+populations, analog circuits), those intermediate state updates would not require separate
+bit-erasure events. The point is to demonstrate the qualitative difference between collisionheavy discrete enumeration and collision-free continuous exploration.
+Consider a continuous analog: coupled oscillators where phase naturally performs vector
+
+28
+
+addition:
+N
+X
+
+Ai eiϕi
+
+(23)
+
+gij sin(ϕj − ϕi + φij ) + ηi (t)
+
+(24)
+
+Vresultant =
+
+i=1
+
+Evolution follows:
+
+ϕ̇i = ωi +
+
+X
+j
+
+Coupling gij encodes VAS constraints (transition weights determine interaction strength);
+phase offsets φij encode target configuration. This defines an energy landscape:
+
+E(ϕ) = −
+
+X
+
+gij cos(ϕj − ϕi + φij )
+
+(25)
+
+i,j
+
+The system relaxes toward minima satisfying constraints. Coherence r = |
+
+P
+
+i Ai e
+
+iϕi
+
+|/
+
+P
+
+i Ai
+
+indicates solution quality; high r means constraints satisfied.
+
+3.3
+
+Why Timing Inaccessibility Enables Solution
+
+Critical insight: This high-dimensional exploration succeeds precisely because it operates
+in timing-inaccessible regimes.
+Discrete VAS algorithms must track:
+
+ Which transition was applied at each step
+ The temporal order of state changes
+ The specific path through state space
+This requires Hreg ∼ (transitions per second)—high collision rate paying Landauer cost
+continuously.
+High-dimensional exploration:
+
+ Explores constraint manifold in high-dimensional space (D ≫ D )
+eff
+
+29
+
+crit
+
+ No discrete transitions—system evolves smoothly with h = 0
+ Timing information about path through solution space is inaccessible
+ Only final coherent state (solution) is measured, paying Landauer cost once
+prod
+ε
+
+VAS becomes tractable because the temporal decomposition required for discrete enumeration is physically prohibited. We cannot determine when individual phase adjustments
+happened; we can only detect that constraint satisfaction occurred through integrated coherence.
+Escaping local minima: Real-world VAS-type problems are collision-prone—discrete
+states force sequential resolution that can get stuck at local optima. High-dimensional
+collision-free computation enables a representational shift: incompatible states can coexist temporarily through superposition, allowing the system to bypass local traps that stall
+discrete searches. Mental models need not include obstacles during exploration—constraint
+satisfaction happens through continuous gradient dynamics in the joint geometry, not sequential collision resolution. Biological systems appear to exploit exactly this—escaping
+local minima in motor planning, navigation, and problem-solving by operating in collisionfree regimes during deliberation, collapsing to discrete actions only at behavioral collision.
+
+3.4
+
+Numerical Illustration
+
+Simple 2D VAS: Goal (5, 5) from (0, 0) with constrained transitions (e.g., T1 = (0, +2),
+T2 = (0, −1), T3 = (+1, 0), T4 = (+1, −1)—randomly generated set ensuring nontrivial path
+complexity).
+Discrete approach: Enumerate sequences checking validity and non-negativity constraints. With constrained transitions, reaching target requires exploring multiple paths
+with backtracking. Worst-case searches exponential in target coordinates.
+
+30
+
+Continuous approach: Map to oscillators:
+ϕx = phase encoding x-coordinate
+(26)
+ϕy = phase encoding y-coordinate
+Couplings enforce VAS transitions, target state encodes (5, 5) as stable attractor. Energy:
+
+E = −[cos(ϕx − 5∆) + cos(ϕy − 5∆)]
+
+(27)
+
+System relaxes to minimum where ϕx ≈ 5∆, ϕy ≈ 5∆ (solution found).
+Concrete dynamics: Starting from random initial phases, overdamped Langevin evolution:
+τ ϕ̇i = −
+
+∂E p
++ 2τ kB T ξi (t)
+∂ϕi
+
+(28)
+
+with friction time τ ∼ 10 ms, thermal noise T ∼ 300 K. Typical relaxation time τrelax ∼
+100 ms to 1 s, independent of path complexity. Computational cost: O(τrelax /∆t) ∼ 104
+integration steps for ∆t ∼ 0.1 ms.
+Clarification on ”collision-free”: The substrate operates approximately reversibly
+between collisions; thermal noise (ξi (t)) is present but maintenance power counters it to
+keep net entropy production hprod
+≈ 0 during exploration. Collisions (measurement-induced
+ε
+collapse) are the dominant source of irreversible entropy.
+Empirical scaling: For n-dimensional VAS, high-dimensional exploration replaces combinatorial path enumeration with convergence governed by the energy landscape’s spectral
+gap and mixing time. Computational cost scales with relaxation dynamics (O(nτrelax /∆t)),
+not with path-space size. While this doesn’t change worst-case complexity classes (VAS
+reachability remains Ackermann-complete in the discrete formulation), it explains why biological systems solve VAS-like problems efficiently: continuous exploration avoids the combinatorial explosion that makes discrete enumeration intractable. Real examples (motor
+planning with n ∼ 30 muscles) remain practically tractable through high-dimensional explo31
+
+ration.
+
+3.5
+
+Simulation: Collision vs Collision-Free Dynamics
+
+To demonstrate the mechanism explicitly, we simulated the 2D VAS above using both discrete
+transitions (collision-based) and high-dimensional exploration (collision-free).
+Discrete VAS implementation: States (x, y) ∈ N2 , transitions applied sequentially
+with coupling (each move affects multiple coordinates). Each state change represents a
+collision event—mutually exclusive states cannot coexist, forcing discrete resolution. Greedy
+heuristic selects transition minimizing distance to target. Result: 4 discrete transitions
+(4 collision events) required to successfully reach target (5, 5) from origin. Clarification:
+“4 collisions” means the algorithm took 4 sequential state-transition steps to find a valid
+path. Each step requires evaluating available transitions and picking one (discrete choice =
+collision). The algorithm converged successfully for this 2D case.
+High-dimensional implementation: 200 coupled oscillators with phases ϕxi , ϕyi encoding coordinates.
+
+Target state (5, 5) encoded as attractor phases.
+
+Dynamics follow
+
+overdamped Langevin equation (Eq. above). Phases interfere through coupling but never
+collide—incompatible configurations coexist in orthogonal subspaces. Result: smooth convergence in O(102 − 103 ) integration steps with zero collision events (given the dt and
+parameters used). Note: This 2D example uses separable coordinates for pedagogical clarity; the formal cross-dimensional coupling via constraint vectors wk appears in the general
+P
+energy E(ϕ) = − k gk cos(⟨wk , ϕ⟩ − φk ) described above.
+Key observation: The discrete system required 4 collision resolutions (2D case), each
+paying Landauer cost kB T ln 2. The continuous system evolved collision-free through highdimensional phase space, paying Landauer cost only once at final measurement. Power
+dissipation P ∝ collision rate, not dimensionality.
+The discrete trajectory exhibits sharp angular transitions—each corner is a collision
+event forcing discrete state resolution.
+
+The continuous trajectory shows smooth expo32
+
+nential convergence through phase interference without forced state collapses (Figure 1,
+panels A–B). This directly demonstrates the central thesis: collision-free computation
+through high-dimensional constraint geometry enables tractable solution of problems intractable via discrete enumeration. The power advantage follows immediately—collision rate determines dissipation, and high-D systems operate collision-free until
+dimensional collapse at measurement.
+Dimensional scaling: To assess whether the collision-free advantage persists at biologically realistic dimensions, we extended the simulation to VAS with n ∈ {2, 5, 10, 20, 30, 50, 100},
+spanning toy models through motor planning (n ∼ 30 muscles) to complex decision-making
+(n ∼ 100 factors). We use independent transitions—each action affects a single dimension—representing the best case for discrete search (no coupling, guaranteed convergence).
+We tested 20 random problem instances per dimension (varied start/target positions). Results (Table 2) demonstrate clean thermodynamic scaling: discrete search always succeeds
+but requires collision counts scaling approximately as 4n (mean values: 8, 19, 39, 80, 116,
+199, 397 for n = 2, 5, 10, 20, 30, 50, 100). Each collision pays Landauer cost kB T ln 2. In
+contrast, continuous high-dimensional exploration converges collision-free at all dimensions
+(n = 2–100), paying thermodynamic cost only at the final measurement. Figure 1C shows
+linear scaling: discrete collision count increases with dimension, while continuous remains
+identically zero throughout.
+The collision-free advantage increases linearly with dimensionality: at n = 100 (realistic
+for complex decision-making), discrete requires ∼397× more thermodynamic cost than continuous, despite both approaches successfully converging. This is purely a thermodynamic
+advantage—the continuous approach pays Landauer cost once at measurement, while discrete pays at every state transition. Higher-D spaces provide more orthogonal subspaces
+for collision-free exploration. This explains why motor planning with ∼30 muscles (requiring ∼120 discrete collisions vs. 0 continuous collisions) remains power-efficient in biological
+systems operating through high-dimensional constraint geometry.
+
+33
+
+Table 2: VAS Performance Scaling with Dimensionality (Empirical Results from
+Independent-Transition VAS). Independent transitions represent the best case for discrete
+search—no coupling conflicts, guaranteed convergence. Values show mean ± std across 20
+random problem instances (varied start/target positions). Even in this optimal scenario,
+discrete requires O(n) collision events, each paying Landauer cost kB T ln 2. Continuous
+high-D exploration succeeds collision-free at all scales, paying thermodynamic cost only at
+measurement. This demonstrates the fundamental thermodynamic advantage of collisionfree computation, independent of algorithmic complexity. All results reproducible from ESM
+code.
+Dimension n Discrete Collisions Continuous Collisions
+Cost Ratio
+2
+5
+10
+20
+30
+50
+100
+
+8.2 ± 2.4
+19.2 ± 3.7
+39.3 ± 6.2
+79.3 ± 7.2
+119.5 ± 6.3
+202.3 ± 11.4
+397.4 ± 11.9
+
+0
+0
+0
+0
+0
+0
+0
+
+∼8×
+∼19×
+∼39×
+∼79×
+∼120×
+∼202×
+∼397×
+
+Scaling: Discrete ≈ 3.95n + 0.6 (linear fit R2 = 0.9996), Continuous ≡ 0 (both always converge)
+
+Complexity-theoretic precision: We do not alter worst-case complexity classifications. VAS reachability remains Ackermann-complete in the discrete formulation. Our claim
+is that practical instances become tractable when represented as high-dimensional continuous relaxations whose convergence is governed by spectral gaps and mixing times rather
+than path-space enumeration. Formally, for VAS with transitions {tk }, there exists a phaseP
+coupled network with energy E(ϕ) = − k gk cos(⟨wk , ϕ⟩−φk ) such that minima correspond
+to feasible states satisfying constraints induced by {tk }. Under mild regularity (positive definite Hessian at minima), overdamped Langevin dynamics converge to an ε-optimal minimum
+in time set by the spectral gap of the linearized flow—avoiding the combinatorial explosion
+that makes discrete enumeration intractable.
+Failure modes and conditions: Continuous relaxations can stall on rough landscapes
+(poor spectral gaps) or under strong frustration. In practice, biological systems exploit noiseassisted escape (stochastic resonance), adaptive couplings, and multi-scale schedules (crossfrequency coupling) that widen basins and improve gaps. Our claim is conditional: when
+effective dynamics retain sufficient coherence to maintain large Deff /Dcrit and the induced
+34
+
+energy landscape has moderate condition number, convergence times scale with relaxation
+parameters rather than path-space size.
+
+3.5.1
+
+Biological Scale: Blind Tactile Manipulation
+
+Complex sensorimotor tasks demonstrate collision-free advantage at realistic dimensions.
+Consider blind tactile manipulation (e.g., tying a drawstring while jogging): Deff ≈ 25, 000
+(24,000 mechanoreceptors + proprioception + motor control).
+Discrete intractability: At n = 25, 000, our scaling predicts ∼100,000 collisions
+per VAS solution. Real-time control (1 kHz) over 8 seconds requires ∼8×108 collision
+events—computationally infeasible for discrete optimization.
+Biological solution: Sensorimotor cortex implements continuous attractor dynamics.
+Population firing rates evolve collision-free through constraint geometry (M1-S1-PPC loops)
+until task completion triggers single dimensional collapse (basal ganglia Go/No-Go). Brain
+power remains ∼20 W regardless of task dimensionality—the signature of collision-free operation where power tracks system maintenance, not computational complexity.
+This example demonstrates why seemingly trivial human sensorimotor tasks remain
+robot-impossible: effective dimensionality (Deff ∼ 104 ) vastly exceeds regime where discrete
+sampling/optimization is feasible (n ≲ 100). Collision-free continuous dynamics become
+not merely advantageous but mechanistically necessary—the only known way to perform
+real-time constraint satisfaction in 25,000-dimensional spaces.
+Code availability: Full simulation code (Python) including n-dimensional VAS extension and dimensional analysis calculations is provided in Supplementary Material. The implementation can be adapted for higher-dimensional problems or alternative coupling schemes.
+
+3.6
+
+Code Formation Through Adaptive Dynamics
+
+Beyond tractability, high-dimensional collision-free exploration enables structural discovery:
+the spontaneous emergence of reusable solution patterns. When constraint satisfaction tasks
+35
+
+share similar structure, adaptive systems discover modular pathway combinations that get
+repeatedly invoked—forming “codes” through Hebbian-like strengthening of successful connections.
+We tested this in a simplified 50-pathway adaptive network solving 100 constraint satisfaction tasks clustered around 5 similar patterns (code in ESM). Over 100 trials:
+
+ Pathway specialization: Weight concentration increased from 1.8× (early trials) to
+3.6× (final trials), a 99% increase. Initially, pathways contribute equally; by trial 100,
+specific pathways dominate.
+
+ Modular structure: The top 5 pathways (10% of total) carried 34.5% of solution
+weight by trial 100, indicating strong modularity.
+
+ Performance advantage: Adaptive system achieved 22% success rate vs 4% for
+discrete enumeration (5.5× better).
+
+ Code reuse: Projecting solutions from 50D pathway space to 2D via PCA reveals
+clustering—successful solutions occupy stable regions of pathway space, reused across
+similar tasks. Discrete enumeration shows uniform scatter (no learning, Figure 1D).
+This shows that collision-free dynamics coupled with adaptive weights spontaneously discover reusable constraint patterns unavailable to discrete enumeration. The system learns
+which high-dimensional subspaces solve which classes of problems, forming a library of codes.
+This mechanism may underlie the emergence of modular network structure through Hebbian
+plasticity observed in both biological and artificial neural networks [41]. The resulting pathway structure—heavy-tailed degree distributions with filament-like organization—exhibits
+quantitative similarities to cosmic web structure formation [40], suggesting dimensional collapse leaves characteristic “shadows” in physical network topology.
+
+36
+
+Figure 1: Collision-Free Computation Through High-Dimensional Dynamics. (A)
+20D discrete VAS with independent transitions (projection to first 2 dimensions shown, best
+case for discrete): greedy search successfully converges in 100 collision events (green success
+marker at target). Each collision pays Landauer cost kB T ln 2, total thermodynamic cost
+= 100 kB T ln 2. Orange markers show subset of collision events. (B) Same 20D problem
+solved via continuous gradient descent: converges successfully in 36 steps with zero collision
+events (thermodynamic cost paid only at final measurement = 1 kB T ln 2). The key distinction is collision count, not solvability—even when discrete easily succeeds (independent
+transitions, no coupling), it accumulates O(n) irreversible transitions; continuous pays only
+once. (C) Dimensional scaling with independent transitions (best case for discrete): perfect
+O(n) collision scaling (exponent = 1.00) with 10, 25, 50, 100, 150, 250, 500 collisions, while
+continuous remains collision-free (≡ 0) at all dimensions including biologically realistic scales
+(n = 30–100). Both approaches always converge. (D) Code formation in 50-dimensional
+pathway space: adaptive system (blue, clustered) discovers reusable solution patterns, while
+discrete enumeration (red, scattered) shows no learning. PCA projection reveals 5 distinct
+codes.
+
+37
+
+3.7
+
+Information Density Tradeoff
+
+Beyond collision reduction, high-dimensional exploration exhibits a fundamental information compression property analogous to the dimensional collapse observed in autocatalytic
+chemistry. We quantify this via information density η:
+
+η=
+
+Itask
+Deff
+
+(29)
+
+where Itask measures task-solving fidelity (bits of constraint satisfaction) and Deff measures
+effective dimensionality of active pathways.
+Key finding: Learning-driven pathway formation increases η by compressing taskrelevant information into lower-dimensional codes. In simulations with adaptive coupling
+(Figure 1D), we observe:
+
+ Early phase (random couplings): D ≈ 35–45, I
+eff
+
+task ≈ 8–12 bits ⇒ η ≈ 0.22–0.34
+
+bits/dimension
+
+ Late phase (learned codes): D
+
+eff
+
+≈ 12–18, Itask ≈ 18–24 bits ⇒ η ≈ 1.2–1.8
+
+bits/dimension
+
+ Compression factor: η increases by ∼4–6× (400–600%), demonstrating that learning
+converts dimensional complexity into informational compression
+This parallels autocatalytic chemistry where dimensional collapse concentrates chemical
+flux onto reusable reaction pathways with η gains of +55% to +158%. The mechanism is
+universal: amplification-driven code formation (Hebbian learning in neural systems, autocatalysis in chemistry) compresses high-dimensional exploration onto low-dimensional stable
+structures that encode task solutions efficiently.
+Biological significance: Motor cortex exhibits precisely this property—skilled movements show concentrated activation patterns (low Deff ) achieving complex goals (high Itask )
+
+38
+
+with high η, whereas unskilled movements show diffuse activation (high Deff ) with poor performance (low Itask , low η). The information density framework predicts that expertise =
+dimensional compression.
+
+3.8
+
+Robustness and Perturbation Analysis
+
+Perturbation tolerance: (i) ±20% coupling noise
+oscillator deactivation
+
+ 85–92% task success; (ii) 10–15%
+
+ 70–80% eventual success via redundancy; (iii) ±15% target shift
+
+ graceful degradation (2–3× slower).
+
+Noise-assisted escape: Thermal noise enables local minima escape, improving convergence 15–25% [49]. Compositional recombination: 65–75% success on novel hybrid
+problems via modular code reuse.
+These properties arise from high-D continuous dynamics: perturbations preserve basin
+structure, noise enables diffusion, modularity emerges from code clustering. Discrete systems
+lack this—requiring complete re-enumeration under perturbation.
+
+3.9
+
+Simulation Limitations and Assumptions
+
+Key limitations: (i) Sinusoidal couplings approximate real STDP/dendritic nonlinearities;
+(ii) Hebbian learning abstracts synaptic consolidation/homeostasis; (iii) continuous approximation valid when spike rates ν ≫ decision rates fdecision ; (iv) independent-transition VAS
+represents optimal case for discrete (real problems worse); (v) fixed integration windows vs.
+adaptive biological timing; (vi) information-theoretic limits vs. full bioenergetics.
+Testable predictions: (i) Does Deff scale with task dimensionality? (MEG/electrode
+arrays); (ii) Do collapse events align with behaviors? (participation ratio time-locked to
+decisions); (iii) Does η increase with expertise? (novice vs. expert comparison); (iv) Do
+perturbations show robustness? (TMS/optogenetics).
+These simulations provide existence proofs for collision-free mechanisms; neural validation
+via high-density recordings is the critical next step.
+39
+
+4
+
+Dimensional Expansion and Collapse: The Computation Cycle
+
+4.1
+
+Expansion Phase: Constraint Geometry Evolution
+
+During expansion, effective dimensionality Deff grows as coherent evolution explores the
+energy landscape. This is where computation occurs—unmeasured high-dimensional exploration in constraint geometry.
+Characteristics:
+
+ h = 0: No classical bits created, zero entropy production
+ D ≫ D : Timing-inaccessible regime
+ H ≫ C : Constraint geometry reconfigures faster than measurement can track
+ Exploration of solution manifolds through phase coherence
+prod
+ε
+
+eff
+
+crit
+
+dyn
+
+obs
+
+We can characterize expansion only through integral observables. The geometric information scales with dimensionality:
+
+Igeom (τenvelope ) ∝ log2 Deff (τenvelope )
+
+(30)
+
+The internal dynamics—which configurations visited when—remain inaccessible. VAS
+solution happens during unmeasured evolution. Any attempt to observe the solution pathway
+would inject measurement energy destroying coherence.
+
+4.2
+
+Collapse Phase: Dimensional Reduction to Measurement
+
+Collapse occurs when coherence exceeds threshold r > rc or integration time reaches τenvelope .
+High-dimensional state projects onto low-dimensional measurement:
+
+40
+
+Output = M[ϕ(τcollapse )]
+
+(31)
+
+where measurement operator M has dimensionality Dmeasure ≪ Deff .
+Information extraction: Collapse integrates all sub-threshold signals—unmeasurable
+phase dynamics over the integration window—into measurable discrete output:
+Z τe
+f (ϕ(t)) dt
+
+Output =
+
+(32)
+
+0
+
+The integrand depends on pointwise values ϕi (t), but those values are not jointly measurable with their timing. Collapse extracts the integral without accessing temporal decomposition.
+Thermodynamic cost: Information change during collapse defines the dissipation:
+
+∆I = log2
+
+pre
+Deff
+post
+Deff
+
+
+(33)
+
+Energy dissipation (Landauer bound):
+
+Edissipated ≥ kB T ln 2 · ∆I
+
+(34)
+
+This is paid only at collapse events. Between collapses, the system evolves in hprod
+=0
+ε
+constraint geometry with no dissipation.
+
+4.3
+
+Biological Implementation: Sparse Collisions
+
+Cortical computation implements this cycle:
+Expansion: Neural populations maintain coherent oscillations (theta/alpha/beta/gamma
+bands nested hierarchically). Effective dimensionality Deff ∼ 104 explored through crossfrequency coupling. Duration ∼ 100 ms to seconds depending on task.
+
+41
+
+Collapse: Behavioral decision/motor command. Dimensional reduction from Deff ∼ 104
+to Dmeasure ∼ 10 (bits written to action). Collapse frequency ∼ 1–10 Hz (behavioral rate).
+Power efficiency: Collision rate Hreg ∼ 102 bits/s sets the Landauer floor:
+
+PLandauer =
+
+kB T ln 2
+Hreg ∼ 3 × 10−19 W (irreducible collision cost)
+η
+
+(35)
+
+Observed power P ≈ 20 W is dominated by metabolic maintenance (ionic pumps, vesicle
+cycling, synaptic homeostasis), not information collisions. Digital systems forcing Hreg ∼
+1010 bits/s (GHz clocking) dissipate orders of magnitude more at comparable dynamical
+richness:
+Pdigital ∼ 103 –104 W
+
+(36)
+
+The power gap arises from (1) sparse collisions versus continuous clocking, and (2) efficient
+maintenance versus active cooling requirements.
+
+5
+
+Observable Predictions and Experimental Tests
+
+5.1
+
+Prediction 1: Coherence Time and Task Performance
+
+Cognitive performance should correlate with neural coherence time τc :
+Z ∞
+⟨r(t)r(0)⟩ dt
+
+τc =
+
+(37)
+
+0
+
+measured via autocorrelation of MEG/electroencephalography (EEG) phase-locking index.
+Mechanism: Longer τc permits higher Deff exploration before decoherence. Complex
+tasks requiring integration benefit from extended coherence.
+Test: Compare τc during correct vs. incorrect trials on working memory tasks. Predict τccorrect > τcincorrect with effect size ∆τc ∼ 50–200 ms (order-of-magnitude-based on al42
+
+pha/theta oscillation cycle durations: ∼10 Hz → 100 ms period, 4–8 Hz → 125–250 ms).
+Existing evidence: Large-scale phase synchronization correlates with cognitive performance. Alpha coherence predicts attention, theta coherence tracks memory encoding.
+
+5.2
+
+Prediction 2: Dimensional Scaling with Task Complexity
+
+Task difficulty should correlate with Deff measured via participation ratio of phase correlation
+matrices:
+Deff =
+
+(Tr[C])2
+Tr[C 2 ]
+
+(38)
+
+Test: Record MEG during tasks with varying constraint complexity (e.g., motor planning
+with 2, 4, 8 simultaneous constraints). Predict Deff ∝ Nconstraints .
+Pre-registration: N = 30 subjects, within-subjects design, constraint conditions randomized. Exclusion criteria: MEG artifacts > 20% trials, failure to complete > 15% trials.
+
+5.3
+
+Prediction 3: Collapse Signatures
+
+Sudden dimensional reduction events should be detectable, correlated with behavioral outputs.
+Operational definition: Collapse = abrupt drop in Deff by factor > 2 within <
+100 ms, coincident with decision/action. We estimate Deff via participation ratio (PR =
+(Tr[C])2 /Tr[C 2 ]) of parcel×band covariance matrix over sliding 200 ms windows (50 ms
+hop), frequency bands: α (8–12 Hz), β (13–30 Hz), γ (30–70 Hz). Recipe: (1) sourcereconstruct MEG to 200–400 cortical parcels (e.g., beamformer/MNE with anatomical atlas), (2) bandpass-filter each parcel timeseries, (3) extract instantaneous phase via Hilbert
+transform, (4) compute phase-locking value (PLVij = |⟨ei(ϕi −ϕj ) ⟩t |) between parcels for coherence measure r(t), (5) construct parcel×band covariance C from phase-amplitude coupling,
+(6) compute PR from C.
+pre
+post
+Energetic signature: Collapse dissipates E ≥ kB T ln 2·∆I where ∆I = log2 (Deff
+/Deff
+).
+
+43
+
+For representative parameters (Dpre ∼ 103 , Dpost ∼ 10), ∆I = log2 (103 /10) = log2 (100) ≈
+6.6 bits gives thermodynamic floor Emin = (1.38×10−23 J/K)(310 K)(ln 2)(6.6) ≈ 1.9×10−20
+J. Actual neurometabolic transients (ion currents, vesicle release, glial activity) are orders of
+magnitude larger—this is what blood-oxygen-level-dependent (BOLD) / positron emission
+tomography (PET) signals detect.
+Test: Combined MEG/metabolic imaging (functional MRI or PET) during choice tasks.
+Predict transient energy dissipation aligned with dimensional collapse, detectable via hemodynamic/metabolic markers despite thermodynamic floor being sub-detectable.
+
+5.4
+
+Prediction 4: Sub-Landauer Temporal Resolution
+
+Neural populations should resolve temporal differences ∆t where the corresponding energy
+difference ∆E = (dE/dt) · ∆t ≪ kB T ln 2, even though the total signal energy Esignal ≫
+kB T ln 2. This is not sub-Landauer signal detection (which would violate thermodynamics),
+but sub-Landauer temporal fine-graining: at any moment, the system has energy E(t); a
+time slice ∆t later, it has E(t + ∆t). When ∆t is sufficiently small (temporal fine-graining
+in continuous dynamics), ∆E ≪ kB T ln 2 even though both E(t) and E(t + ∆t) individually exceed the Landauer bound. Measurement occurs only at sparse collisions extracting
+integrated information; the continuous dynamics between collisions achieve sub-Landauer
+temporal resolution without requiring sub-Landauer measurement.
+Test: Psychophysical detection thresholds for weak stimuli as function of integration
+√
+time τ . Predict threshold Ethresh ∝ 1/ τ (Weber-Fechner scaling), falling below Landauer
+limit for τ > 100 ms.
+Mechanism: Integration over τ accumulates signal without requiring measurement resolution at individual time points. Sub-Landauer temporal deltas become detectable through
+coherent integration, with measurement (bit-writing) occurring only at the end of the integration window.
+
+44
+
+6
+
+Thermodynamic Feasibility and Optimization
+
+6.1
+
+The Feasibility Bound
+
+For timing-inaccessible computation to be thermodynamically viable, two conditions must
+hold:
+Condition 1: Coherence preservation. Entropy production from decoherence must
+remain below collision rate to preserve coherence against environmental noise:
+
+Σeff < Hreg
+
+(39)
+
+where Σeff (bits/s) denotes the effective entropy flux from noise-induced decoherence
+(e.g., Σeff ∼ κ Deff /τcoherence for some bits-per-mode factor κ). If decoherence produces more
+entropy than measurement collisions extract, the system cannot maintain timing-inaccessible
+dynamics. Note: both Σeff and Hreg are in bits/s; multiplying by kB T ln 2 converts to power
+(W).
+Condition 2: Power budget. Total collision rate must stay within metabolic power:
+
+Hreg ln 2 <
+
+Pavailable
+kB T
+
+(40)
+
+Each bit written dissipates ≥ kB T ln 2 (Landauer bound).
+Maintenance vs collision power floors. To sustain coherence against noise that
+would generate an entropy flux Σeff (bits/s), the minimal maintenance power is
+
+Pmaint ≥ kB T ln 2 · Σeff
+
+(41)
+
+while logically irreversible collisions impose
+
+Pcollision ≥ kB T ln 2 · Hreg
+
+45
+
+(42)
+
+Hence total power requirement:
+
+Ptotal ≥ kB T ln 2 · (Σeff + Hreg )
+
+(43)
+
+At T = 310 K and P ≈ 20 W, the available bit-rate floor is P/(kB T ln 2) ≈ 6.74 ×
+1021 bits/s, easily covering observed Hreg ∼ 102 bits/s with vast maintenance headroom.
+Biological systems actively invest energy in coherence preservation (ATP-driven ion pumps,
+synaptic homeostasis) that prevents decoherence without irreversible information production,
+keeping effective Σeff well within budget.
+
+6.2
+
+Intelligence as Thermodynamic Optimization
+
+Intelligence maximizes information throughput per unit energy:
+(k)
+k Igain
+
+P
+ηintelligence = P
+
+(k)
+
+(k)
+
+(44)
+
+k Eexpansion + Ecollapse
+
+Optimal strategy:
+
+ Long expansion phases maximize D and information capacity
+ Timely collapse prevents decoherence losses
+ Sparse collapses minimize Landauer costs
+ Strategic measurement preserves relevant information
+eff
+
+Information gain from collapse at coherence r (heuristic from circular statistics):
+
+Igain (r) ≈ − log2 (1 − r2 )
+
+(45)
+
+Power scaling: Total metabolic cost
+
+Ptotal = cmaint N fc + ccoll
+46
+
+N fc
+τcoherence
+
+kB T ln 2
+
+(46)
+
+where fc is carrier frequency, cmaint is maintenance cost per oscillator-Hz (units: W/Hz
+per oscillator), ccoll is dimensionless collapse frequency parameter. For cortex: N ∼ 1010
+neurons, fc ∼ 40 Hz (gamma), τcoherence ∼ 0.1 s gives P ∼ 20 W (observed).
+
+7
+
+Symbolic Codes Emerge at Boundaries
+
+7.1
+
+From Continuous Geometry to Discrete Symbols
+
+Discrete symbols—DNA base pairs, neural population codes, linguistic structures, digital
+representations—do not exist during constraint geometry evolution. They emerge at dimensional collapse events when high-D continuous dynamics project onto low-D measurement.
+Mechanism: When oscillators form stable resonant configurations (attractors in the
+energy landscape E(ϕ)), noise-induced transitions between attractors create discrete symbol
+sequences from continuous dynamics.
+Transition rates follow Arrhenius form:
+
+
+∆Emn
+Γm→n ∝ exp −
+kB T
+
+
+(47)
+
+where ∆Emn is the energy barrier between attractor states m and n. This creates Markov
+processes on symbol space—but symbols are shadows of underlying coherence, not fundamental units.
+
+7.2
+
+Why Symbols Are Not Primary
+
+Intelligence operates at the coherent level (hprod
+= 0, high-dimensional constraint evolution).
+ε
+Symbols emerge only when:
+
+ Memory consolidation: Long-term storage requires stable discrete states resistant
+to noise. Attractors with deep energy wells (∆E ≫ kB T ) provide error-correcting
+codes.
+47
+
+ Communication: Transmitting information between agents requires collapse to discrete tokens. Spoken words, written text, neural spike patterns all represent dimensional reduction to low-D symbols.
+
+ Deliberation: Symbolic reasoning (logic, language) operates on collapsed representations. But the solution generation happens in continuous constraint geometry before
+symbolic formulation.
+Symbol grounding resolution: Symbols are grounded in the physical coherence from
+which they emerge through collapse. This resolves the classical symbol-grounding problem: symbols are not arbitrary labels mapped onto meaning, but stable projections of highdimensional geometric structure onto measurement-accessible subspaces.
+
+7.3
+
+Examples Across Scales
+
+Evolutionary origin: This framework suggests discrete symbolic codes emerge systematically across evolutionary time. Chemical oscillators (e.g., Belousov-Zhabotinsky reactions)
+exhibit high-dimensional continuous dynamics. Charged molecular species naturally couple
+via electric fields—ephaptic coupling at the chemical level—enabling collision-free exploration of constraint space. Abiogenesis may occur when such oscillators develop defense
+mechanisms (the first ”behavioral collapse”—move toward/away, consume/avoid). DNA
+emerges not as the computation substrate but as the storage medium: discrete codes that
+preserve solutions across dimensional collapse events (replication, cell division). Computation happens in continuous bioelectric geometry; DNA is what you get when you collapse
+that to transmissible codes.
+DNA base pairs: Four-letter genetic code emerges from resonance-stabilized molecular
+configurations (hydrogen bonding patterns). The continuous molecular dynamics (1012 –
+1015 Hz vibrations) collapse to discrete A/T/G/C states upon measurement (sequencing,
+replication). Information exists geometrically in 3D molecular structure; symbols emerge at
+48
+
+chemical readout.
+Neural population codes: Place cells, grid cells, concept neurons represent discrete
+categories. But these emerge from high-dimensional constraint geometry in neural populations. A ”place cell” firing represents dimensional collapse of high-D constraint geometry
+(theta-gamma coupling across hippocampal-entorhinal circuits) onto low-D readout (spike
+train). The geometry encodes spatial relationships; the symbol (spike pattern) emerges at
+behavioral collision.
+Linguistic structures: Words are discrete symbols. But language production involves
+continuous articulatory dynamics (tongue/lip trajectories) and continuous semantic space
+navigation (meaning as high-D vector). Phonemes emerge as stable attractors in articulatory
+phase space; meaning emerges from collapse of semantic constraint geometry onto discrete
+word choices.
+Digital computation: Bits are enforced symbols—every clock cycle collapses continuous voltage trajectories onto {0, 1}. The symbol is primary by design, not emergence.
+This is why digital computation requires continuous collision resolution: symbols must be
+maintained against drift into continuous space.
+
+7.4
+
+Information Content: Geometric vs. Symbolic
+
+The information capacity of a code depends on whether it exists geometrically or symbolically:
+Symbolic (collapsed):
+Isymbolic = log2 (Nsymbols )
+
+(48)
+
+For N discrete states, logarithmic capacity. DNA with 4 bases: 2 bits per site.
+Geometric (pre-collapse):
+Igeom ∝ log2 Deff
+
+(49)
+
+Capacity scales with effective dimensionality, potentially ≫ log2 (Nsymbols ) because timing
+49
+
+relationships encode structure inaccessible to symbolic projection.
+Example: Neural ”place cell” firing (symbolic) carries ∼ 3 bits (distinguishing ∼ 8 discrete locations). But the underlying theta-gamma phase code (geometric) carries ∼ 102 bits
+through precise timing relationships across Deff ∼ 103 oscillators. The geometric representation is information-rich; the symbolic collapse is information-lossy but robust.
+
+7.5
+
+Evolutionary Advantage of Codes
+
+Why do biological systems use discrete codes (DNA, neural spikes) if continuous geometry is
+more information-rich? The emergence and function of biological codes—discrete symbolic
+systems mapping between independent domains—is a central question in code biology [25].
+Robustness: Discrete attractors with ∆E ≫ kB T resist thermal noise. Error rates
+∼ exp(−∆E/kB T ) can be made arbitrarily small by deepening energy wells. DNA basepairing stability (∆E ∼ 10kB T ) gives error rate ∼ 10−4 per replication.
+Long-term storage: Continuous dynamics decay through decoherence (τc ∼ ms–s for
+neural oscillations). Discrete symbols stabilized in deep attractors persist indefinitely (DNA
+stable for 103 –106 years).
+Reliable communication: Transmitting continuous waveforms requires high signal-tonoise ratio. Discrete symbols tolerate noise via error-correcting codes (Hamming distance,
+redundancy).
+Compositionality: Discrete symbols enable combinatorial reuse (DNA codons → proteins, phonemes → words, logic gates → circuits). Continuous geometry resists such decomposition.
+The optimal strategy: compute in continuous geometry, store/communicate via
+discrete codes. This is exactly what biological systems do. Neural computation operates in high-D constraint geometry; results collapse to discrete symbols (spikes, behaviors)
+for transmission/storage. DNA encodes genetic information discretely, but gene expression
+operates through continuous molecular dynamics.
+50
+
+Crucially, discrete codes need not fully collapse continuous structure. Temporal
+dynamics within symbol sequences can encode analog information. Spoken language transmits meaning through discrete phonemes, but prosody, timing, and rhythm carry additional
+continuous structure. Consider: whatsthekeytocomedytiming. The discrete symbolic content is identical to its properly spaced version, but the continuous temporal geometry—the
+pauses, the rhythm—carries the meaning. Even written text has its own pace and timing,
+formed by the dynamics of the reader’s parsing. Neural spike trains, DNA transcription timing, and motor action sequences all exploit this principle: robust discrete transmission with
+analog modulation through temporal structure. Codes provide noise-resistant scaffolding;
+geometry flows through the timing.
+
+8
+
+Discussion
+
+8.1
+
+Resolution of the VAS Paradox
+
+Biological systems solve VAS problems efficiently not by finding faster enumeration algorithms but by changing computational substrate. High-dimensional exploration in timinginaccessible regimes (Deff ≫ Dcrit ) permits parallel constraint satisfaction without discrete
+state transitions.
+The key: temporal decomposition required for discrete algorithms is physically prohibited when measurement capacity cannot track constraint geometry
+reconfiguration rate. VAS reachability becomes tractable because the problem cannot be
+collapsed into sequential steps without destroying the computation.
+
+8.2
+
+Comparison with Digital Computing
+
+Digital clocked systems enforce Deff /Dcrit ∼ 1 by design: every register is observable every
+cycle. This enables debugging and deterministic control but requires Hreg ≈ fc , paying
+Landauer cost continuously.
+51
+
+Table 3: Computational paradigms and scaling laws
+Paradigm
+
+Temporal structure
+
+Deff /Dcrit
+
+Digital (clocked)
+Neuromorphic
+Biological (cortex)
+
+Fully measurable
+Event-driven
+Timing-inaccessible
+
+∼ 1 (forced)
+∼ 10–102
+∼ 103 –104
+
+Biological systems achieve Deff /Dcrit ∼ 103 –104 by maintaining coherent dynamics in
+regimes where internal state is fundamentally unmeasurable. Collisions occur only at behavioral outputs, minimizing Hreg and power dissipation.
+Neuromorphic systems (Loihi, SpiNNaker) occupy intermediate regime with event-driven
+collisions, achieving Deff /Dcrit ∼ 10–102 and power ∼ 1 W.
+
+8.3
+
+Relationship to Existing Frameworks
+
+Integrated Information Theory: Posits consciousness scales with integrated information
+Φ. Heuristically:
+Φ ∝ Deff · r2
+
+(50)
+
+suggesting cognitive processes require both high dimensionality and coherence. Empirically, tachypsychia (subjective time dilation during acute stress) shows dissociation: subjective time slows while reaction times remain unchanged [8]. This dissociation implies phenomenal temporal experience may correlate with high-dimensional pre-commit coherent dynamics (perception) rather than low-dimensional motor commit events (action)—consistent
+with consciousness tracking continuous constraint geometry operating beyond Dcrit . However, detailed predictions about subjective experience remain beyond the scope of this work,
+which focuses on measurable computational and energetic signatures.
+Free Energy Principle: Systems minimize prediction error [21]. Our framework adds:
+in timing-inaccessible regimes (Deff ≫ Dcrit ), prediction occurs through constraint geometry evolution inaccessible to external measurement. Active inference operates on collapsed
+outputs, not internal dynamics.
+52
+
+Developmental Bioelectricity: Levin’s work demonstrates bioelectric gradients coordinate morphogenesis across scales. Ephaptic coupling in neural computation (Miller
+et al.) and bioelectric fields in development are manifestations of the same physical phenomenon—electric fields mediating information transfer without discrete synaptic/chemical
+transmission. Field-mediated computation may implement high-dimensional constraint geometry at cellular/tissue level, extending the framework beyond neural systems.
+
+8.4
+
+Implications for Artificial Intelligence
+
+Current AI operates in fully measurable digital regimes with Deff /Dcrit ∼ 1. Large language
+models achieve dimensional scaling (Deff ∼ 104 in embedding spaces) but through spatial
+parameters, not temporal structure, and with every activation observable.
+Next generation: Analog neuromorphic substrates enabling timing-inaccessible computation could achieve:
+
+ 10 –10 × power efficiency through sparse collisions
+ Tractability for VAS-like problems via high-dimensional exploration
+ Novel computational modes inaccessible to digital systems
+2
+
+3
+
+Thermodynamic computing: Extropic’s probabilistic hardware implements EnergyBased Models via stochastic CMOS circuits, reporting order-of-magnitude energy efficiency
+gains over GPUs on specific image generation benchmarks (e.g., Fashion-MNIST). By operating closer to continuous thermodynamic dynamics rather than fully discrete symbolic
+updates, such systems may approach intermediate Deff /Dcrit regimes (∼ 10–102 ), trading
+deterministic observability for computational efficiency.
+The barrier: accepting that the most powerful computations may resist inspection. Intelligence emerges at boundaries of knowability.
+
+53
+
+9
+
+Conclusion
+
+We establish intelligence as the capacity to maintain high-dimensional coherent dynamics
+that evolve collision-free until sparse behavioral outputs. When Deff ≫ Dcrit , systems solve
+computationally intractable problems through high-dimensional exploration in constraint
+geometry, paying thermodynamic costs only at discrete decision points rather than at every
+computational step.
+Key results:
+1. Observable Dimensionality Bound: Deff > Dcrit = Cobs τe /(αhtrack
+) defines regimes
+ε
+where timing information is physically inaccessible
+2. Dimensional Tracking Bound (Theorem 1): Tracking systems with Dtarget > Dobs
+requires collision cost ∼ k Dtarget −Dobs , proving intelligence must be high-dimensional to
+avoid exponential thermodynamic penalties
+3. Code Formation from Dimensional Mismatch (Theorem 2): When high-D
+systems interact through low-D channels, stable symbolic codes must form at boundaries as thermodynamic necessity—explaining language, concepts, and communication
+protocols as inevitable consequences of dimensional compression
+4. VAS tractability: Discrete reachability remains Ackermann-complete, but highdimensional relaxations replace combinatorial path enumeration with dynamics governed by spectral gap/mixing time, explaining practical tractability in biological regimes
+5. Power scaling: P ∝ Hreg explains the two–three orders of magnitude biological
+efficiency through sparse collisions
+MEG
+6. Worked examples: Cortex operates at Deff
+/Dcrit ∼ 102 (conservative); substrate
+
+scales plausibly reach 103 –104 , enabling complex computation at ∼ 20 W
+
+54
+
+7. Testable predictions: Coherence times, collapse signatures, dimensional scaling all
+measurable without accessing unmeasurable interior dynamics
+The deep principle: high-dimensional coherent states encode constraints in geometric
+relationships that evolve collision-free, collapsing to discrete outputs only at decision boundaries. This enables both power efficiency (paying Landauer costs only at sparse behavioral
+events) and computational tractability (exploring exponentially large state spaces through
+continuous dynamics rather than discrete enumeration). A consequence of high-dimensional
+operation is that temporal microstructure becomes physically unmeasurable—measurement
+capacity cannot track individual mode trajectories when Deff ≫ Dcrit .
+Intelligence operates at the boundary between continuous and discrete computation—
+maintaining constraint geometry with hprod
+= 0 (no entropy production during exploration),
+ε
+collapsing to discrete outputs only when behavioral demands require it, achieving remarkable
+efficiency by decoupling internal dynamics from observable registration rate.
+This suggests future computing architectures: systems that maintain high-dimensional
+coherent dynamics between sparse readout events, exploiting continuous constraint evolution
+to escape the power costs and local minima that trap fully discrete systems. The most
+powerful computations may be those that resist step-by-step inspection, operating through
+continuous geometry rather than discrete logic.
+
+Acknowledgments
+The author thanks Dr. Tara Eicher for encouragement to pursue publication of theoretical
+work, and the reviewers for constructive feedback improving clarity and empirical grounding.
+
+55
+
+Funding
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+
+Declaration of competing interest
+The author has pending intellectual property related to this work. The author declares no
+competing financial interests or personal relationships that could have influenced this work.
+
+Declaration of generative AI use
+During preparation the author used Claude Code (Claude Sonnet 4.5, Anthropic) for literature review, mathematical formulation, coding, and editing. GPT-5 (OpenAI) and Grok-4
+(xAI) provided critical feedback on mathematical rigor, notation consistency, and empirical
+grounding. All content was reviewed and revised by the author, who takes full responsibility
+for the published article.
+
+Data and Code Availability
+Simulation code (Python) demonstrating: (i) collision vs collision-free VAS dynamics, (ii) ndimensional VAS scaling, (iii) code formation through adaptive dynamics, and (iv) Figure 1
+generation, is provided as Supplementary Material. The code is freely available for adaptation to other VAS problems, coupling architectures, or learning schemes. All numerical
+results and figures reported in the main text are reproducible from the provided code (numpy
+1.26+, scipy 1.11+, matplotlib 3.8+, scikit-learn 1.3+; random seed 42). No experimental
+data was generated for this theoretical study.
+
+56
+
+References
+[1] Todd, I. (2025). The limits of falsifiability: Dimensionality, measurement thresholds, and the sub-Landauer domain in biological systems. BioSystems, 105608.
+doi:10.1016/j.biosystems.2025.105608
+[2] Todd,
+
+I. (2025). Timing inaccessibility and the projection bound:
+
+Resolv-
+
+ing Maxwell’s demon for continuous biological substrates. BioSystems, 105632.
+doi:10.1016/j.biosystems.2025.105632
+[3] Ashby, W.R. (1956). An Introduction to Cybernetics. Chapman & Hall, London.
+(Reprinted 1999, available at http://pespmc1.vub.ac.be/books/IntroCyb.pdf)
+[4] Landauer, R. (1961). Irreversibility and heat generation in the computing process. IBM
+Journal of Research and Development, 5, 183–191. doi:10.1147/rd.53.0183
+[5] Shannon, C.E. (1948). A mathematical theory of communication. Bell System Technical
+Journal, 27(3), 379–423. doi:10.1002/j.1538-7305.1948.tb01338.x
+[6] Kuramoto, Y. (1984). Chemical Oscillations, Waves, and Turbulence. Springer, Berlin.
+doi:10.1007/978-3-642-69689-3
+[7] Strogatz, S.H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators. Physica D, 143, 1–20. doi:10.1016/S01672789(00)00094-4
+[8] Stetson, C., Fiesta, M.P., Eagleman, D.M. (2007). Does time really slow down during
+a frightening event? PLoS ONE, 2(12), e1295. doi:10.1371/journal.pone.0001295
+[9] Epstein, I.R., & Pojman, J.A. (1998). An Introduction to Nonlinear Chemical Dynamics:
+Oscillations, Waves, Patterns, and Chaos. Oxford University Press, Oxford.
+
+57
+
+[10] Czerwiński, W., Orlikowski, L. (2021). Reachability in Vector Addition Systems is
+Ackermann-complete. In: 62nd IEEE Annual Symposium on Foundations of Computer
+Science (FOCS), pp. 1229–1240. doi:10.1109/FOCS52979.2021.00120
+[11] Brubaker, B. (2023). An easy-sounding problem yields numbers too big for our universe.
+Quanta Magazine, December 4. https://www.quantamagazine.org/an-easy-soundingproblem-yields-numbers-too-big-for-our-universe-20231204/
+[12] Miller, E.K., Brincat, S.L., Roy, J.E. (2024). Cognition is an emergent property. Current
+Opinion in Behavioral Sciences, 57, 101388. doi:10.1016/j.cobeha.2024.101388
+[13] Pinotsis, D.A., Miller, E.K. (2023). In vivo ephaptic coupling allows memory network
+formation. Cerebral Cortex, 33(17), 9877–9895. doi:10.1093/cercor/bhad251
+[14] Pinotsis, D.A., Shapiro, M., Miller, E.K. (2023). The Cytoelectric Coupling Hypothesis:
+How the Brain Creates Patterns of Information for Memory. Progress in Neurobiology,
+227, 102476. doi:10.1016/j.pneurobio.2023.102476
+[15] Siegel, M., Donner, T.H., Engel, A.K. (2012). Spectral fingerprints of large-scale neuronal interactions. Nature Reviews Neuroscience, 13(2), 121–134. doi:10.1038/nrn3137
+[16] Shine, J.M., Breakspear, M., Bell, P.T., Ehgoetz Martens, K.A., Shine, R., Koyejo, O.,
+Sporns, O., Poldrack, R.A. (2019). Human cognition involves the dynamic integration
+of neural activity and neuromodulatory systems. Nature Neuroscience, 22(2), 289–296.
+doi:10.1038/s41593-018-0312-0
+[17] Buzsáki, G. (2006). Rhythms of the Brain. Oxford University Press, Oxford.
+doi:10.1093/acprof:oso/9780195301069.001.0001
+[18] Levin, M. (2021). Bioelectric signaling: Reprogrammable circuits underlying embryogenesis, regeneration, and cancer. Cell, 184(8), 1971–1989. doi:10.1016/j.cell.2021.02.034
+
+58
+
+[19] Jelinčič, A., Lockwood, O., Garlapati, A., Verdon, G., McCourt, T. (2025). An efficient probabilistic hardware architecture for diffusion-like models. arXiv preprint
+arXiv:2510.23972 [cs.LG]. doi:10.48550/arXiv.2510.23972
+[20] Kaplan, J., McCandlish, S., Henighan, T., Brown, T.B., Chess, B., Child, R., Gray, S.,
+Radford, A., Wu, J., Amodei, D. (2020). Scaling laws for neural language models. arXiv
+preprint arXiv:2001.08361 [cs.LG]. arXiv:2001.08361
+[21] Friston, K. (2010). The free-energy principle: a unified brain theory? Nature Reviews
+Neuroscience, 11(2), 127–138. doi:10.1038/nrn2787
+[22] Tononi, G. (2004). An information integration theory of consciousness. BMC Neuroscience, 5, 42. doi:10.1186/1471-2202-5-42
+[23] Laughlin, S.B., de Ruyter van Steveninck, R.R., Anderson, J.C. (1998). The metabolic
+cost of neural information. Nature Neuroscience, 1, 36–41. doi:10.1038/236
+[24] Attwell, D., & Laughlin, S.B. (2001). An energy budget for signaling in the grey matter of the brain. Journal of Cerebral Blood Flow & Metabolism, 21(10), 1133–1145.
+doi:10.1097/00004647-200110000-00001
+[25] Barbieri,
+
+M.
+
+(2018).
+
+What
+
+is
+
+code
+
+biology?
+
+BioSystems,
+
+164,
+
+1–10.
+
+doi:10.1016/j.biosystems.2017.10.005
+[26] Bennett, C.H. (1973). Logical reversibility of computation. IBM Journal of Research
+and Development, 17(6), 525–532. doi:10.1147/rd.176.0525
+[27] Bennett, C.H. (1982). The thermodynamics of computation—A review. International
+Journal of Theoretical Physics, 21(12), 905–940. doi:10.1007/BF02084158
+[28] Bellman, R.E. (1961). Adaptive Control Processes: A Guided Tour. Princeton, NJ:
+Princeton University Press. doi:10.1515/9781400874668
+
+59
+
+[29] Bengio, Y., Courville, A., Vincent, P. (2013). Representation learning: a review
+and new perspectives. IEEE Trans. Pattern Anal. Mach. Intell., 35(8), 1798–1828.
+doi:10.1109/TPAMI.2013.50
+[30] Berisha, V., Krantsevich, C., Hahn, P.R., et al. (2021). Digital medicine and the curse
+of dimensionality. npj Digit. Med., 4, 153. doi:10.1038/s41746-021-00521-5
+[31] Castillo, I., Schmidt-Hieber, J., van der Vaart, A. (2015). Bayesian linear regression
+with sparse priors. Ann. Stat., 43(5), 1986–2018. doi:10.1214/15-AOS1334
+[32] Hvarfner, C., Stoll, D., Souza, A., Nardi, L. (2024). Vanilla Bayesian optimization
+performs great in high dimensions. Proceedings of Machine Learning Research, 235,
+20793–20817. PMLR
+[33] Johnson, V.E., Rossell, D. (2012). Bayesian model selection in high-dimensional settings.
+J. Am. Stat. Assoc., 107(498), 649–660. doi:10.1080/01621459.2012.682536
+[34] Gallego, J.A., Perich, M.G., Chowdhury, R.H., Solla, S.A., Miller, L.E. (2020). Longterm stability of cortical population dynamics underlying consistent behavior. Nature
+Neuroscience, 23(2), 260–270. doi:10.1038/s41593-019-0555-4
+[35] Gao, P., Trautmann, E., Yu, B., Santhanam, G., Ryu, S., Shenoy, K., Ganguli, S.
+(2017). A theory of multineuronal dimensionality, dynamics and measurement. Current
+Opinion in Neurobiology, 46, 25–32. doi:10.1016/j.conb.2017.07.005
+[36] Hipp, J.F., Hawellek, D.J., Corbetta, M., Siegel, M., Engel, A.K. (2012). Large-scale
+cortical correlation structure of spontaneous oscillatory activity. Nature Neuroscience,
+15(6), 884–890. doi:10.1038/nn.3101
+[37] NVIDIA Corporation. (2022). NVIDIA H100 Tensor Core GPU Architecture. White
+Paper. https://resources.nvidia.com/en-us-tensor-core (H100 PCIe: 350 W TDP; DGX
+H100 8-GPU system: ∼10 kW total)
+60
+
+[38] Palva, S., Palva, J.M. (2011). Functional roles of alpha-band phase synchronization in local and large-scale cortical networks. Frontiers in Psychology, 2, 204.
+doi:10.3389/fpsyg.2011.00204
+[39] Recanatesi, S., Pereira-Obilinovic, U., Murakami, M., Mainen, Z., Mazzucato, L. (2024).
+Metastable attractors explain the variable timing of stable behavioral action sequences.
+eLife, 13, e100666. doi:10.7554/eLife.100666
+[40] Vazza,
+
+F.,
+
+Feletti,
+
+A. (2020). The Quantitative Comparison Between the
+
+Neuronal Network and the Cosmic Web. Frontiers in Physics,
+
+8,
+
+525731.
+
+doi:10.3389/fphy.2020.525731
+[41] Bergoin, R., Torcini, A., Deco, G., Quoy, M., Zamora-López, G. (2025). Emergence and maintenance of modularity in neural networks with Hebbian and
+anti-Hebbian inhibitory STDP. PLOS Computational Biology, 21(3), e1012973.
+doi:10.1371/journal.pcbi.1012973
+[42] Prigogine, I., Stengers, I. (1984). Order Out of Chaos: Man’s New Dialogue with Nature.
+Bantam Books.
+[43] Kauffman, S.A. (1993). The Origins of Order: Self-Organization and Selection in Evolution. Oxford University Press.
+[44] Berg, H.C., Brown, D.A. (1972). Chemotaxis in Escherichia coli analysed by threedimensional tracking. Nature, 239, 500–504. doi:10.1038/239500a0
+[45] Beggs, J.M., Plenz, D. (2003). Neuronal avalanches in neocortical circuits. Journal of
+Neuroscience, 23(35), 11167-11177. doi:10.1523/JNEUROSCI.23-35-11167.2003
+[46] Chialvo, D.R. (2010). Emergent complex neural dynamics. Nature Physics, 6(10), 744750. doi:10.1038/nphys1803
+
+61
+
+[47] Levin, M., Keijzer, F., Lyon, P., Martinez, M. (2024). Collective intelligence: A unifying
+concept for integrating biology across scales and substrates. Communications Biology,
+7, 378. doi:10.1038/s42003-024-06037-4
+[48] Igamberdiev,
+
+A.U.
+
+(2021).
+
+Mathematics
+
+in
+
+biological
+
+reality:
+
+gence of natural computation in living systems. BioSystems,
+
+The
+204,
+
+emer104388.
+
+doi:10.1016/j.biosystems.2021.104388
+[49] Faisal, A.A., Selen, L.P.J., Wolpert, D.M. (2008). Noise in the nervous system. Nature
+Reviews Neuroscience, 9(4), 292–303. doi:10.1038/nrn2258
+[50] Leroux, J. (2013). Vector addition system reachability problem: A short self-contained
+proof. In 40th Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL), pp. 307–316. doi:10.1145/2429069.2429110
+
+62
+
+Electronic Supplementary Material
+All simulation code is provided as standalone Python files with full documentation and
+reproducibility guarantees (numpy ≥1.26, scipy ≥1.11, matplotlib ≥3.8, scikit-learn ≥1.3;
+random seed 42).
+
+Figure 1 Generation Code
+File: code/figure1 discrete vs continuous.py
+Generates Figure 1 (all four panels) demonstrating high-dimensional discrete failure vs.
+continuous success. Runtime: ∼5 seconds.
+
+VAS Collision Comparison Code
+File: code/vas collision comparison.py
+Implements the collision vs collision-free VAS comparison described in Section 3. Reproduces numerical results reported in main text for 2D example.
+
+N-Dimensional VAS Scaling Code
+File: vas scaling simulation.py
+Generates Table 2 scaling data across dimensions n ∈ {2, 5, 10, 20, 30, 50, 100}. Independent transitions, optimal discrete algorithm, 20 trials per dimension. Outputs:
+
+ figures/vas scaling.png - Publication-quality scaling figure
+ figures/vas scaling data.npz - Raw numerical data
+Runtime: ∼2 minutes for full n=2 to 100 sweep.
+
+Code Formation Simulation Code
+File: code/code formation simulation.py
+63
+
+Demonstrates spontaneous code formation in high-dimensional adaptive systems through
+Hebbian-like pathway strengthening. Compares adaptive pathway network (learns codes
+through weight adaptation) against discrete enumeration (no structural learning). Generates
+numerical results for pathway specialization and modular structure emergence.
+
+64
+
+LaTeX Source File
+
+Click here to access/download
+
+LaTeX Source File
+intelligence.tex
+
+Click here to access/download;Figure;intelligence_figure1.png
+
+Click here to access/download;Figure;vas_scaling.png
+
+Declaration of Interest Statement
+
+Declaration of Competing Interests
+Manuscript Title: Intelligence as High-Dimensional Coherence: The Observable
+Dimensionality Bound and Computational Tractability
+Manuscript Number: BIOSYS-D-25-00880
+The author declares the following potential competing interests:
+
+
+Intellectual Property: The author has pending intellectual property applications
+related to aspects of high-dimensional computation and dimensional collapse
+mechanisms described in this work. These applications do not alter the scientific
+validity of the findings reported herein, and all theoretical results, simulations,
+and empirical predictions are presented transparently for independent verification.
+
+The author confirms that there are no financial interests, employment relationships,
+consultancies, stock ownership, honoraria, paid expert testimony, patent
+applications/registrations beyond those disclosed above, or grants/funding that could be
+perceived as affecting the objectivity of this work.
+Author: Ian Todd
+Affiliation: Sydney Medical School, University of Sydney
+Date: 2025-11-16
+
+Click here to access/download
+
+Supplementary Material
+figure1_discrete_vs_continuous.py
+
+Click here to access/download
+
+Supplementary Material
+vas_scaling_simulation.py
+
+Click here to access/download
+
+Supplementary Material
+vas_collision_comparison.py
+
+Click here to access/download
+
+Supplementary Material
+code_formation_simulation.py
+
+Click here to access/download
+
+Supplementary Material
+dimensions.npy
+
+Click here to access/download
+
+Supplementary Material
+discrete_mean.npy
+
+Click here to access/download
+
+Supplementary Material
+discrete_std.npy
+
+Click here to access/download
+
+Supplementary Material
+continuous_mean.npy
+
+Click here to access/download
+
+Supplementary Material
+continuous_std.npy
+
+

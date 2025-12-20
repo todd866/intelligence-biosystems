@@ -1294,4 +1294,17 @@ Runtime: $\sim$2 minutes for full n=2 to 100 sweep.
 
 Demonstrates spontaneous code formation in high-dimensional adaptive systems through Hebbian-like pathway strengthening. Compares adaptive pathway network (learns codes through weight adaptation) against discrete enumeration (no structural learning). Generates numerical results for pathway specialization and modular structure emergence.
 
+\subsection*{Figure S2: Success Rate vs Coupling Strength}
+
+\textbf{File:} \texttt{revisions/figureS2\_clean.py}
+
+Demonstrates the key difference between discrete and continuous methods when inter-dimensional constraints are present (Figure~\ref{fig:coupling}). As coupling strength increases (fraction of dimension pairs that must stay synchronized), discrete greedy search fails catastrophically (100\% $\rightarrow$ 0\% success) while continuous gradient descent maintains 100\% success throughout. Panel B shows the associated Landauer cost: discrete methods hit maximum iterations (stuck), while continuous methods maintain constant cost of 1 (single readout).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/figureS2_clean.pdf}
+\caption{\textbf{Coupling strength reveals fundamental discrete/continuous asymmetry.} \textbf{(A)} Success rate vs.\ coupling fraction. Discrete greedy search (red) drops from 100\% to 0\% as more dimension pairs become coupled; continuous gradient flow (green) maintains 100\% success regardless of coupling. \textbf{(B)} Collision count (Landauer cost proxy). Discrete methods incur $O(n)$ collisions and get stuck at high coupling; continuous methods require only 1 collision at final readout. $n=10$ dimensions, 50 trials per coupling level. This demonstrates that the discrete/continuous gap widens with problem complexity---coupling constraints create NP-complete constraint satisfaction problems for discrete methods that continuous dynamics solve trivially through parallel coordinate updates.}
+\label{fig:coupling}
+\end{figure}
+
 \end{document}

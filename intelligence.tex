@@ -29,11 +29,7 @@ Sydney, NSW, Australia\\
 \maketitle
 
 \begin{abstract}
-\textbf{Intelligence must be high-dimensional.} We show that high-dimensional continuous dynamics are not merely one way to implement intelligence—they are the only thermodynamically viable solution. The core constraint is \textit{measurement bandwidth}, not computational complexity: tracking systems with effective dimensionality $D_{\text{target}}$ requires measurement capacity $C_{\text{obs}} \gtrsim D_{\text{target}} \cdot h_\varepsilon^{\text{track}} / \tau_e$. External observers with finite bandwidth face an observational accessibility threshold beyond which the system becomes ontologically unmeasurable. This applies to \textit{all living systems}: bacteria tracking chemical gradients ($D_{\text{target}} \sim 10^1$--$10^2$, $\sim 10^{-12}$ W) and human brains tracking social/ecological complexity ($D_{\text{target}} \sim 10^3$--$10^5$, $\sim$20 W) both require high-dimensional substrates ($D_{\text{eff}} \gg D_{\text{target}}$), scaled to their respective behavioral bandwidths. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental measurement-theoretic property of life, not unique to humans.
-
-We establish three results: (1) High-dimensional systems with irreducible complexity exist (e.g., vector addition systems with Ackermann-complete reachability; coupled oscillator networks with $D_{\text{eff}} \gg 1$). (2) \textit{Theorem (Measurement-Theoretic Tracking Bound):} External observers can track systems only when $D_{\text{target}} \le D_{\text{crit}} = C_{\text{obs}}\tau_e/(\alpha h_\varepsilon^{\text{track}})$. Beyond this threshold, insufficient measurement bandwidth makes the system observationally inaccessible—not hard to compute, but impossible to observe. (3) Biological intelligence sidesteps this bound by \textit{embodying} the dynamics: the substrate \textit{is} the high-dimensional field ($D_{\text{eff}} \gg D_{\text{target}}$). No external measurement occurs during internal evolution; information lives in geometric configuration (oscillator phases, coupling strengths). Dimensional collapse happens only at behavioral output, paying Landauer cost once ($k_B T \ln 2$) rather than continuously measuring and updating.
-
-The Observable Dimensionality Bound shows when $D_{\text{eff}} > D_{\text{crit}}$, temporal microstructure becomes physically unmeasurable. Human cortex operates at $D_{\text{eff}}^{\text{MEG}}/D_{\text{crit}} \sim 10^2$ (substrate plausibly $10^3$--$10^4$), explaining both power efficiency (thermodynamic cost paid at behavioral bottleneck, not internal dynamics) and computational tractability (VAS problems Ackermann-complete for discrete enumeration become tractable via continuous high-dimensional relaxation). This framework unifies biological efficiency with the measurement-theoretic impossibility of externally observing high-dimensional intelligence.
+Intelligence arises from the maintenance of high-dimensional coherent dynamics. We argue that this is not merely one way to implement adaptive behavior---it is the only thermodynamically viable solution for tracking complex environments in real time. The core constraint is measurement bandwidth: external observers can track systems only when target dimensionality falls below a critical threshold set by channel capacity and temporal resolution. Beyond this Observable Dimensionality Bound, systems become observationally inaccessible---not computationally hard, but fundamentally unmeasurable. Living systems sidestep this limit by embodying the dynamics: the substrate is the high-dimensional field, so no external measurement occurs during internal evolution. Information lives in geometric configuration (oscillator phases, coupling strengths), with dimensional collapse occurring only at behavioral output. This explains the dramatic efficiency gap between biological and artificial intelligence: brains pay thermodynamic costs at sparse behavioral commitments rather than at every computational step. We formalize these ideas through a measurement-theoretic tracking bound, demonstrate that irreducibly complex high-dimensional systems exist (vector addition systems with Ackermann-complete reachability), and show that human cortex operates far beyond the observable threshold. The framework connects to recent work on consciousness and dimensionality, suggesting that the capacity to maintain coherent high-dimensional dynamics---rather than any specific neural mechanism---is the substrate-independent foundation of intelligent behavior across biological systems, from bacterial chemotaxis to human cognition.
 \end{abstract}
 
 \noindent\textbf{Keywords:} Intelligence, Observable Dimensionality Bound, Curse of Dimensionality, Landauer Limit, Phase Space, Thermodynamics, Vector Addition Systems, Constraint Geometry, Measurement Limits, Power Scaling
@@ -51,9 +47,9 @@ The Observable Dimensionality Bound shows when $D_{\text{eff}} > D_{\text{crit}}
 
 \subsection{The Core Claim}
 
-\textbf{Defining intelligence operationally.} We define intelligence not as a human-specific property but as the general capacity to track and respond to environmental complexity—whether bacterial chemotaxis tracking chemical gradients ($D_{\text{target}} \sim 10^1$--$10^2$) or human cognition tracking social/ecological dynamics ($D_{\text{target}} \sim 10^3$--$10^5$). Under this definition, intelligence is fundamentally a \textit{tracking problem}: an organism must maintain internal representations that capture the relevant dimensions of its environment to generate adaptive behavior. The measurement-theoretic bound (Theorem 1, \S\ref{sec:bayesian}) then immediately implies that systems tracking $D_{\text{target}}$-dimensional environments must implement substrate dimensionality $D_{\text{eff}} \gg D_{\text{target}}$ to avoid observational inaccessibility. This is not a contingent claim about what ``intelligence'' happens to be instantiated in, but a logical consequence of what tracking high-dimensional targets thermodynamically requires. Intelligence must be high-dimensional because \textit{tracking complexity is what intelligence means}, and tracking requires dimensional matching.
+\textbf{Defining intelligence operationally.} We define intelligence not as a human-specific property but as the general capacity to track and respond to environmental complexity—whether bacterial chemotaxis tracking chemical gradients ($D_{\text{target}} \sim 10^1$--$10^2$) or human cognition tracking social/ecological dynamics ($D_{\text{target}} \sim 10^3$--$10^5$). Under this definition, intelligence is fundamentally a \textit{tracking problem}: an organism must maintain internal representations that capture the relevant dimensions of its environment to generate adaptive behavior. The measurement-theoretic bound (Theorem 1, \S\ref{sec:bayesian}) then immediately implies that systems tracking $D_{\text{target}}$-dimensional environments must implement substrate dimensionality $D_{\text{eff}} \gg D_{\text{target}}$ to avoid observational inaccessibility. This is not a contingent claim about what ``intelligence'' happens to be instantiated in, but a logical consequence of what tracking high-dimensional targets thermodynamically requires. Intelligence arises from maintaining high-dimensional coherence because \textit{tracking complexity is what intelligence means}, and tracking requires dimensional matching.
 
-Intelligence is implemented through high-dimensional continuous dynamics operating in phase space with effective dimensionality $D_{\text{eff}} \sim 10^3$--$10^4$. This is not one implementation among many—it is the only thermodynamically viable way to track and control complex environments in real time.
+Intelligent behavior arises from high-dimensional continuous dynamics operating in phase space with effective dimensionality $D_{\text{eff}} \sim 10^3$--$10^4$. This is not one implementation among many—it is the only thermodynamically viable way to track and control complex environments in real time.
 
 What does high-dimensional continuous computation enable?
 
@@ -996,7 +992,7 @@ Neuromorphic systems (Loihi, SpiNNaker) occupy intermediate regime with event-dr
 
 \subsection{Relationship to Existing Frameworks}
 
-\textbf{Integrated Information Theory:} Posits consciousness scales with integrated information $\Phi$. Heuristically:
+\textbf{Integrated Information Theory:} Posits consciousness scales with integrated information $\Phi$ \cite{tononi2004}. Recent work in \textit{BioSystems} has explored the relationship between consciousness and dimensionality from multiple perspectives: Ivancevic \cite{ivancevic2020} developed a neuro-geometric model linking consciousness to high-dimensional manifold dynamics, Beneventano \cite{beneventano2024} examined the physical information approach to conscious experience, and Pepperell \cite{pepperell2025} proposed a non-reductive naturalist account grounded in complex systems. Heuristically:
 \begin{equation}
 \Phi \propto D_{\text{eff}} \cdot r^2
 \end{equation}
@@ -1024,7 +1020,7 @@ The barrier: accepting that the most powerful computations may resist inspection
 
 \section{Conclusion}
 
-We establish intelligence as the capacity to maintain high-dimensional coherent dynamics that evolve collision-free until sparse behavioral outputs. When $D_{\text{eff}} \gg D_{\text{crit}}$, systems solve computationally intractable problems through high-dimensional exploration in constraint geometry, paying thermodynamic costs only at discrete decision points rather than at every computational step.
+We establish that intelligence arises from the capacity to maintain high-dimensional coherent dynamics that evolve collision-free until sparse behavioral outputs. When $D_{\text{eff}} \gg D_{\text{crit}}$, systems solve computationally intractable problems through high-dimensional exploration in constraint geometry, paying thermodynamic costs only at discrete decision points rather than at every computational step.
 
 \textbf{Key results:}
 
@@ -1140,6 +1136,15 @@ Friston, K. (2010). The free-energy principle: a unified brain theory? \textit{N
 
 \bibitem{tononi2004}
 Tononi, G. (2004). An information integration theory of consciousness. \textit{BMC Neuroscience}, 5, 42. \href{https://doi.org/10.1186/1471-2202-5-42}{doi:10.1186/1471-2202-5-42}
+
+\bibitem{ivancevic2020}
+Ivancevic, V., Ivancevic, T. (2020). A neuro-geometric model for consciousness based on manifold learning. \textit{BioSystems}, 191--192, 104151. \href{https://doi.org/10.1016/j.biosystems.2020.104151}{doi:10.1016/j.biosystems.2020.104151}
+
+\bibitem{beneventano2024}
+Beneventano, P., Galofaro, F., Sgarro, A. (2024). The physical information approach to the scientific study of consciousness. \textit{BioSystems}, 243, 105346. \href{https://doi.org/10.1016/j.biosystems.2024.105346}{doi:10.1016/j.biosystems.2024.105346}
+
+\bibitem{pepperell2025}
+Pepperell, R. (2025). Non-reductive naturalism about consciousness. \textit{BioSystems}, 247, 105677. \href{https://doi.org/10.1016/j.biosystems.2025.105677}{doi:10.1016/j.biosystems.2025.105677}
 
 \bibitem{laughlin1998}
 Laughlin, S.B., de Ruyter van Steveninck, R.R., Anderson, J.C. (1998). The metabolic cost of neural information. \textit{Nature Neuroscience}, 1, 36--41. \href{https://doi.org/10.1038/236}{doi:10.1038/236}

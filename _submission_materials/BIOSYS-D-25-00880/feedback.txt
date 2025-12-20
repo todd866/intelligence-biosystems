@@ -1,0 +1,72 @@
+Manuscript Number: BIOSYS-D-25-00880 
+
+Intelligence as High-Dimensional Coherence: Energy Landscapes, Phase Space, and the Physical Basis of Computation 
+
+Dear Mr Todd,  
+
+Thank you for submitting your manuscript to BioSystems. 
+
+We have completed our evaluation of your manuscript. The reviewers recommend reconsideration of your manuscript following its revision and modification. I invite you to resubmit your manuscript after addressing the comments below. Please resubmit your revised manuscript by Jan 07, 2026. 
+
+When revising your manuscript, please consider all issues mentioned in the reviewers' comments carefully: please outline every change made in response to their comments and provide suitable rebuttals for any comments not addressed. Please note that your revised submission may need to be re-reviewed.  
+
+To submit your revised manuscript, please log in as an author at https://www.editorialmanager.com/biosys/, and navigate to the "Submissions Needing Revision" folder under the Author Main Menu.
+
+Research Elements (optional)
+This journal encourages you to share research objects - including your raw data, methods, protocols, software, hardware and more – which support your original research article in a Research Elements journal. Research Elements are open access, multidisciplinary, peer-reviewed journals which make the objects associated with your research more discoverable, trustworthy and promote replicability and reproducibility. As open access journals, there may be an Article Publishing Charge if your paper is accepted for publication. Find out more about the Research Elements journals at https://www.elsevier.com/authors/tools-and-resources/research-elements-journals?dgcid=ec_em_research_elements_email.
+
+
+BioSystems values your contribution and I look forward to receiving your revised manuscript. 
+
+Kind regards,  
+
+Abir Igamberdiev 
+
+Editor-in-Chief 
+
+BioSystems 
+
+Editor and Reviewer comments:  
+
+Reviewer #1: 1. The manuscript's abstract and introduction are conceptually rich but occasionally dense, with long sentences that obscure the logical flow. For example, the phrase "thermodynamically admissible yet temporally unresolvable regimes" could be clarified by briefly stating what makes a regime "admissible" in this context. Consider citing https://doi.org/10.58496/adsa/2023/009 to frame this clarification within broader discussions of interpretability and trustworthiness in complex AI systems, which similarly emphasize the need for accessible conceptual language.
+
+2. In Section 2.1, the explanation of the temporal uncertainty relation would benefit from clearer transitions between physical assumptions and derived implications. The study titled *"Deep Transfer Learning Model for EEG Biometric Decoding"* discusses how signal interpretation depends on explicitly linking measurement constraints to observable outcomes—an approach that could guide the restructuring of your derivation for better readability and logical continuity.
+
+3. The methodology—specifically, the decision to avoid explicit simulation or pseudocode—is philosophically consistent with the paper's thesis that sub-Landauer dynamics are unmeasurable. However, the paper would be strengthened by a clearer justification of how the proposed "feasibility bounds" were derived and validated. Consider citing https://doi.org/10.58496/bjai/2025/012, which outlines a modular and metacognitive framework for self-organizing systems; this reference supports methodological rigor in contexts where direct measurement is infeasible.
+
+4. The paper's originality is notable: it reframes intelligence as a thermodynamic phenomenon constrained by measurement limits rather than algorithmic complexity. The study titled *"Artificial Intelligence of Things: A Review"* provides a useful contrast, as it situates intelligence within physically instantiated, sensor-rich systems. Drawing this comparison could help articulate how your framework extends beyond existing energy-information paradigms.
+
+5. The argument occasionally shifts between physical formalism and philosophical inference without clear signposting. Adding brief summary sentences at the end of key subsections (e.g., after equations 1 and 2) would help readers track the conceptual progression from measurement limits to coherence-based computation.
+
+6. The discussion of "dimensional collapse" would benefit from a schematic or conceptual diagram summarizing how unmeasurable dynamics transition into measurable outputs. This visual clarification would make the proposed mechanism more accessible to readers outside theoretical physics.
+
+7. The literature context could be expanded slightly in the introduction to situate the work within thermodynamic computation or quantum measurement theory, even if only conceptually. Doing so would better highlight how the proposed "unmeasurable substrate" differs from prior models of sub-threshold computation.
+
+8. Finally, the conclusion could more explicitly connect the theoretical predictions to empirical observables. Suggesting specific measurable macroscopic signatures (e.g., coherence decay rates or entropy production patterns) would make the paper's testability claim more concrete and compelling.
+
+
+Reviewer #2: This manuscript presents a bold and unconventional theoretical framework proposing that intelligence arises from the maintenance of high-dimensional coherence within sub-Landauer thermodynamic regimes, where computation occurs below measurable thresholds. It unites ideas from thermodynamics, information theory, and nonlinear dynamics to argue that biological systems exploit unmeasurable, continuous relaxation processes to solve intractable problems such as vector addition system reachability.
+
+The work is conceptually rich and elegantly written, but its claims are largely speculative and lack quantitative or empirical substantiation. The physical plausibility of sustained sub-Landauer computation and the proposed mechanisms for "dimensional collapse" require clearer experimental grounding. While the manuscript offers stimulating and original philosophical insight into the physical basis of intelligence, it would benefit from tighter linkage to measurable biological or computational phenomena to ensure scientific testability and relevance. Hence the evaluation result of major revision.
+
+To strengthen it, the author could introduce at least one simple numerical or simulation model illustrating "dimensional collapse" or "continuous relaxation," identify measurable biological proxies (e.g., neural coherence times, stochastic resonance thresholds) for proposed mechanisms, and more clearly separate physical principles from conjecture. The thermodynamic arguments about sub-Landauer computation require precise energy definitions, and the consciousness section could be reframed as speculative. Clearer structure, integration of contemporary computational neuroscience literature, and a more operational conclusion emphasizing testable predictions would greatly enhance scientific credibility and readability.
+  
+
+
+
+More information and support 
+
+FAQ: How do I revise my submission in Editorial Manager?
+
+https://service.elsevier.com/app/answers/detail/a_id/28463/supporthub/publishing/
+
+FAQ: How can I reset a forgotten password?
+https://service.elsevier.com/app/answers/detail/a_id/28452/supporthub/publishing/
+For further assistance, please visit our customer service site: https://service.elsevier.com/app/home/supporthub/publishing/
+Here you can search for solutions on a range of topics, find answers to frequently asked questions, and learn more about Editorial Manager via interactive tutorials. You can also talk 24/7 to our customer support team by phone and 24/7 by live chat and email
+
+At Elsevier, we want to help all our authors to stay safe when publishing. Please be aware of fraudulent messages requesting money in return for the publication of your paper. If you are publishing open access with Elsevier, bear in mind that we will never request payment before the paper has been accepted. We have prepared some guidelines (https://www.elsevier.com/connect/authors-update/seven-top-tips-on-stopping-apc-scams ) that you may find helpful, including a short video on Identifying fake acceptance letters (https://www.youtube.com/watch?v=o5l8thD9XtE ). Please remember that you can contact Elsevier s Researcher Support team (https://service.elsevier.com/app/home/supporthub/publishing/) at any time if you have questions about your manuscript, and you can log into Editorial Manager to check the status of your manuscript (https://service.elsevier.com/app/answers/detail/a_id/29155/c/10530/supporthub/publishing/kw/status/).
+
+#AU_BIOSYS#
+
+To ensure this email reaches the intended recipient, please do not delete the above code

@@ -1,0 +1,77 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\signature{Ian Todd\\Sydney Medical School\\University of Sydney}
+\address{Ian Todd\\Sydney Medical School\\University of Sydney\\Sydney, NSW, Australia\\itod2305@uni.sydney.edu.au}
+
+\begin{document}
+
+\begin{letter}{Dr. Abir Igamberdiev\\Editor-in-Chief\\BioSystems}
+
+\opening{Dear Dr. Igamberdiev,}
+
+I am pleased to resubmit my revised manuscript titled ``Intelligence as High-Dimensional Coherence: The Observable Dimensionality Bound and Computational Tractability'' (BIOSYS-D-25-00880) for reconsideration in \textit{BioSystems}.
+
+I thank you and the reviewers for the constructive feedback, which has substantially strengthened the manuscript. The reviewers recognized the work's conceptual originality while correctly identifying the need for (1) quantitative demonstration of the theoretical claims, (2) clearer empirical grounding, and (3) improved accessibility and structure. I have addressed all major concerns through extensive revisions.
+
+\textbf{Major Changes in Response to Reviewer Feedback:}
+
+\begin{enumerate}
+
+\item \textbf{Numerical simulations added} (Reviewer 2's primary concern): I now provide four complete Python simulation codes demonstrating:
+\begin{itemize}
+\item Collision-free computation in high-dimensional continuous systems vs. collision-heavy discrete enumeration
+\item VAS scaling showing linear collision count ($\sim$4$n$) for discrete vs. zero for continuous across dimensions $n = 2$ to $100$
+\item Spontaneous code formation through Hebbian pathway strengthening
+\item Quantitative comparison validating the dimensional tracking bound
+\end{itemize}
+All code is provided as supplementary material with full documentation and reproducibility guarantees.
+
+\item \textbf{Empirical grounding and testable predictions} (Reviewer 2): I have:
+\begin{itemize}
+\item Added concrete numerical example using MEG parcellation data showing cortex operates at $D_{\text{eff}}/D_{\text{crit}} \sim 10^2$ (Section 3.2)
+\item Derived observable dimensionality bound $D_{\text{crit}} = C_{\text{obs}}\tau_e/(\alpha h_\varepsilon)$ with explicit parameter values
+\item Provided specific predictions for coherence times, power scaling, and dimensional collapse signatures (Section 8)
+\item Connected to measurable biological proxies including neural oscillations, MEG coherence, and metabolic efficiency
+\end{itemize}
+
+\item \textbf{Structural improvements and accessibility} (Reviewer 1):
+\begin{itemize}
+\item Reorganized abstract and introduction for clearer logical flow
+\item Added explicit ``Structure and thesis: What's new'' section distinguishing my contributions from existing frameworks
+\item Included summary sentences after key derivations (Theorems 1 \& 2)
+\item Clarified physical assumptions vs. derived implications throughout
+\item Trimmed overall length while expanding critical explanations
+\end{itemize}
+
+\item \textbf{Methodological rigor and clarity}:
+\begin{itemize}
+\item Made irreducibility assumptions explicit in Theorem 1
+\item Added ``Simulation Limitations and Assumptions'' subsection
+\item Distinguished measurable observables from theoretical constructs
+\item Connected framework to Ashby's law of requisite variety, morphological computation, and reservoir computing
+\item Expanded discussion of compressible vs. irreducible complexity
+\end{itemize}
+
+\end{enumerate}
+
+\textbf{Title and Framing Changes:}
+
+I have retitled the manuscript to emphasize the \textit{Observable Dimensionality Bound} as the central quantitative contribution. The new framing clarifies that high-dimensional coherence is not speculative philosophy but a thermodynamic necessity arising from measurement limits, computational complexity, and Landauer's principle. The VAS simulations provide concrete demonstration that this is not merely conceptual but operationally verifiable.
+
+\textbf{Preservation of Core Thesis:}
+
+While I have significantly strengthened empirical grounding and quantitative support, the manuscript retains its theoretical ambition: explaining \textit{why} biological intelligence must be high-dimensional as a consequence of thermodynamics and information theory, not merely observing that it is. The addition of simulations and empirical predictions transforms this from philosophical speculation into a testable theoretical framework.
+
+I believe the revised manuscript now meets \textit{BioSystems}' standards for scientific rigor while preserving the conceptual originality that reviewers recognized. The work provides both formal theory and concrete implementation, bridging abstract principles and measurable phenomena.
+
+A detailed point-by-point response to all reviewer comments is provided separately.
+
+Thank you for the opportunity to revise and resubmit this work. I look forward to your decision.
+
+\closing{Sincerely,}
+
+\end{letter}
+
+\end{document}
