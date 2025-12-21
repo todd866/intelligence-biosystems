@@ -1,12 +1,12 @@
 # Intelligence as High-Dimensional Coherence
 
 **Repository:** todd866/intelligence-biosystems
-**Paper status:** Under review at *BioSystems* (BIOSYS-D-25-00880R1)
+**Paper status:** Under review at *BioSystems* (R2 minor revision, BIOSYS-D-25-00880R2)
 **This repo:** Post-submission validation + revisions (transparent, versioned)
 
 ## One-line thesis
 
-Intelligence is the capacity to track high-dimensional target states through low-bandwidth observation channels; continuous high-dimensional substrates achieve this efficiently where discrete algorithms fail.
+Intelligence arises from the capacity to track high-dimensional target states through low-bandwidth observation channels; continuous high-dimensional substrates achieve this efficiently where discrete algorithms fail.
 
 ## Core results
 
@@ -45,33 +45,32 @@ Cortical dynamics exceed observable dimensionality by two orders of magnitude.
 
 ```
 3_intelligence/
-├── intelligence.tex              # Development version
+├── intelligence.tex              # Current manuscript (R2)
 ├── intelligence.pdf              # Compiled output
-├── intelligence_SUBMITTED.tex    # Frozen original submission (DO NOT EDIT)
-├── revisions/                    # R1 materials
-│   ├── intelligence_r1.tex       # Revised manuscript
-│   └── intelligence_r1.pdf       # Compiled revision
-├── code/                         # Simulation suite
-│   ├── figure1_discrete_vs_continuous.py
-│   ├── vas_collision_comparison.py
-│   ├── vas_scaling_simulation.py
-│   └── code_formation_simulation.py
-├── figures/                      # Generated plots
-└── build_clean.sh                # LaTeX build script
+├── code/
+│   ├── vas_scaling_simulation.py # Main simulation: collision scaling with dimension
+│   ├── figure1_regenerate.py     # Generates Figure 1
+│   └── _old/                     # Archived earlier scripts
+├── figures/
+│   ├── intelligence_figure1.png  # Main figure
+│   └── intelligence_figure1.pdf
+├── _submission_materials/
+│   ├── cover_letter_r2.tex/pdf   # R2 cover letter
+│   ├── response_to_editor_r2.tex/pdf  # Point-by-point response
+│   └── R1/                       # Archived R1 materials
+└── _archive/                     # Old submissions, revisions, commentary
 ```
 
 ## Simulation validation
 
-The `code/` directory contains four simulation scripts demonstrating the collision vs relaxation mechanism:
+The `code/` directory contains simulation scripts demonstrating the collision vs relaxation mechanism:
 
 | Script | Purpose |
 |--------|---------|
 | `vas_scaling_simulation.py` | Tests collision count scaling with dimension D |
-| `vas_collision_comparison.py` | Direct comparison: discrete enumeration vs continuous relaxation |
-| `figure1_discrete_vs_continuous.py` | Generates Figure 1 (collision-heavy vs collision-free dynamics) |
-| `code_formation_simulation.py` | Related code-formation dynamics |
+| `figure1_regenerate.py` | Generates Figure 1 (VAS trajectories, scaling, code formation) |
 
-**Key result:** Discrete state updates incur O(k^D) collision costs; continuous relaxation converges without stepwise enumeration.
+**Key result:** Discrete state updates incur O(n) collision costs; continuous relaxation converges with 0 collisions during evolution (1 at final readout).
 
 ## What we are and aren't claiming
 
@@ -84,8 +83,6 @@ The `code/` directory contains four simulation scripts demonstrating the collisi
 ## Build
 
 ```bash
-./build_clean.sh
-# or manually:
 pdflatex intelligence.tex && pdflatex intelligence.tex
 ```
 
