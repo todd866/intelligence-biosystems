@@ -140,7 +140,11 @@ class ContinuousVAS:
         self.coupling = 2.0      # Inter-oscillator coupling
         self.noise_strength = 0.03  # Thermal noise
 
-        self.collision_count = 0  # Always zero for continuous!
+        # Collision counting convention (matches Table 2 in manuscript):
+        # - During evolution: 0 collisions (collision-free dynamics)
+        # - Including final readout: 1 collision (dimensional collapse at measurement)
+        self.collisions_during_evolution = 0
+        self.collisions_including_readout = 1  # Final readout counts as one collision
         self.trajectory = []
 
     def get_state(self):
