@@ -163,7 +163,7 @@ This paper demonstrates that collision-free computation is not merely a power-sa
 
 We establish this through vector addition systems (VAS)---problems proven to be Ackermann-complete via discrete enumeration yet efficiently solvable by biological systems. The resolution: collision-free high-dimensional exploration that escapes local minima trapping discrete approaches.
 
-\textbf{Structure and thesis: What's new.} Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost \cite{landauer1961}; Ashby's requisite variety gives a qualitative constraint on control \cite{ashby1956}; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete \cite{leroux2013}; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency \cite{friston2010,beggs2003}. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show \textit{why} exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:
+\textbf{Structure and thesis: What's new.} Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost \cite{landauer1961}; Ashby's requisite variety gives a qualitative constraint on control \cite{ashby1956}; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete \cite{leroux2013}; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency \cite{friston2010,beggs2003,enel2016reservoir}. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show \textit{why} exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:
 \begin{enumerate}
 \item \textbf{Observable Dimensionality Bound}: A quantitative threshold $D_{\text{crit}} = C_{\text{obs}}\tau_e / (\alpha h_\varepsilon^{\text{track}})$ tying measurement capacity, timescale, and per-mode tracking cost into a single criterion for timing-inaccessibility.
 \item \textbf{Measurement-Theoretic Tracking Bound (Theorem 1)}: Proof that external observers can track systems only when $D_{\text{target}} \le D_{\text{crit}} = C_{\text{obs}}\tau_e/(\alpha h_\varepsilon^{\text{track}})$; beyond this threshold, insufficient measurement bandwidth renders the system observationally inaccessible, quantifying Ashby's variety principle through measurement physics.
@@ -406,7 +406,7 @@ where $r \in [0,1]$ measures global synchronization.
 
 \textbf{The key mechanism:} Oscillators coupled through $K_{ij}$ create a time-varying topology—the pattern of phase relationships $\{\phi_i - \phi_j\}$ defines a geometric structure that reconfigures continuously. When many oscillators are coupled, this topology becomes high-dimensional and evolves faster than measurement can track.
 
-Effective dimensionality $D_{\text{eff}}$ quantifies active degrees of freedom, typically estimated via participation ratio:
+Effective dimensionality $D_{\text{eff}}$ quantifies active degrees of freedom. The concept of dimensionality as an intrinsic geometric property of dynamical systems was formalized by Grassberger and Procaccia \cite{grassberger1983} through correlation dimension, and by Takens \cite{takens1981} through embedding theorems. Critically, Eckmann and Ruelle \cite{eckmann1985} established that dimension (geometry of the attractor) and entropy (statistics over the attractor) are independent characteristics---a distinction central to our framework. For practical estimation, we use the participation ratio \cite{gao2017}:
 \begin{equation}
 D_{\text{eff}} = \frac{(\text{Tr}[C])^2}{\text{Tr}[C^2]}
 \end{equation}
@@ -1243,6 +1243,9 @@ Milo, R., Phillips, R. (2010). \textit{Cell Biology by the Numbers}. Garland Sci
 \bibitem{beggs2003}
 Beggs, J.M., Plenz, D. (2003). Neuronal avalanches in neocortical circuits. \textit{Journal of Neuroscience}, 23(35), 11167-11177. \href{https://doi.org/10.1523/JNEUROSCI.23-35-11167.2003}{doi:10.1523/JNEUROSCI.23-35-11167.2003}
 
+\bibitem{enel2016reservoir}
+Enel, P., Procyk, E., Quilodran, R., Dominey, P.F. (2016). Reservoir computing properties of neural dynamics in prefrontal cortex. \textit{PLOS Computational Biology}, 12(6), e1004967. \href{https://doi.org/10.1371/journal.pcbi.1004967}{doi:10.1371/journal.pcbi.1004967}
+
 \bibitem{chialvo2010}
 Chialvo, D.R. (2010). Emergent complex neural dynamics. \textit{Nature Physics}, 6(10), 744-750. \href{https://doi.org/10.1038/nphys1803}{doi:10.1038/nphys1803}
 
@@ -1266,6 +1269,15 @@ Leroux, J. (2013). Vector addition system reachability problem: A short self-con
 
 \bibitem{melkikh2025}
 Melkikh, A.V. (2025). Humans and microbes: A systems theory perspective on coevolution. \textit{BioSystems}, 105639. \href{https://doi.org/10.1016/j.biosystems.2025.105639}{doi:10.1016/j.biosystems.2025.105639}
+
+\bibitem{grassberger1983}
+Grassberger, P., Procaccia, I. (1983). Measuring the strangeness of strange attractors. \textit{Physica D: Nonlinear Phenomena}, 9(1--2), 189--208. \href{https://doi.org/10.1016/0167-2789(83)90298-1}{doi:10.1016/0167-2789(83)90298-1}
+
+\bibitem{takens1981}
+Takens, F. (1981). Detecting strange attractors in turbulence. In \textit{Dynamical Systems and Turbulence, Warwick 1980}, Lecture Notes in Mathematics, vol. 898, pp. 366--381. Springer. \href{https://doi.org/10.1007/BFb0091924}{doi:10.1007/BFb0091924}
+
+\bibitem{eckmann1985}
+Eckmann, J.-P., Ruelle, D. (1985). Ergodic theory of chaos and strange attractors. \textit{Reviews of Modern Physics}, 57(3), 617--656. \href{https://doi.org/10.1103/RevModPhys.57.617}{doi:10.1103/RevModPhys.57.617}
 
 \end{thebibliography}
 
