@@ -514,6 +514,8 @@ Therefore:
 \frac{D_{\text{eff}}^{\text{MEG}}}{D_{\text{crit}}} \in [54, 540] \approx 10^{2}
 \end{equation}
 
+\textbf{Sensitivity analysis:} The core inequality $D_{\text{eff}} \gg D_{\text{crit}}$ is robust to parameter choices. If $h_\varepsilon^{\text{track}}$ were 6--10 bits/mode (finer phase bins, more conservative), $D_{\text{crit}}$ drops to $\sim$0.2--2 modes, \textit{strengthening} the inequality. If $C_{\text{commit}}$ is 10$\times$ larger (generous estimate of behavioral bandwidth), $D_{\text{crit}}$ rises to $\sim$6--56 modes---still $\ll D_{\text{eff}}^{\text{MEG}} \approx 300$. The qualitative conclusion (cortex operates far above tracking threshold) holds across reasonable parameter ranges.
+
 Even at MEG-accessible scales, cortex operates $\sim 10^{2}\times$ above the observability threshold. At finer scales (substrate $D_{\text{eff}} \sim 10^{3}$--$10^{4}$), the ratio reaches $10^{3}$--$10^{4}$. This two-scale estimate separates sensor-limited dimensionality ($D_{\text{eff}}^{\text{MEG}}$) from substrate-level dimensionality within parcels (LFP/spiking), avoiding conflation of measurement bandwidth with intrinsic degrees of freedom.
 
 \textbf{Clarification on dimensional hierarchy.} Our estimates refer to \textit{specific subsystems}, not total brain dimensionality:
@@ -649,21 +651,21 @@ The continuous trajectory shows smooth exponential convergence through phase int
 
 \begin{table}[h]
 \centering
-\caption{High-dimensional continuous exploration scales collision-free across all tested dimensions ($n=2$ to $100$). The system explores constraint geometry in parallel phase space, paying Landauer cost only at measurement collapse. Values show mean $\pm$ std across 20 random problem instances per dimension (varied start/target positions). For comparison: discrete enumeration on the same problems requires O($n$) collision events, each paying Landauer cost $k_B T \ln 2$. Note: This compares collision costs only; continuous dynamics have maintenance costs (thermal coupling functionally expands dimensionality via stochastic resonance) that scale with substrate size, not decision rate. All results reproducible from ESM code.}
+\caption{High-dimensional continuous exploration scales collision-free across all tested dimensions ($n=2$ to $100$). The system explores constraint geometry in parallel phase space, paying Landauer cost only at measurement collapse. Values show mean $\pm$ std across 20 random problem instances per dimension (varied start/target positions). \textbf{Collision counting convention:} ``Discrete collisions'' counts \textit{forced discrete commitments under standard architectures}---each per-dimension state update treated as a logically irreversible write. This is a conservative proxy for Landauer cost; reversible implementations would shift where costs land but not eliminate them (see §\ref{sec:vas} note on reversible computing). Both methods converge successfully on all trials (100\% success rate). All results reproducible from ESM code.}
 \label{tab:vas_scaling}
-\begin{tabular}{cccc}
+\begin{tabular}{ccccc}
 \toprule
-Dimension $n$ & Discrete Collisions & Continuous Collisions & Cost Ratio \\
+Dimension $n$ & Discrete Collisions & Continuous Collisions & Cost Ratio & Success \\
 \midrule
-2   & $8.2 \pm 2.4$    & 1 & $\sim$8$\times$ \\
-5   & $19.2 \pm 3.7$   & 1 & $\sim$19$\times$ \\
-10  & $39.3 \pm 6.2$   & 1 & $\sim$39$\times$ \\
-20  & $79.3 \pm 7.2$   & 1 & $\sim$79$\times$ \\
-30  & $119.5 \pm 6.3$  & 1 & $\sim$120$\times$ \\
-50  & $202.3 \pm 11.4$ & 1 & $\sim$202$\times$ \\
-100 & $397.4 \pm 11.9$ & 1 & $\sim$397$\times$ \\
+2   & $8.2 \pm 2.4$    & 1 & $\sim$8$\times$ & 100\% \\
+5   & $19.2 \pm 3.7$   & 1 & $\sim$19$\times$ & 100\% \\
+10  & $39.3 \pm 6.2$   & 1 & $\sim$39$\times$ & 100\% \\
+20  & $79.3 \pm 7.2$   & 1 & $\sim$79$\times$ & 100\% \\
+30  & $119.5 \pm 6.3$  & 1 & $\sim$120$\times$ & 100\% \\
+50  & $202.3 \pm 11.4$ & 1 & $\sim$202$\times$ & 100\% \\
+100 & $397.4 \pm 11.9$ & 1 & $\sim$397$\times$ & 100\% \\
 \bottomrule
-\multicolumn{4}{l}{\small Scaling: Discrete $\approx 3.95n + 0.6$ (linear fit $R^2 = 0.9996$), Continuous $\equiv 1$ (final readout only)}
+\multicolumn{5}{l}{\small Scaling: Discrete $\approx 3.95n + 0.6$ (linear fit $R^2 = 0.9996$), Continuous $\equiv 1$ (final readout only)}
 \end{tabular}
 \end{table}
 
