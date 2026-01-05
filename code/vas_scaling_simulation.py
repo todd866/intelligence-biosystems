@@ -15,7 +15,7 @@ Each dimension tested with 20 random problem instances.
 
 Results demonstrate:
 1. Discrete collision count scales linearly: ~4n
-2. Continuous collisions remain zero at all scales
+2. Continuous collisions = 1 at all scales (readout only; 0 during exploration)
 3. Thermodynamic cost ratio increases linearly with dimension
 """
 
