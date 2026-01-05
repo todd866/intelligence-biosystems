@@ -166,7 +166,7 @@ where $\eta \in (0,1]$ is recording efficiency \cite{landauer1961}.\footnote{Lan
 \begin{itemize}
 \item \textbf{Digital clocked systems:} Enforce $H_{\text{reg}} \approx f_c \times (\text{words per cycle})$ where $f_c \sim$ GHz. Every mode undergoes collision every cycle. Power dissipation is continuous and high.
 
-\item \textbf{Biological systems:} Collide sparsely at behavioral output only. Internal constraint geometry evolves in high-dimensional phase space ($h_\varepsilon^{\text{prod}} = 0$, no entropy production), but behavioral collisions occur at $H_{\text{reg}} \sim 10^2$ bits/s. Power dissipation is minimal.
+\item \textbf{Biological systems:} Collide sparsely at behavioral output only. Internal constraint geometry evolves in high-dimensional phase space ($h_\varepsilon^{\text{prod}} = 0$: no net information creation via irreversible registration), but behavioral collisions occur at $H_{\text{reg}} \sim 10^2$ bits/s. Power dissipation is minimal.
 \end{itemize}
 
 \textbf{Measured power gap:} Human cortex (~20 W) vs. 8-GPU compute node (8–12 kW, e.g., 8$\times$ H100 DGX system ~10 kW) \cite{nvidiah100} operating at comparable effective dynamical richness shows \textbf{two to three orders of magnitude} difference. (Note: data center total power includes facility overhead—Power Usage Effectiveness (PUE) typically ~1.5--2$\times$ for cooling, power distribution; chip-level comparison remains $\sim$$10^2$--$10^3\times$ gap.) The irreducible Landauer collision floor at $H_{\text{reg}} \sim 10^2$ bits/s is $P_{\text{Landauer}} = k_B T \ln 2 \cdot H_{\text{reg}} \approx 3 \times 10^{-19}$ W at $T = 310$ K---negligible. Observed ~20 W is overwhelmingly \textit{metabolic maintenance} (ion pumps, vesicle cycling, synaptic homeostasis), not information collisions \cite{attwell2001}. The efficiency advantage arises from sparse collisions ($H_{\text{reg}} \ll H_{\text{dyn}}$) versus enforced clocked registration ($H_{\text{reg}} \approx f_c$).
@@ -428,7 +428,7 @@ This is the key to biological computation: \textbf{dynamics can carry more infor
 
 \subsection{Constraint Geometry and Information Emergence}
 
-\textbf{Constraint geometry} refers to high-dimensional dynamical structure evolving with zero entropy production ($h_\varepsilon^{\text{prod}} = 0$). Between measurement events, the system maintains precise geometric relationships (phase correlations, velocity fields, concentration gradients) coupled through physical constraints. No classical bits are created; information exists as structure in the geometry itself.
+\textbf{Constraint geometry} refers to high-dimensional dynamical structure evolving without irreversible bit registration ($h_\varepsilon^{\text{prod}} = 0$). Between measurement events, the system maintains precise geometric relationships (phase correlations, velocity fields, concentration gradients) coupled through physical constraints. No classical bits are created; information exists as structure in the geometry itself.
 
 The paradigmatic example: Kuramoto oscillators with $N$ coupled phases $\phi_i$:
 \begin{equation}
@@ -740,7 +740,7 @@ During expansion, effective dimensionality $D_{\text{eff}}$ grows as coherent ev
 
 \textbf{Characteristics:}
 \begin{itemize}
-\item $h_\varepsilon^{\text{prod}} = 0$: No classical bits created, zero entropy production
+\item $h_\varepsilon^{\text{prod}} = 0$: No classical bits created via irreversible registration
 \item $D_{\text{eff}} \gg D_{\text{crit}}$: Timing-inaccessible regime
 \item $H_{\text{dyn}} \gg C_{\text{commit}}$: Constraint geometry reconfigures faster than measurement can track
 \item Exploration of solution manifolds through phase coherence
@@ -780,7 +780,7 @@ Energy dissipation (Landauer bound):
 E_{\text{dissipated}} \geq k_B T \ln 2 \cdot \Delta I
 \end{equation}
 
-This is paid only at collapse events. Between collapses, the system evolves in $h_\varepsilon^{\text{prod}} = 0$ constraint geometry with no dissipation.
+This is paid only at collapse events. Between collapses, the system evolves in $h_\varepsilon^{\text{prod}} = 0$ constraint geometry---no irreversible bit registration, though metabolic maintenance continues.
 
 \subsection{Biological Implementation: Sparse Collisions}
 
@@ -1082,7 +1082,7 @@ We establish that intelligence arises from the defense of nonergodic dynamics th
 
 The deep principle: high-dimensional nonergodic systems use their dimensional inaccessibility as armor. The same structure that makes them computationally powerful makes them untrackable from outside---and untrackability is a form of autonomy. Within the nonergodic region, constraints encode in geometric relationships that evolve without forced registration; at the boundary, sparse outputs defend the conditions for continued existence. This enables both power efficiency (Landauer costs only at behavioral events) and computational tractability (constrained exploration rather than exhaustive enumeration).
 
-Intelligence operates at the boundary between continuous internal dynamics and discrete external commitments---maintaining constraint geometry with $h_\varepsilon^{\text{prod}} = 0$ (no entropy production during exploration), collapsing to discrete outputs only when behavioral demands require it. The organism is a nonergodic island, and its intelligent outputs are the walls it builds to stay that way.
+Intelligence operates at the boundary between continuous internal dynamics and discrete external commitments---maintaining constraint geometry with $h_\varepsilon^{\text{prod}} = 0$ (no irreversible bit registration during exploration), collapsing to discrete outputs only when behavioral demands require it. The organism is a nonergodic island, and its intelligent outputs are the walls it builds to stay that way.
 
 This suggests future computing architectures: systems that maintain high-dimensional coherent dynamics between sparse readout events, exploiting nonergodic confinement rather than fighting it. The most powerful computations may be those that resist step-by-step inspection, operating through continuous geometry rather than discrete logic. Systems operating in timing-inaccessible regimes exhibit structured unpredictability---coherence constraints make behavior non-arbitrary while dimensional opacity makes the next act unpredictable. This bears directly on questions of agency: autonomy may require opacity, and opacity emerges naturally from high-dimensional nonergodic dynamics.
 
