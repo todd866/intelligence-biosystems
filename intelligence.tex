@@ -44,6 +44,8 @@ Intelligence arises from the defense of nonergodic dynamics through high-dimensi
 \noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
 \textbf{Operational nonergodicity.} We use ``nonergodic'' in an \textit{operational} sense: a system is nonergodic over timescale $\tau_e$ at resolution $\varepsilon$ if it fails to mix over its accessible state-space region within $\tau_e$. Many high-dimensional systems may be ergodic under their invariant measure in the infinite-time limit, but their mixing times exceed any biologically relevant horizon by astronomical factors. It is this \textit{practical} nonergodicity---metastability on organism timescales---that creates memory, constraint, and structured trajectories.}}
 
+\textit{Important clarification:} High dimensionality alone does not guarantee slow mixing---some high-D systems (e.g., certain random walks, well-mixed fluids) have mixing times polynomial in dimension. Our argument rests on three separable components: (i) \textit{state-space volume} grows exponentially with $D$ at fixed resolution $\varepsilon$, so uniform exploration becomes impossible; (ii) \textit{structured dynamics}---biological systems exhibit energy barriers, constraint manifolds, and conservation laws that create metastable regions; (iii) \textit{timescale separation}---mixing times to stationary measures exceed biological relevance ($\tau_e \sim$ seconds to hours) by factors of $10^{10}$ or more. It is the combination of these three factors, not dimension alone, that creates operational nonergodicity.
+
 Nonergodicity creates structure. A system confined to a vanishingly small region of its state space has:
 \begin{itemize}
 \item \textbf{Memory}: the current region reflects the trajectory that led there
@@ -62,7 +64,7 @@ Within nonergodic regions, high entropy flow enables rich dynamics. The system i
 
 The third point is crucial. Behavioral outputs are not merely ``responses'' or ``tracking signals''---they are free-energy-minimizing interventions that protect internal structure. The organism acts to maintain the viability of its nonergodic dynamics \cite{gao2017theory}. Recent work on cell phenotype transitions provides complementary evidence: Huang et al.~\cite{huang2025scim} embed single-cell gene expression profiles as Gaussian distributions on a Fisher information manifold, finding that low Ricci curvature marks critical transitions while high information velocity coincides with low curvature---geometry guides dynamics on phenotype manifolds precisely where dimensional collapse becomes behaviorally relevant.
 
-\textbf{The Observable Dimensionality Bound as armor.} We formalize this through a measurement-theoretic bound: external observers cannot track systems whose effective dimensionality exceeds $D_{\text{crit}} = C_{\text{commit}}\tau_e/(\alpha h_\varepsilon^{\text{track}})$. Beyond this threshold, systems become \textit{observationally inaccessible}---not merely hard to compute, but impossible to track with finite bandwidth. This opacity is functional. It protects internal dynamics from external interference. The high-dimensional structure that makes a system intelligent is the same structure that makes it untrackable---and untrackability is a form of autonomy.
+\textbf{The Observable Dimensionality Bound as functional opacity.} We formalize this through a measurement-theoretic bound: external observers cannot track systems whose effective dimensionality exceeds $D_{\text{crit}} = C_{\text{commit}}\tau_e/(\alpha h_\varepsilon^{\text{track}})$. Beyond this threshold, systems become \textit{observationally inaccessible}---not merely hard to compute, but impossible to track with finite bandwidth. This opacity is functional: low-bandwidth coupling to external systems limits both external control and disturbance propagation (cf. Ashby's requisite variety \cite{ashby1956}). The high-dimensional structure that makes a system intelligent is the same structure that makes it untrackable---and untrackability, operationally defined as resistance to externally-imposed state control under bandwidth limits, is a necessary condition for autonomous behavior.
 
 What does high-dimensional nonergodic computation enable?
 
@@ -267,6 +269,8 @@ D_{\text{crit}} = \frac{C_{\text{commit}} \cdot \tau_e}{\alpha \cdot h_\varepsil
 \begin{equation}
 \delta\phi_i \lesssim \frac{2\pi \varepsilon}{T_i} \quad \Rightarrow \quad h_i \sim \log_2\left(\frac{T_i}{\varepsilon}\right) \text{ bits per mode}
 \end{equation}
+\textit{(Rate-distortion justification:} This expression can be derived formally from rate-distortion theory. For a uniformly distributed phase variable on $[0, T_i]$ under squared-error distortion $\le \varepsilon^2$, the rate-distortion function gives $R(\varepsilon) = \log_2(T_i/\varepsilon)$ bits. Alternatively, under Gaussian noise, the Cramér-Rao bound on phase estimation variance implies a minimum bits-per-mode requirement of the same order.\textit{)}
+
 Summing over $D_{\text{target}}$ modes, the total information to be measured per coherence time $\tau_e$ is:
 \begin{equation}
 I_{\text{total}} = D_{\text{target}} \cdot h_\varepsilon^{\text{track}} \quad \text{bits}
@@ -319,26 +323,26 @@ Proposition 1 immediately implies a second result: when two high-dimensional sys
 
 \textbf{Proposition 2 (Code Formation from Dimensional Mismatch).} Consider two systems $A$ and $B$ with internal dimensionalities $D_A, D_B \gg 1$ that interact through a communication channel with bandwidth $C_{\text{link}}$ and coherence time $\tau_e$. If the systems successfully maintain mutual coordination (each tracks relevant aspects of the other's state), then stable reusable codes must form at the interface as coordination equilibria.
 
-\textbf{Proof.} System $A$ must track aspects of system $B$'s state through the low-bandwidth link. By Proposition 1, $A$ can resolve at most:
+\textbf{Proof.} We work in bits per coherence time to maintain consistent units throughout.
+
+System $A$ must track aspects of system $B$'s state through the low-bandwidth link. The information required to track $B$'s raw state to precision $\varepsilon$ over coherence time $\tau_e$ is:
 \begin{equation}
-D_{\text{link}}^{\text{crit}} = \frac{C_{\text{link}} \cdot \tau_e}{\alpha \cdot h_\varepsilon^{\text{track}}}
+I_{\text{raw}}(\tau_e) = \alpha \cdot D_B \cdot h_\varepsilon^{\text{track}} \quad \text{(bits per $\tau_e$)}
 \end{equation}
-dimensions of $B$'s state in coherence time $\tau_e$. If $D_B > D_{\text{link}}^{\text{crit}}$, the full state is \textit{observationally inaccessible}: $A$ cannot measure enough dimensions to track arbitrary configurations of $B$.
+where $D_B$ is the number of relevant modes and $h_\varepsilon^{\text{track}}$ is bits per mode. By Proposition 1, tracking is feasible only if $I_{\text{raw}}(\tau_e) \le C_{\text{link}} \cdot \tau_e$. When $D_B \gg C_{\text{link}} \tau_e / (\alpha h_\varepsilon^{\text{track}})$, the full state is \textit{observationally inaccessible}.
 
-However, suppose $B$'s behaviorally-relevant dynamics are confined to \textit{structured regions}---recurring subspaces $\mathcal{S}_i$ that capture the aspects of $B$ that matter for coordination. If $A$ can learn to recognize these regions as discrete \textit{codes} $c_i$ (low-dimensional symbols transmitted through the channel), the effective dimensionality of what must be tracked collapses from $D_B$ to $D_{\text{code}} \sim \log_2(N_{\text{codes}})$, where $N_{\text{codes}}$ is the codebook size.
-
-The measurement bandwidth required becomes:
+However, suppose $B$'s behaviorally-relevant dynamics concentrate into \textit{structured regions}---recurring subspaces $\mathcal{S}_i$ that capture the aspects of $B$ that matter for coordination. If $A$ can learn to recognize these regions as discrete \textit{codes} $c_i$, the information required to track $B$ collapses to:
 \begin{equation}
-C_{\text{coded}} = \frac{D_{\text{code}} \cdot h_\varepsilon^{\text{track}}}{\tau_e} + C_{\text{encode}}
+I_{\text{code}}(\tau_e) = \log_2(N_{\text{codes}}) + I_{\text{residual}} \quad \text{(bits per $\tau_e$)}
 \end{equation}
-where $C_{\text{encode}}$ is the bandwidth for transmitting code labels (e.g., phonemes, gestures).
+where $\log_2(N_{\text{codes}})$ bits identifies which code region $B$ occupies, and $I_{\text{residual}} \ll I_{\text{raw}}$ captures within-region variation needed for fine coordination.
 
-\textbf{Channel capacity constraint.} For coordination to be possible, we need $C_{\text{coded}} \le C_{\text{link}}$:
+\textbf{Channel capacity constraint.} For coordination to be possible:
 \begin{equation}
-D_{\text{code}} \le \frac{C_{\text{link}} \cdot \tau_e}{h_\varepsilon^{\text{track}}} - D_{\text{encode}}
+I_{\text{code}}(\tau_e) \le C_{\text{link}} \cdot \tau_e
 \end{equation}
 
-Since $D_{\text{code}} \sim \log_2(N_{\text{codes}}) \ll D_B$, codes enable coordination over channels where raw state tracking would be impossible. Systems that fail to form stable codes cannot maintain coordination through bandwidth-limited channels.
+Since $\log_2(N_{\text{codes}}) + I_{\text{residual}} \ll \alpha \cdot D_B \cdot h_\varepsilon^{\text{track}}$, codes enable coordination over channels where raw state tracking would be impossible. Systems that fail to form stable codes cannot maintain coordination through bandwidth-limited channels.
 
 \textbf{Code stability emerges from reuse.} A code $c_i$ becomes stable when:
 \begin{enumerate}
@@ -531,7 +535,7 @@ What matters for our argument is that \textit{any computational subsystem} track
 \section{Vector Addition Systems: Tractability Through High-Dimensional Exploration}
 \label{sec:vas}
 
-\textbf{Scope of claims.} This section demonstrates a \textit{physical mechanism}---continuous relaxation dynamics---that avoids the stepwise enumeration underlying discrete VAS complexity. We do not claim to solve worst-case VAS reachability in polynomial time (which would contradict Ackermann-completeness). Rather, we show that continuous high-dimensional exploration can make practical instances tractable by avoiding collision-heavy discrete enumeration. The discrete baseline in our simulations represents collision-heavy update regimes, not optimal reachability algorithms.
+\textbf{Scope of claims.} We use VAS reachability as a \textit{canonical example} of discrete path-enumeration hardness; biological tasks are only \textit{structurally analogous} via constrained state navigation (nonnegativity, resource limits, coupled updates). This section demonstrates a physical mechanism---continuous relaxation dynamics---that avoids the stepwise enumeration underlying discrete VAS complexity. We do not claim to solve worst-case VAS reachability in polynomial time (which would contradict Ackermann-completeness). Rather, we show that continuous high-dimensional exploration can make practical instances tractable by avoiding collision-heavy discrete enumeration. The discrete baseline in our simulations represents \textit{collision accounting under stepwise discrete state updates}---not optimal VAS reachability algorithms, but a demonstration that collision count differs qualitatively between discrete enumeration and continuous relaxation.
 
 \subsection{The Computational Paradox}
 
@@ -552,6 +556,8 @@ Yet biological systems routinely solve VAS-like problems. (By ``VAS-like'' we me
 \subsection{High-Dimensional Exploration in Constraint Geometry}
 
 \textbf{Simulation note:} The numerical implementations provided (Python scripts in supplementary materials) are illustrative models, not literal physical substrates. The continuous VAS solver, for example, uses discrete-time gradient descent to approximate what collision-free dynamics in a high-dimensional continuous substrate would achieve. Although our continuous dynamics are implemented on a digital machine, those collisions occur in the \textit{simulating} substrate. The thermodynamic argument is about the \textit{simulated} high-dimensional dynamics: in a physical implementation of the continuous field (e.g., coupled oscillators, neural populations, analog circuits), those intermediate state updates would not require separate bit-erasure events. The point is to demonstrate the \textit{qualitative difference} between collision-heavy discrete enumeration and collision-free continuous exploration.
+
+\textit{Note on reversible computing:} The discrete baseline counts ``forced discrete commitments''---updates that would be logically irreversible under standard architectures. Reversible computing schemes could avoid mid-computation erasure, but would still incur stabilization/readout costs at boundaries where stable records must be written. The collision accounting reflects \textit{conservative} costs for standard discrete implementations; the qualitative gap remains even under more generous assumptions.
 
 Consider a continuous analog: coupled oscillators where phase naturally performs vector addition:
 \begin{equation}
@@ -1082,7 +1088,7 @@ We establish that intelligence arises from the defense of nonergodic dynamics th
 \item \textbf{Testable predictions:} Coherence times, collapse signatures, dimensional scaling all measurable without accessing unmeasurable interior dynamics
 \end{enumerate}
 
-The deep principle: high-dimensional nonergodic systems use their dimensional inaccessibility as armor. The same structure that makes them computationally powerful makes them untrackable from outside---and untrackability is a form of autonomy. Within the nonergodic region, constraints encode in geometric relationships that evolve without forced registration; at the boundary, sparse outputs defend the conditions for continued existence. This enables both power efficiency (Landauer costs only at behavioral events) and computational tractability (constrained exploration rather than exhaustive enumeration).
+The deep principle: high-dimensional nonergodic systems derive functional protection from their dimensional inaccessibility. The same structure that makes them computationally powerful makes them untrackable from outside---and untrackability (resistance to external state control under bandwidth limits) is operationally equivalent to autonomy. Within the nonergodic region, constraints encode in geometric relationships that evolve without forced registration; at the boundary, sparse outputs defend the conditions for continued existence. This enables both power efficiency (Landauer costs only at behavioral events) and computational tractability (constrained exploration rather than exhaustive enumeration).
 
 Intelligence operates at the boundary between continuous internal dynamics and discrete external commitments---maintaining constraint geometry with $h_\varepsilon^{\text{prod}} = 0$ (no irreversible bit registration during exploration), collapsing to discrete outputs only when behavioral demands require it. The organism is a nonergodic island, and its intelligent outputs are the walls it builds to stay that way.
 
