@@ -76,25 +76,41 @@ def generate_scaling_data():
     }
 
 # =============================================================================
-# PANEL D: Code Formation
+# PANEL D: Code Formation (from actual simulation)
 # =============================================================================
 
 def generate_code_formation():
-    """Generate code formation clustering data."""
-    n_pathways, n_tasks, n_patterns = 50, 100, 5
-    np.random.seed(789)
+    """
+    Load code formation data from actual simulation.
 
-    # Adaptive system learns clustered codes
-    code_patterns = np.array([np.random.randn(n_pathways) for _ in range(n_patterns)])
-    adaptive_sols = [code_patterns[np.random.randint(n_patterns)] +
-                     np.random.normal(0, 0.15, n_pathways) for _ in range(n_tasks)]
+    If saved data exists, load it. Otherwise, run simulation and save.
+    Uses SHARED PCA basis for fair comparison between methods.
+    """
+    from pathlib import Path
+    data_path = Path(__file__).parent / 'figures' / 'code_formation_data.npz'
 
-    # Discrete enumeration shows no learning (random scatter)
-    discrete_sols = [np.random.exponential(0.5, n_pathways) for _ in range(n_tasks)]
+    if data_path.exists():
+        # Load pre-computed results
+        data = np.load(data_path)
+        adaptive_sols = data['adaptive_solutions']
+        discrete_sols = data['discrete_solutions']
+        print(f"Loaded code formation data from {data_path}")
+    else:
+        # Run simulation and save
+        print("Running code formation simulation...")
+        from code_formation_simulation import run_simulation, save_results
+        cont, disc = run_simulation(n_trials=100)
+        adaptive_sols, discrete_sols = save_results(cont, disc)
 
-    # PCA projection
-    adaptive_2d = PCA(n_components=2).fit_transform(adaptive_sols)
-    discrete_2d = PCA(n_components=2).fit_transform(discrete_sols)
+    # CRITICAL FIX: Use SHARED PCA basis for fair comparison
+    # Fit PCA on combined data so both are in the same coordinate system
+    combined = np.vstack([adaptive_sols, discrete_sols])
+    pca = PCA(n_components=2)
+    pca.fit(combined)
+
+    # Transform both using the SAME basis
+    adaptive_2d = pca.transform(adaptive_sols)
+    discrete_2d = pca.transform(discrete_sols)
 
     return adaptive_2d, discrete_2d
 
@@ -195,13 +211,19 @@ ax.text(0.02, 0.98, '5 distinct codes\nemerge via learning', transform=ax.transA
 # Save
 # -----------------------------------------------------------------------------
 plt.tight_layout()
-output_path = '../figures/intelligence_figure1.png'
+
+# Use robust path handling
+from pathlib import Path
+output_dir = Path(__file__).resolve().parent.parent / 'figures'
+output_dir.mkdir(exist_ok=True)
+output_path = output_dir / 'intelligence_figure1.png'
+
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")
 
 # Also save PDF
-plt.savefig(output_path.replace('.png', '.pdf'), bbox_inches='tight')
-print(f"Saved: {output_path.replace('.png', '.pdf')}")
+plt.savefig(output_path.with_suffix('.pdf'), bbox_inches='tight')
+print(f"Saved: {output_path.with_suffix('.pdf')}")
 
 plt.close()
 print("\nDone! Figure regenerated with correct data.")

@@ -67,8 +67,9 @@ The `code/` directory contains simulation scripts demonstrating the collision vs
 
 | Script | Purpose |
 |--------|---------|
-| `vas_scaling_simulation.py` | Tests collision count scaling with dimension D |
-| `figure1_regenerate.py` | Generates Figure 1 (VAS trajectories, scaling, code formation) |
+| `vas_scaling_simulation.py` | DiscreteVAS and ContinuousVAS classes; collision count scaling with dimension |
+| `code_formation_simulation.py` | Hebbian pathway learning vs discrete enumeration; generates clustering data |
+| `figure1_regenerate.py` | Generates Figure 1 (imports above modules) |
 
 **Key result:** Discrete state updates incur O(n) collision costs; continuous relaxation converges with 0 collisions during evolution (1 at final readout).
 

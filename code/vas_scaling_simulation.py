@@ -145,6 +145,7 @@ class ContinuousVAS:
         # - Including final readout: 1 collision (dimensional collapse at measurement)
         self.collisions_during_evolution = 0
         self.collisions_including_readout = 1  # Final readout counts as one collision
+        self.collision_count = 1  # Default: include readout (matches Table 2)
         self.trajectory = []
 
     def get_state(self):
