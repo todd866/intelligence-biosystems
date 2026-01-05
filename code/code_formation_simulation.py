@@ -58,13 +58,14 @@ class ContinuousAdaptiveSystem:
 class DiscreteEnumerativeSystem:
     """Baseline: random pathway selection, no learning.
 
-    Uses SAME representation as adaptive system (pathway activation vectors)
-    to enable fair PCA comparison.
+    Uses same REPRESENTATION DIMENSIONALITY as adaptive system (n_paths-dimensional
+    activation vectors) to enable fair PCA comparison. Pathways themselves are
+    independently sampled - the comparison is about learning dynamics, not shared structure.
     """
     def __init__(self, n_dim=20, n_paths=50):
         self.n_dim = n_dim
         self.n_paths = n_paths
-        # Same pathway structure as adaptive, but no learning
+        # Independent pathway sample (not shared with adaptive)
         self.paths = np.random.randn(n_paths, n_dim)
         self.paths = self.paths / np.linalg.norm(self.paths, axis=1, keepdims=True)
         self.solution_vectors = []

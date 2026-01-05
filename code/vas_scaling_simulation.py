@@ -311,10 +311,10 @@ def plot_scaling_results(results, save_path=None):
                 marker='o', markersize=8, linewidth=2, capsize=5,
                 label='Discrete (collision-based)', color='#d62728')
 
-    # Continuous collisions (always zero)
-    ax.plot(dimensions, np.zeros_like(dimensions),
+    # Continuous collisions (always 1 - final readout only)
+    ax.plot(dimensions, np.ones_like(dimensions),
             marker='s', markersize=8, linewidth=2,
-            label='Continuous (collision-free)', color='#2ca02c')
+            label='Continuous (1 at readout)', color='#2ca02c')
 
     # Linear fit to discrete data
     from numpy.polynomial import Polynomial
