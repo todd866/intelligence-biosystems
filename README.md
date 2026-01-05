@@ -6,7 +6,7 @@
 
 ## One-line thesis
 
-Intelligence arises from the capacity to track high-dimensional target states through low-bandwidth observation channels; continuous high-dimensional substrates achieve this efficiently where discrete algorithms fail.
+Intelligence arises from maintaining high-dimensional coherent dynamics that exceed observation channel capacity; continuous substrates achieve this with far fewer irreversible state registrations than discrete implementations.
 
 ## Core results
 
@@ -15,15 +15,14 @@ Intelligence arises from the capacity to track high-dimensional target states th
 We derive the critical dimensionality threshold:
 
 ```
-D_crit = C_obs × τ_e / (α × h_track × ε)
+D_crit = C_obs × τ_e / (α × h_ε)
 ```
 
 where:
 - **C_obs** = observation channel bandwidth (bits/s)
-- **τ_e** = tracking timescale
-- **h_track** = bits per dimension per update
-- **ε** = acceptable tracking error
-- **α** = efficiency factor
+- **τ_e** = coherence timescale
+- **h_ε** = bits per mode per τ_e at resolution ε (typically 2–5 bits for neural oscillations)
+- **α** = compressibility factor ∈ (0,1]
 
 **Key prediction:** When D_target > D_crit, external observers cannot fully track the system's state from behavioral output alone.
 
