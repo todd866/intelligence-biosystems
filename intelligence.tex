@@ -147,7 +147,7 @@ The system's constraint geometry evolves faster than any observer can track it.
 
 To avoid ambiguity, we define key terms operationally:
 
-\textbf{Timing-inaccessible.} A regime in which the coarse-grained dynamical information rate $H_{\text{dyn}}=\alpha\,h^{\text{track}}_\varepsilon D_{\text{eff}}/\tau_e$ (bits/s) exceeds the available observation channel capacity $C_{\text{commit}}$ at resolution $\varepsilon$; temporal order of intermediate states is unrecoverable without disrupting the dynamics.
+\textbf{Timing-inaccessible.} A regime in which the coarse-grained dynamical information rate $H_{\text{dyn}}=\alpha\,h^{\text{track}}_\varepsilon D_{\text{eff}}/\tau_e$ (bits/s) exceeds the available commitment channel capacity $C_{\text{commit}}$ at resolution $\varepsilon$; temporal order of intermediate states is unrecoverable without disrupting the dynamics.
 
 \textbf{Collision (commit).} A logically irreversible registration of mutually exclusive macrostates that writes information to a stable record and thus dissipates $\ge k_B T \ln 2$ per bit.
 
@@ -386,7 +386,7 @@ Training GPT-scale models ($\sim 10^{11}$ parameters, $\sim 10^{13}$ tokens) req
 
 \textbf{The clocking constraint:} Digital systems enforce temporal synchronization via a global clock signal. Every register must settle to a definite state at each clock edge, forcing $D_{\text{eff}}/D_{\text{crit}} \to 1$ regardless of architectural complexity. Biological systems operate \textbf{unclocked}---oscillations emerge from coupled dynamics without external synchronization. This permits $D_{\text{eff}} \gg D_{\text{crit}}$ to persist between measurement events, as there is no mechanism forcing dimensional collapse every cycle.
 
-\textbf{Thermodynamic consequence:} Systems with high $D_{\text{eff}}^{\text{substrate}}$ (biology, quantum systems) evolve in timing-inaccessible regimes where constraint geometry reconfigures faster than observation capacity can track, colliding only at measurement bottlenecks. Systems with low $D_{\text{eff}}^{\text{substrate}}$ but high $D_{\text{eff}}^{\text{algorithm}}$ (digital computers) must serialize dynamics via rapid collisions, paying Landauer cost continuously.
+\textbf{Thermodynamic consequence:} Systems with high $D_{\text{eff}}^{\text{substrate}}$ (biology, quantum systems) evolve in timing-inaccessible regimes where constraint geometry reconfigures faster than commitment capacity can track, colliding only at behavioral bottlenecks. Systems with low $D_{\text{eff}}^{\text{substrate}}$ but high $D_{\text{eff}}^{\text{algorithm}}$ (digital computers) must serialize dynamics via rapid collisions, paying Landauer cost continuously.
 
 The two--three orders of magnitude power gap reflects the thermodynamic cost of collision resolution. Clocked architectures resolve collisions at GHz rates; biological systems operate collision-free and unclocked, collapsing only at behavioral bottleneck ($\sim 100$ bits/s).
 
@@ -402,7 +402,7 @@ Symbol & Meaning & Units & Cortex (typical) \\
 \midrule
 $D_{\text{eff}}$ & Effective dimensionality & modes & $10^2$--$10^3$ (MEG-visible), $10^3$--$10^4$ (substrate) \\
 $D_{\text{crit}}^{\text{behavior}}$ & Critical dimension (behavioral channel)\footnote{$D_{\text{crit}}$ computed for behavioral output channel ($C_{\text{commit}} \sim 10^2$ bits/s); instrumentation channels (MEG, ECoG) have far larger effective $C_{\text{commit}}$ and correspondingly larger $D_{\text{crit}}$.} & modes & $\sim 0.5$--$6$ \\
-$C_{\text{commit}}$ & Observation capacity & bits/s & $10^2$ \\
+$C_{\text{commit}}$ & Commitment capacity & bits/s & $10^2$ \\
 $H_{\text{dyn}}$ & Intrinsic dynamics rate & bits/s & $\sim 5\times10^3$ (MEG); $\gg$ at substrate \\
 $H_{\text{reg}}$ & Collision rate & bits/s & $10^2$ \\
 $h_\varepsilon^{\text{track}}$ & Min. bits/mode/$\tau_e$ to track geometry & bits & $1$--$3$ \\
@@ -453,7 +453,7 @@ where $C$ is the covariance matrix of oscillator states.
 
 \subsection{Measurement Capacity and the Critical Threshold}
 
-Observation occurs through a channel with finite capacity $C_{\text{commit}}$ (bits/s) \cite{shannon1948}, bounded by behavioral output constraints—reaction times, choice entropy, motor bandwidth—not by the intrinsic dynamics rate $H_{\text{dyn}}$.
+Commitment to action occurs through a channel with finite capacity $C_{\text{commit}}$ (bits/s) \cite{shannon1948}, bounded by behavioral output constraints---reaction times, choice entropy, motor bandwidth---not by the intrinsic dynamics rate $H_{\text{dyn}}$.
 
 For biological behavioral outputs: motor commands, speech, choices. Typical values $C_{\text{commit}} \sim 10^2$ bits/s.
 
@@ -537,7 +537,7 @@ Vector addition systems (VAS) formalize constrained state-space navigation. Stat
 
 \textbf{Example (2D VAS):} States $(x,y) \in \mathbb{N}^2$, transitions $\{(+1,-1), (-2,+1), (+3,0)\}$. Is $(5,3)$ reachable from $(0,0)$? Discrete algorithms must enumerate all possible sequences. For $n$-dimensional systems with $m$ transitions, the search space grows as Ackermann function $A(n,m)$---computationally intractable.
 
-Yet biological systems routinely solve VAS-like problems:
+Yet biological systems routinely solve VAS-like problems. (By ``VAS-like'' we mean \textit{high-dimensional constrained state navigation}---nonnegativity, resource constraints, coupled updates---not literal Petri-net reachability. The analogy is structural, not formal.)
 \begin{itemize}
 \item \textbf{Motor planning:} Reaching for an object requires coordinating $\sim 30$ muscles under biomechanical constraints (joint limits, torque bounds, obstacle avoidance). This is high-dimensional VAS with continuous state updates.
 \item \textbf{Metabolic optimization:} Cells select among exponentially many biochemical pathways to achieve metabolic targets given resource constraints.
