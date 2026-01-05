@@ -47,18 +47,19 @@ Cortical dynamics exceed observable dimensionality by two orders of magnitude.
 3_intelligence/
 ├── intelligence.tex              # Current manuscript (R2)
 ├── intelligence.pdf              # Compiled output
+├── README.md
+├── LICENSE
 ├── code/
-│   ├── vas_scaling_simulation.py # Main simulation: collision scaling with dimension
-│   ├── figure1_regenerate.py     # Generates Figure 1
-│   └── _old/                     # Archived earlier scripts
+│   ├── vas_scaling_simulation.py # VAS classes and scaling experiments
+│   ├── code_formation_simulation.py  # Hebbian learning simulation
+│   └── figure1_regenerate.py     # Generates Figure 1 (imports above)
 ├── figures/
-│   ├── intelligence_figure1.png  # Main figure
-│   └── intelligence_figure1.pdf
-├── _submission_materials/
-│   ├── cover_letter_r2.tex/pdf   # R2 cover letter
-│   ├── response_to_editor_r2.tex/pdf  # Point-by-point response
-│   └── R1/                       # Archived R1 materials
-└── _archive/                     # Old submissions, revisions, commentary
+│   └── intelligence_figure1.png/pdf
+├── submission/                   # Current submission materials
+│   ├── cover_letter_r2.tex/pdf
+│   ├── response_to_editor_r2.tex/pdf
+│   └── R1/                       # Previous round materials
+└── archive/                      # (gitignored) Old versions, commentary
 ```
 
 ## Simulation validation
