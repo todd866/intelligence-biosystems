@@ -58,16 +58,19 @@ class ContinuousAdaptiveSystem:
 class DiscreteEnumerativeSystem:
     """Baseline: random pathway selection, no learning.
 
-    Uses same REPRESENTATION DIMENSIONALITY as adaptive system (n_paths-dimensional
-    activation vectors) to enable fair PCA comparison. Pathways themselves are
-    independently sampled - the comparison is about learning dynamics, not shared structure.
+    Uses SAME pathway matrix as adaptive system to enable fair comparison.
+    Both systems have identical structural resources - the only difference
+    is whether weights adapt (Hebbian learning) or remain uniform (no learning).
     """
-    def __init__(self, n_dim=20, n_paths=50):
+    def __init__(self, n_dim=20, n_paths=50, shared_paths=None):
         self.n_dim = n_dim
         self.n_paths = n_paths
-        # Independent pathway sample (not shared with adaptive)
-        self.paths = np.random.randn(n_paths, n_dim)
-        self.paths = self.paths / np.linalg.norm(self.paths, axis=1, keepdims=True)
+        # Use shared pathways if provided, otherwise generate (for backward compatibility)
+        if shared_paths is not None:
+            self.paths = shared_paths.copy()
+        else:
+            self.paths = np.random.randn(n_paths, n_dim)
+            self.paths = self.paths / np.linalg.norm(self.paths, axis=1, keepdims=True)
         self.solution_vectors = []
         self.solution_trials = []
 
@@ -116,9 +119,14 @@ def generate_clustered_tasks(n_tasks=100, n_dim=20, n_clusters=5):
     return tasks
 
 def run_simulation(n_trials=100):
-    """Run code formation experiment."""
+    """Run code formation experiment.
+
+    Both systems share the SAME pathway matrix - the only difference is
+    whether weights adapt (Hebbian learning) or remain uniform (random selection).
+    """
     continuous = ContinuousAdaptiveSystem(n_dim=20, n_paths=50)
-    discrete = DiscreteEnumerativeSystem(n_dim=20)
+    # Share pathways for fair comparison
+    discrete = DiscreteEnumerativeSystem(n_dim=20, n_paths=50, shared_paths=continuous.paths)
     tasks = generate_clustered_tasks(n_trials, n_dim=20, n_clusters=5)
 
     for trial, task in enumerate(tasks):

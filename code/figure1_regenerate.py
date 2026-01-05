@@ -204,7 +204,7 @@ ax.legend(loc='upper right', fontsize=10)
 ax.grid(True, alpha=0.3)
 
 # Add annotation
-ax.text(0.02, 0.98, '5 distinct codes\nemerge via learning', transform=ax.transAxes,
+ax.text(0.02, 0.98, 'Clustered solution patterns\nemerge via learning', transform=ax.transAxes,
         fontsize=9, va='top', color='#2ca02c', style='italic')
 
 # -----------------------------------------------------------------------------
