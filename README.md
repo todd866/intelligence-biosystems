@@ -1,8 +1,18 @@
 # Intelligence as High-Dimensional Coherence
 
-**Repository:** todd866/intelligence-biosystems
-**Paper status:** Under review at *BioSystems* (R2 minor revision, BIOSYS-D-25-00880R2)
+**Repository:** [todd866/intelligence-biosystems](https://github.com/todd866/intelligence-biosystems)
+**Paper status:** Under review at *BioSystems* (minor revision, BIOSYS-D-25-00880R1)
 **This repo:** Post-submission validation + revisions (transparent, versioned)
+
+## Companion Paper
+
+**Mathematical foundation:** The Observable Dimensionality Bound derived here is proven rigorously in the companion paper:
+
+> **Curvature Amplification of Tracking Complexity on Statistical Manifolds**
+> Target: *Information Geometry* (Springer)
+> Repository: [todd866/tracking-complexity](https://github.com/todd866/tracking-complexity)
+
+That paper shows covering numbers on negatively curved statistical manifolds grow *exponentially* with geodesic radius—meaning the flat-geometry assumption in this paper is actually conservative. The opacity bound is even stronger than stated.
 
 ## One-line thesis
 
@@ -15,11 +25,11 @@ Intelligence arises from maintaining high-dimensional coherent dynamics that exc
 We derive the critical dimensionality threshold:
 
 ```
-D_crit = C_obs × τ_e / (α × h_ε)
+D_crit = C_commit × τ_e / (α × h_ε)
 ```
 
 where:
-- **C_obs** = observation channel bandwidth (bits/s)
+- **C_commit** = behavioral commitment channel bandwidth (bits/s)
 - **τ_e** = coherence timescale
 - **h_ε** = bits per mode per τ_e at resolution ε (typically 2–5 bits for neural oscillations)
 - **α** = compressibility factor ∈ (0,1]
@@ -55,9 +65,9 @@ Cortical dynamics exceed observable dimensionality by two orders of magnitude.
 ├── figures/
 │   └── intelligence_figure1.png/pdf
 ├── submission/                   # Current submission materials
-│   ├── cover_letter_r2.tex/pdf
-│   ├── response_to_editor_r2.tex/pdf
-│   └── R1/                       # Previous round materials
+│   ├── cover_letter_r1.tex/pdf
+│   ├── response_to_editor_r1.tex/pdf
+│   └── R1/                       # Previous round materials (archive)
 └── archive/                      # (gitignored) Old versions, commentary
 ```
 
