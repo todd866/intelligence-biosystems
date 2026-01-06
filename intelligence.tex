@@ -883,12 +883,12 @@ Neural populations should resolve temporal differences $\Delta t$ where the corr
 
 For timing-inaccessible computation to be thermodynamically viable, two conditions must hold:
 
-\textbf{Condition 1: Coherence preservation.} Entropy production from decoherence must remain below collision rate to preserve coherence against environmental noise:
+\textbf{Condition 1: Coherence preservation.} In the regime where sparse collapse events are the dominant irreversible bookkeeping events, the entropy flux from noise-induced decoherence must remain within the available maintenance budget:
 \begin{equation}
-\Sigma_{\text{eff}} < H_{\text{reg}}
+\Sigma_{\text{eff}} \lesssim H_{\text{reg}}
 \end{equation}
 
-where $\Sigma_{\text{eff}}$ (bits/s) denotes the effective entropy flux from noise-induced decoherence (e.g., $\Sigma_{\text{eff}}\!\sim\!\kappa\,D_{\text{eff}}/\tau_{\text{coherence}}$ for some bits-per-mode factor $\kappa$). If decoherence produces more entropy than measurement collisions extract, the system cannot maintain timing-inaccessible dynamics. Note: both $\Sigma_{\text{eff}}$ and $H_{\text{reg}}$ are in bits/s; multiplying by $k_B T \ln 2$ converts to power (W).
+where $\Sigma_{\text{eff}}$ (bits/s) denotes the effective entropy flux from noise-induced decoherence (e.g., $\Sigma_{\text{eff}}\!\sim\!\kappa\,D_{\text{eff}}/\tau_{\text{coherence}}$ for some bits-per-mode factor $\kappa$). This is a \textit{regime condition}, not a derived inequality: if decoherence overwhelms the system's capacity to maintain coherent dynamics between sparse outputs, the timing-inaccessible regime breaks down and computation reverts to continuous collision mode. Note: both $\Sigma_{\text{eff}}$ and $H_{\text{reg}}$ are in bits/s; multiplying by $k_B T \ln 2$ converts to power (W).
 
 \textbf{Condition 2: Power budget.} Total collision rate must stay within metabolic power:
 \begin{equation}
