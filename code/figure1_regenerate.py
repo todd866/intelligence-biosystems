@@ -142,12 +142,15 @@ ax.plot(path[:, 0], path[:, 1], '-', color=COLOR_DISCRETE, linewidth=1.5, alpha=
 # Show more collision points (every 3rd instead of 5th) with larger markers
 ax.scatter(path[::3, 0], path[::3, 1], c='#CC79A7', s=60, zorder=5, marker='s',
            edgecolors='black', linewidths=0.5, label='Collision events')
+# Start marker
+ax.plot(path[0, 0], path[0, 1], 'D', color='green', markersize=12, zorder=10,
+        markeredgecolor='black', label='Start')
 ax.plot(path[-1, 0], path[-1, 1], 'o', color=COLOR_CONTINUOUS, markersize=15, zorder=10, label='SUCCESS')
 ax.plot(5, 5, '*', color='gold', markersize=20, markeredgecolor='black', zorder=10, label='Target')
 
 ax.set_xlabel('Dimension 1', fontsize=11)
 ax.set_ylabel('Dimension 2', fontsize=11)
-ax.set_title(f'A. 20D Discrete VAS: Success ({collisions} collisions)', fontsize=12, fontweight='bold')
+ax.set_title(f'A. 20D Discrete (2D projection): {collisions} collisions', fontsize=12, fontweight='bold')
 ax.legend(loc='upper left', fontsize=9)
 ax.grid(True, alpha=0.3)
 
@@ -158,14 +161,22 @@ ax = axes[0, 1]
 path = traj_data['continuous_path'][:, :2]  # First 2 dims
 
 ax.plot(path[:, 0], path[:, 1], '-', color=COLOR_CONTINUOUS, linewidth=2, alpha=0.8)
+# Start marker
+ax.plot(path[0, 0], path[0, 1], 'D', color='green', markersize=12, zorder=10,
+        markeredgecolor='black', label='Start')
+# Tolerance circle around target (ε = 0.3)
+tolerance = plt.Circle((5, 5), 0.3, color='gold', fill=False, linewidth=2,
+                        linestyle='--', alpha=0.8, label='Tolerance (ε)')
+ax.add_patch(tolerance)
 ax.plot(path[-1, 0], path[-1, 1], 'o', color=COLOR_CONTINUOUS, markersize=15, zorder=10, label='SUCCESS')
 ax.plot(5, 5, '*', color='gold', markersize=20, markeredgecolor='black', zorder=10, label='Target')
 
 ax.set_xlabel('Dimension 1', fontsize=11)
 ax.set_ylabel('Dimension 2', fontsize=11)
-ax.set_title(f'B. 20D Continuous: Success (0 collisions during, 1 at readout)', fontsize=12, fontweight='bold')
+ax.set_title('B. 20D Continuous (2D projection): 0 during, 1 at readout', fontsize=12, fontweight='bold')
 ax.legend(loc='upper left', fontsize=9)
 ax.grid(True, alpha=0.3)
+ax.set_aspect('equal', adjustable='datalim')  # Ensure circle looks circular
 
 # Add annotation
 ax.annotate('Collision-free\nevolution', xy=(2.5, 2.5), fontsize=11,
@@ -182,9 +193,8 @@ c_coll = scaling_data['continuous_collisions']
 ax.plot(dims, d_coll, 'o-', color=COLOR_DISCRETE, linewidth=2.5, markersize=8, label='Discrete VAS')
 ax.plot(dims, c_coll, 's--', color=COLOR_CONTINUOUS, linewidth=2.5, markersize=8, label='Continuous (1 at readout)')
 
-# Linear fit
-slope = np.polyfit(dims, d_coll, 1)[0]
-ax.text(300, 400, f'O(n) scaling\nexponent = 1.00', fontsize=10,
+# Linear fit annotation
+ax.text(300, 400, f'O(n) scaling', fontsize=10,
         bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
 ax.set_xlabel('Dimensionality (n)', fontsize=11)
@@ -193,6 +203,18 @@ ax.set_title('C. Dimensional Scaling: Both Converge', fontsize=12, fontweight='b
 ax.legend(loc='upper left', fontsize=10)
 ax.grid(True, alpha=0.3)
 ax.set_ylim(-20, max(d_coll) + 50)
+
+# Inset to show continuous = 1 is visible (not 0)
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+axins = inset_axes(ax, width="35%", height="30%", loc='center right')
+axins.plot(dims, d_coll, 'o-', color=COLOR_DISCRETE, linewidth=1.5, markersize=4)
+axins.plot(dims, c_coll, 's--', color=COLOR_CONTINUOUS, linewidth=1.5, markersize=4)
+axins.set_ylim(-0.5, 15)
+axins.set_xlim(0, 520)
+axins.axhline(y=1, color=COLOR_CONTINUOUS, linestyle=':', alpha=0.5)
+axins.set_ylabel('Collisions', fontsize=8)
+axins.tick_params(labelsize=8)
+axins.set_title('Zoomed: continuous = 1', fontsize=8)
 
 # -----------------------------------------------------------------------------
 # Panel D: Code Formation - Pathway Reuse
@@ -207,9 +229,9 @@ width = 0.35
 bars1 = ax.bar(x - width/2, adaptive_usage, width, color=COLOR_ADAPTIVE, alpha=0.8, label='Adaptive (learned)')
 bars2 = ax.bar(x + width/2, discrete_usage, width, color=COLOR_SCATTERED, alpha=0.6, label='Discrete (uniform)')
 
-ax.set_xlabel('Pathway (sorted by adaptive usage)', fontsize=11)
-ax.set_ylabel('Times used (out of 100 trials)', fontsize=11)
-ax.set_title('D. Code Formation: Pathway Reuse', fontsize=12, fontweight='bold')
+ax.set_xlabel('Pathway rank (sorted by adaptive usage)', fontsize=11)
+ax.set_ylabel('Total activations (100 trials)', fontsize=11)
+ax.set_title('D. Code Formation: Pathway Reuse (top 20 of 50 shown)', fontsize=12, fontweight='bold')
 ax.legend(loc='upper right', fontsize=9)
 ax.set_xlim(-1, 20)  # Show top 20 pathways
 ax.set_xticks(range(0, 20, 2))
