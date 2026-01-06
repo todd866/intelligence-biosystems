@@ -275,6 +275,8 @@ D_{\text{crit}} = \frac{C_{\text{commit}} \cdot \tau_e}{\alpha \cdot h_\varepsil
 \end{equation}
 \textit{(Rate-distortion justification:} This expression can be derived formally from rate-distortion theory. For a uniformly distributed phase variable on $[0, T_i]$ under squared-error distortion $\le \varepsilon^2$, the rate-distortion function gives $R(\varepsilon) = \log_2(T_i/\varepsilon)$ bits. Alternatively, under Gaussian noise, the Cramér-Rao bound on phase estimation variance implies a minimum bits-per-mode requirement of the same order.\textit{)}
 
+\textit{(Reconciling with the ``2--5 bits'' regime:} The general form $\log_2(T/\varepsilon)$ can yield arbitrarily large bit requirements for fine $\varepsilon$. However, biology operates at \textbf{noise-limited resolution}: neural oscillations have phase noise $\sigma_\phi \sim 0.3$--$1$ rad, limiting distinguishable states to $\sim$4--32 bins ($\sim$2--5 bits). Finer resolution is physically unachievable. Thus the ``2--5 bits per mode'' estimate is not a free parameter but reflects the \textit{biologically accessible} regime where $\varepsilon \sim \sigma_\phi$. The bound becomes tighter, not weaker, when we acknowledge this constraint: biology cannot even attempt fine-$\varepsilon$ tracking.\textit{)}
+
 Summing over $D_{\text{target}}$ modes, the total information to be measured per coherence time $\tau_e$ is:
 \begin{equation}
 I_{\text{total}} = D_{\text{target}} \cdot h_\varepsilon^{\text{track}} \quad \text{bits}
