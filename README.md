@@ -1,7 +1,7 @@
 # Intelligence as High-Dimensional Coherence
 
 **Repository:** [todd866/intelligence-biosystems](https://github.com/todd866/intelligence-biosystems)
-**Paper status:** Under review at *BioSystems* (minor revision, BIOSYS-D-25-00880R1)
+**Paper status:** Under review at *BioSystems* (R1 revision of resubmission, BIOSYS-D-25-00880R1)
 **This repo:** Post-submission validation + revisions (transparent, versioned)
 
 ## Companion Paper
@@ -54,7 +54,7 @@ Cortical dynamics exceed observable dimensionality by two orders of magnitude.
 
 ```
 3_intelligence/
-├── intelligence.tex              # Current manuscript (R2)
+├── intelligence.tex              # Current manuscript (R1 revision)
 ├── intelligence.pdf              # Compiled output
 ├── README.md
 ├── LICENSE
