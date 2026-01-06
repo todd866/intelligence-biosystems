@@ -27,3 +27,4 @@ code/figures/
 
 # Build
 build/
+*.tiff

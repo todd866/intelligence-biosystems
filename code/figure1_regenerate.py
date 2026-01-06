@@ -76,43 +76,39 @@ def generate_scaling_data():
     }
 
 # =============================================================================
-# PANEL D: Code Formation (from actual simulation)
+# PANEL D: Code Formation - Pathway Reuse (from actual simulation)
 # =============================================================================
 
 def generate_code_formation():
     """
-    Load code formation data from actual simulation.
+    Load code formation data and compute pathway reuse statistics.
 
-    If saved data exists, load it. Otherwise, run simulation and save.
-    Uses SHARED PCA basis for fair comparison between methods.
+    Shows weight concentration (adaptive learning) vs uniform (no learning).
     """
     from pathlib import Path
     data_path = Path(__file__).parent / 'figures' / 'code_formation_data.npz'
 
     if data_path.exists():
-        # Load pre-computed results
         data = np.load(data_path)
         adaptive_sols = data['adaptive_solutions']
         discrete_sols = data['discrete_solutions']
+        adaptive_weights = data['adaptive_weights']
         print(f"Loaded code formation data from {data_path}")
     else:
-        # Run simulation and save
         print("Running code formation simulation...")
         from code_formation_simulation import run_simulation, save_results
         cont, disc = run_simulation(n_trials=100)
         adaptive_sols, discrete_sols = save_results(cont, disc)
+        adaptive_weights = cont.weights
 
-    # CRITICAL FIX: Use SHARED PCA basis for fair comparison
-    # Fit PCA on combined data so both are in the same coordinate system
-    combined = np.vstack([adaptive_sols, discrete_sols])
-    pca = PCA(n_components=2)
-    pca.fit(combined)
+    # Compute pathway usage frequencies
+    adaptive_usage = adaptive_sols.sum(axis=0)  # How often each pathway was used
+    discrete_usage = discrete_sols.sum(axis=0)
 
-    # Transform both using the SAME basis
-    adaptive_2d = pca.transform(adaptive_sols)
-    discrete_2d = pca.transform(discrete_sols)
+    # Sort by adaptive usage for visualization
+    sort_idx = np.argsort(adaptive_usage)[::-1]
 
-    return adaptive_2d, discrete_2d
+    return adaptive_usage[sort_idx], discrete_usage[sort_idx], adaptive_weights[sort_idx]
 
 # =============================================================================
 # GENERATE FIGURE
@@ -123,9 +119,16 @@ print("Generating Figure 1...")
 # Get data
 traj_data = generate_20d_trajectories()
 scaling_data = generate_scaling_data()
-adaptive_2d, discrete_2d = generate_code_formation()
+adaptive_usage, discrete_usage, adaptive_weights = generate_code_formation()
 
-# Create figure
+# Colorblind-friendly palette (avoid red/green)
+COLOR_DISCRETE = '#E69F00'  # Orange
+COLOR_CONTINUOUS = '#0072B2'  # Blue
+COLOR_ADAPTIVE = '#0072B2'  # Blue
+COLOR_SCATTERED = '#E69F00'  # Orange
+
+# Create figure with larger fonts
+plt.rcParams.update({'font.size': 12, 'axes.titlesize': 14, 'axes.labelsize': 13})
 fig, axes = plt.subplots(2, 2, figsize=(12, 10))
 
 # -----------------------------------------------------------------------------
@@ -135,9 +138,11 @@ ax = axes[0, 0]
 path = traj_data['discrete_path'][:, :2]  # First 2 dims
 collisions = traj_data['discrete_collisions']
 
-ax.plot(path[:, 0], path[:, 1], 'o-', color='#d62728', markersize=3, linewidth=1.5, alpha=0.7)
-ax.scatter(path[::5, 0], path[::5, 1], c='orange', s=40, zorder=5, label='Collision events')
-ax.plot(path[-1, 0], path[-1, 1], 'o', color='green', markersize=15, zorder=10, label='SUCCESS')
+ax.plot(path[:, 0], path[:, 1], '-', color=COLOR_DISCRETE, linewidth=1.5, alpha=0.7)
+# Show more collision points (every 3rd instead of 5th) with larger markers
+ax.scatter(path[::3, 0], path[::3, 1], c='#CC79A7', s=60, zorder=5, marker='s',
+           edgecolors='black', linewidths=0.5, label='Collision events')
+ax.plot(path[-1, 0], path[-1, 1], 'o', color=COLOR_CONTINUOUS, markersize=15, zorder=10, label='SUCCESS')
 ax.plot(5, 5, '*', color='gold', markersize=20, markeredgecolor='black', zorder=10, label='Target')
 
 ax.set_xlabel('Dimension 1', fontsize=11)
@@ -152,8 +157,8 @@ ax.grid(True, alpha=0.3)
 ax = axes[0, 1]
 path = traj_data['continuous_path'][:, :2]  # First 2 dims
 
-ax.plot(path[:, 0], path[:, 1], '-', color='#2ca02c', linewidth=2, alpha=0.8)
-ax.plot(path[-1, 0], path[-1, 1], 'o', color='darkgreen', markersize=15, zorder=10, label='SUCCESS')
+ax.plot(path[:, 0], path[:, 1], '-', color=COLOR_CONTINUOUS, linewidth=2, alpha=0.8)
+ax.plot(path[-1, 0], path[-1, 1], 'o', color=COLOR_CONTINUOUS, markersize=15, zorder=10, label='SUCCESS')
 ax.plot(5, 5, '*', color='gold', markersize=20, markeredgecolor='black', zorder=10, label='Target')
 
 ax.set_xlabel('Dimension 1', fontsize=11)
@@ -163,8 +168,8 @@ ax.legend(loc='upper left', fontsize=9)
 ax.grid(True, alpha=0.3)
 
 # Add annotation
-ax.annotate('Collision-free\nevolution', xy=(2.5, 2.5), fontsize=10,
-            color='#2ca02c', ha='center', style='italic')
+ax.annotate('Collision-free\nevolution', xy=(2.5, 2.5), fontsize=11,
+            color=COLOR_CONTINUOUS, ha='center', style='italic')
 
 # -----------------------------------------------------------------------------
 # Panel C: Scaling
@@ -174,8 +179,8 @@ dims = scaling_data['dimensions']
 d_coll = scaling_data['discrete_collisions']
 c_coll = scaling_data['continuous_collisions']
 
-ax.plot(dims, d_coll, 'o-', color='#d62728', linewidth=2.5, markersize=8, label='Discrete VAS')
-ax.plot(dims, c_coll, 's--', color='#2ca02c', linewidth=2.5, markersize=8, label='Continuous (1 at readout)')
+ax.plot(dims, d_coll, 'o-', color=COLOR_DISCRETE, linewidth=2.5, markersize=8, label='Discrete VAS')
+ax.plot(dims, c_coll, 's--', color=COLOR_CONTINUOUS, linewidth=2.5, markersize=8, label='Continuous (1 at readout)')
 
 # Linear fit
 slope = np.polyfit(dims, d_coll, 1)[0]
@@ -190,22 +195,31 @@ ax.grid(True, alpha=0.3)
 ax.set_ylim(-20, max(d_coll) + 50)
 
 # -----------------------------------------------------------------------------
-# Panel D: Code Formation
+# Panel D: Code Formation - Pathway Reuse
 # -----------------------------------------------------------------------------
 ax = axes[1, 1]
 
-ax.scatter(discrete_2d[:, 0], discrete_2d[:, 1], c='#d62728', s=50, alpha=0.4, label='Discrete (scattered)')
-ax.scatter(adaptive_2d[:, 0], adaptive_2d[:, 1], c='#2ca02c', s=80, alpha=0.7, label='Adaptive (clustered)')
+n_pathways = len(adaptive_usage)
+x = np.arange(n_pathways)
+width = 0.35
 
-ax.set_xlabel('PC1', fontsize=11)
-ax.set_ylabel('PC2', fontsize=11)
-ax.set_title('D. Code Formation: Pathway Clustering', fontsize=12, fontweight='bold')
-ax.legend(loc='upper right', fontsize=10)
-ax.grid(True, alpha=0.3)
+# Bar chart showing pathway usage (sorted by adaptive usage)
+bars1 = ax.bar(x - width/2, adaptive_usage, width, color=COLOR_ADAPTIVE, alpha=0.8, label='Adaptive (learned)')
+bars2 = ax.bar(x + width/2, discrete_usage, width, color=COLOR_SCATTERED, alpha=0.6, label='Discrete (uniform)')
 
-# Add annotation
-ax.text(0.02, 0.98, 'Clustered solution patterns\nemerge via learning', transform=ax.transAxes,
-        fontsize=9, va='top', color='#2ca02c', style='italic')
+ax.set_xlabel('Pathway (sorted by adaptive usage)', fontsize=11)
+ax.set_ylabel('Times used (out of 100 trials)', fontsize=11)
+ax.set_title('D. Code Formation: Pathway Reuse', fontsize=12, fontweight='bold')
+ax.legend(loc='upper right', fontsize=9)
+ax.set_xlim(-1, 20)  # Show top 20 pathways
+ax.set_xticks(range(0, 20, 2))
+
+# Add annotation showing concentration (position below legend)
+top10_adaptive = adaptive_usage[:10].sum() / adaptive_usage.sum() * 100
+top10_discrete = discrete_usage[:10].sum() / discrete_usage.sum() * 100
+ax.text(0.98, 0.70, f'Top 10 capture:\nAdaptive: {top10_adaptive:.0f}%\nDiscrete: {top10_discrete:.0f}%',
+        transform=ax.transAxes, fontsize=10, va='top', ha='right',
+        bbox=dict(boxstyle='round', facecolor='white', edgecolor='gray', alpha=0.9))
 
 # -----------------------------------------------------------------------------
 # Save
@@ -218,12 +232,17 @@ output_dir = Path(__file__).resolve().parent.parent / 'figures'
 output_dir.mkdir(exist_ok=True)
 output_path = output_dir / 'intelligence_figure1.png'
 
-plt.savefig(output_path, dpi=300, bbox_inches='tight')
+# Save high-res PNG (600 DPI for publication)
+plt.savefig(output_path, dpi=600, bbox_inches='tight', facecolor='white')
 print(f"Saved: {output_path}")
 
 # Also save PDF
-plt.savefig(output_path.with_suffix('.pdf'), bbox_inches='tight')
+plt.savefig(output_path.with_suffix('.pdf'), bbox_inches='tight', facecolor='white')
 print(f"Saved: {output_path.with_suffix('.pdf')}")
+
+# Save TIFF (Elsevier preferred format)
+plt.savefig(output_path.with_suffix('.tiff'), dpi=600, bbox_inches='tight', facecolor='white')
+print(f"Saved: {output_path.with_suffix('.tiff')}")
 
 plt.close()
 print("\nDone! Figure regenerated with correct data.")
