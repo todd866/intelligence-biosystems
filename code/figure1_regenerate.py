@@ -204,18 +204,6 @@ ax.legend(loc='upper left', fontsize=10)
 ax.grid(True, alpha=0.3)
 ax.set_ylim(-20, max(d_coll) + 50)
 
-# Inset to show continuous = 1 is visible (not 0)
-from mpl_toolkits.axes_grid1.inset_locator import inset_axes
-axins = inset_axes(ax, width="35%", height="30%", loc='center right')
-axins.plot(dims, d_coll, 'o-', color=COLOR_DISCRETE, linewidth=1.5, markersize=4)
-axins.plot(dims, c_coll, 's--', color=COLOR_CONTINUOUS, linewidth=1.5, markersize=4)
-axins.set_ylim(-0.5, 15)
-axins.set_xlim(0, 520)
-axins.axhline(y=1, color=COLOR_CONTINUOUS, linestyle=':', alpha=0.5)
-axins.set_ylabel('Collisions', fontsize=8)
-axins.tick_params(labelsize=8)
-axins.set_title('Zoomed: continuous = 1', fontsize=8)
-
 # -----------------------------------------------------------------------------
 # Panel D: Code Formation - Pathway Reuse
 # -----------------------------------------------------------------------------
