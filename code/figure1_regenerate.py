@@ -250,10 +250,6 @@ print(f"Saved: {output_path}")
 plt.savefig(output_path.with_suffix('.pdf'), bbox_inches='tight', facecolor='white')
 print(f"Saved: {output_path.with_suffix('.pdf')}")
 
-# Save TIFF (Elsevier preferred format)
-plt.savefig(output_path.with_suffix('.tiff'), dpi=600, bbox_inches='tight', facecolor='white')
-print(f"Saved: {output_path.with_suffix('.tiff')}")
-
 plt.close()
 print("\nDone! Figure regenerated with correct data.")
 print(f"Discrete 20D: {traj_data['discrete_collisions']} collisions, success={traj_data['discrete_success']}")
