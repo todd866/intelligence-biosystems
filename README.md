@@ -1,8 +1,8 @@
 # Intelligence as High-Dimensional Coherence
 
 **Repository:** [todd866/intelligence-biosystems](https://github.com/todd866/intelligence-biosystems)
-**Paper status:** R2 submitted to *BioSystems* (January 6, 2026; BIOSYS-D-25-00880R2)
-**This repo:** Post-submission validation + revisions (transparent, versioned)
+**Paper status:** Published in *BioSystems* (January 2026)
+**DOI:** [10.1016/j.biosystems.2026.105704](https://doi.org/10.1016/j.biosystems.2026.105704)
 
 ## Companion Paper
 
@@ -100,12 +100,12 @@ pdflatex intelligence.tex && pdflatex intelligence.tex
 ## Citation
 
 ```bibtex
-@article{todd2025intelligence,
+@article{todd2026intelligence,
   title={Intelligence as High-Dimensional Coherence: The Observable Dimensionality Bound and Computational Tractability},
   author={Todd, Ian},
   journal={BioSystems},
-  year={2025},
-  note={Under review}
+  year={2026},
+  doi={10.1016/j.biosystems.2026.105704}
 }
 ```
 
