@@ -54,7 +54,7 @@ Cortical dynamics exceed observable dimensionality by two orders of magnitude.
 
 ```
 3_intelligence/
-├── intelligence.tex              # Current manuscript (R2 revision)
+├── intelligence.tex              # Published manuscript
 ├── intelligence.pdf              # Compiled output
 ├── README.md
 ├── LICENSE
@@ -64,10 +64,6 @@ Cortical dynamics exceed observable dimensionality by two orders of magnitude.
 │   └── figure1_regenerate.py     # Generates Figure 1 (imports above)
 ├── figures/
 │   └── intelligence_figure1.png/pdf
-├── submission/                   # Current submission materials
-│   ├── cover_letter_r1.tex/pdf
-│   ├── response_to_editor_r1.tex/pdf
-│   └── R1/                       # Previous round materials (archive)
 └── archive/                      # (gitignored) Old versions, commentary
 ```
 
