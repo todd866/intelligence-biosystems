@@ -13,7 +13,6 @@ Key: Both discrete and continuous SUCCEED. The comparison is collision COUNT, no
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.decomposition import PCA
 from vas_scaling_simulation import DiscreteVAS, ContinuousVAS
 
 np.random.seed(42)

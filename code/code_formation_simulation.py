@@ -15,7 +15,6 @@ and performance advantages of adaptive high-dimensional exploration.
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import defaultdict
-from sklearn.decomposition import PCA
 
 np.random.seed(42)
 
