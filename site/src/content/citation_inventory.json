@@ -1,0 +1,1972 @@
+{
+  "summary": {
+    "paper_title": "Intelligence as High-Dimensional Coherence",
+    "paper_doi": "10.1016/j.biosystems.2026.105704",
+    "cited_keys": 58,
+    "bib_entries": 75,
+    "cited_dois": 49,
+    "cited_without_doi": 9,
+    "uncited_bib_entries": [
+      "buzsaki2006",
+      "chialvo2010",
+      "cover2006",
+      "epstein1998",
+      "gallego2020",
+      "gao2017theory",
+      "hipp2012",
+      "igamberdiev2021",
+      "kuramoto1984",
+      "laughlin1998",
+      "levin2021",
+      "levin2024",
+      "palva2011",
+      "pinotsis2023cytoelectric",
+      "recanatesi2024",
+      "strogatz2000",
+      "vanroy2006"
+    ],
+    "missing_bib_entries": [],
+    "paperlibrary_status_counts": {
+      "have_text": 58,
+      "needs_pdf": 7,
+      "no_doi": 10
+    },
+    "text_overrides_used": []
+  },
+  "references": [
+    {
+      "cite_key": "todd2025falsifiability",
+      "title": "The limits of falsifiability: Dimensionality, measurement thresholds, and the sub-Landauer domain in biological systems",
+      "authors": "Todd, I.",
+      "year": "2025",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2025.105608",
+      "url": "https://doi.org/10.1016/j.biosystems.2025.105608",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        },
+        {
+          "line": 497,
+          "context": "This is not technological limitation but thermodynamic fact. Extracting timing information requires injecting measurement energy $ k_B T 2$ per bit, which can disrupt the coherence enabling the computation. This establishes a projection bound: continuous substrates can support dynamics richer than any discrete measurement can capture todd2025maxwell, creating regimes where falsifiability itself becomes limited by measurement thresholds todd2025falsifiability."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2025-105608",
+        "title": "The limits of falsifiability: Dimensionality, measurement thresholds, and the sub-Landauer domain in biological systems",
+        "year": "2025",
+        "journal": "BioSystems",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2025-105608.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2025-105608.txt",
+        "has_text": true
+      },
+      "raw": "Todd, I. (2025). The limits of falsifiability: Dimensionality, measurement thresholds, and the sub-Landauer domain in biological systems. BioSystems, 105608. doi:10.1016/j.biosystems.2025.105608"
+    },
+    {
+      "cite_key": "todd2025maxwell",
+      "title": "Timing inaccessibility and the projection bound: Resolving Maxwell's demon for continuous biological substrates",
+      "authors": "Todd, I.",
+      "year": "2025",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2025.105632",
+      "url": "https://doi.org/10.1016/j.biosystems.2025.105632",
+      "citation_count": 4,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        },
+        {
+          "line": 115,
+          "context": "Our proposal: Biological intelligence operates through collision-free exploration in high-dimensional spaces, enabling power efficiency (sparse collisions) and computational tractability (escaping local minima). When $D_eff > D_crit$, temporal microstructure becomes operationally untrackable at the available channel capacity—timing inaccessibility as thermodynamic consequence. As in timing-inaccessibility models todd2025maxwell, internal computation proceeds via reversible correlation and constraint evolution (Stage 1), with thermodynamic costs concentrated at discrete commitment events where stable records are written (Stage 2)."
+        },
+        {
+          "line": 320,
+          "context": "Remark (Connection to Temporal Registration and Projection Bounds). Proposition 1 is the dimensional counterpart of two results from timing-inaccessibility theory todd2025maxwell: (i) the Temporal Registration Bound (TRB), which states that irreversibly ordering $M$ temporal bins requires $ _2(M!)$ bits of stabilized record, and (ii) the Projection Bound (PB), which states that quasistatic dimensional collapse from $N_pre$ to $N_post$ accessible states dissipates $ k_B T_eff (N_pre/N_post)$. TRB constrains temporal resolution; Proposition 1 constrains dimensional resolution. Both derive from the same upstream physics: finite measurement bandwidth cannot resolve structure faster than Landauer-limited stabilization permits. When $D_eff > D_crit$, the system operates in the timing-inaccessible regime where TRB and PB jointly guarantee that temporal order of internal states is unrecoverable from behavioral output."
+        },
+        {
+          "line": 497,
+          "context": "This is not technological limitation but thermodynamic fact. Extracting timing information requires injecting measurement energy $ k_B T 2$ per bit, which can disrupt the coherence enabling the computation. This establishes a projection bound: continuous substrates can support dynamics richer than any discrete measurement can capture todd2025maxwell, creating regimes where falsifiability itself becomes limited by measurement thresholds todd2025falsifiability."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2025-105632",
+        "title": "Timing inaccessibility and the projection bound: Resolving Maxwell’s demon for continuous biological substrates",
+        "year": "2025",
+        "journal": "BioSystems",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2025-105632.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2025-105632.txt",
+        "has_text": true
+      },
+      "raw": "Todd, I. (2025). Timing inaccessibility and the projection bound: Resolving Maxwell's demon for continuous biological substrates. BioSystems, 105632. doi:10.1016/j.biosystems.2025.105632"
+    },
+    {
+      "cite_key": "ashby1956",
+      "title": "An Introduction to Cybernetics",
+      "authors": "Ashby, W.R.",
+      "year": "1956",
+      "journal": "",
+      "doi": "10.5962/bhl.title.5851",
+      "url": "http://pespmc1.vub.ac.be/books/IntroCyb.pdf",
+      "citation_count": 3,
+      "contexts": [
+        {
+          "line": 67,
+          "context": "The Observable Dimensionality Bound as functional opacity. We formalize this through a measurement-theoretic bound: external observers cannot track systems whose effective dimensionality exceeds $D_crit = C_commit_e/( h_^track)$. Beyond this threshold, systems become observationally inaccessible---not merely hard to compute, but impossible to track with finite bandwidth. This opacity is functional: low-bandwidth coupling to external systems limits both external control and disturbance propagation (cf. Ashby's requisite variety ashby1956). The high-dimensional structure that makes a system intelligent is the same structure that makes it untrackable---and untrackability, operationally defined as resistance to externally-imposed state control under bandwidth limits, is a necessary condition for autonomous behavior."
+        },
+        {
+          "line": 192,
+          "context": "Structure and thesis: What's new. Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost landauer1961; Ashby's requisite variety gives a qualitative constraint on control ashby1956; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete leroux2013; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency friston2010,beggs2003,enel2016reservoir. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:"
+        },
+        {
+          "line": 318,
+          "context": "Connection to Ashby's Law of Requisite Variety. This result can be understood as a measurement-theoretic refinement of Ashby's law of requisite variety ashby1956: a controller must have at least as much variety as the disturbances it compensates. Here, ``variety'' is instantiated as effective dimensionality $D_eff$, and we show that when $D_target > D_crit$, the shortfall manifests as observational inaccessibility---the controller cannot even measure the disturbances, let alone compensate them. Ashby's principle provides the qualitative constraint; Proposition 1 quantifies the measurement bandwidth required to achieve it."
+        }
+      ],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Ashby, W.R. (1956). An Introduction to Cybernetics. Chapman & Hall, London. (Reprinted 1999, available at http://pespmc1.vub.ac.be/books/IntroCyb.pdf)"
+    },
+    {
+      "cite_key": "landauer1961",
+      "title": "Irreversibility and heat generation in the computing process",
+      "authors": "Landauer, R.",
+      "year": "1961",
+      "journal": "IBM Journal of Research and Development",
+      "doi": "10.1147/rd.53.0183",
+      "url": "https://doi.org/10.1147/rd.53.0183",
+      "citation_count": 3,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        },
+        {
+          "line": 166,
+          "context": "where $ (0,1]$ is recording efficiency landauer1961.Landauer's bound applies to logically irreversible operations (erasure/overwrite). Here ``collisions'' are precisely those registrations. Purely reversible readout cannot, at scale, extract temporal decompositions when $H_dyn>C_commit$ without enforcing registrations and dissipation. This has profound implications:"
+        },
+        {
+          "line": 192,
+          "context": "Structure and thesis: What's new. Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost landauer1961; Ashby's requisite variety gives a qualitative constraint on control ashby1956; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete leroux2013; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency friston2010,beggs2003,enel2016reservoir. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1147-rd-53-0183",
+        "title": "Irreversibility and Heat Generation in the Computing Process",
+        "year": "1961",
+        "journal": "IBM Journal of Research and Development",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1147-rd-53-0183.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1147-rd-53-0183.txt",
+        "has_text": true
+      },
+      "raw": "Landauer, R. (1961). Irreversibility and heat generation in the computing process. IBM Journal of Research and Development, 5, 183--191. doi:10.1147/rd.53.0183"
+    },
+    {
+      "cite_key": "shannon1948",
+      "title": "A mathematical theory of communication",
+      "authors": "Shannon, C.E.",
+      "year": "1948",
+      "journal": "Bell System Technical Journal",
+      "doi": "10.1002/j.1538-7305.1948.tb01338.x",
+      "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 475,
+          "context": "Commitment to action occurs through a channel with finite capacity $C_commit$ (bits/s) shannon1948, bounded by behavioral output constraints---reaction times, choice entropy, motor bandwidth---not by the intrinsic dynamics rate $H_dyn$."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1002-j-1538-7305-1948-tb01338-x",
+        "title": "A Mathematical Theory of Communication",
+        "year": "1948",
+        "journal": "Bell System Technical Journal",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1002-j-1538-7305-1948-tb01338-x.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1002-j-1538-7305-1948-tb01338-x.txt",
+        "has_text": true
+      },
+      "raw": "Shannon, C.E. (1948). A mathematical theory of communication. Bell System Technical Journal, 27(3), 379--423. doi:10.1002/j.1538-7305.1948.tb01338.x"
+    },
+    {
+      "cite_key": "cover2006",
+      "title": "Elements of Information Theory",
+      "authors": "Cover, T.M., & Thomas, J.A.",
+      "year": "2006",
+      "journal": "",
+      "doi": "10.1002/047174882x",
+      "url": "https://doi.org/10.1002/047174882X",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1002-047174882x",
+        "title": "Elements of Information Theory",
+        "year": "2005",
+        "journal": "",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1002-047174882x.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1002-047174882x.txt",
+        "has_text": true
+      },
+      "raw": "Cover, T.M., & Thomas, J.A. (2006). Elements of Information Theory (2nd ed.). Wiley-Interscience. doi:10.1002/047174882X"
+    },
+    {
+      "cite_key": "gao2017theory",
+      "title": "A theory of multineuronal dimensionality, dynamics and measurement",
+      "authors": "Gao, P., & Ganguli, S.",
+      "year": "2017",
+      "journal": "bioRxiv",
+      "doi": "10.1101/214262",
+      "url": "https://doi.org/10.1101/214262",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1101-214262",
+        "title": "A theory of multineuronal dimensionality, dynamics and measurement",
+        "year": "2017",
+        "journal": "",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1101-214262.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1101-214262.txt",
+        "has_text": true
+      },
+      "raw": "Gao, P., & Ganguli, S. (2017). A theory of multineuronal dimensionality, dynamics and measurement. bioRxiv, 214262. doi:10.1101/214262"
+    },
+    {
+      "cite_key": "vanroy2006",
+      "title": "Performance loss bounds for approximate value iteration with state aggregation",
+      "authors": "Van Roy, B.",
+      "year": "2006",
+      "journal": "Mathematics of Operations Research",
+      "doi": "10.1287/moor.1060.0188",
+      "url": "https://doi.org/10.1287/moor.1060.0188",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1287-moor-1060-0188",
+        "title": "Performance Loss Bounds for Approximate Value Iteration with State Aggregation",
+        "year": "2006",
+        "journal": "Mathematics of Operations Research",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1287-moor-1060-0188.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1287-moor-1060-0188.txt",
+        "has_text": true
+      },
+      "raw": "Van Roy, B. (2006). Performance loss bounds for approximate value iteration with state aggregation. Mathematics of Operations Research, 31(2), 234--244. doi:10.1287/moor.1060.0188"
+    },
+    {
+      "cite_key": "kuramoto1984",
+      "title": "Chemical Oscillations, Waves, and Turbulence",
+      "authors": "Kuramoto, Y.",
+      "year": "1984",
+      "journal": "",
+      "doi": "10.1007/978-3-642-69689-3",
+      "url": "https://doi.org/10.1007/978-3-642-69689-3",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1007-978-3-642-69689-3",
+        "title": "Chemical Oscillations, Waves, and Turbulence",
+        "year": "1984",
+        "journal": "Springer Series in Synergetics",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1007-978-3-642-69689-3.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1007-978-3-642-69689-3.txt",
+        "has_text": true
+      },
+      "raw": "Kuramoto, Y. (1984). Chemical Oscillations, Waves, and Turbulence. Springer, Berlin. doi:10.1007/978-3-642-69689-3"
+    },
+    {
+      "cite_key": "strogatz2000",
+      "title": "From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators",
+      "authors": "Strogatz, S.H.",
+      "year": "2000",
+      "journal": "Physica D",
+      "doi": "10.1016/s0167-2789(00)00094-4",
+      "url": "https://doi.org/10.1016/S0167-2789(00)00094-4",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-s0167-2789-00-00094-4",
+        "title": "From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators",
+        "year": "2000",
+        "journal": "Physica D: Nonlinear Phenomena",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-s0167-2789-00-00094-4.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-s0167-2789-00-00094-4.txt",
+        "has_text": true
+      },
+      "raw": "Strogatz, S.H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators. Physica D, 143, 1--20. doi:10.1016/S0167-2789(00)00094-4"
+    },
+    {
+      "cite_key": "stetson2007",
+      "title": "Does time really slow down during a frightening event? PLoS ONE, 2(12), e1295",
+      "authors": "Stetson, C., Fiesta, M.P., Eagleman, D.M.",
+      "year": "2007",
+      "journal": "",
+      "doi": "10.1371/journal.pone.0001295",
+      "url": "https://doi.org/10.1371/journal.pone.0001295",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1067,
+          "context": "suggesting cognitive processes require both high dimensionality and coherence. Empirically, tachypsychia (subjective time dilation during acute stress) shows dissociation: subjective time slows while reaction times remain unchanged stetson2007. This dissociation implies phenomenal temporal experience may correlate with high-dimensional pre-commit coherent dynamics (perception) rather than low-dimensional motor commit events (action)---consistent with consciousness tracking continuous constraint geometry operating beyond $D_crit$. However, detailed predictions about subjective experience remain beyond the scope of this work, which focuses on measurable computational and energetic signatures."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1371-journal-pone-0001295",
+        "title": "Does Time Really Slow Down during a Frightening Event?",
+        "year": "2007",
+        "journal": "PLoS ONE",
+        "source": "unpaywall",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1371-journal-pone-0001295.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1371-journal-pone-0001295.txt",
+        "has_text": true
+      },
+      "raw": "Stetson, C., Fiesta, M.P., Eagleman, D.M. (2007). Does time really slow down during a frightening event? PLoS ONE, 2(12), e1295. doi:10.1371/journal.pone.0001295"
+    },
+    {
+      "cite_key": "epstein1998",
+      "title": "An Introduction to Nonlinear Chemical Dynamics: Oscillations, Waves, Patterns, and Chaos",
+      "authors": "Epstein, I.R., & Pojman, J.A.",
+      "year": "1998",
+      "journal": "",
+      "doi": "",
+      "url": "",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Epstein, I.R., & Pojman, J.A. (1998). An Introduction to Nonlinear Chemical Dynamics: Oscillations, Waves, Patterns, and Chaos. Oxford University Press, Oxford."
+    },
+    {
+      "cite_key": "czerwinski2021",
+      "title": "Reachability in Vector Addition Systems is Ackermann-complete. In: 62nd IEEE Annual Symposium on Foundations of Computer Science (FOCS), pp. 1229--1240",
+      "authors": "Czerwiński, W., Orlikowski, Ł.",
+      "year": "2021",
+      "journal": "",
+      "doi": "10.1109/focs52979.2021.00120",
+      "url": "https://doi.org/10.1109/FOCS52979.2021.00120",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 559,
+          "context": "Vector addition systems (VAS) formalize constrained state-space navigation. States are integer vectors $v N^n$; transitions add or subtract fixed vectors. The reachability problem---can we reach target $v_target$ from initial $v_init$?---has been proven Ackermann-complete czerwinski2021,brubaker2023, with complexity beyond any elementary function of input size."
+        }
+      ],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Czerwiński, W., Orlikowski, Ł. (2021). Reachability in Vector Addition Systems is Ackermann-complete. In: 62nd IEEE Annual Symposium on Foundations of Computer Science (FOCS), pp. 1229--1240. doi:10.1109/FOCS52979.2021.00120"
+    },
+    {
+      "cite_key": "brubaker2023",
+      "title": "An easy-sounding problem yields numbers too big for our universe",
+      "authors": "Brubaker, B.",
+      "year": "2023",
+      "journal": "Quanta Magazine",
+      "doi": "",
+      "url": "https://www.quantamagazine.org/an-easy-sounding-problem-yields-numbers-too-big-for-our-universe-20231204/",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 559,
+          "context": "Vector addition systems (VAS) formalize constrained state-space navigation. States are integer vectors $v N^n$; transitions add or subtract fixed vectors. The reachability problem---can we reach target $v_target$ from initial $v_init$?---has been proven Ackermann-complete czerwinski2021,brubaker2023, with complexity beyond any elementary function of input size."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Brubaker, B. (2023). An easy-sounding problem yields numbers too big for our universe. Quanta Magazine, December 4. https://www.quantamagazine.org/an-easy-sounding-problem-yields-numbers-too-big-for-our-universe-20231204/"
+    },
+    {
+      "cite_key": "miller2024",
+      "title": "Cognition is an emergent property",
+      "authors": "Miller, E.K., Brincat, S.L., Roy, J.E.",
+      "year": "2024",
+      "journal": "Current Opinion in Behavioral Sciences",
+      "doi": "10.1016/j.cobeha.2024.101388",
+      "url": "https://doi.org/10.1016/j.cobeha.2024.101388",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 210,
+          "context": "Neural tissue: Cortical dynamics emerge from coupled neural oscillators; ephaptic field coupling creates high-D phase space miller2024,pinotsis2023ephaptic. Action potentials are low-D projections linking intracellular and extracellular high-D dynamics."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-cobeha-2024-101388",
+        "title": "Cognition is an emergent property",
+        "year": "2024",
+        "journal": "Current Opinion in Behavioral Sciences",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-cobeha-2024-101388.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-cobeha-2024-101388.txt",
+        "has_text": true
+      },
+      "raw": "Miller, E.K., Brincat, S.L., Roy, J.E. (2024). Cognition is an emergent property. Current Opinion in Behavioral Sciences, 57, 101388. doi:10.1016/j.cobeha.2024.101388"
+    },
+    {
+      "cite_key": "chen2026",
+      "title": "Oscillatory control of cortical space as a computational dimension",
+      "authors": "Chen, Z., Brincat, S.L., Lundqvist, M., Loonis, R.F., Warden, M.R., Miller, E.K.",
+      "year": "2025",
+      "journal": "Current Biology",
+      "doi": "10.1016/j.cub.2025.11.072",
+      "url": "https://doi.org/10.1016/j.cub.2025.11.072",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 501,
+          "context": "Neural oscillations as computation substrate. Miller and colleagues demonstrate that cortical computation emerges from coupled neural oscillations, not discrete symbolic operations. Working memory, for instance, operates through sustained oscillatory patterns in prefrontal cortex—information exists as geometric structure in phase relationships, not as stored bits. Chen et al. chen2026 provide direct evidence for this spatial computing framework: alpha/beta oscillations act as ``inhibitory stencils'' controlling where spiking can occur, demonstrating that slow rhythms actively structure the cortical workspace for content representation. The system maintains coherence over seconds, collapsing to discrete behavioral outputs only when decisions are made."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-cub-2025-11-072",
+        "title": "Oscillatory control of cortical space as a computational dimension",
+        "year": "2026",
+        "journal": "Current Biology",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-cub-2025-11-072.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-cub-2025-11-072.txt",
+        "has_text": true
+      },
+      "raw": "Chen, Z., Brincat, S.L., Lundqvist, M., Loonis, R.F., Warden, M.R., Miller, E.K. (2025, in press). Oscillatory control of cortical space as a computational dimension. Current Biology. doi:10.1016/j.cub.2025.11.072"
+    },
+    {
+      "cite_key": "pinotsis2023ephaptic",
+      "title": "In vivo ephaptic coupling allows memory network formation",
+      "authors": "Pinotsis, D.A., Miller, E.K.",
+      "year": "2023",
+      "journal": "Cerebral Cortex",
+      "doi": "10.1093/cercor/bhad251",
+      "url": "https://doi.org/10.1093/cercor/bhad251",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 210,
+          "context": "Neural tissue: Cortical dynamics emerge from coupled neural oscillators; ephaptic field coupling creates high-D phase space miller2024,pinotsis2023ephaptic. Action potentials are low-D projections linking intracellular and extracellular high-D dynamics."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1093-cercor-bhad251",
+        "title": "In vivo ephaptic coupling allows memory network formation",
+        "year": "2023",
+        "journal": "Cerebral Cortex",
+        "source": "imported",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1093-cercor-bhad251.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1093-cercor-bhad251.txt",
+        "has_text": true
+      },
+      "raw": "Pinotsis, D.A., Miller, E.K. (2023). In vivo ephaptic coupling allows memory network formation. Cerebral Cortex, 33(17), 9877--9895. doi:10.1093/cercor/bhad251"
+    },
+    {
+      "cite_key": "pinotsis2023cytoelectric",
+      "title": "The Cytoelectric Coupling Hypothesis: How the Brain Creates Patterns of Information for Memory",
+      "authors": "Pinotsis, D.A., Shapiro, M., Miller, E.K.",
+      "year": "2023",
+      "journal": "Progress in Neurobiology",
+      "doi": "10.1016/j.pneurobio.2023.102476",
+      "url": "https://doi.org/10.1016/j.pneurobio.2023.102476",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Pinotsis, D.A., Shapiro, M., Miller, E.K. (2023). The Cytoelectric Coupling Hypothesis: How the Brain Creates Patterns of Information for Memory. Progress in Neurobiology, 227, 102476. doi:10.1016/j.pneurobio.2023.102476"
+    },
+    {
+      "cite_key": "siegel2012",
+      "title": "Spectral fingerprints of large-scale neuronal interactions",
+      "authors": "Siegel, M., Donner, T.H., Engel, A.K.",
+      "year": "2012",
+      "journal": "Nature Reviews Neuroscience",
+      "doi": "10.1038/nrn3137",
+      "url": "https://doi.org/10.1038/nrn3137",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 503,
+          "context": "We can estimate the accessible regime from magnetoencephalography (MEG) observables. MEG source reconstruction typically yields hundreds of cortical parcels (order-of-magnitude $N 10^2$--$10^3$, often ~200--400 depending on parcellation) coupling across quasi-independent frequency bands (alpha, beta, gamma: $|B| 3$--$5$) siegel2012. If task-relevant dynamics involve coordinated activity across these parcels and bands with task-selective sparsity $ [0.2, 0.4]$ shine2019, a conservative estimate of effective dimensionality is:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nrn3137",
+        "title": "Spectral fingerprints of large-scale neuronal interactions",
+        "year": "2012",
+        "journal": "Nature Reviews Neuroscience",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nrn3137.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nrn3137.txt",
+        "has_text": true
+      },
+      "raw": "Siegel, M., Donner, T.H., Engel, A.K. (2012). Spectral fingerprints of large-scale neuronal interactions. Nature Reviews Neuroscience, 13(2), 121--134. doi:10.1038/nrn3137"
+    },
+    {
+      "cite_key": "shine2019",
+      "title": "Human cognition involves the dynamic integration of neural activity and neuromodulatory systems",
+      "authors": "Shine, J.M., Breakspear, M., Bell, P.T., Ehgoetz Martens, K.A., Shine, R., Koyejo, O., Sporns, O., Poldrack, R.A.",
+      "year": "2019",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/s41593-018-0312-0",
+      "url": "https://doi.org/10.1038/s41593-018-0312-0",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 503,
+          "context": "We can estimate the accessible regime from magnetoencephalography (MEG) observables. MEG source reconstruction typically yields hundreds of cortical parcels (order-of-magnitude $N 10^2$--$10^3$, often ~200--400 depending on parcellation) coupling across quasi-independent frequency bands (alpha, beta, gamma: $|B| 3$--$5$) siegel2012. If task-relevant dynamics involve coordinated activity across these parcels and bands with task-selective sparsity $ [0.2, 0.4]$ shine2019, a conservative estimate of effective dimensionality is:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-s41593-018-0312-0",
+        "title": "Human cognition involves the dynamic integration of neural activity and neuromodulatory systems",
+        "year": "2019",
+        "journal": "Nature Neuroscience",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-s41593-018-0312-0.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-s41593-018-0312-0.txt",
+        "has_text": true
+      },
+      "raw": "Shine, J.M., Breakspear, M., Bell, P.T., Ehgoetz Martens, K.A., Shine, R., Koyejo, O., Sporns, O., Poldrack, R.A. (2019). Human cognition involves the dynamic integration of neural activity and neuromodulatory systems. Nature Neuroscience, 22(2), 289--296. doi:10.1038/s41593-018-0312-0"
+    },
+    {
+      "cite_key": "buzsaki2006",
+      "title": "Rhythms of the Brain",
+      "authors": "Buzsáki, G.",
+      "year": "2006",
+      "journal": "",
+      "doi": "10.1093/acprof:oso/9780195301069.001.0001",
+      "url": "https://doi.org/10.1093/acprof:oso/9780195301069.001.0001",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1093-acprof-oso-9780195301069-001-0001",
+        "title": "Rhythms of the Brain",
+        "year": "2006",
+        "journal": "",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1093-acprof-oso-9780195301069-001-0001.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1093-acprof-oso-9780195301069-001-0001.txt",
+        "has_text": true
+      },
+      "raw": "Buzsáki, G. (2006). Rhythms of the Brain. Oxford University Press, Oxford. doi:10.1093/acprof:oso/9780195301069.001.0001"
+    },
+    {
+      "cite_key": "levin2021",
+      "title": "Bioelectric signaling: Reprogrammable circuits underlying embryogenesis, regeneration, and cancer",
+      "authors": "Levin, M.",
+      "year": "2021",
+      "journal": "Cell",
+      "doi": "10.1016/j.cell.2021.02.034",
+      "url": "https://doi.org/10.1016/j.cell.2021.02.034",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-cell-2021-02-034",
+        "title": "Bioelectric signaling: Reprogrammable circuits underlying embryogenesis, regeneration, and cancer",
+        "year": "2021",
+        "journal": "Cell",
+        "source": "unpaywall",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-cell-2021-02-034.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-cell-2021-02-034.txt",
+        "has_text": true
+      },
+      "raw": "Levin, M. (2021). Bioelectric signaling: Reprogrammable circuits underlying embryogenesis, regeneration, and cancer. Cell, 184(8), 1971--1989. doi:10.1016/j.cell.2021.02.034"
+    },
+    {
+      "cite_key": "extropic2025",
+      "title": "An efficient probabilistic hardware architecture for diffusion-like models",
+      "authors": "Jelinčič, A., Lockwood, O., Garlapati, A., Verdon, G., McCourt, T.",
+      "year": "2025",
+      "journal": "arXiv preprint",
+      "doi": "10.48550/arxiv.2510.23972",
+      "url": "https://doi.org/10.48550/arXiv.2510.23972",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1086,
+          "context": "Thermodynamic computing: Extropic's probabilistic hardware implements Energy-Based Models via stochastic CMOS circuits, reporting order-of-magnitude energy efficiency gains over GPUs on specific image generation benchmarks extropic2025. By operating closer to continuous thermodynamic dynamics rather than fully discrete symbolic updates, such systems may approach intermediate $D_eff/D_crit$ regimes ($ 10$--$10^2$), trading deterministic observability for computational efficiency."
+        }
+      ],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Jelinčič, A., Lockwood, O., Garlapati, A., Verdon, G., McCourt, T. (2025). An efficient probabilistic hardware architecture for diffusion-like models. arXiv preprint arXiv:2510.23972 [cs.LG]. doi:10.48550/arXiv.2510.23972"
+    },
+    {
+      "cite_key": "kaplan2020",
+      "title": "Scaling laws for neural language models",
+      "authors": "Kaplan, J., McCandlish, S., Henighan, T., Brown, T.B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., Amodei, D.",
+      "year": "2020",
+      "journal": "arXiv preprint",
+      "doi": "",
+      "url": "https://arxiv.org/abs/2001.08361",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 85,
+          "context": "Training GPT-scale models ($ 10^11$ parameters) requires $ 10^23$--$10^24$ floating-point operations kaplan2020; treating each FLOP as $$1--10 bit registrations yields order-of-magnitude $10^24$ collision events, consuming megawatts. The human brain achieves comparable representational complexity at $$20~W---six orders of magnitude less.These comparisons are illustrative order-of-magnitude contrasts, not claims of exact energetic equivalence between biological and artificial workloads. FLOPs $$ collisions, GPU efficiency varies by workload, and AI tasks differ from biological cognition. The point is qualitative: architectural commitment frequency differs by orders of magnitude. This gap reflects, in part, the thermodynamic cost of forced registrations under dimensional mismatch."
+        },
+        {
+          "line": 404,
+          "context": "Training GPT-scale models ($ 10^11$ parameters, $ 10^13$ tokens) requires $ 10^23$--$10^24$ FLOPs kaplan2020, corresponding to order-of-magnitude $10^24$ bit registrations and consuming megawatts continuously. Biological intelligence achieves comparable representational complexity while dissipating $ 20$ W---six orders of magnitude less---because it operates collision-free until behavioral output."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Kaplan, J., McCandlish, S., Henighan, T., Brown, T.B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., Amodei, D. (2020). Scaling laws for neural language models. arXiv preprint arXiv:2001.08361 [cs.LG]. arXiv:2001.08361"
+    },
+    {
+      "cite_key": "friston2010",
+      "title": "The free-energy principle: a unified brain theory? Nature Reviews Neuroscience, 11(2), 127--138",
+      "authors": "Friston, K.",
+      "year": "2010",
+      "journal": "",
+      "doi": "10.1038/nrn2787",
+      "url": "https://doi.org/10.1038/nrn2787",
+      "citation_count": 4,
+      "contexts": [
+        {
+          "line": 65,
+          "context": "The third point is crucial. Behavioral outputs are not merely ``responses'' or ``tracking signals''---they are free-energy-minimizing interventions that protect internal structure. The organism acts to maintain the viability of its nonergodic dynamics friston2010. Recent work on cell phenotype transitions provides complementary evidence: Huang et al.~huang2024scim embed single-cell gene expression profiles as Gaussian distributions on a Fisher information manifold, finding that low Ricci curvature marks critical transitions while high information velocity coincides with low curvature---geometry guides dynamics on phenotype manifolds precisely where dimensional collapse becomes behaviorally relevant."
+        },
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        },
+        {
+          "line": 192,
+          "context": "Structure and thesis: What's new. Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost landauer1961; Ashby's requisite variety gives a qualitative constraint on control ashby1956; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete leroux2013; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency friston2010,beggs2003,enel2016reservoir. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:"
+        },
+        {
+          "line": 1069,
+          "context": "Free Energy Principle: Under the FEP, biological systems can be described as minimizing variational free energy (a bound on surprise) via perception/action cycles friston2010. Our framework adds an observational constraint: in timing-inaccessible regimes ($D_eff D_crit$), much of the predictive machinery is implemented by high-dimensional constraint-geometry evolution that is not reconstructible from the low-bandwidth behavioral channel. Behavioral readouts therefore reflect collapsed commitments, not the full internal trajectory."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nrn2787",
+        "title": "The free-energy principle: a unified brain theory?",
+        "year": "2010",
+        "journal": "Nature Reviews Neuroscience",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nrn2787.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nrn2787.txt",
+        "has_text": true
+      },
+      "raw": "Friston, K. (2010). The free-energy principle: a unified brain theory? Nature Reviews Neuroscience, 11(2), 127--138. doi:10.1038/nrn2787"
+    },
+    {
+      "cite_key": "tononi2004",
+      "title": "An information integration theory of consciousness",
+      "authors": "Tononi, G.",
+      "year": "2004",
+      "journal": "BMC Neuroscience",
+      "doi": "10.1186/1471-2202-5-42",
+      "url": "https://doi.org/10.1186/1471-2202-5-42",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1052,
+          "context": "Integrated Information Theory: Posits consciousness scales with integrated information $$ tononi2004. Recent work in BioSystems has explored consciousness and dimensionality from perspectives that are complementary to parts of our measurement-theoretic framing:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1186-1471-2202-5-42",
+        "title": "An information integration theory of consciousness",
+        "year": "2004",
+        "journal": "BMC Neuroscience",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1186-1471-2202-5-42.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1186-1471-2202-5-42.txt",
+        "has_text": true
+      },
+      "raw": "Tononi, G. (2004). An information integration theory of consciousness. BMC Neuroscience, 5, 42. doi:10.1186/1471-2202-5-42"
+    },
+    {
+      "cite_key": "gunji2020",
+      "title": "Three types of logical structure resulting from the trilemma of free will, determinism and locality",
+      "authors": "Gunji, Y.P., Nakamura, K., Minoura, M., Adamatzky, A.",
+      "year": "2020",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2020.104151",
+      "url": "https://doi.org/10.1016/j.biosystems.2020.104151",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1055,
+          "context": "Gunji et al.\\ gunji2020 showed that free will, determinism, and locality form a trilemma---only two of three can coexist. When locality is abandoned (their ``Type III'' structure), free will and determinism coexist because internal contexts become isolated from external observation. This is consistent with the broader idea that internal context can be insulated from external access; in our terms, when $D_eff > D_crit$, internal dynamics become observationally inaccessible from the relevant low-bandwidth channel, which can make an internally deterministic process appear ``free'' to an external observer."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2020-104151",
+        "title": "Three types of logical structure resulting from the trilemma of free will, determinism and locality",
+        "year": "2020",
+        "journal": "Biosystems",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2020-104151.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2020-104151.txt",
+        "has_text": true
+      },
+      "raw": "Gunji, Y.P., Nakamura, K., Minoura, M., Adamatzky, A. (2020). Three types of logical structure resulting from the trilemma of free will, determinism and locality. BioSystems, 195, 104151. doi:10.1016/j.biosystems.2020.104151"
+    },
+    {
+      "cite_key": "igamberdiev2024",
+      "title": "Reflexive neural circuits and the origin of language and music codes",
+      "authors": "Igamberdiev, A.U.",
+      "year": "2024",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2024.105346",
+      "url": "https://doi.org/10.1016/j.biosystems.2024.105346",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1057,
+          "context": "Igamberdiev igamberdiev2024 proposed that consciousness emerges from three hierarchical thermodynamic cycles, where each cycle detects low-energy quanta emitted by the previous cycle. Internal dynamics involve ``non-demolition quantum measurements'' with extremely low dissipation; energy cost is paid at cycle boundaries, not during internal evolution. This provides a closely related picture in which energetic costs concentrate at boundary events. Our framework makes an analogous (but classical, measurement-bandwidth) claim: irreversible costs are concentrated at behavioral output/commitment events rather than during internal continuous evolution."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2024-105346",
+        "title": "Reflexive neural circuits and the origin of language and music codes",
+        "year": "2024",
+        "journal": "BioSystems",
+        "source": "imported",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2024-105346.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2024-105346.txt",
+        "has_text": true
+      },
+      "raw": "Igamberdiev, A.U. (2024). Reflexive neural circuits and the origin of language and music codes. BioSystems, 246, 105346. doi:10.1016/j.biosystems.2024.105346"
+    },
+    {
+      "cite_key": "gunji2025",
+      "title": "Natural Born Intelligence Manifesto: Illustrating the Dynamic Perspective for Consciousness",
+      "authors": "Gunji, Y.P.",
+      "year": "2025",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2025.105677",
+      "url": "https://doi.org/10.1016/j.biosystems.2025.105677",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1059,
+          "context": "Gunji gunji2025 distinguished ``Natural Born Intelligence'' from AI by arguing that AI treats the unknown as merely not-yet-experienced data within a fixed representational space, while living systems access a ``true outside'' through meta-level schema transformation. Gunji's ``true outside'' can be read as a conceptual analogue of dynamics that remain outside a fixed representational scheme. In our framing, the relevant limitation is operational: when $D_target > D_crit$, prediction from the constrained observation channel cannot fully resolve the causal manifold."
+        }
+      ],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Gunji, Y.P. (2025). Natural Born Intelligence Manifesto: Illustrating the Dynamic Perspective for Consciousness. BioSystems, 248, 105677. doi:10.1016/j.biosystems.2025.105677"
+    },
+    {
+      "cite_key": "laughlin1998",
+      "title": "The metabolic cost of neural information",
+      "authors": "Laughlin, S.B., de Ruyter van Steveninck, R.R., Anderson, J.C.",
+      "year": "1998",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/236",
+      "url": "https://doi.org/10.1038/236",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-236",
+        "title": "The metabolic cost of neural information",
+        "year": "1998",
+        "journal": "Nature Neuroscience",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-236.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-236.txt",
+        "has_text": true
+      },
+      "raw": "Laughlin, S.B., de Ruyter van Steveninck, R.R., Anderson, J.C. (1998). The metabolic cost of neural information. Nature Neuroscience, 1, 36--41. doi:10.1038/236"
+    },
+    {
+      "cite_key": "attwell2001",
+      "title": "An energy budget for signaling in the grey matter of the brain",
+      "authors": "Attwell, D., & Laughlin, S.B.",
+      "year": "2001",
+      "journal": "Journal of Cerebral Blood Flow & Metabolism",
+      "doi": "10.1097/00004647-200110000-00001",
+      "url": "https://doi.org/10.1097/00004647-200110000-00001",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 78,
+          "context": "Sparse boundary costs. Total brain power remains order-of-magnitude constrained ($$20 W) across diverse cognitive tasks attwell2001. Power scales with the rate of behavioral commitments ($H_reg 10^2$ bits/s), not with internal phase-space dimensionality ($D_eff 10^4$). The system incurs at least Landauer cost only when writing irreversible outputs---the sparse signals that defend its nonergodic position. (Note: Internal commitments exist---synaptic consolidation, LTP/LTD, structural plasticity---but these occur at rates and timescales different from clocked digital stabilization. The claim is not that brains are thermodynamically reversible internally, but that they minimize frequent irreversible stabilization during computation, concentrating durable commitments into sparser boundary events.)"
+        },
+        {
+          "line": 174,
+          "context": "Measured power gap: Human cortex (~20 W) vs. 8-GPU compute node (8–12 kW, e.g., 8$$ H100 DGX system ~10 kW) nvidiah100 operating at comparable effective dynamical richness shows two to three orders of magnitude difference. (Note: data center total power includes facility overhead—Power Usage Effectiveness (PUE) typically ~1.5--2$$ for cooling, power distribution; chip-level comparison remains $$$10^2$--$10^3$ gap.) The irreducible Landauer collision floor at $H_reg 10^2$ bits/s is $P_Landauer = k_B T 2 H_reg 3 10^-19$ W at $T = 310$ K---negligible. Observed ~20 W is overwhelmingly metabolic maintenance (ion pumps, vesicle cycling, synaptic homeostasis), not information collisions attwell2001. The efficiency advantage arises from sparse collisions ($H_reg H_dyn$) versus enforced clocked registration ($H_reg f_c$)."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1097-00004647-200110000-00001",
+        "title": "An Energy Budget for Signaling in the Grey Matter of the Brain",
+        "year": "2001",
+        "journal": "Journal of Cerebral Blood Flow &amp; Metabolism",
+        "source": "unpaywall",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1097-00004647-200110000-00001.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1097-00004647-200110000-00001.txt",
+        "has_text": true
+      },
+      "raw": "Attwell, D., & Laughlin, S.B. (2001). An energy budget for signaling in the grey matter of the brain. Journal of Cerebral Blood Flow & Metabolism, 21(10), 1133--1145. doi:10.1097/00004647-200110000-00001"
+    },
+    {
+      "cite_key": "barbieri2018",
+      "title": "What is code biology? BioSystems, 164, 1--10",
+      "authors": "Barbieri, M.",
+      "year": "2018",
+      "journal": "",
+      "doi": "10.1016/j.biosystems.2017.10.005",
+      "url": "https://doi.org/10.1016/j.biosystems.2017.10.005",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1005,
+          "context": "Why do biological systems use discrete codes (DNA, neural spikes) if continuous geometry is more information-rich? The emergence and function of biological codes—discrete symbolic systems mapping between independent domains—is a central question in code biology barbieri2018."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2017-10-005",
+        "title": "What is code biology?",
+        "year": "2018",
+        "journal": "Biosystems",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2017-10-005.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2017-10-005.txt",
+        "has_text": true
+      },
+      "raw": "Barbieri, M. (2018). What is code biology? BioSystems, 164, 1--10. doi:10.1016/j.biosystems.2017.10.005"
+    },
+    {
+      "cite_key": "bennett1973",
+      "title": "Logical reversibility of computation",
+      "authors": "Bennett, C.H.",
+      "year": "1973",
+      "journal": "IBM Journal of Research and Development",
+      "doi": "10.1147/rd.176.0525",
+      "url": "https://doi.org/10.1147/rd.176.0525",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        },
+        {
+          "line": 89,
+          "context": "Clarification on thermodynamic claims. We distinguish three cost layers: (i) the Landauer floor---the minimum $k_B T 2$ per bit of logically irreversible erasure; (ii) physical switching and maintenance costs---real dissipation in both silicon and biology (ion pumps, synaptic homeostasis, transistor switching); and (iii) commitment frequency---how often a system forces stabilization of a discrete state. Our claim concerns layer (iii): biology concentrates commitment events (stable record writing) at a lower effective rate than clocked architectures, pushing irreversible state registration outward to sparse behavioral boundaries. This does not deny that brains dissipate continuously (they do---layer ii); it identifies where architectural commitments occur. Reversible computing bennett1973 demonstrates that layer (i) is not intrinsic to computation; our argument is that biology achieves something analogous at the architectural level by deferring commitment. Standard high-throughput digital training/inference regimes commit at every clock cycle; biology commits at behavioral output."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1147-rd-176-0525",
+        "title": "Logical Reversibility of Computation",
+        "year": "1973",
+        "journal": "IBM Journal of Research and Development",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1147-rd-176-0525.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1147-rd-176-0525.txt",
+        "has_text": true
+      },
+      "raw": "Bennett, C.H. (1973). Logical reversibility of computation. IBM Journal of Research and Development, 17(6), 525--532. doi:10.1147/rd.176.0525"
+    },
+    {
+      "cite_key": "bennett1982",
+      "title": "The thermodynamics of computation—A review",
+      "authors": "Bennett, C.H.",
+      "year": "1982",
+      "journal": "International Journal of Theoretical Physics",
+      "doi": "10.1007/bf02084158",
+      "url": "https://doi.org/10.1007/BF02084158",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1007-bf02084158",
+        "title": "The thermodynamics of computation—a review",
+        "year": "1982",
+        "journal": "International Journal of Theoretical Physics",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1007-bf02084158.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1007-bf02084158.txt",
+        "has_text": true
+      },
+      "raw": "Bennett, C.H. (1982). The thermodynamics of computation—A review. International Journal of Theoretical Physics, 21(12), 905--940. doi:10.1007/BF02084158"
+    },
+    {
+      "cite_key": "bellman1961",
+      "title": "Adaptive Control Processes: A Guided Tour",
+      "authors": "Bellman, R.E.",
+      "year": "1961",
+      "journal": "",
+      "doi": "10.1515/9781400874668",
+      "url": "https://doi.org/10.1515/9781400874668",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 241,
+          "context": "This is Bellman's curse of dimensionality bellman1961 for discrete algorithmic observers: as $n$ grows, explicit Bayesian inference becomes computationally intractable---collision count explodes exponentially. The statistical literature extensively documents these fundamental constraints: posterior consistency fails without strong structural assumptions in high-dimensional Bayesian regression castillo2015, model selection becomes inconsistent with standard priors johnson2012, and high-dimensional Bayesian optimization is described as facing an ``Achilles' heel'' from dimensional scaling hvarfner2024. Digital medicine applications of machine learning confront this same barrier: modern digital health data (imaging, speech, wearables, genomics) produce ``dataset blind spots'' where models appear validated but fail catastrophically in deployment when feature spaces vastly exceed available training data berisha2021."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1515-9781400874668",
+        "title": "Adaptive Control Processes",
+        "year": "1961",
+        "journal": "",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1515-9781400874668.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1515-9781400874668.txt",
+        "has_text": true
+      },
+      "raw": "Bellman, R.E. (1961). Adaptive Control Processes: A Guided Tour. Princeton, NJ: Princeton University Press. doi:10.1515/9781400874668"
+    },
+    {
+      "cite_key": "bengio2013",
+      "title": "Representation learning: a review and new perspectives",
+      "authors": "Bengio, Y., Courville, A., Vincent, P.",
+      "year": "2013",
+      "journal": "IEEE Trans. Pattern Anal. Mach. Intell.",
+      "doi": "10.1109/tpami.2013.50",
+      "url": "https://doi.org/10.1109/TPAMI.2013.50",
+      "citation_count": 3,
+      "contexts": [
+        {
+          "line": 117,
+          "context": "Irreducible complexity is irreducible. A common objection invokes sparse coding or dimensionality reduction bengio2013: if data lie on low-dimensional manifolds, clever algorithms could avoid the curse. This applies when targets have reducible complexity (e.g., image classification on natural manifolds). But systems with irreducible high-D—ecosystems, vector addition systems with Ackermann-complete reachability, multi-agent dynamics—cannot be faithfully compressed without information loss. This emergence of macroscopic constraints from dimensional structure has a statistical-mechanics parallel: Baray~baray2025zipf shows that inverse power-law interactions emerge as fixed points of aggregation processes, with the exponent determined by effective dimensionality and symmetry---not imposed a priori. Biology doesn't compress everything because tracking physiology ($D_eff 10^6$) or social interactions ($D_eff 10^3$--$10^4$) requires real-time coherence in the full constraint geometry. Modern AI (e.g., GPT-scale models) succeeds not via low-dimensional cleverness but by brute-force approximation of high-dimensional coherence—$ 10^11$ parameters effectively simulate high-dimensionality, still dissipating megawatts versus the brain's 20~W. Compression helps within high-dimensional substrates (e.g., sparse activations reduce active pathways), but doesn't escape dimensional matching for irreducible targets."
+        },
+        {
+          "line": 243,
+          "context": "Standard approximations (MCMC, variational Bayes, particle filters) reduce collision count by exploiting structure but still scale superlinearly with effective dimension. Modern deep learning architectures defer the exponential barrier through manifold learning and dimensionality reduction, but once $D_eff$ substantially exceeds $D_tract$ even after exploiting all available structure, exponential scaling returns bengio2013."
+        },
+        {
+          "line": 373,
+          "context": "Connection to Bayesian compression. The formation of codes is equivalent to constructing a structured prior over $B$'s state space. Instead of treating all $k^D_B$ hypotheses as equally likely (maximum entropy prior), the codebook imposes structure: \"system $B$ is likely in one of $N_codes$ recurring configurations $S_i$.\" This structured prior reduces the effective hypothesis space from $k^D_B$ to $N_codes k^D_residual$, where $D_residual D_B$ captures within-code variation. The exponential savings arise from exploiting statistical regularity in $B$'s dynamics---precisely the mechanism by which Bayesian compression escapes the curse of dimensionality in practice bengio2013."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1109-tpami-2013-50",
+        "title": "Representation Learning: A Review and New Perspectives",
+        "year": "2013",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1109-tpami-2013-50.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1109-tpami-2013-50.txt",
+        "has_text": true
+      },
+      "raw": "Bengio, Y., Courville, A., Vincent, P. (2013). Representation learning: a review and new perspectives. IEEE Trans. Pattern Anal. Mach. Intell., 35(8), 1798--1828. doi:10.1109/TPAMI.2013.50"
+    },
+    {
+      "cite_key": "berisha2021",
+      "title": "Digital medicine and the curse of dimensionality",
+      "authors": "Berisha, V., Krantsevich, C., Hahn, P.R., et al.",
+      "year": "2021",
+      "journal": "npj Digit. Med.",
+      "doi": "10.1038/s41746-021-00521-5",
+      "url": "https://doi.org/10.1038/s41746-021-00521-5",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 241,
+          "context": "This is Bellman's curse of dimensionality bellman1961 for discrete algorithmic observers: as $n$ grows, explicit Bayesian inference becomes computationally intractable---collision count explodes exponentially. The statistical literature extensively documents these fundamental constraints: posterior consistency fails without strong structural assumptions in high-dimensional Bayesian regression castillo2015, model selection becomes inconsistent with standard priors johnson2012, and high-dimensional Bayesian optimization is described as facing an ``Achilles' heel'' from dimensional scaling hvarfner2024. Digital medicine applications of machine learning confront this same barrier: modern digital health data (imaging, speech, wearables, genomics) produce ``dataset blind spots'' where models appear validated but fail catastrophically in deployment when feature spaces vastly exceed available training data berisha2021."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-s41746-021-00521-5",
+        "title": "Digital medicine and the curse of dimensionality",
+        "year": "2021",
+        "journal": "npj Digital Medicine",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-s41746-021-00521-5.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-s41746-021-00521-5.txt",
+        "has_text": true
+      },
+      "raw": "Berisha, V., Krantsevich, C., Hahn, P.R., et al. (2021). Digital medicine and the curse of dimensionality. npj Digit. Med., 4, 153. doi:10.1038/s41746-021-00521-5"
+    },
+    {
+      "cite_key": "castillo2015",
+      "title": "Bayesian linear regression with sparse priors",
+      "authors": "Castillo, I., Schmidt-Hieber, J., van der Vaart, A.",
+      "year": "2015",
+      "journal": "Ann. Stat.",
+      "doi": "10.1214/15-aos1334",
+      "url": "https://doi.org/10.1214/15-AOS1334",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 241,
+          "context": "This is Bellman's curse of dimensionality bellman1961 for discrete algorithmic observers: as $n$ grows, explicit Bayesian inference becomes computationally intractable---collision count explodes exponentially. The statistical literature extensively documents these fundamental constraints: posterior consistency fails without strong structural assumptions in high-dimensional Bayesian regression castillo2015, model selection becomes inconsistent with standard priors johnson2012, and high-dimensional Bayesian optimization is described as facing an ``Achilles' heel'' from dimensional scaling hvarfner2024. Digital medicine applications of machine learning confront this same barrier: modern digital health data (imaging, speech, wearables, genomics) produce ``dataset blind spots'' where models appear validated but fail catastrophically in deployment when feature spaces vastly exceed available training data berisha2021."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1214-15-aos1334",
+        "title": "Bayesian linear regression with sparse priors",
+        "year": "2015",
+        "journal": "The Annals of Statistics",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1214-15-aos1334.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1214-15-aos1334.txt",
+        "has_text": true
+      },
+      "raw": "Castillo, I., Schmidt-Hieber, J., van der Vaart, A. (2015). Bayesian linear regression with sparse priors. Ann. Stat., 43(5), 1986--2018. doi:10.1214/15-AOS1334"
+    },
+    {
+      "cite_key": "hvarfner2024",
+      "title": "Vanilla Bayesian optimization performs great in high dimensions",
+      "authors": "Hvarfner, C., Stoll, D., Souza, A., Nardi, L.",
+      "year": "2024",
+      "journal": "Proceedings of Machine Learning Research",
+      "doi": "",
+      "url": "https://proceedings.mlr.press/v235/hvarfner24a.html",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 241,
+          "context": "This is Bellman's curse of dimensionality bellman1961 for discrete algorithmic observers: as $n$ grows, explicit Bayesian inference becomes computationally intractable---collision count explodes exponentially. The statistical literature extensively documents these fundamental constraints: posterior consistency fails without strong structural assumptions in high-dimensional Bayesian regression castillo2015, model selection becomes inconsistent with standard priors johnson2012, and high-dimensional Bayesian optimization is described as facing an ``Achilles' heel'' from dimensional scaling hvarfner2024. Digital medicine applications of machine learning confront this same barrier: modern digital health data (imaging, speech, wearables, genomics) produce ``dataset blind spots'' where models appear validated but fail catastrophically in deployment when feature spaces vastly exceed available training data berisha2021."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Hvarfner, C., Stoll, D., Souza, A., Nardi, L. (2024). Vanilla Bayesian optimization performs great in high dimensions. Proceedings of Machine Learning Research, 235, 20793--20817. PMLR"
+    },
+    {
+      "cite_key": "johnson2012",
+      "title": "Bayesian model selection in high-dimensional settings",
+      "authors": "Johnson, V.E., Rossell, D.",
+      "year": "2012",
+      "journal": "J. Am. Stat. Assoc.",
+      "doi": "10.1080/01621459.2012.682536",
+      "url": "https://doi.org/10.1080/01621459.2012.682536",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 241,
+          "context": "This is Bellman's curse of dimensionality bellman1961 for discrete algorithmic observers: as $n$ grows, explicit Bayesian inference becomes computationally intractable---collision count explodes exponentially. The statistical literature extensively documents these fundamental constraints: posterior consistency fails without strong structural assumptions in high-dimensional Bayesian regression castillo2015, model selection becomes inconsistent with standard priors johnson2012, and high-dimensional Bayesian optimization is described as facing an ``Achilles' heel'' from dimensional scaling hvarfner2024. Digital medicine applications of machine learning confront this same barrier: modern digital health data (imaging, speech, wearables, genomics) produce ``dataset blind spots'' where models appear validated but fail catastrophically in deployment when feature spaces vastly exceed available training data berisha2021."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1080-01621459-2012-682536",
+        "title": "Bayesian Model Selection in High-Dimensional Settings",
+        "year": "2012",
+        "journal": "Journal of the American Statistical Association",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1080-01621459-2012-682536.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1080-01621459-2012-682536.txt",
+        "has_text": true
+      },
+      "raw": "Johnson, V.E., Rossell, D. (2012). Bayesian model selection in high-dimensional settings. J. Am. Stat. Assoc., 107(498), 649--660. doi:10.1080/01621459.2012.682536"
+    },
+    {
+      "cite_key": "gallego2020",
+      "title": "Long-term stability of cortical population dynamics underlying consistent behavior",
+      "authors": "Gallego, J.A., Perich, M.G., Chowdhury, R.H., Solla, S.A., Miller, L.E.",
+      "year": "2020",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/s41593-019-0555-4",
+      "url": "https://doi.org/10.1038/s41593-019-0555-4",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-s41593-019-0555-4",
+        "title": "Long-term stability of cortical population dynamics underlying consistent behavior",
+        "year": "2020",
+        "journal": "Nature Neuroscience",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-s41593-019-0555-4.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-s41593-019-0555-4.txt",
+        "has_text": true
+      },
+      "raw": "Gallego, J.A., Perich, M.G., Chowdhury, R.H., Solla, S.A., Miller, L.E. (2020). Long-term stability of cortical population dynamics underlying consistent behavior. Nature Neuroscience, 23(2), 260--270. doi:10.1038/s41593-019-0555-4"
+    },
+    {
+      "cite_key": "gao2017",
+      "title": "A theory of multineuronal dimensionality, dynamics and measurement",
+      "authors": "Gao, P., Trautmann, E., Yu, B., Santhanam, G., Ryu, S., Shenoy, K., Ganguli, S.",
+      "year": "2017",
+      "journal": "Current Opinion in Neurobiology",
+      "doi": "10.1016/j.conb.2017.07.005",
+      "url": "https://doi.org/10.1016/j.conb.2017.07.005",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 465,
+          "context": "Effective dimensionality $D_eff$ quantifies active degrees of freedom. The concept of dimensionality as an intrinsic geometric property of dynamical systems was formalized by Grassberger and Procaccia grassberger1983 through correlation dimension, and by Takens takens1981 through embedding theorems. Critically, Eckmann and Ruelle eckmann1985 established that dimension (geometry of the attractor) and entropy (statistics over the attractor) are independent characteristics---a distinction central to our framework. For practical estimation, we use the participation ratio gao2017:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-conb-2017-07-005",
+        "title": "Periodic population codes: From a single circular variable to higher dimensions, multiple nested scales, and conceptual spaces",
+        "year": "2017",
+        "journal": "Current Opinion in Neurobiology",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-conb-2017-07-005.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-conb-2017-07-005.txt",
+        "has_text": true
+      },
+      "raw": "Gao, P., Trautmann, E., Yu, B., Santhanam, G., Ryu, S., Shenoy, K., Ganguli, S. (2017). A theory of multineuronal dimensionality, dynamics and measurement. Current Opinion in Neurobiology, 46, 25--32. doi:10.1016/j.conb.2017.07.005"
+    },
+    {
+      "cite_key": "hipp2012",
+      "title": "Large-scale cortical correlation structure of spontaneous oscillatory activity",
+      "authors": "Hipp, J.F., Hawellek, D.J., Corbetta, M., Siegel, M., Engel, A.K.",
+      "year": "2012",
+      "journal": "Nature Neuroscience",
+      "doi": "10.1038/nn.3101",
+      "url": "https://doi.org/10.1038/nn.3101",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nn-3101",
+        "title": "Large-scale cortical correlation structure of spontaneous oscillatory activity",
+        "year": "2012",
+        "journal": "Nature Neuroscience",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nn-3101.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nn-3101.txt",
+        "has_text": true
+      },
+      "raw": "Hipp, J.F., Hawellek, D.J., Corbetta, M., Siegel, M., Engel, A.K. (2012). Large-scale cortical correlation structure of spontaneous oscillatory activity. Nature Neuroscience, 15(6), 884--890. doi:10.1038/nn.3101"
+    },
+    {
+      "cite_key": "nvidiah100",
+      "title": "NVIDIA H100 Tensor Core GPU Architecture. White Paper",
+      "authors": "NVIDIA Corporation.",
+      "year": "2022",
+      "journal": "",
+      "doi": "",
+      "url": "https://resources.nvidia.com/en-us-tensor-core",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 174,
+          "context": "Measured power gap: Human cortex (~20 W) vs. 8-GPU compute node (8–12 kW, e.g., 8$$ H100 DGX system ~10 kW) nvidiah100 operating at comparable effective dynamical richness shows two to three orders of magnitude difference. (Note: data center total power includes facility overhead—Power Usage Effectiveness (PUE) typically ~1.5--2$$ for cooling, power distribution; chip-level comparison remains $$$10^2$--$10^3$ gap.) The irreducible Landauer collision floor at $H_reg 10^2$ bits/s is $P_Landauer = k_B T 2 H_reg 3 10^-19$ W at $T = 310$ K---negligible. Observed ~20 W is overwhelmingly metabolic maintenance (ion pumps, vesicle cycling, synaptic homeostasis), not information collisions attwell2001. The efficiency advantage arises from sparse collisions ($H_reg H_dyn$) versus enforced clocked registration ($H_reg f_c$)."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "NVIDIA Corporation. (2022). NVIDIA H100 Tensor Core GPU Architecture. White Paper. https://resources.nvidia.com/en-us-tensor-core (H100 PCIe: 350 W TDP; DGX H100 8-GPU system: $$10 kW total)"
+    },
+    {
+      "cite_key": "palva2011",
+      "title": "Functional roles of alpha-band phase synchronization in local and large-scale cortical networks",
+      "authors": "Palva, S., Palva, J.M.",
+      "year": "2011",
+      "journal": "Frontiers in Psychology",
+      "doi": "10.3389/fpsyg.2011.00204",
+      "url": "https://doi.org/10.3389/fpsyg.2011.00204",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-3389-fpsyg-2011-00204",
+        "title": "Functional Roles of Alpha-Band Phase Synchronization in Local and Large-Scale Cortical Networks",
+        "year": "2011",
+        "journal": "Frontiers in Psychology",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-3389-fpsyg-2011-00204.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-3389-fpsyg-2011-00204.txt",
+        "has_text": true
+      },
+      "raw": "Palva, S., Palva, J.M. (2011). Functional roles of alpha-band phase synchronization in local and large-scale cortical networks. Frontiers in Psychology, 2, 204. doi:10.3389/fpsyg.2011.00204"
+    },
+    {
+      "cite_key": "recanatesi2024",
+      "title": "Metastable attractors explain the variable timing of stable behavioral action sequences",
+      "authors": "Recanatesi, S., Pereira-Obilinovic, U., Murakami, M., Mainen, Z., Mazzucato, L.",
+      "year": "2024",
+      "journal": "eLife",
+      "doi": "10.7554/elife.100666",
+      "url": "https://doi.org/10.7554/eLife.100666",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-7554-elife-100666",
+        "title": "The geometry and dimensionality of brain-wide activity",
+        "year": "2025",
+        "journal": "eLife",
+        "source": "europepmc",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-7554-elife-100666.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-7554-elife-100666.txt",
+        "has_text": true
+      },
+      "raw": "Recanatesi, S., Pereira-Obilinovic, U., Murakami, M., Mainen, Z., Mazzucato, L. (2024). Metastable attractors explain the variable timing of stable behavioral action sequences. eLife, 13, e100666. doi:10.7554/eLife.100666"
+    },
+    {
+      "cite_key": "vazza2020",
+      "title": "The Quantitative Comparison Between the Neuronal Network and the Cosmic Web",
+      "authors": "Vazza, F., Feletti, A.",
+      "year": "2020",
+      "journal": "Frontiers in Physics",
+      "doi": "10.3389/fphy.2020.525731",
+      "url": "https://doi.org/10.3389/fphy.2020.525731",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 716,
+          "context": "This shows that collision-free dynamics coupled with adaptive weights spontaneously discover reusable constraint patterns unavailable to discrete enumeration. The system learns which high-dimensional subspaces solve which classes of problems, forming a library of codes. This mechanism may underlie the emergence of modular network structure through Hebbian plasticity observed in both biological and artificial neural networks hebbian_modularity. The resulting pathway structure---heavy-tailed degree distributions with filament-like organization---exhibits quantitative similarities to cosmic web structure formation vazza2020, suggesting dimensional collapse leaves characteristic ``shadows'' in physical network topology."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-3389-fphy-2020-525731",
+        "title": "The Quantitative Comparison Between the Neuronal Network and the Cosmic Web",
+        "year": "2020",
+        "journal": "Frontiers in Physics",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-3389-fphy-2020-525731.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-3389-fphy-2020-525731.txt",
+        "has_text": true
+      },
+      "raw": "Vazza, F., Feletti, A. (2020). The Quantitative Comparison Between the Neuronal Network and the Cosmic Web. Frontiers in Physics, 8, 525731. doi:10.3389/fphy.2020.525731"
+    },
+    {
+      "cite_key": "hebbian_modularity",
+      "title": "Emergence and maintenance of modularity in neural networks with Hebbian and anti-Hebbian inhibitory STDP",
+      "authors": "Bergoin, R., Torcini, A., Deco, G., Quoy, M., Zamora-López, G.",
+      "year": "2025",
+      "journal": "PLOS Computational Biology",
+      "doi": "10.1371/journal.pcbi.1012973",
+      "url": "https://doi.org/10.1371/journal.pcbi.1012973",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 716,
+          "context": "This shows that collision-free dynamics coupled with adaptive weights spontaneously discover reusable constraint patterns unavailable to discrete enumeration. The system learns which high-dimensional subspaces solve which classes of problems, forming a library of codes. This mechanism may underlie the emergence of modular network structure through Hebbian plasticity observed in both biological and artificial neural networks hebbian_modularity. The resulting pathway structure---heavy-tailed degree distributions with filament-like organization---exhibits quantitative similarities to cosmic web structure formation vazza2020, suggesting dimensional collapse leaves characteristic ``shadows'' in physical network topology."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1371-journal-pcbi-1012973",
+        "title": "Emergence and maintenance of modularity in neural networks with Hebbian and anti-Hebbian inhibitory STDP",
+        "year": "2025",
+        "journal": "PLOS Computational Biology",
+        "source": "europepmc",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1371-journal-pcbi-1012973.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1371-journal-pcbi-1012973.txt",
+        "has_text": true
+      },
+      "raw": "Bergoin, R., Torcini, A., Deco, G., Quoy, M., Zamora-López, G. (2025). Emergence and maintenance of modularity in neural networks with Hebbian and anti-Hebbian inhibitory STDP. PLOS Computational Biology, 21(3), e1012973. doi:10.1371/journal.pcbi.1012973"
+    },
+    {
+      "cite_key": "prigogine1984",
+      "title": "Order Out of Chaos: Man's New Dialogue with Nature",
+      "authors": "Prigogine, I., Stengers, I.",
+      "year": "1984",
+      "journal": "",
+      "doi": "",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Prigogine, I., Stengers, I. (1984). Order Out of Chaos: Man's New Dialogue with Nature. Bantam Books."
+    },
+    {
+      "cite_key": "kauffman1993",
+      "title": "The Origins of Order: Self-Organization and Selection in Evolution",
+      "authors": "Kauffman, S.A.",
+      "year": "1993",
+      "journal": "",
+      "doi": "",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Kauffman, S.A. (1993). The Origins of Order: Self-Organization and Selection in Evolution. Oxford University Press."
+    },
+    {
+      "cite_key": "berg1972",
+      "title": "Chemotaxis in Escherichia coli analysed by three-dimensional tracking",
+      "authors": "Berg, H.C., Brown, D.A.",
+      "year": "1972",
+      "journal": "Nature",
+      "doi": "10.1038/239500a0",
+      "url": "https://doi.org/10.1038/239500a0",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-239500a0",
+        "title": "Chemotaxis in Escherichia coli analysed by Three-dimensional Tracking",
+        "year": "1972",
+        "journal": "Nature",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-239500a0.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-239500a0.txt",
+        "has_text": true
+      },
+      "raw": "Berg, H.C., Brown, D.A. (1972). Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature, 239, 500--504. doi:10.1038/239500a0"
+    },
+    {
+      "cite_key": "sourjik2004",
+      "title": "Functional interactions between receptors in bacterial chemotaxis",
+      "authors": "Sourjik, V., Berg, H.C.",
+      "year": "2004",
+      "journal": "Nature",
+      "doi": "10.1038/nature02406",
+      "url": "https://doi.org/10.1038/nature02406",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nature02406",
+        "title": "Functional interactions between receptors in bacterial chemotaxis",
+        "year": "2004",
+        "journal": "Nature",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nature02406.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nature02406.txt",
+        "has_text": true
+      },
+      "raw": "Sourjik, V., Berg, H.C. (2004). Functional interactions between receptors in bacterial chemotaxis. Nature, 428(6981), 437--441. doi:10.1038/nature02406"
+    },
+    {
+      "cite_key": "wadhams2004",
+      "title": "Making sense of it all: bacterial chemotaxis",
+      "authors": "Wadhams, G.H., Armitage, J.P.",
+      "year": "2004",
+      "journal": "Nature Reviews Molecular Cell Biology",
+      "doi": "10.1038/nrm1524",
+      "url": "https://doi.org/10.1038/nrm1524",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nrm1524",
+        "title": "Making sense of it all: bacterial chemotaxis",
+        "year": "2004",
+        "journal": "Nature Reviews Molecular Cell Biology",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nrm1524.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nrm1524.txt",
+        "has_text": true
+      },
+      "raw": "Wadhams, G.H., Armitage, J.P. (2004). Making sense of it all: bacterial chemotaxis. Nature Reviews Molecular Cell Biology, 5(12), 1024--1037. doi:10.1038/nrm1524"
+    },
+    {
+      "cite_key": "frank2024",
+      "title": "Control theory for humans and other animals",
+      "authors": "Frank, S.A.",
+      "year": "2024",
+      "journal": "Journal of The Royal Society Interface",
+      "doi": "10.1098/rsif.2023.0460",
+      "url": "https://doi.org/10.1098/rsif.2023.0460",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1098-rsif-2023-0460",
+        "title": "A geometric process of evolutionary game dynamics",
+        "year": "2023",
+        "journal": "Journal of The Royal Society Interface",
+        "source": "europepmc",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1098-rsif-2023-0460.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1098-rsif-2023-0460.txt",
+        "has_text": true
+      },
+      "raw": "Frank, S.A. (2024). Control theory for humans and other animals. Journal of The Royal Society Interface, 21(211), 20230460. doi:10.1098/rsif.2023.0460"
+    },
+    {
+      "cite_key": "fitts1954",
+      "title": "The information capacity of the human motor system in controlling the amplitude of movement",
+      "authors": "Fitts, P.M.",
+      "year": "1954",
+      "journal": "Journal of Experimental Psychology",
+      "doi": "10.1037/h0055392",
+      "url": "https://doi.org/10.1037/h0055392",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 133,
+          "context": "Critical distinction: Behavioral vs. internal observation channels. We define $C_commit$ as the behavioral/motor output bandwidth---the rate at which the system commits information to externally observable actions. Operationally, $C_commit^behavior B _2(1+SNR)$, where $B$ is estimated from response variance and control degrees of freedom ($ 10^2$ bits/s for human motor output fitts1954). This is not the same as internal sensing bandwidth: neuroscientists can observe cortex directly via MEG/ECoG at Mbps rates ($C^MEG C_commit^behavior$). The Observable Dimensionality Bound applies to the behavioral channel because that is where the projection boundary lies---where the system incurs Landauer cost to write stable records. Internal measurements (MEG, calcium imaging) observe high-D dynamics without placing a projection boundary there; they are passive readouts that do not force dimensional collapse. Behavioral outputs (muscle commands, spoken words) are commitment events at the projection boundary that write information irreversibly, paying at least $k_B T 2$ per bit. The bound $D_eff > D_crit^behavior$ means internal dynamics evolve faster than behavioral commitments can resolve them, enabling collision-free computation between sparse output events. When $D_eff > D_crit$, the system's constraint geometry reconfigures faster than behavioral commitment can track---it becomes timing-inaccessible."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1037-h0055392",
+        "title": "The information capacity of the human motor system in controlling the amplitude of movement.",
+        "year": "1954",
+        "journal": "Journal of Experimental Psychology",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1037-h0055392.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1037-h0055392.txt",
+        "has_text": true
+      },
+      "raw": "Fitts, P.M. (1954). The information capacity of the human motor system in controlling the amplitude of movement. Journal of Experimental Psychology, 47(6), 381--391. doi:10.1037/h0055392"
+    },
+    {
+      "cite_key": "johansson1998",
+      "title": "Tactile sensory control of object manipulation in humans. In K.J. Morley (Ed.), The Somatosensory System (pp. 67--79). Birkhäuser",
+      "authors": "Johansson, R.S., Flanagan, J.R.",
+      "year": "1998",
+      "journal": "",
+      "doi": "10.1007/978-3-0348-7639-0_5",
+      "url": "https://doi.org/10.1007/978-3-0348-7639-0_5",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        },
+        {
+          "line": 695,
+          "context": "Complex sensorimotor tasks demonstrate collision-free advantage at realistic dimensions. Consider blind tactile manipulation (e.g., tying a drawstring while jogging): upper-bound estimate $D_eff 25,000$ based on receptor count (24,000 mechanoreceptors johansson1998) plus proprioception and motor control. Important caveat: Receptor count provides an upper bound on effective dimensionality; actual task-relevant manifold dimensionality is likely much lower ($D_task 10^2$--$10^3$) due to correlations, hierarchical organization, and task constraints gallego2017,sadtler2014. This example illustrates scaling principles, not precise dimensionality measurement."
+        }
+      ],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Johansson, R.S., Flanagan, J.R. (1998). Tactile sensory control of object manipulation in humans. In K.J. Morley (Ed.), The Somatosensory System (pp. 67--79). Birkhäuser. doi:10.1007/978-3-0348-7639-0_5"
+    },
+    {
+      "cite_key": "gallego2017",
+      "title": "Neural manifolds for the control of movement",
+      "authors": "Gallego, J.A., Perich, M.G., Miller, L.E., Solla, S.A.",
+      "year": "2017",
+      "journal": "Neuron",
+      "doi": "10.1016/j.neuron.2017.05.025",
+      "url": "https://doi.org/10.1016/j.neuron.2017.05.025",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 695,
+          "context": "Complex sensorimotor tasks demonstrate collision-free advantage at realistic dimensions. Consider blind tactile manipulation (e.g., tying a drawstring while jogging): upper-bound estimate $D_eff 25,000$ based on receptor count (24,000 mechanoreceptors johansson1998) plus proprioception and motor control. Important caveat: Receptor count provides an upper bound on effective dimensionality; actual task-relevant manifold dimensionality is likely much lower ($D_task 10^2$--$10^3$) due to correlations, hierarchical organization, and task constraints gallego2017,sadtler2014. This example illustrates scaling principles, not precise dimensionality measurement."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-neuron-2017-05-025",
+        "title": "Neural Manifolds for the Control of Movement",
+        "year": "2017",
+        "journal": "Neuron",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-neuron-2017-05-025.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-neuron-2017-05-025.txt",
+        "has_text": true
+      },
+      "raw": "Gallego, J.A., Perich, M.G., Miller, L.E., Solla, S.A. (2017). Neural manifolds for the control of movement. Neuron, 94(5), 978--984. doi:10.1016/j.neuron.2017.05.025"
+    },
+    {
+      "cite_key": "sadtler2014",
+      "title": "Neural constraints on learning",
+      "authors": "Sadtler, P.T., Quick, K.M., Golub, M.D., Chase, S.M., Ryu, S.I., Tyler-Kabara, E.C., Yu, B.M., Batista, A.P.",
+      "year": "2014",
+      "journal": "Nature",
+      "doi": "10.1038/nature13665",
+      "url": "https://doi.org/10.1038/nature13665",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 695,
+          "context": "Complex sensorimotor tasks demonstrate collision-free advantage at realistic dimensions. Consider blind tactile manipulation (e.g., tying a drawstring while jogging): upper-bound estimate $D_eff 25,000$ based on receptor count (24,000 mechanoreceptors johansson1998) plus proprioception and motor control. Important caveat: Receptor count provides an upper bound on effective dimensionality; actual task-relevant manifold dimensionality is likely much lower ($D_task 10^2$--$10^3$) due to correlations, hierarchical organization, and task constraints gallego2017,sadtler2014. This example illustrates scaling principles, not precise dimensionality measurement."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nature13665",
+        "title": "Neural constraints on learning",
+        "year": "2014",
+        "journal": "Nature",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nature13665.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nature13665.txt",
+        "has_text": true
+      },
+      "raw": "Sadtler, P.T., Quick, K.M., Golub, M.D., Chase, S.M., Ryu, S.I., Tyler-Kabara, E.C., Yu, B.M., Batista, A.P. (2014). Neural constraints on learning. Nature, 512(7515), 423--426. doi:10.1038/nature13665"
+    },
+    {
+      "cite_key": "milo2010",
+      "title": "Cell Biology by the Numbers",
+      "authors": "Milo, R., Phillips, R.",
+      "year": "2010",
+      "journal": "",
+      "doi": "",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Milo, R., Phillips, R. (2010). Cell Biology by the Numbers. Garland Science, New York. ISBN 978-0815345374"
+    },
+    {
+      "cite_key": "beggs2003",
+      "title": "Neuronal avalanches in neocortical circuits",
+      "authors": "Beggs, J.M., Plenz, D.",
+      "year": "2003",
+      "journal": "Journal of Neuroscience",
+      "doi": "10.1523/jneurosci.23-35-11167.2003",
+      "url": "https://doi.org/10.1523/JNEUROSCI.23-35-11167.2003",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Existing frameworks: Landauer's principle landauer1961, reversible computing bennett1973,bennett1982, free energy principle friston2010, self-organization theory prigogine1984,kauffman1993, neural criticality beggs2003, and recent work on sub-Landauer regimes todd2025falsifiability,todd2025maxwell address aspects but don't unite power efficiency with computational tractability through collision dynamics in high-dimensional constraint geometry."
+        },
+        {
+          "line": 192,
+          "context": "Structure and thesis: What's new. Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost landauer1961; Ashby's requisite variety gives a qualitative constraint on control ashby1956; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete leroux2013; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency friston2010,beggs2003,enel2016reservoir. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1523-jneurosci-23-35-11167-2003",
+        "title": "Neuronal Avalanches in Neocortical Circuits",
+        "year": "2003",
+        "journal": "The Journal of Neuroscience",
+        "source": "unpaywall",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1523-jneurosci-23-35-11167-2003.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1523-jneurosci-23-35-11167-2003.txt",
+        "has_text": true
+      },
+      "raw": "Beggs, J.M., Plenz, D. (2003). Neuronal avalanches in neocortical circuits. Journal of Neuroscience, 23(35), 11167-11177. doi:10.1523/JNEUROSCI.23-35-11167.2003"
+    },
+    {
+      "cite_key": "enel2016reservoir",
+      "title": "Reservoir computing properties of neural dynamics in prefrontal cortex",
+      "authors": "Enel, P., Procyk, E., Quilodran, R., Dominey, P.F.",
+      "year": "2016",
+      "journal": "PLOS Computational Biology",
+      "doi": "10.1371/journal.pcbi.1004967",
+      "url": "https://doi.org/10.1371/journal.pcbi.1004967",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 192,
+          "context": "Structure and thesis: What's new. Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost landauer1961; Ashby's requisite variety gives a qualitative constraint on control ashby1956; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete leroux2013; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency friston2010,beggs2003,enel2016reservoir. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1371-journal-pcbi-1004967",
+        "title": "Reservoir Computing Properties of Neural Dynamics in Prefrontal Cortex",
+        "year": "2016",
+        "journal": "PLOS Computational Biology",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1371-journal-pcbi-1004967.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1371-journal-pcbi-1004967.txt",
+        "has_text": true
+      },
+      "raw": "Enel, P., Procyk, E., Quilodran, R., Dominey, P.F. (2016). Reservoir computing properties of neural dynamics in prefrontal cortex. PLOS Computational Biology, 12(6), e1004967. doi:10.1371/journal.pcbi.1004967"
+    },
+    {
+      "cite_key": "chialvo2010",
+      "title": "Emergent complex neural dynamics",
+      "authors": "Chialvo, D.R.",
+      "year": "2010",
+      "journal": "Nature Physics",
+      "doi": "10.1038/nphys1803",
+      "url": "https://doi.org/10.1038/nphys1803",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nphys1803",
+        "title": "Emergent complex neural dynamics",
+        "year": "2010",
+        "journal": "Nature Physics",
+        "source": "unpaywall",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nphys1803.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nphys1803.txt",
+        "has_text": true
+      },
+      "raw": "Chialvo, D.R. (2010). Emergent complex neural dynamics. Nature Physics, 6(10), 744-750. doi:10.1038/nphys1803"
+    },
+    {
+      "cite_key": "levin2024",
+      "title": "Collective intelligence: A unifying concept for integrating biology across scales and substrates",
+      "authors": "Levin, M., Keijzer, F., Lyon, P., Martinez, M.",
+      "year": "2024",
+      "journal": "Communications Biology",
+      "doi": "10.1038/s42003-024-06037-4",
+      "url": "https://doi.org/10.1038/s42003-024-06037-4",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-s42003-024-06037-4",
+        "title": "Collective intelligence: A unifying concept for integrating biology across scales and substrates",
+        "year": "2024",
+        "journal": "Communications Biology",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-s42003-024-06037-4.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-s42003-024-06037-4.txt",
+        "has_text": true
+      },
+      "raw": "Levin, M., Keijzer, F., Lyon, P., Martinez, M. (2024). Collective intelligence: A unifying concept for integrating biology across scales and substrates. Communications Biology, 7, 378. doi:10.1038/s42003-024-06037-4"
+    },
+    {
+      "cite_key": "igamberdiev1993",
+      "title": "Quantum mechanical properties of biosystems: A framework for complexity, structural stability, and transformations",
+      "authors": "Igamberdiev, A.U.",
+      "year": "1993",
+      "journal": "BioSystems",
+      "doi": "10.1016/0303-2647(93)90018-8",
+      "url": "https://doi.org/10.1016/0303-2647(93)90018-8",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 91,
+          "context": "Quantum measurement as high-dimensional physics. Igamberdiev (1993) igamberdiev1993 framed biological organization in terms of internal quantum non-demolition measurements with low energy dissipation via slow conformational relaxation of biomacromolecular complexes. The correspondence between his quantum framework and our classical high-dimensional framework is structural---the same mathematical forms and thermodynamic constraints appear in both, suggesting that quantum measurement phenomena in biosystems may be manifestations of high-dimensional classical dynamics rather than requiring fundamental quantum mechanics."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-0303-2647-93-90018-8",
+        "title": "Quantum mechanical properties of biosystems: A framework for complexity, structural stability, and transformations",
+        "year": "1993",
+        "journal": "Biosystems",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-0303-2647-93-90018-8.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-0303-2647-93-90018-8.txt",
+        "has_text": true
+      },
+      "raw": "Igamberdiev, A.U. (1993). Quantum mechanical properties of biosystems: A framework for complexity, structural stability, and transformations. BioSystems, 31(1), 65--73. doi:10.1016/0303-2647(93)90018-8"
+    },
+    {
+      "cite_key": "igamberdiev2021",
+      "title": "Mathematics in biological reality: The emergence of natural computation in living systems",
+      "authors": "Igamberdiev, A.U.",
+      "year": "2021",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2021.104388",
+      "url": "https://doi.org/10.1016/j.biosystems.2021.104388",
+      "citation_count": 0,
+      "contexts": [],
+      "paperlibrary_status": "needs_pdf",
+      "paperlibrary": {},
+      "raw": "Igamberdiev, A.U. (2021). Mathematics in biological reality: The emergence of natural computation in living systems. BioSystems, 204, 104388. doi:10.1016/j.biosystems.2021.104388"
+    },
+    {
+      "cite_key": "just2025",
+      "title": "A case for aneural cognition: E. coli and its cognitive repertoire",
+      "authors": "Just, B.B., de Farias, S.T.",
+      "year": "2025",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2025.105645",
+      "url": "https://doi.org/10.1016/j.biosystems.2025.105645",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2025-105645",
+        "title": "A case for aneural cognition: E. coli and its cognitive repertoire",
+        "year": "2025",
+        "journal": "BioSystems",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2025-105645.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2025-105645.txt",
+        "has_text": true
+      },
+      "raw": "Just, B.B., de Farias, S.T. (2025). A case for aneural cognition: E. coli and its cognitive repertoire. BioSystems, 105645. doi:10.1016/j.biosystems.2025.105645"
+    },
+    {
+      "cite_key": "faisal2008",
+      "title": "Noise in the nervous system",
+      "authors": "Faisal, A.A., Selen, L.P.J., Wolpert, D.M.",
+      "year": "2008",
+      "journal": "Nature Reviews Neuroscience",
+      "doi": "10.1038/nrn2258",
+      "url": "https://doi.org/10.1038/nrn2258",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 748,
+          "context": "Noise-assisted escape: Thermal noise enables local minima escape faisal2008; in our simulations, this improved convergence 15--25\\"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nrn2258",
+        "title": "Noise in the nervous system",
+        "year": "2008",
+        "journal": "Nature Reviews Neuroscience",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nrn2258.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nrn2258.txt",
+        "has_text": true
+      },
+      "raw": "Faisal, A.A., Selen, L.P.J., Wolpert, D.M. (2008). Noise in the nervous system. Nature Reviews Neuroscience, 9(4), 292--303. doi:10.1038/nrn2258"
+    },
+    {
+      "cite_key": "leroux2013",
+      "title": "Vector addition system reachability problem: A short self-contained proof. In 40th Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL), pp. 307--316",
+      "authors": "Leroux, J.",
+      "year": "2013",
+      "journal": "",
+      "doi": "10.1145/2429069.2429110",
+      "url": "https://doi.org/10.1145/2429069.2429110",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 192,
+          "context": "Structure and thesis: What's new. Existing work provides essential foundations: Landauer's principle establishes bit-level thermodynamic cost landauer1961; Ashby's requisite variety gives a qualitative constraint on control ashby1956; vector addition system (VAS) theory shows some high-D problems are Ackermann-complete leroux2013; free energy principle, neural criticality, morphological computation, and reservoir computing address aspects of biological efficiency friston2010,beggs2003,enel2016reservoir. Our framework provides energetic lower bounds under the morphological/reservoir intuition: we show why exploiting substrate dynamics is thermodynamically necessary, not merely efficient. Our contributions:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1145-2429069-2429110",
+        "title": "Plan B",
+        "year": "2013",
+        "journal": "Proceedings of the 40th annual ACM SIGPLAN-SIGACT symposium on Principles of programming languages",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1145-2429069-2429110.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1145-2429069-2429110.txt",
+        "has_text": true
+      },
+      "raw": "Leroux, J. (2013). Vector addition system reachability problem: A short self-contained proof. In 40th Annual ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL), pp. 307--316. doi:10.1145/2429069.2429110"
+    },
+    {
+      "cite_key": "melkikh2025",
+      "title": "Humans and microbes: A systems theory perspective on coevolution",
+      "authors": "Melkikh, A.V.",
+      "year": "2025",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2025.105639",
+      "url": "https://doi.org/10.1016/j.biosystems.2025.105639",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 322,
+          "context": "Implication: Intelligent Behavior Requires High-Dimensional Coherence. The thermodynamic argument applies to all living systems, not just humans. Intelligence—the capacity to track and respond to environmental complexity—is a fundamental property of life. Bacterial chemotaxis berg1972,sourjik2004 involves tracking multiple ligands (aspartate, serine, temperature, pH) through $$5--10 receptor types wadhams2004, spatial gradients in 3D, and temporal integration over $$1--10s timescales, giving $D_target 10^1$--$10^2$ at power dissipation $ 10^-12$ W frank2024. Recent work on E. coli's molecular architecture just2025 demonstrates this is implemented via $>$300 signaling proteins performing integrated perception, memory (methylation-based temporal comparison), decision-making (centralized receptor clustering), and anticipation, confirming that bacterial ``tracking'' is instantiated by high-dimensional collision-free dynamics, not discrete enumeration. The rapid evolution of antibiotic resistance and adaptive mutations melkikh2025 further demonstrates that bacterial genomes (with configuration space $ 4^10^6$ for a typical genome) cannot enumerate all variants; instead, evolution proceeds along low-dimensional constraint manifolds in this vast state space, creating the appearance of ``directed'' mutations without invoking quantum mechanics—observational inaccessibility in classical high-D systems suffices. Human sensorimotor control involves tracking $$600 muscles, $ 10^2$ joint angles, and proprioceptive/tactile feedback from $ 10^4$ mechanoreceptors johansson1998, giving lower-bound estimates of $D_target 10^2$--$10^3$ for motor control alone; adding social cognition (theory of mind, multi-agent prediction) and physiological regulation ($ 10^5$--$10^6$ molecular species milo2010) extends this to $D_target 10^3$--$10^5$ at $$20 W total cortical power. In both cases, $D_obs D_target$ is required: dimensional matching scales with the organism's behavioral bandwidth $C_commit$, not absolute power. A bacterium with $C_commit 1$ bit/s needs $D_crit 0.01$--$0.1$; cortex with $C_commit 10^2$ bits/s needs $D_crit 5$. Both operate well above their respective thresholds via high-dimensional substrates (bacterial chemotaxis networks, neural oscillations). The thermodynamically favored solution under bounded measurement capacity is $D_obs D_target$: intelligence is generically implemented in high-dimensional substrates operating through collision-free constraint geometry. This is not merely a design choice but a thermodynamic attractor for living systems tracking complex environments."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2025-105639",
+        "title": "Humans and microbes: A systems theory perspective on coevolution",
+        "year": "2025",
+        "journal": "BioSystems",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2025-105639.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2025-105639.txt",
+        "has_text": true
+      },
+      "raw": "Melkikh, A.V. (2025). Humans and microbes: A systems theory perspective on coevolution. BioSystems, 105639. doi:10.1016/j.biosystems.2025.105639"
+    },
+    {
+      "cite_key": "grassberger1983",
+      "title": "Measuring the strangeness of strange attractors",
+      "authors": "Grassberger, P., Procaccia, I.",
+      "year": "1983",
+      "journal": "Physica D: Nonlinear Phenomena",
+      "doi": "10.1016/0167-2789(83)90298-1",
+      "url": "https://doi.org/10.1016/0167-2789(83)90298-1",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 465,
+          "context": "Effective dimensionality $D_eff$ quantifies active degrees of freedom. The concept of dimensionality as an intrinsic geometric property of dynamical systems was formalized by Grassberger and Procaccia grassberger1983 through correlation dimension, and by Takens takens1981 through embedding theorems. Critically, Eckmann and Ruelle eckmann1985 established that dimension (geometry of the attractor) and entropy (statistics over the attractor) are independent characteristics---a distinction central to our framework. For practical estimation, we use the participation ratio gao2017:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-0167-2789-83-90298-1",
+        "title": "Measuring the strangeness of strange attractors",
+        "year": "1983",
+        "journal": "Physica D: Nonlinear Phenomena",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-0167-2789-83-90298-1.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-0167-2789-83-90298-1.txt",
+        "has_text": true
+      },
+      "raw": "Grassberger, P., Procaccia, I. (1983). Measuring the strangeness of strange attractors. Physica D: Nonlinear Phenomena, 9(1--2), 189--208. doi:10.1016/0167-2789(83)90298-1"
+    },
+    {
+      "cite_key": "takens1981",
+      "title": "Detecting strange attractors in turbulence. In Dynamical Systems and Turbulence, Warwick 1980, Lecture Notes in Mathematics, vol. 898, pp. 366--381. Springer",
+      "authors": "Takens, F.",
+      "year": "1981",
+      "journal": "",
+      "doi": "10.1007/bfb0091924",
+      "url": "https://doi.org/10.1007/BFb0091924",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 465,
+          "context": "Effective dimensionality $D_eff$ quantifies active degrees of freedom. The concept of dimensionality as an intrinsic geometric property of dynamical systems was formalized by Grassberger and Procaccia grassberger1983 through correlation dimension, and by Takens takens1981 through embedding theorems. Critically, Eckmann and Ruelle eckmann1985 established that dimension (geometry of the attractor) and entropy (statistics over the attractor) are independent characteristics---a distinction central to our framework. For practical estimation, we use the participation ratio gao2017:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1007-bfb0091924",
+        "title": "Detecting strange attractors in turbulence",
+        "year": "1981",
+        "journal": "Lecture Notes in Mathematics",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1007-bfb0091924.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1007-bfb0091924.txt",
+        "has_text": true
+      },
+      "raw": "Takens, F. (1981). Detecting strange attractors in turbulence. In Dynamical Systems and Turbulence, Warwick 1980, Lecture Notes in Mathematics, vol. 898, pp. 366--381. Springer. doi:10.1007/BFb0091924"
+    },
+    {
+      "cite_key": "eckmann1985",
+      "title": "Ergodic theory of chaos and strange attractors",
+      "authors": "Eckmann, J.-P., Ruelle, D.",
+      "year": "1985",
+      "journal": "Reviews of Modern Physics",
+      "doi": "10.1103/revmodphys.57.617",
+      "url": "https://doi.org/10.1103/RevModPhys.57.617",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 465,
+          "context": "Effective dimensionality $D_eff$ quantifies active degrees of freedom. The concept of dimensionality as an intrinsic geometric property of dynamical systems was formalized by Grassberger and Procaccia grassberger1983 through correlation dimension, and by Takens takens1981 through embedding theorems. Critically, Eckmann and Ruelle eckmann1985 established that dimension (geometry of the attractor) and entropy (statistics over the attractor) are independent characteristics---a distinction central to our framework. For practical estimation, we use the participation ratio gao2017:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1103-revmodphys-57-617",
+        "title": "Ergodic theory of chaos and strange attractors",
+        "year": "1985",
+        "journal": "Reviews of Modern Physics",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1103-revmodphys-57-617.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1103-revmodphys-57-617.txt",
+        "has_text": true
+      },
+      "raw": "Eckmann, J.-P., Ruelle, D. (1985). Ergodic theory of chaos and strange attractors. Reviews of Modern Physics, 57(3), 617--656. doi:10.1103/RevModPhys.57.617"
+    },
+    {
+      "cite_key": "aggarwal2025bayesian",
+      "title": "The Bayesian geometry of transformer attention",
+      "authors": "Aggarwal, N., Dalal, S.R., Misra, V.",
+      "year": "2025",
+      "journal": "arXiv preprint arXiv:2512.22471",
+      "doi": "",
+      "url": "https://arxiv.org/abs/2512.22471",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 1077,
+          "context": "Large language models achieve dimensional scaling ($D_eff 10^4$ in embedding spaces) but through spatial parameters, not temporal structure. Moreover, such systems operate on fixed representational geometries determined at training time: recent work shows transformers implement Bayesian inference as a computational primitive with $10^-3$--$10^-4$-bit precision aggarwal2025bayesian, but on manifolds sculpted during training and frozen during inference. They navigate pre-existing coordinate systems rather than endogenously reconfiguring which degrees of freedom are causally relevant. The dominant constraint in digital systems is enforced registration/clocking, which couples internal state evolution tightly to discrete update events. Under our framework, this shifts energetic and algorithmic burden toward frequent collision-like updates, whereas biological systems can concentrate irreversible costs at sparse boundary commitments (behavioral outputs)."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Aggarwal, N., Dalal, S.R., Misra, V. (2025). The Bayesian geometry of transformer attention. arXiv preprint arXiv:2512.22471. arXiv:2512.22471"
+    },
+    {
+      "cite_key": "huang2024scim",
+      "title": "Geometric quantification of cell phenotype transition manifolds with information geometry",
+      "authors": "Huang, M. et al.",
+      "year": "2024",
+      "journal": "bioRxiv preprint 2023.12.28.573500v2",
+      "doi": "10.1101/2023.12.28.573500",
+      "url": "https://doi.org/10.1101/2023.12.28.573500",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 65,
+          "context": "The third point is crucial. Behavioral outputs are not merely ``responses'' or ``tracking signals''---they are free-energy-minimizing interventions that protect internal structure. The organism acts to maintain the viability of its nonergodic dynamics friston2010. Recent work on cell phenotype transitions provides complementary evidence: Huang et al.~huang2024scim embed single-cell gene expression profiles as Gaussian distributions on a Fisher information manifold, finding that low Ricci curvature marks critical transitions while high information velocity coincides with low curvature---geometry guides dynamics on phenotype manifolds precisely where dimensional collapse becomes behaviorally relevant."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1101-2023-12-28-573500",
+        "title": "Geometric Quantification of Cell Phenotype Transition Manifolds with Information Geometry",
+        "year": "2023",
+        "journal": "",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1101-2023-12-28-573500.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1101-2023-12-28-573500.txt",
+        "has_text": true
+      },
+      "raw": "Huang, M. et al. (2024). Geometric quantification of cell phenotype transition manifolds with information geometry. bioRxiv preprint 2023.12.28.573500v2. doi:10.1101/2023.12.28.573500"
+    },
+    {
+      "cite_key": "baray2025zipf",
+      "title": "Zipfian universality of interaction laws: A statistical-mechanics framework for inverse power scaling",
+      "authors": "Baray, J.",
+      "year": "2025",
+      "journal": "arXiv preprint arXiv:2512.13241",
+      "doi": "",
+      "url": "https://arxiv.org/abs/2512.13241",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 117,
+          "context": "Irreducible complexity is irreducible. A common objection invokes sparse coding or dimensionality reduction bengio2013: if data lie on low-dimensional manifolds, clever algorithms could avoid the curse. This applies when targets have reducible complexity (e.g., image classification on natural manifolds). But systems with irreducible high-D—ecosystems, vector addition systems with Ackermann-complete reachability, multi-agent dynamics—cannot be faithfully compressed without information loss. This emergence of macroscopic constraints from dimensional structure has a statistical-mechanics parallel: Baray~baray2025zipf shows that inverse power-law interactions emerge as fixed points of aggregation processes, with the exponent determined by effective dimensionality and symmetry---not imposed a priori. Biology doesn't compress everything because tracking physiology ($D_eff 10^6$) or social interactions ($D_eff 10^3$--$10^4$) requires real-time coherence in the full constraint geometry. Modern AI (e.g., GPT-scale models) succeeds not via low-dimensional cleverness but by brute-force approximation of high-dimensional coherence—$ 10^11$ parameters effectively simulate high-dimensionality, still dissipating megawatts versus the brain's 20~W. Compression helps within high-dimensional substrates (e.g., sparse activations reduce active pathways), but doesn't escape dimensional matching for irreducible targets."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Baray, J. (2025). Zipfian universality of interaction laws: A statistical-mechanics framework for inverse power scaling. arXiv preprint arXiv:2512.13241. arXiv:2512.13241"
+    }
+  ]
+}
