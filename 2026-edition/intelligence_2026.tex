@@ -1,0 +1,409 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Intelligence as high-dimensional coherence: The observable dimensionality bound and computational tractability},pdfauthor={Ian Todd}}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{0.25em}
+\title{Intelligence as high-dimensional coherence: The observable dimensionality bound and computational tractability}
+\author{Ian Todd\\Sydney Medical School, University of Sydney\\Sydney, NSW, Australia\\
+\texttt{itod2305@uni.sydney.edu.au}}
+\date{2026 author edition}
+\begin{document}
+\maketitle
+\begin{center}
+\small The published article in \textit{BioSystems} 260 (2026), 105704 remains the\\
+version of record and the one to cite:
+\href{https://doi.org/10.1016/j.biosystems.2026.105704}{doi:10.1016/j.biosystems.2026.105704}.
+\end{center}
+
+\begin{abstract}
+Intelligence is the maintenance and adaptive use of high-dimensional coherent dynamics that outrun tracking through limited observation channels. The organism embodies the process that an observer must reconstruct. Neural activity, bodily configuration and environmental coupling carry history, coordinate action and defend the conditions for continued activity. The central architectural claim is that continuous substrates sustain this organisation with far fewer irreversible registrations than implementations that repeatedly overwrite discrete records of the evolving state. Metastability preserves useful relations while local dynamics explore alternatives; sparse outputs express their consequences. The observable dimensionality bound formalises the gap between internal dynamics and external description. A worked example requires 6000 bits/s to track 300 modes, while a 100-bit/s channel supports only five. Thermodynamic accounting locates the cost of memory reset alongside acquisition, retention and ongoing dissipation. Constraint geometry makes computation a physical process of relaxation toward the encoded objective. Reusable codes extend coordination across limited interfaces. Together, these mechanisms place intelligence in the organised activity of a living system and identify direct tests of the relations that sustain its flexibility.
+\end{abstract}
+
+\noindent\textbf{Keywords:} biological intelligence; high-dimensional coherence; metastability; embodied computation; observation channels; thermodynamics; adaptive codes
+
+\section{Intelligence in the dynamics that sustain an organism}
+
+Intelligence consists in maintaining high-dimensional coherent dynamics and reshaping them to sustain viable action. Those dynamics carry more differentiated activity than an observation channel can track whenever their information demand exceeds its capacity. An organism uses this activity directly: its physical state carries the history, constraints and alternatives from which action emerges.
+
+A hand adjusting its grip on a slipping object brings together touch, muscle tension, posture and expectation. Much of the adjustment occurs before a person can describe it. The movement expresses a small part of the organisation that made the adjustment possible. Bacterial chemotaxis offers a simpler example: receptor activity and biochemical adaptation retain recent conditions and alter subsequent movement \citep{berg1972,wadhams2004}. In each case, a history carried by the organism changes its response to the present.
+
+By \emph{coherence} I mean organised relations that let a system's components contribute to a continuing activity despite change and disturbance. By \emph{high-dimensional} I mean that many distinguishable degrees of freedom participate in those relations at the scale relevant to the activity. The organism's state, couplings and ongoing activity constitute the mechanism. A compact output expresses what that mechanism achieves.
+
+This is a claim about organisation across time. An organism preserves some relations, changes others and acts on the conditions that allow both processes to continue. Coherence therefore includes the capacity to reorganise. Uniform synchrony would be too restrictive: a cortex in which every population followed the same trajectory would have little independent variation available for flexible computation. Effective coordination allows different populations to do different things while remaining coupled to the same task.
+
+Neural population studies support this emphasis on coordinated dynamics. Movement can be described through population manifolds, and learning depends partly on the activity patterns available within an existing network \citep{gallego2017,sadtler2014}. Consistent behaviour can accompany stable population dynamics over long periods \citep{gallego2020}. Oscillatory interactions provide another means of organising activity across space and time \citep{siegel2012}. Chen and colleagues describe spatial patterns of alpha/beta activity that constrain where task information is expressed in spiking and gamma activity \citep{chen2026}. These findings put relationships among components at the centre of the computation.
+
+The biological ambition extends beyond neurons. Bioelectric signalling coordinates cellular activity during development and regeneration \citep{levin2021}. Chemotactic adaptation operates through biochemical networks. The physical variables differ, but both cases invite the same question: how does an organised system retain enough differentiated activity to respond flexibly while preserving the conditions of its own persistence? A theory of intelligence should be able to address that question across substrates.
+
+The crucial organisation joins differentiation to coordination. Uncoupled oscillators supply variation; a rigid attractor supplies persistence. Intelligence requires useful distinctions to survive within dynamics that can reorganise. The strongest prediction is causal: disrupting the relevant relations should impair selection, learning and viable action even when simple measures of activity remain intact.
+
+Embodiment also changes the cost of computation. A continuous substrate lets its relations evolve without repeatedly copying the whole configuration into discrete memory. Irreversible registrations concentrate where durable records and actions are needed. This is the architectural source of economy developed here: preserve rich dynamics, exploit their constraint geometry, and read out the consequences sparsely.
+
+\section{Memory and flexibility in a constrained state space}
+\label{sec:geometry}
+
+\subsection{A physical state can carry a history}
+
+Let \(x(t)\) denote the organism's state at time \(t\), represented by \(n\) physical coordinates at a chosen scale. These might include population activities, phases, concentrations or mechanical configurations. Let \(e(t)\) describe the environmental variables coupled to them, and let \(\theta(t)\) describe adjustable couplings. A schematic model is
+\begin{equation}
+ \dot{x}=F(x,e;\theta),\qquad
+ \dot{\theta}=G(x,e;\theta),\qquad
+ a=A(x,\theta).
+ \label{eq:dynamics}
+\end{equation}
+Here \(F\) gives the state dynamics, \(G\) gives the slower or adaptive changes in coupling, and \(A\) maps the current organisation to an action \(a\). The environmental dynamics also depend on \(a\), closing the loop. Each coordinate retains its own physical units in this structural description.
+
+The current state can retain a history because different past inputs leave different configurations or coupling strengths. A future input then acts on those differences. The organism need not first translate the whole configuration into a separate symbolic description for that history to influence its behaviour. Reservoir models provide a concrete example of how ongoing neural dynamics can support memory and readout \citep{enel2016reservoir}. Long-term memory can also reside in altered connections and cellular structure. Persistence need not depend on one uninterrupted oscillation.
+
+\emph{Constraint geometry} names the arrangement of dynamically available states and the relations that guide motion among them. In a hand, tendon forces and joint geometry restrict movement. In a neural population, connectivity and current activity shape which patterns can follow. A constraint can be helpful because it excludes ineffective responses before any explicit search is performed. Learning changes this geometry by making useful trajectories easier to enter or maintain.
+
+\subsection{Metastability on biological timescales}
+
+A system is operationally nonergodic over a specified interval when it does not mix across its accessible state distribution within that interval, at the resolution being considered. This can arise through barriers, slow variables or weak coupling between regions. A useful biological regime combines relatively rapid motion within a region with slower escape from it. Local change then occurs within a persistent context.
+
+High dimension enlarges the available repertoire. If \(n\) coordinates each have \(q\) distinguishable bins, the Cartesian inventory has \(q^n\) configurations, where \(q\) is the number of bins per coordinate. Metastability requires barriers, slow variables or weak coupling that delay mixing across this repertoire. The inventory alone gives no mixing time: mixing can occur without visiting every bin. Transition times establish how long a structured region remains available to the organism.
+
+The important biological relation is between those times and the task. A transient configuration that lasts through a sensory comparison may provide memory even if it disappears within a second. A stable configuration that cannot be left when circumstances change can obstruct action. The theory therefore predicts an adaptable separation of timescales, rather than maximal persistence. The organism must preserve the distinctions that remain useful while allowing new ones to form.
+
+Coupling structure, feedback and energy supply determine how perturbations propagate. Observational opacity and resistance to control are distinct: one accessible control variable can destabilise many hidden degrees of freedom. Biological autonomy resides in the closed loop in equation~\eqref{eq:dynamics}, including its capacity to restore viable activity after disturbance.
+
+\subsection{Selective coherence}
+
+Coupled phase oscillators make some of these relations explicit. For oscillator \(i\), let \(\phi_i\) be phase in radians, \(\omega_i\) its intrinsic angular frequency, and \(K_{ij}\) the coupling rate from oscillator \(j\). A standard model is
+\begin{equation}
+ \dot{\phi}_i=\omega_i+\sum_{j=1}^{n}K_{ij}\sin(\phi_j-\phi_i).
+ \label{eq:kuramoto}
+\end{equation}
+The complex order parameter
+\begin{equation}
+ r e^{\mathrm{i}\psi}=\frac{1}{n}\sum_{j=1}^{n}e^{\mathrm{i}\phi_j}
+ \label{eq:order}
+\end{equation}
+defines global phase alignment \(r\), between zero and one, and mean phase \(\psi\); \(\mathrm{i}\) is the imaginary unit \citep{strogatz2000}. Large \(r\) measures phase similarity.
+
+Two internally coordinated groups can have opposite phases and a small global \(r\). Conversely, strong global locking can reduce independent activity. Biological coherence resides in relations within and between groups, including changing phase offsets and amplitude relationships. The relevant observables should follow those relations. Structured cortical correlations and dynamic integration show why selective coordination matters \citep{hipp2012,shine2019}.
+
+Noise broadens exploration, assists escape from some local basins and destroys some retained distinctions \citep{faisal2008}. Its contribution depends on the task, the coupling and the noise scale. Useful dynamics balance exploration against the persistence of information.
+
+\subsection{What a dimension estimate measures}
+
+For a measured feature vector \(z\) with nonzero covariance matrix \(\Sigma\), define the covariance participation ratio
+\begin{equation}
+ D_{\mathrm{PR}}=
+ \frac{(\operatorname{tr}\Sigma)^2}{\operatorname{tr}(\Sigma^2)}
+ =\frac{(\sum_{j=1}^{m}\lambda_j)^2}{\sum_{j=1}^{m}\lambda_j^2}.
+ \label{eq:pr}
+\end{equation}
+Here \(m\) is the number of features, \(\lambda_j\) are the covariance eigenvalues, and \(\operatorname{tr}\) denotes the trace. The ratio describes how variance is distributed across directions. It lies between one and the covariance rank. It depends on feature scaling, preprocessing and the time window.
+
+Counting cortical parcels and frequency bands provides the size of a feature inventory. For example, one scalar feature for each of 250 parcels in four bands gives \(m=1000\). Selecting 30\% of these yields 300 features. Neither count determines \(D_{\mathrm{PR}}\). If all 1000 standardised features have equal pairwise correlation \(\rho\), direct substitution gives
+\begin{equation}
+ D_{\mathrm{PR}}=\frac{1000}{1+999\rho^2}.
+ \label{eq:equicorr}
+\end{equation}
+In this illustrative covariance model, the value is 1000 for \(\rho=0\), about 91.0 for \(\rho=0.1\), and about 3.99 for \(\rho=0.5\). The same feature inventory supports radically different amounts of independent variation.
+
+Participation ratio also differs from causal and predictive dimension. A low-variance direction can carry an important decision variable, while high-variance directions contribute little to an output. Prediction on held-out trials and interventions on candidate modes connect measured variation to the distinctions a task demands. Changing the task then tests how much of the organism's wider repertoire a compact model captures.
+
+\section{The observable dimensionality bound}
+\label{sec:bound}
+
+\subsection{Specify what must be recovered}
+
+A behaviour record, an electrode array and a biochemical assay provide different views of an organism. Each has a measurement map, noise and a limited time in which its observations can be used. The bound concerns one specified view and one specified reconstruction task.
+
+Let \(X\) be the random variable describing the target trajectory, state or event over a horizon of length \(T\) seconds. Let \(S\) be information already available to the observer, including past observations and known model parameters. The observer produces a reconstruction \(\widehat X\). A nonnegative distortion function \(d(X,\widehat X)\) states what counts as error: examples include average state error or an explicitly defined event-timing loss. The allowed expected distortion is \(\varepsilon\).
+
+Define the conditional information requirement
+\begin{equation}
+ B_T(\varepsilon\mid S)=
+ \inf_{\mathbb{E}[d(X,\widehat X)]\leq\varepsilon}
+ I(X;\widehat X\mid S),
+ \label{eq:rd}
+\end{equation}
+where \(I\) is conditional mutual information, in bits, and the infimum is over conditional distributions of reconstructions. This is a finite-horizon rate-distortion quantity \citep{cover2006}. It gives a necessary information requirement even when the physical observer cannot implement the best reconstruction distribution. Deadline and causality restrictions can make an actual task harder.
+
+Let \(Y\) denote everything acquired through the chosen observation channel by the deadline. Suppose that its admissible use satisfies
+\begin{equation}
+ I(X;Y\mid S)\leq CT,
+ \label{eq:channel}
+\end{equation}
+where \(C\) is an information capacity bound in bits per second. Equation~\eqref{eq:channel} must be established for the channel model and its resource constraints. A stored-data rate is not automatically an information rate about \(X\). For a stationary memoryless channel, the usual capacity supplies the familiar bound; channels with memory, feedback or adaptive sensing require an appropriate finite-horizon bound \citep{shannon1948,cover2006}.
+
+\paragraph{Channel-relative tracking bound.}
+If \(\widehat X\) is computed from \(Y\) and \(S\), with no additional access to the target, then
+\begin{equation}
+ B_T(\varepsilon\mid S)>CT
+ \quad\Longrightarrow\quad
+ \mathbb{E}[d(X,\widehat X)]>\varepsilon.
+ \label{eq:bound}
+\end{equation}
+Indeed, conditional data processing gives
+\begin{equation}
+ B_T(\varepsilon\mid S)
+ \leq I(X;\widehat X\mid S)
+ \leq I(X;Y\mid S)
+ \leq CT
+ \label{eq:proof}
+\end{equation}
+for any observer attaining the nominated distortion. A violation of the outer inequality excludes that performance.
+
+This obstruction applies to every observer using that channel, biological or artificial. Capacity is a necessary condition for tracking; achieving it also requires a suitable measurement map, code and computation within the deadline.
+
+\subsection{When the bound can be expressed as a dimension}
+
+Suppose a source model establishes that tracking \(D\) task-relevant modes requires at least \(D h_\varepsilon\) bits over an update interval \(\tau>0\). Here \(h_\varepsilon>0\) is a lower bound in bits per mode per interval, after conditioning on available history and accounting for dependence between modes. Applying equation~\eqref{eq:bound} to that interval gives the necessary condition
+\begin{equation}
+ D\leq D_{\mathrm{crit}},
+ \qquad
+ D_{\mathrm{crit}}=\frac{C\tau}{h_\varepsilon}.
+ \label{eq:dcrit}
+\end{equation}
+The units are modes: bits/s multiplied by seconds and divided by bits/mode. The lower bound on joint information supplies the substantive assumption.
+
+The source model must establish joint information demand. If all coordinates affect the target only through their sum, that sum can suffice. Predictable trajectories require only the innovations left after using \(S\). The distribution, dependence and required accuracy of recovery turn a phase-bin inventory into a coding requirement.
+
+For an exact illustrative source, suppose 300 independent modes each take four equally likely states and are independently renewed every 0.1 seconds. Lossless description requires 600 bits per interval, or 6000 bits/s. A channel limited to 100 bits/s offers at most 10 bits per interval. The corresponding lossless dimensional threshold is five modes. At 10 bits/s it is half a mode, meaning that even one such mode cannot be tracked losslessly at the specified renewal rate.
+
+Finite-error performance can also be bounded. For one interval let \(p_e\) be the probability of reconstructing any part of the 300-mode state incorrectly, and let \(M=4^{300}\) be the number of equiprobable joint states. Fano's inequality gives
+\begin{equation}
+ I(X;\widehat X)\geq
+ \log_2 M-h_2(p_e)-p_e\log_2(M-1),
+ \label{eq:fano}
+\end{equation}
+where \(h_2(p)=-p\log_2 p-(1-p)\log_2(1-p)\) is binary entropy \citep{cover2006}. Since \(h_2(p_e)\leq1\) and only 10 bits can arrive, \(10\geq599-600p_e\). Hence \(p_e\geq 1-11/600\), or about 98.2\% for exact recovery of the entire joint state.
+
+A cortical application measures innovations at the relevant temporal resolution and tests their importance to the nominated target. Laboratory measurements use their own channel capacity, independently of the organism's behavioural output rate.
+
+\subsection{Why embodiment matters}
+
+An organism can use relations that it does not transmit through its behavioural interface. Mechanical couplings redistribute force; recurrent activity changes the response to incoming signals. Their causal influence does not require an external observer to reconstruct them. This is the architectural importance of high-dimensional coherence: a rich physical state can contribute directly to action while only a limited consequence crosses a particular boundary.
+
+The bound makes this gap between internal organisation and external description precise. The computational resource lies in the relations that act together within the substrate. For a known task, a small statistic can express their useful consequence even when the organism's wider adaptive repertoire depends on many more degrees of freedom.
+
+Acquiring an unknown biological state, simulating specified equations and reproducing a behavioural capability are different tasks. Equation~\eqref{eq:bound} governs acquisition through the chosen channel. Reproducing the organism's capacities turns on which physical relations sustain its adaptive repertoire.
+
+\section{The energetic cost of maintaining and reading dynamics}
+\label{sec:energy}
+
+Neural activity consumes energy continuously. Restoring ionic gradients, maintaining membrane potentials and supporting synaptic signalling all contribute to the budget \citep{attwell2001,laughlin1998}. A continuous flow of free energy sustains dynamically stable patterns. Their persistence and their dissipation belong to the same physical process.
+
+For a chosen physical boundary, let \(S_{\mathrm{sys}}\) be the system's thermodynamic entropy in joules per kelvin, \(\dot S_{\mathrm{in}}\) the net entropy flow into it, and \(\dot S_{\mathrm{prod}}\) the entropy production rate. The entropy balance is
+\begin{equation}
+ \frac{dS_{\mathrm{sys}}}{dt}
+ =\dot S_{\mathrm{in}}+\dot S_{\mathrm{prod}},
+ \qquad \dot S_{\mathrm{prod}}\geq0.
+ \label{eq:entropy}
+\end{equation}
+At a steady state, positive internal production can be balanced by entropy export. Maintaining coherence can be dissipative even while a coarse-grained uncertainty remains constant.
+
+\subsection{Acquisition, retention and reset}
+
+Landauer's principle quantifies the physical cost of reducing logical uncertainty \citep{landauer1961,bennett1982}. For a memory reset isothermally to a standard state, take symmetric, energetically degenerate logical states with equal internal entropies, coupled to a reservoir at temperature \(T_b\). Let the states be internally equilibrated and let the protocol use no side information. Reducing the memory's logical Shannon entropy by \(H_{\mathrm{erase}}\) bits then delivers heat to the reservoir bounded by
+\begin{equation}
+ Q_{\mathrm{reset}}\geq k_{\mathrm B}T_b\ln2\,H_{\mathrm{erase}},
+ \label{eq:landauer}
+\end{equation}
+where \(k_{\mathrm B}\) is Boltzmann's constant. State-energy differences, correlations available to the controller, finite-time constraints and the rest of the apparatus require their own accounting. The familiar one-bit value concerns resetting an initially unbiased bit under these assumptions.
+
+Acquisition creates a correlation; retention preserves a record; reset discards logical uncertainty. Here an \emph{irreversible registration} means a record update that erases distinctions between prior logical states. The discarded entropy determines its reset floor. Threshold crossings and counter increments must be analysed through their physical memory maps: a counter increment can be logically reversible on its valid domain. Reversible computing separates the number of discrete updates from the number of erasures \citep{bennett1973}.
+
+The observer's energy supply belongs to the observer's budget. Its information capacity follows from the channel, rather than from dividing the target's energy by \(k_{\mathrm B}T_b\ln2\). Backaction follows from the physical coupling between instrument and target.
+
+At \(T_b=310\) K, using \(k_{\mathrm B}=1.380649\times10^{-23}\) J/K,
+\begin{equation}
+ k_{\mathrm B}T_b\ln2
+ =2.9667\times10^{-21}\ {\rm J}.
+ \label{eq:numericenergy}
+\end{equation}
+Resetting 100 independent unbiased bits per second at this ideal floor would require \(2.9667\times10^{-19}\) W. Conversely, 20 W divided by the one-bit floor is about \(6.74\times10^{21}\) ideal bit resets per second. These reset-model scale comparisons place the ideal floor far below biological power. Physical overhead and ongoing activity therefore dominate the practical energy budget.
+
+\subsection{Sparse registration as an architectural advantage}
+
+A continuous substrate carries its evolving configuration in the physical variables doing the work. Mechanical and electrical couplings propagate constraints directly. Against an implementation that repeatedly overwrites uncertain discrete records of that configuration, sparse registration avoids the discrete record erasures and data movement imposed by that representation. This is the paper's architectural claim: continuous dynamics achieve rich coordination with far fewer irreversible registrations by keeping intermediate relations in motion and recording selected consequences.
+
+An energy comparison should use the same input ensemble, accuracy, latency and tolerated failure rate. It should include preparation, learning, internal evolution, sensing, readout and resetting, with a common accounting boundary. If these are disjoint stages, their measured work can be added. If maintenance and computation share the same physical processes, allocating the same dissipation to both would double-count it.
+
+Registration count and total energy answer different questions. The first identifies avoidable memory operations; the second includes the continuous cost of sustaining useful dynamics. Biological, analogue, digital and hybrid systems can all be compared on this basis. The proposed advantage directs attention to where a design spends energy maintaining relations and where it spends energy representing them elsewhere.
+
+A reduction in \(D_{\mathrm{PR}}\) describes a change in the variance spectrum. To calculate erased bits and heat, specify the physical state distribution and its transformation. This connects geometry to thermodynamics through an actual operation.
+
+\section{Computing through constraint geometry}
+\label{sec:computation}
+
+\subsection{What relaxation achieves}
+
+A physical system responds to many constraints simultaneously because those constraints enter its equations of motion. In sensorimotor adjustment, forces and neural activity evolve together, and the resulting configuration shapes the next input. The computational resource is the organised dynamics, including the history embedded in its couplings.
+
+To make the mechanism precise, consider dimensionless coordinates \(u\) and a dimensionless objective \(V(u)\). Suppose the deterministic dynamics follow
+\begin{equation}
+ \dot u=-\gamma\nabla V(u),
+ \label{eq:gradient}
+\end{equation}
+where \(\gamma>0\) is a rate in inverse seconds and \(\nabla V\) is the gradient. Then
+\begin{equation}
+ \frac{dV}{dt}=-\gamma\|\nabla V(u)\|^2\leq0.
+ \label{eq:descent}
+\end{equation}
+Here \(\|\cdot\|\) is the Euclidean norm. The system descends the objective without an explicit enumeration of all configurations.
+
+The encoded objective determines the convergence rate. Let \(u^\ast\) be a stationary minimum. Suppose the trajectory remains in a convex region containing \(u^\ast\), where the Hessian of \(V\) has eigenvalues at least \(\mu>0\). The Hessian is the matrix of second derivatives, and \(\mu\) measures the least curvature in that region. Strong convexity gives
+\begin{equation}
+ \|u(t)-u^\ast\|
+ \leq e^{-\gamma\mu t}\|u(0)-u^\ast\|.
+ \label{eq:localrate}
+\end{equation}
+Thus reaching distance \(\delta\) from the minimum requires no more than
+\begin{equation}
+ t_\delta=\frac{1}{\gamma\mu}
+ \log\!\left(\frac{\|u(0)-u^\ast\|}{\delta}\right)
+ \label{eq:relaxation}
+\end{equation}
+when the initial distance exceeds \(\delta\). This follows by differentiating the squared distance and integrating the resulting inequality. It is a local result unless the curvature and invariance conditions hold globally.
+
+The rate exposes what a useful substrate provides: an appropriate basin, sufficient curvature and a starting state that enters it. Weak curvature and narrow basins slow convergence; noise changes settling time and accuracy. Learning and development shape these properties before the immediate task begins. A digital numerical method can exploit the same objective, making total resources on the same problem the relevant comparison.
+
+If \(V\) is realised by a physical energy \(U=E_0V\), where \(E_0\) is an energy scale in joules, a simple overdamped thermal model for these dimensionless coordinates is
+\begin{equation}
+ du=-\Gamma\nabla U\,dt+\sqrt{2\Gamma k_{\mathrm B}T_b}\,dW_t.
+ \label{eq:langevin}
+\end{equation}
+Here \(\Gamma\) is a scalar mobility in \({\rm J}^{-1}{\rm s}^{-1}\), and \(W_t\) is a vector of independent Wiener processes, with increments of variance \(dt\). The noise and mobility obey the equilibrium fluctuation-dissipation relation for this model. Energy release during relaxation can become heat. Active biological processes require explicit treatment of their additional driving.
+
+\subsection{Encoding determines which problem is solved}
+
+Vector addition systems provide a stringent example. A state \(v\) is a vector of nonnegative integers. A transition adds one vector from a fixed finite set \(\mathcal T\), provided all resulting coordinates remain nonnegative. Reachability asks whether some legal transition sequence connects a specified initial state to a specified target. General reachability is Ackermann-complete in the worst case \citep{czerwinski2021}.
+
+An oscillator objective centred on a target illustrates alignment. For target coordinates \(v_1^\ast,\ldots,v_n^\ast\), phase coordinates \(\phi_1,\ldots,\phi_n\), and a phase scale \(\Delta\) in radians per coordinate unit, consider
+\begin{equation}
+ V(\phi)=-\sum_{j=1}^{n}\cos(\phi_j-\Delta v_j^\ast).
+ \label{eq:targetpotential}
+\end{equation}
+Its minima align each phase with its target modulo \(2\pi\). A bounded coordinate range and sufficient phase precision are needed even to decode that alignment without ambiguity. The expression contains no legal-transition set and no initial-state reachability constraint.
+
+For example, from \((0,0)\) with transitions \((2,0)\) and \((0,2)\), every reachable coordinate is even. The target \((1,1)\) is unreachable. Equation~\eqref{eq:targetpotential} nevertheless has a minimum at the phases encoding that target. It solves a constructed alignment task. To solve the reachability problem, an encoding would have to preserve legal transitions and nonnegativity, distinguish unreachable targets, and support extraction of a valid certificate with controlled precision and total cost.
+
+A hand settles into a stable grip through continuous mechanics that embody the relevant forces and constraints. Evolved and learned constraints encode recurring tasks as useful basins for relaxation. Much of the computational work is already embodied in the substrate and its developmental history.
+
+\subsection{Comparing implementations}
+
+The accompanying source implementations compare target-centred oscillator relaxation with independent-coordinate updates on separable alignment objectives. Their update counts describe algorithmic activity; physical energy requires a device measurement. Numerical integration also provides a digital implementation of the continuous dynamics.
+
+A matched benchmark would specify an identical input representation, successful output, precision, stopping rule and failure criterion for each method. It would include target loading, initialisation, conversion and learning costs. An analogue device's physical parallelism must be counted alongside the number of components it uses.
+
+High-dimensional dynamics provide room for differentiated responses and for adaptive constraints to act jointly. Each classical trajectory occupies one state at a time, with many relations shaping its evolution together. That collective influence is the computational strength of the substrate.
+
+\section{Reusable codes at limited interfaces}
+\label{sec:codes}
+
+A familiar gesture coordinates two people without transmitting either person's full internal state. A shared history of situations, actions and responses gives the gesture its meaning. Recurring task classes, recognisable by the sender and actionable by the receiver, make reusable codes economical at a limited interface.
+
+Suppose a sender's state falls into one of \(K\) recurring task classes, denoted by a label \(Z\). The label is useful when states in a class call for the same receiver response to the desired accuracy. An established code can convey the class using \(\lceil\log_2 K\rceil\) bits in a noiseless fixed-length message. Across independent draws, ideal variable-length coding approaches the label entropy \(H(Z)\) bits per draw. Relevant within-class variation requires additional information. Discovering the classes and learning the mapping add acquisition costs.
+
+The required structure can be made explicit in a small adaptive model. Assume stationary recurring classes, a sender that can identify the class, a noiseless channel with at least \(K\) symbols, and a receiver response \(a_z\) appropriate to each class \(z\). Both parties share evaluative feedback. Let \(\pi\) be a one-to-one assignment from classes to symbols, and suppose the receiver currently maps \(\pi(z)\) to \(a_z\).
+
+For each class \(z\), let \(w_z(j)\) be the sender's probability of selecting symbol \(j\). Consider the feedback update
+\begin{equation}
+ w_z^{\,\mathrm{new}}=(1-\eta)w_z+\eta e_{\pi(z)},
+ \qquad 0<\eta<1,
+ \label{eq:codelearning}
+\end{equation}
+where \(\eta\) is the learning rate and \(e_{\pi(z)}\) is the probability vector concentrated on the symbol that feedback identifies as successful. After \(m\) visits to that class,
+\begin{equation}
+ w_z^{(m)}(\pi(z))
+ =1-(1-\eta)^m\bigl[1-w_z^{(0)}(\pi(z))\bigr].
+ \label{eq:codeconvergence}
+\end{equation}
+Repeated visits stabilise the compatible association, and the probability of other symbols decays geometrically.
+
+This mechanism reinforces reuse of a mapping. Joint emergence of an encoder and decoder additionally requires updates that make their mappings mutually interpretable \citep{barbieri2018}. Ambiguous feedback, changing tasks and incompatible updates can prevent convergence. Code formation follows from the organisation of learning, not from a bottleneck alone.
+
+The existing 50-pathway demonstration illustrates preferential reuse. It samples tasks around five constructed patterns, selects five pathways from a fixed repertoire and reinforces selected pathways after sufficiently accurate reconstruction. A shared-convention experiment would add an independently adapting receiver and compare both mappings with those of a matched digital learner.
+
+Continuous forces, positions and scalar estimates also coordinate activity by preserving the relevant distinctions. Discrete codes earn their place when reuse repays the cost of learning. Their robustness and compositional possibilities then support increasingly elaborate coordination.
+
+The high-dimensional substrate gives the compact label its meaning. The same gesture draws on posture, attention and a history of interaction. Learning stabilises a reusable readout while leaving substantial internal variation available for other tasks. A small message recruits an extensive organisation.
+
+\section{Tests of the biological thesis}
+\label{sec:tests}
+
+The decisive test changes the relations that sustain flexible behaviour. Vary the constraints a task imposes, record the substrate and separate changes in organisation from changes in effort, arousal and measurement quality.
+
+\subsection{Estimate dimension and time on the same data}
+
+For a cortical study, define the measured feature vector before interpreting its dimension. Band-limited amplitudes provide one possible set of scalar features. If phase is used, its circular nature must be respected, for example by representing each phase with sine and cosine coordinates. That changes the feature inventory and its dependencies. Source reconstruction, spatial leakage, filtering and normalisation all affect the covariance spectrum.
+
+Estimate equation~\eqref{eq:pr} with an explicitly reported sample window and effective sample size. For \(N\) centred observations in \(m\) features, the sample covariance rank is at most \(\min(m,N-1)\). Temporal autocorrelation further reduces the number of effectively independent observations. Short windows can therefore manufacture apparent low dimension or unstable changes in it. Uncertainty should be assessed with resampling that preserves temporal dependence, alongside suitable covariance regularisation and sensitivity to feature scaling.
+
+A coherence timescale also needs an estimator. For a chosen scalar coordination measure \(q(t)\), define its centred fluctuation \(\delta q(t)=q(t)-\mathbb E[q(t)]\) and normalised autocorrelation
+\begin{equation}
+ \rho_q(s)=
+ \frac{\mathbb E[\delta q(t+s)\delta q(t)]}
+ {\mathbb E[\delta q(t)^2]},
+ \qquad
+ \tau_q=\int_0^{s_c}\rho_q(s)\,ds .
+ \label{eq:correlation}
+\end{equation}
+Here \(s\) is lag and \(s_c\) is a declared cutoff, such as a preselected first-zero rule. The quantity \(\tau_q\) has units of time. Nonstationarity, oscillation and the cutoff can change its interpretation. A carrier period or an autocorrelation time is not automatically the renewal interval \(\tau\) required by equation~\eqref{eq:dcrit}. The observer's information requirement should be estimated from residual uncertainty after using its history, rather than from nominal samples per second.
+
+\subsection{Change the relations the task needs}
+
+Hold sensory input and motor output complexity approximately fixed while increasing the number of independently varied constraints that determine a successful response. The theory predicts recruitment or reorganisation of coordinated modes when the added constraints demand new distinctions. Learning, shared structure and noise determine how that reorganisation changes the covariance spectrum.
+
+Compare full and reduced dynamical predictors on held-out trials and on new combinations of constraints. A reduced model should receive comparable training and sufficient model capacity. If it retains predictive and control performance across the nominated intervention family, that is evidence that the omitted modes are unnecessary for those tasks. If a richer model adds predictive value, targeted perturbation is still needed to establish that the additional relations have a causal role.
+
+The more distinctive test disrupts coordination while preserving simpler summaries as far as possible. For example, a perturbation can alter timing relations while controlling for mean activity and gross input strength. Impaired flexible performance, followed by recovery when the relevant relations are restored, would support the mechanism. Failure to find such dependence would count against that proposed form of coherence.
+
+\subsection{Distinguish readout from internal reorganisation}
+
+An action can compress a high-dimensional state into a small output without changing the dimension of the internal activity. Conversely, internal activity may reorganise before, during or after the action. These are separate empirical events.
+
+Time-resolved covariance and coordination measures test whether task-dependent reorganisation accompanies commitment. Window length and filtering set the temporal precision. Compare changes in participation ratio with matched movement, arousal and sensory controls. The central prediction is that useful distinctions persist until they have contributed to the response.
+
+Learning provides a related test. Familiar tasks can recruit activity more selectively or support more differentiated responses. Track task accuracy, generalisation and the modes needed to sustain them together. Their changing relationship reveals how expertise reorganises the substrate.
+
+\subsection{Compare complete physical tasks}
+
+Vary readout frequency while holding the useful computation fixed to isolate the saving from sparse registration. Measure reset operations and total energy separately using the accounting boundary in Section~\ref{sec:energy}. The experiment then reveals how registration savings contribute to the complete energy budget.
+
+A code experiment should allow both sender and receiver to learn and should record their mappings separately. It should test communication after perturbing one mapping, introducing new task combinations or exchanging partners. Fixed-code controls distinguish learning a task from establishing a convention. A digital learner with the same observations, feedback and training budget is the appropriate computational comparison.
+
+\section{Consequences for intelligence and artificial systems}
+
+The theory gives physical relations a constitutive role in intelligence. An organism's current organisation carries history, limits available responses and changes through learning. The large state space supplies differentiated possibilities; selective coherence makes some of them work together. Action then helps preserve or reshape the conditions under which that organisation can continue.
+
+This connects to accounts of perception and action as parts of a self-maintaining process \citep{friston2010}. Coherence supplies the organisation that action preserves and reshapes. Variational free energy measures an inference objective; physical free energy enters the thermodynamic budget. The shared emphasis is on activity that sustains the conditions for its own continuation.
+
+For artificial systems, the design programme is direct: preserve useful dynamics across tasks, adapt couplings as constraints change, and communicate the consequences that other components need. Persistent physical organisation gives learning a place to accumulate and action a context from which to emerge. These principles guide biological, analogue, digital and hybrid implementations.
+
+The key design target is a repertoire that survives new demands. A system that preserves familiar outputs while losing flexibility after particular relations are removed reveals what those relations contribute. Such interventions expose capacities that ordinary readout leaves hidden.
+
+\paragraph{Scope and open questions.}
+The next empirical step is to identify which coordinated modes carry adaptive capacity across tasks and perturbations, and how much energy sparse registration saves in complete implementations. A compact model that retains the same repertoire would favour a simpler mechanism; selective loss and restoration of flexibility after coherence disruption would support the account developed here.
+
+\section{Conclusion}
+
+Intelligence resides in the maintenance and adaptive reorganisation of high-dimensional coherence. The organism carries its history in an evolving physical state, holds useful distinctions across time, and acts to defend the conditions that keep this organisation alive.
+
+The observable dimensionality bound explains why sparse outputs leave so much of this activity untracked. Embodiment lets the organism use the relations directly. Constraint geometry brings many influences to bear on the same evolving state; selective readout turns their collective result into action.
+
+The architectural advantage is to sustain rich dynamics with sparse irreversible registrations. Reusable codes carry that economy across interfaces, allowing compact signals to recruit extensive internal organisation. This places intelligence in the coherent activity that makes flexible action possible and gives artificial systems a concrete design objective: maintain the relations that sustain an adaptive repertoire.
+
+\section*{Author note}
+This is an independent 2026 author edition. The published article remains the version of record and the one to cite. Numerical examples are self-contained analytical scenarios; this edition reports no new biological data or simulation results. The source implementations accompanying the published article remain available in the adjacent \texttt{../code/} directory.
+
+\section*{Disclosure}
+The published article disclosed pending intellectual property related to this work. This edition was rewritten with AI assistance (Claude, Codex) for drafting, mathematical checking and critical review; the author takes responsibility for the content.
+
+\bibliographystyle{unsrtnat}
+\setlength{\bibsep}{3pt plus 1pt minus 1pt}
+\bibliography{references}
+\end{document}

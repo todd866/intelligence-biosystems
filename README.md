@@ -1,5 +1,7 @@
 # Intelligence as High-Dimensional Coherence
 
+**2026 edition:** a rewrite of this paper as I would write it today, with AI-assisted checking. See [`2026-edition/`](2026-edition/) ([PDF](2026-edition/intelligence_2026.pdf)). The published article remains the version of record.
+
 **Repository:** [todd866/intelligence-biosystems](https://github.com/todd866/intelligence-biosystems)
 **Paper status:** Published in *BioSystems* (January 2026)
 **DOI:** [10.1016/j.biosystems.2026.105704](https://doi.org/10.1016/j.biosystems.2026.105704)
