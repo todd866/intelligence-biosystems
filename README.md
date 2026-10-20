@@ -4,16 +4,6 @@
 **Paper status:** Published in *BioSystems* (January 2026)
 **DOI:** [10.1016/j.biosystems.2026.105704](https://doi.org/10.1016/j.biosystems.2026.105704)
 
-## Companion Paper
-
-**Mathematical foundation:** The Observable Dimensionality Bound derived here is proven rigorously in the companion paper:
-
-> **Curvature Amplification of Tracking Complexity on Statistical Manifolds**
-> Target: *Information Geometry* (Springer)
-> Repository: [todd866/tracking-complexity](https://github.com/todd866/tracking-complexity)
-
-That paper shows covering numbers on negatively curved statistical manifolds grow *exponentially* with geodesic radius—meaning the flat-geometry assumption in this paper is actually conservative. The opacity bound is even stronger than stated.
-
 ## One-line thesis
 
 Intelligence arises from maintaining high-dimensional coherent dynamics that exceed observation channel capacity; continuous substrates achieve this with far fewer irreversible state registrations than discrete implementations.
